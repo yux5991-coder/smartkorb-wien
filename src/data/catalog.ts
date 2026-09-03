@@ -40,6 +40,8 @@ export interface CatalogIndex {
   cheapestByProduct: Map<string, DiscountView>;
   categories: ProductCategory[];
   recipeTags: string[];
+  /** Cuisines present in the catalogue, most recipes first. */
+  cuisines: string[];
 }
 
 export const isDiscountActive = (discount: Discount, onDate = todayIso()): boolean =>
@@ -108,6 +110,14 @@ export const indexCatalog = (catalog: Catalog, origin: CatalogOrigin): CatalogIn
     recipeTags: Array.from(new Set(catalog.recipes.flatMap((recipe) => recipe.tags))).sort((a, b) =>
       a.localeCompare(b, 'de'),
     ),
+    cuisines: Array.from(
+      catalog.recipes.reduce((counts, recipe) => {
+        counts.set(recipe.cuisine, (counts.get(recipe.cuisine) ?? 0) + 1);
+        return counts;
+      }, new Map<string, number>()),
+    )
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'de'))
+      .map(([cuisine]) => cuisine),
   };
 };
 

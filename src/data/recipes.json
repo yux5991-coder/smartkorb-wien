@@ -3,7 +3,6 @@
     "id": "r-01",
     "title": "Wiener Erdäpfelgulasch",
     "tags": [
-      "Österreichisch",
       "Hausmannskost",
       "Budget"
     ],
@@ -51,13 +50,13 @@
     "cookingTimeMin": 40,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/erdaepfelgulasch.jpg",
-    "emoji": "🥘"
+    "emoji": "🥘",
+    "cuisine": "Österreichisch"
   },
   {
     "id": "r-02",
     "title": "Spaghetti Napoli",
     "tags": [
-      "Italienisch",
       "Schnell",
       "Budget"
     ],
@@ -104,13 +103,13 @@
     "cookingTimeMin": 25,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/spaghetti-napoli.jpg",
-    "emoji": "🍝"
+    "emoji": "🍝",
+    "cuisine": "Italienisch"
   },
   {
     "id": "r-03",
     "title": "Gemüsecurry mit Kokosmilch",
     "tags": [
-      "Asiatisch",
       "Vegan",
       "One-Pot"
     ],
@@ -162,13 +161,13 @@
     "cookingTimeMin": 35,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/gemuesecurry.jpg",
-    "emoji": "🍛"
+    "emoji": "🍛",
+    "cuisine": "Thailändisch"
   },
   {
     "id": "r-04",
     "title": "Hühnerbrust mit Ofengemüse",
     "tags": [
-      "Mediterran",
       "Protein",
       "Ofen"
     ],
@@ -214,13 +213,13 @@
     "cookingTimeMin": 45,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/huhn-ofengemuese.jpg",
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "cuisine": "International"
   },
   {
     "id": "r-05",
-    "title": "Orientalische Linsensuppe",
+    "title": "Mercimek Çorbası – türkische Linsensuppe",
     "tags": [
-      "Orientalisch",
       "Vegan",
       "Budget"
     ],
@@ -272,13 +271,13 @@
     "cookingTimeMin": 30,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/linsensuppe.jpg",
-    "emoji": "🍲"
+    "emoji": "🍲",
+    "cuisine": "Türkisch"
   },
   {
     "id": "r-06",
     "title": "Kaiserschmarrn mit Beeren",
     "tags": [
-      "Österreichisch",
       "Süßspeise",
       "Familienessen"
     ],
@@ -322,13 +321,13 @@
     "cookingTimeMin": 30,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/kaiserschmarrn.jpg",
-    "emoji": "🥞"
+    "emoji": "🥞",
+    "cuisine": "Österreichisch"
   },
   {
     "id": "r-07",
     "title": "Käsespätzle mit Röstzwiebeln",
     "tags": [
-      "Österreichisch",
       "Comfort Food"
     ],
     "dietTags": [
@@ -371,13 +370,13 @@
     "cookingTimeMin": 45,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/kaesespaetzle.jpg",
-    "emoji": "🧀"
+    "emoji": "🧀",
+    "cuisine": "Österreichisch"
   },
   {
     "id": "r-08",
     "title": "Lachs mit Erdäpfeln und Spinat",
     "tags": [
-      "Mediterran",
       "Protein",
       "Schnell"
     ],
@@ -422,13 +421,13 @@
     "cookingTimeMin": 35,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/lachs-spinat.jpg",
-    "emoji": "🐟"
+    "emoji": "🐟",
+    "cuisine": "International"
   },
   {
     "id": "r-09",
     "title": "Faschierte Laibchen mit Erdäpfelpüree",
     "tags": [
-      "Österreichisch",
       "Hausmannskost",
       "Familienessen"
     ],
@@ -479,13 +478,13 @@
     "cookingTimeMin": 50,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/faschierte-laibchen.jpg",
-    "emoji": "🍽️"
+    "emoji": "🍽️",
+    "cuisine": "Österreichisch"
   },
   {
     "id": "r-10",
     "title": "Klassisches Rindsgulasch",
     "tags": [
-      "Österreichisch",
       "Sonntagsessen"
     ],
     "dietTags": [
@@ -529,13 +528,13 @@
     "cookingTimeMin": 120,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/rindsgulasch.jpg",
-    "emoji": "🥘"
+    "emoji": "🥘",
+    "cuisine": "Österreichisch"
   },
   {
     "id": "r-11",
     "title": "Polenta mit Champignonragout",
     "tags": [
-      "Italienisch",
       "Vegetarisch",
       "Glutenfrei"
     ],
@@ -585,13 +584,13 @@
     "cookingTimeMin": 40,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/polenta-champignons.jpg",
-    "emoji": "🍄"
+    "emoji": "🍄",
+    "cuisine": "Italienisch"
   },
   {
     "id": "r-12",
     "title": "Kichererbsen-Bowl mit Avocado",
     "tags": [
-      "Orientalisch",
       "Vegan",
       "Meal Prep"
     ],
@@ -647,7 +646,8 @@
     "cookingTimeMin": 20,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/kichererbsen-bowl.jpg",
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "cuisine": "International"
   },
   {
     "id": "r-13",
@@ -695,13 +695,13 @@
     "cookingTimeMin": 10,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/overnight-oats.jpg",
-    "emoji": "🥣"
+    "emoji": "🥣",
+    "cuisine": "International"
   },
   {
     "id": "r-14",
     "title": "Caprese mit Vollkornbrot",
     "tags": [
-      "Italienisch",
       "Vegetarisch",
       "Schnell"
     ],
@@ -742,13 +742,13 @@
     "cookingTimeMin": 15,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/caprese.jpg",
-    "emoji": "🍅"
+    "emoji": "🍅",
+    "cuisine": "Italienisch"
   },
   {
     "id": "r-15",
     "title": "Thunfisch-Nudelsalat",
     "tags": [
-      "Mediterran",
       "Meal Prep",
       "Schnell"
     ],
@@ -800,15 +800,14 @@
     "cookingTimeMin": 25,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/thunfisch-nudelsalat.jpg",
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "cuisine": "International"
   },
   {
     "id": "r-16",
     "title": "Schnelle Gnocchi-Pfanne mit Pesto",
     "tags": [
-      "Italienisch",
-      "Schnell",
-      "Fertig & Convenience"
+      "Schnell"
     ],
     "dietTags": [
       "vegetarisch",
@@ -846,15 +845,14 @@
     "cookingTimeMin": 15,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/gnocchi-pfanne.jpg",
-    "emoji": "🥟"
+    "emoji": "🥟",
+    "cuisine": "Italienisch"
   },
   {
     "id": "r-17",
     "title": "Knödel mit Ei und Blattsalat",
     "tags": [
-      "Österreichisch",
-      "Resteküche",
-      "Fertig & Convenience"
+      "Resteküche"
     ],
     "dietTags": [
       "vegetarisch",
@@ -896,15 +894,14 @@
     "cookingTimeMin": 20,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/knoedel-mit-ei.jpg",
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "cuisine": "Österreichisch"
   },
   {
     "id": "r-18",
     "title": "TK-Pizza aufgepeppt",
     "tags": [
-      "Italienisch",
-      "Schnell",
-      "Fertig & Convenience"
+      "Schnell"
     ],
     "dietTags": [
       "vegetarisch",
@@ -912,6 +909,7 @@
     ],
     "allergenFree": [
       "nuesse",
+      "ei",
       "fisch",
       "soja"
     ],
@@ -946,6 +944,3045 @@
     "cookingTimeMin": 18,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/tk-pizza.jpg",
+    "emoji": "🍕",
+    "cuisine": "Italienisch"
+  },
+  {
+    "id": "r-19",
+    "title": "Wiener Schnitzel vom Schwein",
+    "cuisine": "Österreichisch",
+    "tags": [
+      "Klassiker",
+      "Sonntagsessen"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-18",
+        "grams": 600
+      },
+      {
+        "productId": "p-44",
+        "grams": 80
+      },
+      {
+        "productId": "p-31",
+        "grams": 120
+      },
+      {
+        "productId": "p-154",
+        "grams": 150
+      },
+      {
+        "productId": "p-13",
+        "grams": 100
+      },
+      {
+        "productId": "p-05",
+        "grams": 800
+      }
+    ],
+    "instructions": [
+      "Schnitzel dünn klopfen, salzen und pfeffern.",
+      "Der Reihe nach in Mehl, verquirltem Ei und Semmelbröseln wenden — die Brösel nur andrücken, nicht festpressen.",
+      "In reichlich heißem Fett schwimmend backen und die Pfanne dabei schwenken, damit die Panier soufliert.",
+      "Auf Küchenpapier abtropfen lassen und mit Zitronenspalten und Erdäpfelsalat servieren."
+    ],
+    "cookingTimeMin": 40,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/wiener-schnitzel-vom-schwein.jpg",
+    "emoji": "🍖"
+  },
+  {
+    "id": "r-20",
+    "title": "Tafelspitz mit Apfelkren",
+    "cuisine": "Österreichisch",
+    "tags": [
+      "Klassiker",
+      "Sonntagsessen"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-155",
+        "grams": 800
+      },
+      {
+        "productId": "p-07",
+        "grams": 200
+      },
+      {
+        "productId": "p-06",
+        "grams": 150
+      },
+      {
+        "productId": "p-05",
+        "grams": 800
+      },
+      {
+        "productId": "p-159",
+        "grams": 40
+      },
+      {
+        "productId": "p-01",
+        "grams": 150
+      }
+    ],
+    "instructions": [
+      "Eine halbierte Zwiebel ohne Fett dunkel anrösten — sie gibt der Suppe Farbe.",
+      "Fleisch in kochendes Wasser einlegen, Wurzelgemüse und die geröstete Zwiebel zugeben.",
+      "Zwei Stunden knapp unter dem Siedepunkt ziehen lassen und immer wieder abschäumen.",
+      "Apfel fein reiben, mit Kren mischen. Fleisch quer zur Faser aufschneiden und mit Röstkartoffeln servieren."
+    ],
+    "cookingTimeMin": 150,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/tafelspitz-mit-apfelkren.jpg",
+    "emoji": "🥩"
+  },
+  {
+    "id": "r-21",
+    "title": "Krautfleckerl",
+    "cuisine": "Österreichisch",
+    "tags": [
+      "Hausmannskost",
+      "Budget"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-104",
+        "grams": 800
+      },
+      {
+        "productId": "p-157",
+        "grams": 400
+      },
+      {
+        "productId": "p-06",
+        "grams": 200
+      },
+      {
+        "productId": "p-144",
+        "grams": 20
+      },
+      {
+        "productId": "p-161",
+        "grams": 20
+      },
+      {
+        "productId": "p-26",
+        "grams": 40
+      }
+    ],
+    "instructions": [
+      "Kraut fein hobeln und salzen. Zucker in Butter hell karamellisieren lassen.",
+      "Zwiebel und Kraut zugeben und bei mittlerer Hitze 25 Minuten schmoren, bis es goldbraun ist.",
+      "Mit einem Schuss Essig abschmecken, kräftig pfeffern und Kümmel zugeben.",
+      "Fleckerl bissfest kochen und unter das Kraut mischen."
+    ],
+    "cookingTimeMin": 45,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/krautfleckerl.jpg",
+    "emoji": "🥬"
+  },
+  {
+    "id": "r-22",
+    "title": "Wiener Erdäpfelsalat",
+    "cuisine": "Österreichisch",
+    "tags": [
+      "Beilage",
+      "Budget"
+    ],
+    "dietTags": [
+      "vegan",
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-05",
+        "grams": 900
+      },
+      {
+        "productId": "p-06",
+        "grams": 100
+      },
+      {
+        "productId": "p-161",
+        "grams": 40
+      },
+      {
+        "productId": "p-160",
+        "grams": 20
+      },
+      {
+        "productId": "p-158",
+        "grams": 10
+      },
+      {
+        "productId": "p-41",
+        "grams": 30
+      }
+    ],
+    "instructions": [
+      "Erdäpfel in der Schale kochen, noch warm schälen und in Scheiben schneiden.",
+      "Zwiebel fein würfeln und in heißer Suppe kurz ziehen lassen.",
+      "Mit Essig, Senf, Salz und Pfeffer verrühren und über die warmen Erdäpfel gießen.",
+      "Mindestens 20 Minuten durchziehen lassen, zuletzt das Öl unterheben."
+    ],
+    "cookingTimeMin": 30,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/wiener-erdäpfelsalat.jpg",
+    "emoji": "🥔"
+  },
+  {
+    "id": "r-23",
+    "title": "Grießnockerlsuppe",
+    "cuisine": "Österreichisch",
+    "tags": [
+      "Suppe",
+      "Klassiker"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-156",
+        "grams": 120
+      },
+      {
+        "productId": "p-26",
+        "grams": 60
+      },
+      {
+        "productId": "p-31",
+        "grams": 120
+      },
+      {
+        "productId": "p-158",
+        "grams": 15
+      },
+      {
+        "productId": "p-100",
+        "grams": 10
+      }
+    ],
+    "instructions": [
+      "Weiche Butter mit Ei und Salz schaumig rühren, Grieß einrühren.",
+      "Die Masse 20 Minuten rasten lassen — sonst zerfallen die Nockerl.",
+      "Mit zwei Löffeln Nockerl formen und in leicht siedender Suppe 15 Minuten ziehen lassen.",
+      "Mit Schnittlauch oder Petersilie bestreut servieren."
+    ],
+    "cookingTimeMin": 40,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/grießnockerlsuppe.jpg",
+    "emoji": "🍲"
+  },
+  {
+    "id": "r-24",
+    "title": "Apfelstrudel",
+    "cuisine": "Österreichisch",
+    "tags": [
+      "Süßspeise",
+      "Klassiker"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-68",
+        "grams": 275
+      },
+      {
+        "productId": "p-01",
+        "grams": 700
+      },
+      {
+        "productId": "p-154",
+        "grams": 60
+      },
+      {
+        "productId": "p-144",
+        "grams": 80
+      },
+      {
+        "productId": "p-26",
+        "grams": 50
+      },
+      {
+        "productId": "p-102",
+        "grams": 50
+      }
+    ],
+    "instructions": [
+      "Äpfel schälen, in dünne Spalten schneiden und mit Zucker, Zimt und Rosinen mischen.",
+      "Semmelbrösel in Butter goldbraun rösten und auf den ausgerollten Teig streuen — sie binden den Saft.",
+      "Apfelmasse und Nüsse aufsetzen, den Strudel einrollen und mit Butter bestreichen.",
+      "Bei 190 °C etwa 35 Minuten backen und mit Staubzucker bestäuben."
+    ],
+    "cookingTimeMin": 55,
+    "servings": 6,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/apfelstrudel.jpg",
+    "emoji": "🥧"
+  },
+  {
+    "id": "r-25",
+    "title": "Topfenknödel mit Marillen",
+    "cuisine": "Österreichisch",
+    "tags": [
+      "Süßspeise",
+      "Familienessen"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-29",
+        "grams": 250
+      },
+      {
+        "productId": "p-44",
+        "grams": 120
+      },
+      {
+        "productId": "p-31",
+        "grams": 60
+      },
+      {
+        "productId": "p-26",
+        "grams": 60
+      },
+      {
+        "productId": "p-154",
+        "grams": 80
+      },
+      {
+        "productId": "p-162",
+        "grams": 100
+      },
+      {
+        "productId": "p-144",
+        "grams": 40
+      }
+    ],
+    "instructions": [
+      "Topfen, Ei, weiche Butter, Mehl und eine Prise Salz zu einem Teig verkneten und 30 Minuten kühlen.",
+      "Aus dem Teig Kugeln formen, je einen Löffel Marmelade einschließen.",
+      "In siedendem Salzwasser 12 Minuten ziehen lassen — nicht kochen.",
+      "Semmelbrösel in Butter mit Zucker rösten und die Knödel darin wälzen."
+    ],
+    "cookingTimeMin": 45,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/topfenknödel-mit-marillen.jpg",
+    "emoji": "🍑"
+  },
+  {
+    "id": "r-26",
+    "title": "Menemen",
+    "cuisine": "Türkisch",
+    "tags": [
+      "Frühstück",
+      "Schnell"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-31",
+        "grams": 300
+      },
+      {
+        "productId": "p-03",
+        "grams": 400
+      },
+      {
+        "productId": "p-08",
+        "grams": 200
+      },
+      {
+        "productId": "p-06",
+        "grams": 100
+      },
+      {
+        "productId": "p-95",
+        "grams": 30
+      },
+      {
+        "productId": "p-93",
+        "grams": 200
+      },
+      {
+        "productId": "p-41",
+        "grams": 30
+      }
+    ],
+    "instructions": [
+      "Zwiebel und Paprika in Öl weich dünsten.",
+      "Paprikamark kurz mitrösten, dann die geschälten, gewürfelten Tomaten zugeben.",
+      "Offen einkochen, bis die Masse sämig ist, mit Salz und Pul Biber würzen.",
+      "Eier verquirlt hineingeben und nur so lange rühren, bis sie eben stocken. Mit Fladenbrot servieren."
+    ],
+    "cookingTimeMin": 20,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/menemen.jpg",
+    "emoji": "🍳"
+  },
+  {
+    "id": "r-27",
+    "title": "Kısır",
+    "cuisine": "Türkisch",
+    "tags": [
+      "Salat",
+      "Meal Prep",
+      "Vegan"
+    ],
+    "dietTags": [
+      "vegan",
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-91",
+        "grams": 250
+      },
+      {
+        "productId": "p-96",
+        "grams": 40
+      },
+      {
+        "productId": "p-95",
+        "grams": 30
+      },
+      {
+        "productId": "p-100",
+        "grams": 30
+      },
+      {
+        "productId": "p-13",
+        "grams": 60
+      },
+      {
+        "productId": "p-04",
+        "grams": 200
+      },
+      {
+        "productId": "p-118",
+        "grams": 50
+      },
+      {
+        "productId": "p-41",
+        "grams": 40
+      }
+    ],
+    "instructions": [
+      "Feinen Bulgur mit der gleichen Menge kochendem Wasser übergießen und zugedeckt quellen lassen.",
+      "Tomaten- und Paprikamark mit Öl verrühren und unter den lauwarmen Bulgur kneten.",
+      "Gurke, Frühlingszwiebeln und reichlich Petersilie fein schneiden und untermischen.",
+      "Mit Zitronensaft, Salz und Pul Biber abschmecken und kühl servieren."
+    ],
+    "cookingTimeMin": 30,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/kısır.jpg",
+    "emoji": "🥗"
+  },
+  {
+    "id": "r-28",
+    "title": "Karnıyarık",
+    "cuisine": "Türkisch",
+    "tags": [
+      "Hauptspeise",
+      "Ofen"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-92",
+        "grams": 700
+      },
+      {
+        "productId": "p-98",
+        "grams": 400
+      },
+      {
+        "productId": "p-06",
+        "grams": 150
+      },
+      {
+        "productId": "p-03",
+        "grams": 300
+      },
+      {
+        "productId": "p-95",
+        "grams": 30
+      },
+      {
+        "productId": "p-100",
+        "grams": 20
+      },
+      {
+        "productId": "p-41",
+        "grams": 40
+      }
+    ],
+    "instructions": [
+      "Melanzani längs streifig schälen, salzen und 20 Minuten ziehen lassen, dann rundum anbraten.",
+      "Faschiertes mit Zwiebel anbraten, Tomaten, Paprikamark und Petersilie zugeben und einkochen.",
+      "Melanzani längs einschneiden, die Fülle einfüllen und in eine Form setzen.",
+      "Mit etwas Wasser angießen und bei 190 °C 30 Minuten backen."
+    ],
+    "cookingTimeMin": 60,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/karnıyarık.jpg",
+    "emoji": "🍆"
+  },
+  {
+    "id": "r-29",
+    "title": "Köfte mit Bulgur",
+    "cuisine": "Türkisch",
+    "tags": [
+      "Hauptspeise",
+      "Familienessen"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-17",
+        "grams": 500
+      },
+      {
+        "productId": "p-06",
+        "grams": 100
+      },
+      {
+        "productId": "p-154",
+        "grams": 60
+      },
+      {
+        "productId": "p-31",
+        "grams": 60
+      },
+      {
+        "productId": "p-100",
+        "grams": 20
+      },
+      {
+        "productId": "p-91",
+        "grams": 200
+      }
+    ],
+    "instructions": [
+      "Faschiertes mit geriebener Zwiebel, Ei, Bröseln, Petersilie, Kreuzkümmel und Salz gut durchkneten.",
+      "Die Masse 30 Minuten kühlen, dann längliche Köfte formen.",
+      "In der Pfanne oder am Grill von beiden Seiten kräftig braun braten.",
+      "Bulgur in der doppelten Menge Wasser quellen lassen und dazu servieren."
+    ],
+    "cookingTimeMin": 35,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/köfte-mit-bulgur.jpg",
+    "emoji": "🍢"
+  },
+  {
+    "id": "r-30",
+    "title": "Börek mit Schafkäse und Spinat",
+    "cuisine": "Türkisch",
+    "tags": [
+      "Gebäck",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-68",
+        "grams": 275
+      },
+      {
+        "productId": "p-94",
+        "grams": 200
+      },
+      {
+        "productId": "p-11",
+        "grams": 200
+      },
+      {
+        "productId": "p-31",
+        "grams": 60
+      },
+      {
+        "productId": "p-41",
+        "grams": 20
+      }
+    ],
+    "instructions": [
+      "Spinat kurz blanchieren, gut ausdrücken und grob hacken.",
+      "Mit zerbröseltem Schafkäse und etwas Ei vermengen, kräftig pfeffern.",
+      "Teig in Streifen schneiden, füllen und zu Rollen oder Dreiecken formen.",
+      "Mit Ei bestreichen, mit Sesam bestreuen und bei 200 °C 25 Minuten goldbraun backen."
+    ],
+    "cookingTimeMin": 45,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/börek-mit-schafkäse-und-spinat.jpg",
+    "emoji": "🥟"
+  },
+  {
+    "id": "r-31",
+    "title": "Cacık",
+    "cuisine": "Türkisch",
+    "tags": [
+      "Vorspeise",
+      "Schnell",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-25",
+        "grams": 500
+      },
+      {
+        "productId": "p-04",
+        "grams": 300
+      },
+      {
+        "productId": "p-12",
+        "grams": 10
+      },
+      {
+        "productId": "p-107",
+        "grams": 15
+      },
+      {
+        "productId": "p-41",
+        "grams": 20
+      }
+    ],
+    "instructions": [
+      "Gurke grob raspeln, leicht salzen und kurz abtropfen lassen.",
+      "Joghurt mit etwas kaltem Wasser glatt rühren.",
+      "Gurke, feingehackten Knoblauch und Dill unterrühren.",
+      "Mit Salz abschmecken und mit Olivenöl beträufelt servieren."
+    ],
+    "cookingTimeMin": 10,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/cacık.jpg",
+    "emoji": "🥒"
+  },
+  {
+    "id": "r-32",
+    "title": "Ajapsandali",
+    "cuisine": "Kaukasisch",
+    "tags": [
+      "Gemüse",
+      "Vegan",
+      "One-Pot"
+    ],
+    "dietTags": [
+      "vegan",
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-92",
+        "grams": 700
+      },
+      {
+        "productId": "p-08",
+        "grams": 250
+      },
+      {
+        "productId": "p-03",
+        "grams": 400
+      },
+      {
+        "productId": "p-06",
+        "grams": 150
+      },
+      {
+        "productId": "p-12",
+        "grams": 15
+      },
+      {
+        "productId": "p-101",
+        "grams": 25
+      },
+      {
+        "productId": "p-41",
+        "grams": 40
+      }
+    ],
+    "instructions": [
+      "Melanzani würfeln, salzen und 15 Minuten ziehen lassen, dann in Öl anbraten.",
+      "Zwiebel und Paprika zugeben und weich schmoren.",
+      "Tomaten und Knoblauch einrühren und offen einkochen lassen.",
+      "Vom Herd nehmen und mit viel frischem Koriander und Basilikum abschmecken."
+    ],
+    "cookingTimeMin": 45,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/ajapsandali.jpg",
+    "emoji": "🍆"
+  },
+  {
+    "id": "r-33",
+    "title": "Lobio",
+    "cuisine": "Kaukasisch",
+    "tags": [
+      "Eintopf",
+      "Vegan",
+      "Budget"
+    ],
+    "dietTags": [
+      "vegan",
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-151",
+        "grams": 800
+      },
+      {
+        "productId": "p-06",
+        "grams": 150
+      },
+      {
+        "productId": "p-102",
+        "grams": 80
+      },
+      {
+        "productId": "p-12",
+        "grams": 15
+      },
+      {
+        "productId": "p-101",
+        "grams": 25
+      },
+      {
+        "productId": "p-41",
+        "grams": 30
+      }
+    ],
+    "instructions": [
+      "Zwiebel in Öl goldgelb rösten.",
+      "Bohnen mit etwas Kochwasser zugeben und einen Teil davon zerdrücken, bis der Eintopf sämig wird.",
+      "Walnüsse mit Knoblauch und Koriander fein hacken oder mörsern und unterrühren.",
+      "Mit Koriandersamen, Bockshornklee, Salz und einem Spritzer Essig abschmecken."
+    ],
+    "cookingTimeMin": 35,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/lobio.jpg",
+    "emoji": "🫘"
+  },
+  {
+    "id": "r-34",
+    "title": "Chakhokhbili",
+    "cuisine": "Kaukasisch",
+    "tags": [
+      "Hauptspeise",
+      "One-Pot"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-152",
+        "grams": 800
+      },
+      {
+        "productId": "p-03",
+        "grams": 500
+      },
+      {
+        "productId": "p-06",
+        "grams": 300
+      },
+      {
+        "productId": "p-12",
+        "grams": 15
+      },
+      {
+        "productId": "p-101",
+        "grams": 25
+      },
+      {
+        "productId": "p-100",
+        "grams": 20
+      }
+    ],
+    "instructions": [
+      "Hühnerteile ohne Fett in einer heißen Pfanne rundum bräunen.",
+      "Reichlich Zwiebel zugeben und weich schmoren — sie ist die Basis der Sauce.",
+      "Tomaten zugeben und 25 Minuten zugedeckt köcheln lassen.",
+      "Zum Schluss Knoblauch und die Kräuter einrühren und nur kurz ziehen lassen."
+    ],
+    "cookingTimeMin": 50,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/chakhokhbili.jpg",
+    "emoji": "🍗"
+  },
+  {
+    "id": "r-35",
+    "title": "Badrijani – Melanzaniröllchen mit Walnuss",
+    "cuisine": "Kaukasisch",
+    "tags": [
+      "Vorspeise",
+      "Vegan"
+    ],
+    "dietTags": [
+      "vegan",
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-92",
+        "grams": 700
+      },
+      {
+        "productId": "p-102",
+        "grams": 150
+      },
+      {
+        "productId": "p-12",
+        "grams": 15
+      },
+      {
+        "productId": "p-101",
+        "grams": 25
+      },
+      {
+        "productId": "p-161",
+        "grams": 15
+      },
+      {
+        "productId": "p-41",
+        "grams": 30
+      }
+    ],
+    "instructions": [
+      "Melanzani längs in dünne Scheiben schneiden, salzen und beidseitig goldbraun braten.",
+      "Walnüsse mit Knoblauch, Koriander und Gewürzen sehr fein mahlen.",
+      "Mit etwas Wasser und Essig zu einer streichfähigen Paste rühren.",
+      "Paste auf die Scheiben streichen, aufrollen und kühl servieren."
+    ],
+    "cookingTimeMin": 40,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/badrijani-–-melanzaniröllchen-mit-walnuss.jpg",
+    "emoji": "🌰"
+  },
+  {
+    "id": "r-36",
+    "title": "Khachapuri",
+    "cuisine": "Kaukasisch",
+    "tags": [
+      "Gebäck",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-44",
+        "grams": 400
+      },
+      {
+        "productId": "p-25",
+        "grams": 200
+      },
+      {
+        "productId": "p-94",
+        "grams": 250
+      },
+      {
+        "productId": "p-27",
+        "grams": 150
+      },
+      {
+        "productId": "p-31",
+        "grams": 120
+      },
+      {
+        "productId": "p-26",
+        "grams": 40
+      }
+    ],
+    "instructions": [
+      "Mehl, Joghurt, ein Ei, Salz und Backtriebmittel zu einem weichen Teig kneten und rasten lassen.",
+      "Käsesorten mischen — die Mischung soll salzig und leicht säuerlich sein.",
+      "Teigfladen ausrollen, Käse einschlagen, flach drücken und auf ein Blech setzen.",
+      "Bei 220 °C 20 Minuten backen, in der Mitte ein Ei aufschlagen und noch 4 Minuten fertig backen."
+    ],
+    "cookingTimeMin": 50,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/khachapuri.jpg",
+    "emoji": "🧀"
+  },
+  {
+    "id": "r-37",
+    "title": "Bigos",
+    "cuisine": "Polnisch",
+    "tags": [
+      "Eintopf",
+      "Hausmannskost"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-103",
+        "grams": 500
+      },
+      {
+        "productId": "p-104",
+        "grams": 400
+      },
+      {
+        "productId": "p-109",
+        "grams": 250
+      },
+      {
+        "productId": "p-110",
+        "grams": 150
+      },
+      {
+        "productId": "p-06",
+        "grams": 200
+      },
+      {
+        "productId": "p-111",
+        "grams": 80
+      },
+      {
+        "productId": "p-96",
+        "grams": 40
+      }
+    ],
+    "instructions": [
+      "Speck auslassen, Zwiebel darin anrösten.",
+      "Frisches Kraut und abgetropftes Sauerkraut zugeben und mit Wasser knapp bedecken.",
+      "Wurst, Dörrpflaumen, Tomatenmark, Lorbeer und Piment zugeben.",
+      "Mindestens eine Stunde leise köcheln — am zweiten Tag schmeckt Bigos noch besser."
+    ],
+    "cookingTimeMin": 90,
+    "servings": 6,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/bigos.jpg",
+    "emoji": "🥘"
+  },
+  {
+    "id": "r-38",
+    "title": "Pierogi ruskie",
+    "cuisine": "Polnisch",
+    "tags": [
+      "Teigtaschen",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-44",
+        "grams": 400
+      },
+      {
+        "productId": "p-05",
+        "grams": 500
+      },
+      {
+        "productId": "p-29",
+        "grams": 250
+      },
+      {
+        "productId": "p-06",
+        "grams": 200
+      },
+      {
+        "productId": "p-26",
+        "grams": 50
+      }
+    ],
+    "instructions": [
+      "Mehl mit heißem Wasser, etwas Öl und Salz zu einem geschmeidigen Teig kneten, ruhen lassen.",
+      "Erdäpfel weich kochen, zerdrücken und mit Topfen und angerösteter Zwiebel würzen.",
+      "Teig dünn ausrollen, Kreise ausstechen, füllen und die Ränder fest verschließen.",
+      "In Salzwasser kochen, bis sie aufsteigen, dann in Butter mit Zwiebeln schwenken."
+    ],
+    "cookingTimeMin": 75,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/pierogi-ruskie.jpg",
+    "emoji": "🥟"
+  },
+  {
+    "id": "r-39",
+    "title": "Gołąbki",
+    "cuisine": "Polnisch",
+    "tags": [
+      "Hauptspeise",
+      "Familienessen"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-104",
+        "grams": 1000
+      },
+      {
+        "productId": "p-17",
+        "grams": 500
+      },
+      {
+        "productId": "p-39",
+        "grams": 150
+      },
+      {
+        "productId": "p-06",
+        "grams": 150
+      },
+      {
+        "productId": "p-40",
+        "grams": 400
+      }
+    ],
+    "instructions": [
+      "Krautkopf im Ganzen kurz kochen und die Blätter einzeln ablösen.",
+      "Faschiertes mit halb gegartem Reis, gerösteter Zwiebel, Salz und Pfeffer mischen.",
+      "Blätter füllen, straff einrollen und dicht in einen Topf schlichten.",
+      "Mit Tomaten und Wasser angießen und eine Stunde zugedeckt schmoren."
+    ],
+    "cookingTimeMin": 80,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/gołąbki.jpg",
+    "emoji": "🥬"
+  },
+  {
+    "id": "r-40",
+    "title": "Placki ziemniaczane",
+    "cuisine": "Polnisch",
+    "tags": [
+      "Schnell",
+      "Vegetarisch",
+      "Budget"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-05",
+        "grams": 900
+      },
+      {
+        "productId": "p-31",
+        "grams": 60
+      },
+      {
+        "productId": "p-44",
+        "grams": 60
+      },
+      {
+        "productId": "p-06",
+        "grams": 100
+      },
+      {
+        "productId": "p-106",
+        "grams": 200
+      }
+    ],
+    "instructions": [
+      "Erdäpfel und Zwiebel fein reiben und die Flüssigkeit gut ausdrücken.",
+      "Mit Ei, Mehl, Salz und Pfeffer zu einem Teig verrühren.",
+      "Portionsweise in heißem Öl flach ausbreiten und beidseitig knusprig backen.",
+      "Mit Sauerrahm servieren."
+    ],
+    "cookingTimeMin": 35,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/placki-ziemniaczane.jpg",
+    "emoji": "🥔"
+  },
+  {
+    "id": "r-41",
+    "title": "Borschtsch",
+    "cuisine": "Ukrainisch",
+    "tags": [
+      "Suppe",
+      "Klassiker"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-105",
+        "grams": 500
+      },
+      {
+        "productId": "p-104",
+        "grams": 300
+      },
+      {
+        "productId": "p-05",
+        "grams": 400
+      },
+      {
+        "productId": "p-07",
+        "grams": 150
+      },
+      {
+        "productId": "p-06",
+        "grams": 150
+      },
+      {
+        "productId": "p-40",
+        "grams": 200
+      },
+      {
+        "productId": "p-106",
+        "grams": 200
+      },
+      {
+        "productId": "p-107",
+        "grams": 20
+      }
+    ],
+    "instructions": [
+      "Rote Rüben grob raspeln und mit Tomaten und einem Spritzer Essig schmoren — so bleibt die Farbe.",
+      "Zwiebel und Karotte getrennt anrösten.",
+      "Erdäpfel und Kraut in Wasser oder Suppe weich kochen, dann alles zusammenführen.",
+      "10 Minuten ziehen lassen und mit Sauerrahm, Dill und Knoblauch servieren."
+    ],
+    "cookingTimeMin": 60,
+    "servings": 6,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/borschtsch.jpg",
+    "emoji": "🍲"
+  },
+  {
+    "id": "r-42",
+    "title": "Wareniki mit Erdäpfeln",
+    "cuisine": "Ukrainisch",
+    "tags": [
+      "Teigtaschen",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-44",
+        "grams": 400
+      },
+      {
+        "productId": "p-05",
+        "grams": 600
+      },
+      {
+        "productId": "p-06",
+        "grams": 200
+      },
+      {
+        "productId": "p-26",
+        "grams": 60
+      },
+      {
+        "productId": "p-106",
+        "grams": 150
+      }
+    ],
+    "instructions": [
+      "Aus Mehl, Wasser, einer Prise Salz und etwas Öl einen weichen Teig kneten und ruhen lassen.",
+      "Erdäpfelpüree mit kräftig gerösteter Zwiebel würzen.",
+      "Kreise ausstechen, füllen, zu Halbmonden schließen und die Ränder gut andrücken.",
+      "In sprudelndem Salzwasser garen und mit Butter, Zwiebeln und Sauerrahm servieren."
+    ],
+    "cookingTimeMin": 70,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/wareniki-mit-erdäpfeln.jpg",
+    "emoji": "🥟"
+  },
+  {
+    "id": "r-43",
+    "title": "Syrniki",
+    "cuisine": "Ukrainisch",
+    "tags": [
+      "Frühstück",
+      "Süßspeise",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-29",
+        "grams": 500
+      },
+      {
+        "productId": "p-31",
+        "grams": 120
+      },
+      {
+        "productId": "p-44",
+        "grams": 100
+      },
+      {
+        "productId": "p-144",
+        "grams": 60
+      },
+      {
+        "productId": "p-106",
+        "grams": 150
+      },
+      {
+        "productId": "p-162",
+        "grams": 100
+      }
+    ],
+    "instructions": [
+      "Topfen gut abtropfen lassen und mit Ei, Zucker und Mehl verrühren.",
+      "Aus der Masse flache Laibchen formen und leicht in Mehl wenden.",
+      "In Butterschmalz bei mittlerer Hitze goldbraun backen.",
+      "Mit Sauerrahm und Marmelade servieren."
+    ],
+    "cookingTimeMin": 30,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/syrniki.jpg",
+    "emoji": "🥞"
+  },
+  {
+    "id": "r-44",
+    "title": "Ćevapčići mit Ajvar",
+    "cuisine": "Balkan",
+    "tags": [
+      "Grill",
+      "Familienessen"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-17",
+        "grams": 600
+      },
+      {
+        "productId": "p-06",
+        "grams": 150
+      },
+      {
+        "productId": "p-12",
+        "grams": 10
+      },
+      {
+        "productId": "p-93",
+        "grams": 400
+      },
+      {
+        "productId": "p-113",
+        "grams": 200
+      }
+    ],
+    "instructions": [
+      "Faschiertes mit Knoblauch, Salz, Pfeffer und etwas Mineralwasser sehr gut durchkneten.",
+      "Die Masse mindestens zwei Stunden kühl rasten lassen.",
+      "Daumendicke Röllchen formen und heiß von allen Seiten grillen oder braten.",
+      "Im aufgeschnittenen Fladenbrot mit roher Zwiebel und Ajvar servieren."
+    ],
+    "cookingTimeMin": 35,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/ćevapčići-mit-ajvar.jpg",
+    "emoji": "🍢"
+  },
+  {
+    "id": "r-45",
+    "title": "Šopska-Salat",
+    "cuisine": "Balkan",
+    "tags": [
+      "Salat",
+      "Schnell",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-03",
+        "grams": 500
+      },
+      {
+        "productId": "p-04",
+        "grams": 300
+      },
+      {
+        "productId": "p-08",
+        "grams": 200
+      },
+      {
+        "productId": "p-06",
+        "grams": 80
+      },
+      {
+        "productId": "p-94",
+        "grams": 200
+      },
+      {
+        "productId": "p-41",
+        "grams": 30
+      }
+    ],
+    "instructions": [
+      "Tomaten, Gurke und Paprika in mundgerechte Stücke schneiden.",
+      "Zwiebel in feine Ringe schneiden und untermischen.",
+      "Mit Öl, Essig, Salz und Pfeffer marinieren.",
+      "Zum Schluss großzügig geriebenen Schafkäse darüberstreuen."
+    ],
+    "cookingTimeMin": 15,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/šopska-salat.jpg",
+    "emoji": "🥗"
+  },
+  {
+    "id": "r-46",
+    "title": "Mapo Tofu",
+    "cuisine": "Chinesisch",
+    "tags": [
+      "Wok",
+      "Scharf"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-119",
+        "grams": 400
+      },
+      {
+        "productId": "p-17",
+        "grams": 250
+      },
+      {
+        "productId": "p-114",
+        "grams": 40
+      },
+      {
+        "productId": "p-125",
+        "grams": 30
+      },
+      {
+        "productId": "p-118",
+        "grams": 50
+      },
+      {
+        "productId": "p-117",
+        "grams": 15
+      },
+      {
+        "productId": "p-39",
+        "grams": 300
+      }
+    ],
+    "instructions": [
+      "Tofu würfeln und in leicht gesalzenem Wasser ziehen lassen, damit er beim Braten ganz bleibt.",
+      "Faschiertes scharf anbraten, Ingwer, Knoblauch und die Chilipaste zugeben und kurz mitrösten.",
+      "Mit Wasser und Sojasauce aufgießen, Tofu vorsichtig einlegen und 5 Minuten ziehen lassen.",
+      "Mit angerührter Stärke binden und mit Frühlingszwiebeln über Reis servieren."
+    ],
+    "cookingTimeMin": 30,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/mapo-tofu.jpg",
+    "emoji": "🌶️"
+  },
+  {
+    "id": "r-47",
+    "title": "Gebratener Reis mit Ei",
+    "cuisine": "Chinesisch",
+    "tags": [
+      "Wok",
+      "Resteküche",
+      "Schnell"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "fisch"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-39",
+        "grams": 300
+      },
+      {
+        "productId": "p-31",
+        "grams": 180
+      },
+      {
+        "productId": "p-118",
+        "grams": 60
+      },
+      {
+        "productId": "p-56",
+        "grams": 150
+      },
+      {
+        "productId": "p-114",
+        "grams": 30
+      },
+      {
+        "productId": "p-116",
+        "grams": 15
+      }
+    ],
+    "instructions": [
+      "Reis am Vortag kochen und kalt stellen — frischer Reis wird im Wok matschig.",
+      "Eier im heißen Wok stocken lassen und wieder herausnehmen.",
+      "Reis bei großer Hitze braten, bis die Körner springen, Erbsen zugeben.",
+      "Ei zurückgeben, mit Sojasauce und Sesamöl abschmecken, Frühlingszwiebeln unterheben."
+    ],
+    "cookingTimeMin": 20,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/gebratener-reis-mit-ei.jpg",
+    "emoji": "🍚"
+  },
+  {
+    "id": "r-48",
+    "title": "Wok-Nudeln mit Pak Choi",
+    "cuisine": "Chinesisch",
+    "tags": [
+      "Wok",
+      "Schnell",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "fisch"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-121",
+        "grams": 250
+      },
+      {
+        "productId": "p-129",
+        "grams": 300
+      },
+      {
+        "productId": "p-07",
+        "grams": 150
+      },
+      {
+        "productId": "p-114",
+        "grams": 40
+      },
+      {
+        "productId": "p-116",
+        "grams": 15
+      },
+      {
+        "productId": "p-117",
+        "grams": 15
+      }
+    ],
+    "instructions": [
+      "Nudeln knapp bissfest kochen und kalt abschrecken.",
+      "Karotten in feine Streifen, Pak Choi in breite Stücke schneiden.",
+      "Ingwer und Knoblauch im heißen Wok anbraten, Gemüse zugeben und 2 Minuten pfannenrühren.",
+      "Nudeln zugeben, mit Sojasauce ablöschen und mit Sesamöl abschmecken."
+    ],
+    "cookingTimeMin": 25,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/wok-nudeln-mit-pak-choi.jpg",
+    "emoji": "🍜"
+  },
+  {
+    "id": "r-49",
+    "title": "Rindfleisch mit Pak Choi",
+    "cuisine": "Chinesisch",
+    "tags": [
+      "Wok",
+      "Protein"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-132",
+        "grams": 400
+      },
+      {
+        "productId": "p-129",
+        "grams": 300
+      },
+      {
+        "productId": "p-114",
+        "grams": 40
+      },
+      {
+        "productId": "p-117",
+        "grams": 15
+      },
+      {
+        "productId": "p-12",
+        "grams": 10
+      },
+      {
+        "productId": "p-39",
+        "grams": 300
+      }
+    ],
+    "instructions": [
+      "Fleischstreifen mit Sojasauce und etwas Stärke marinieren — das hält sie saftig.",
+      "Im sehr heißen Wok portionsweise scharf anbraten und herausnehmen.",
+      "Ingwer, Knoblauch und Pak Choi anbraten, mit einem Schuss Wasser dämpfen.",
+      "Fleisch zurückgeben, abschmecken und sofort mit Reis servieren."
+    ],
+    "cookingTimeMin": 30,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/rindfleisch-mit-pak-choi.jpg",
+    "emoji": "🥩"
+  },
+  {
+    "id": "r-50",
+    "title": "Oyakodon",
+    "cuisine": "Japanisch",
+    "tags": [
+      "Reisgericht",
+      "Schnell"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "fisch"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-16",
+        "grams": 400
+      },
+      {
+        "productId": "p-31",
+        "grams": 240
+      },
+      {
+        "productId": "p-06",
+        "grams": 200
+      },
+      {
+        "productId": "p-114",
+        "grams": 40
+      },
+      {
+        "productId": "p-122",
+        "grams": 300
+      },
+      {
+        "productId": "p-118",
+        "grams": 40
+      }
+    ],
+    "instructions": [
+      "Reis waschen, bis das Wasser klar ist, und garen.",
+      "Zwiebelspalten in Sojasauce, Wasser und etwas Zucker weich köcheln.",
+      "Hühnerstücke zugeben und 5 Minuten gar ziehen lassen.",
+      "Verquirltes Ei darübergießen, zudecken und nur halb stocken lassen. Über den Reis gleiten lassen."
+    ],
+    "cookingTimeMin": 30,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/oyakodon.jpg",
+    "emoji": "🍚"
+  },
+  {
+    "id": "r-51",
+    "title": "Miso-Suppe mit Tofu",
+    "cuisine": "Japanisch",
+    "tags": [
+      "Suppe",
+      "Schnell",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegan",
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-126",
+        "grams": 60
+      },
+      {
+        "productId": "p-119",
+        "grams": 200
+      },
+      {
+        "productId": "p-123",
+        "grams": 10
+      },
+      {
+        "productId": "p-118",
+        "grams": 40
+      }
+    ],
+    "instructions": [
+      "Wasser mit einem Stück Kombu oder Gemüsebrühe erwärmen, aber nicht kochen.",
+      "Miso in einer Kelle mit etwas Brühe glatt rühren und einrühren — Miso darf nie kochen.",
+      "Tofuwürfel und Noristreifen zugeben und nur heiß werden lassen.",
+      "Mit Frühlingszwiebeln bestreut sofort servieren."
+    ],
+    "cookingTimeMin": 15,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/miso-suppe-mit-tofu.jpg",
+    "emoji": "🍲"
+  },
+  {
+    "id": "r-52",
+    "title": "Teriyaki-Hühnchen",
+    "cuisine": "Japanisch",
+    "tags": [
+      "Hauptspeise",
+      "Familienessen"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-16",
+        "grams": 500
+      },
+      {
+        "productId": "p-114",
+        "grams": 50
+      },
+      {
+        "productId": "p-48",
+        "grams": 40
+      },
+      {
+        "productId": "p-117",
+        "grams": 15
+      },
+      {
+        "productId": "p-122",
+        "grams": 300
+      },
+      {
+        "productId": "p-118",
+        "grams": 40
+      }
+    ],
+    "instructions": [
+      "Sojasauce, Honig, geriebenen Ingwer und etwas Wasser zur Sauce verrühren.",
+      "Hühnerfleisch auf der Hautseite knusprig braten und wenden.",
+      "Sauce angießen und einkochen lassen, bis sie glänzend am Fleisch haftet.",
+      "Aufschneiden und mit Reis und Frühlingszwiebeln servieren."
+    ],
+    "cookingTimeMin": 30,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/teriyaki-hühnchen.jpg",
+    "emoji": "🍗"
+  },
+  {
+    "id": "r-53",
+    "title": "Kimchi-Jjigae",
+    "cuisine": "Koreanisch",
+    "tags": [
+      "Eintopf",
+      "Scharf"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-124",
+        "grams": 300
+      },
+      {
+        "productId": "p-119",
+        "grams": 300
+      },
+      {
+        "productId": "p-110",
+        "grams": 150
+      },
+      {
+        "productId": "p-118",
+        "grams": 50
+      },
+      {
+        "productId": "p-125",
+        "grams": 20
+      },
+      {
+        "productId": "p-39",
+        "grams": 300
+      }
+    ],
+    "instructions": [
+      "Speck auslassen, gut gereiftes Kimchi zugeben und 5 Minuten mitbraten — das ist die Geschmacksbasis.",
+      "Mit Wasser aufgießen und 15 Minuten köcheln lassen.",
+      "Gochujang einrühren und abschmecken.",
+      "Tofuscheiben einlegen, kurz ziehen lassen und mit Reis servieren."
+    ],
+    "cookingTimeMin": 35,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/kimchi-jjigae.jpg",
+    "emoji": "🍲"
+  },
+  {
+    "id": "r-54",
+    "title": "Bibimbap",
+    "cuisine": "Koreanisch",
+    "tags": [
+      "Reisgericht",
+      "Meal Prep"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "fisch"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-39",
+        "grams": 300
+      },
+      {
+        "productId": "p-07",
+        "grams": 200
+      },
+      {
+        "productId": "p-11",
+        "grams": 200
+      },
+      {
+        "productId": "p-31",
+        "grams": 180
+      },
+      {
+        "productId": "p-125",
+        "grams": 40
+      },
+      {
+        "productId": "p-116",
+        "grams": 20
+      },
+      {
+        "productId": "p-17",
+        "grams": 250
+      }
+    ],
+    "instructions": [
+      "Reis kochen. Karotten in Streifen und Spinat getrennt kurz anbraten und je mit Sesamöl und Salz würzen.",
+      "Faschiertes mit Sojasauce und Knoblauch würzig braten.",
+      "Alles sternförmig auf dem Reis anrichten.",
+      "Ein Spiegelei daraufsetzen und mit Gochujang am Tisch verrühren."
+    ],
+    "cookingTimeMin": 40,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/bibimbap.jpg",
+    "emoji": "🍚"
+  },
+  {
+    "id": "r-55",
+    "title": "Kimchi-Pfannkuchen",
+    "cuisine": "Koreanisch",
+    "tags": [
+      "Snack",
+      "Schnell",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-124",
+        "grams": 300
+      },
+      {
+        "productId": "p-44",
+        "grams": 200
+      },
+      {
+        "productId": "p-31",
+        "grams": 60
+      },
+      {
+        "productId": "p-118",
+        "grams": 60
+      },
+      {
+        "productId": "p-116",
+        "grams": 15
+      }
+    ],
+    "instructions": [
+      "Kimchi grob hacken und den Saft auffangen.",
+      "Mehl, Ei, Kimchisaft und kaltes Wasser zu einem dünnflüssigen Teig rühren.",
+      "Kimchi und Frühlingszwiebeln unterheben.",
+      "In reichlich Öl dünn ausbacken, bis die Ränder knusprig sind, und in Stücke schneiden."
+    ],
+    "cookingTimeMin": 25,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/kimchi-pfannkuchen.jpg",
+    "emoji": "🥞"
+  },
+  {
+    "id": "r-56",
+    "title": "Pad Thai",
+    "cuisine": "Thailändisch",
+    "tags": [
+      "Wok",
+      "Schnell"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-120",
+        "grams": 250
+      },
+      {
+        "productId": "p-119",
+        "grams": 200
+      },
+      {
+        "productId": "p-31",
+        "grams": 120
+      },
+      {
+        "productId": "p-130",
+        "grams": 60
+      },
+      {
+        "productId": "p-128",
+        "grams": 60
+      },
+      {
+        "productId": "p-127",
+        "grams": 30
+      },
+      {
+        "productId": "p-118",
+        "grams": 60
+      }
+    ],
+    "instructions": [
+      "Reisnudeln in warmem Wasser einweichen, nicht kochen.",
+      "Tofu würfeln und knusprig anbraten, Ei danach im selben Wok stocken lassen.",
+      "Nudeln zugeben und mit Fischsauce, Tamarinde oder Limette und etwas Zucker abschmecken.",
+      "Mit gehackten Erdnüssen, Frühlingszwiebeln und Limettenspalten servieren."
+    ],
+    "cookingTimeMin": 30,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/pad-thai.jpg",
+    "emoji": "🍜"
+  },
+  {
+    "id": "r-57",
+    "title": "Rotes Curry mit Huhn",
+    "cuisine": "Thailändisch",
+    "tags": [
+      "One-Pot",
+      "Schnell"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-16",
+        "grams": 400
+      },
+      {
+        "productId": "p-50",
+        "grams": 60
+      },
+      {
+        "productId": "p-46",
+        "grams": 400
+      },
+      {
+        "productId": "p-08",
+        "grams": 200
+      },
+      {
+        "productId": "p-39",
+        "grams": 300
+      },
+      {
+        "productId": "p-128",
+        "grams": 60
+      }
+    ],
+    "instructions": [
+      "Currypaste im dicken Teil der Kokosmilch anbraten, bis sie duftet.",
+      "Hühnerstreifen zugeben und rundum anziehen lassen.",
+      "Restliche Kokosmilch und Paprika zugeben und 10 Minuten köcheln.",
+      "Mit Fischsauce, etwas Zucker und Limettensaft ausbalancieren, mit Reis servieren."
+    ],
+    "cookingTimeMin": 30,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/rotes-curry-mit-huhn.jpg",
+    "emoji": "🍛"
+  },
+  {
+    "id": "r-58",
+    "title": "Tom Kha Gai",
+    "cuisine": "Thailändisch",
+    "tags": [
+      "Suppe",
+      "Schnell"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-46",
+        "grams": 400
+      },
+      {
+        "productId": "p-16",
+        "grams": 300
+      },
+      {
+        "productId": "p-10",
+        "grams": 250
+      },
+      {
+        "productId": "p-128",
+        "grams": 60
+      },
+      {
+        "productId": "p-117",
+        "grams": 25
+      },
+      {
+        "productId": "p-101",
+        "grams": 25
+      }
+    ],
+    "instructions": [
+      "Kokosmilch mit Wasser, Galgant oder Ingwer und Zitronengras erwärmen.",
+      "Hühnerstreifen und Pilze zugeben und 8 Minuten sanft ziehen lassen.",
+      "Vom Herd nehmen und mit Fischsauce und viel Limettensaft abschmecken.",
+      "Mit frischem Koriander servieren — die Suppe darf nach dem Würzen nicht mehr kochen."
+    ],
+    "cookingTimeMin": 25,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/tom-kha-gai.jpg",
+    "emoji": "🥥"
+  },
+  {
+    "id": "r-59",
+    "title": "Phở Gà",
+    "cuisine": "Vietnamesisch",
+    "tags": [
+      "Suppe",
+      "Sonntagsessen"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-120",
+        "grams": 250
+      },
+      {
+        "productId": "p-16",
+        "grams": 400
+      },
+      {
+        "productId": "p-117",
+        "grams": 30
+      },
+      {
+        "productId": "p-06",
+        "grams": 200
+      },
+      {
+        "productId": "p-101",
+        "grams": 25
+      },
+      {
+        "productId": "p-128",
+        "grams": 60
+      },
+      {
+        "productId": "p-127",
+        "grams": 30
+      }
+    ],
+    "instructions": [
+      "Zwiebel und Ingwer halbieren und in der trockenen Pfanne schwarz rösten.",
+      "Mit Wasser, Sternanis, Zimt und Koriandersamen 40 Minuten auskochen und abseihen.",
+      "Hühnerfleisch in der Brühe garziehen lassen und in Streifen schneiden.",
+      "Reisnudeln in die Schüssel geben, Brühe aufgießen, mit Kräutern, Limette und Chili servieren."
+    ],
+    "cookingTimeMin": 60,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/phở-gà.jpg",
+    "emoji": "🍜"
+  },
+  {
+    "id": "r-60",
+    "title": "Bánh mì mit Hühnerstreifen",
+    "cuisine": "Vietnamesisch",
+    "tags": [
+      "Sandwich",
+      "Schnell"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "fisch"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-35",
+        "grams": 300
+      },
+      {
+        "productId": "p-16",
+        "grams": 300
+      },
+      {
+        "productId": "p-07",
+        "grams": 150
+      },
+      {
+        "productId": "p-04",
+        "grams": 150
+      },
+      {
+        "productId": "p-101",
+        "grams": 25
+      },
+      {
+        "productId": "p-112",
+        "grams": 60
+      },
+      {
+        "productId": "p-114",
+        "grams": 20
+      }
+    ],
+    "instructions": [
+      "Karotten in feine Streifen schneiden und in Essig, Zucker und Salz 15 Minuten einlegen.",
+      "Hühnerstreifen mit Sojasauce, Knoblauch und etwas Zucker marinieren und scharf anbraten.",
+      "Weckerl aufschneiden, ausdrücken und mit Mayonnaise bestreichen.",
+      "Fleisch, eingelegte Karotten, Gurkenstreifen und viel Koriander einfüllen."
+    ],
+    "cookingTimeMin": 25,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/bánh-mì-mit-hühnerstreifen.jpg",
+    "emoji": "🥖"
+  },
+  {
+    "id": "r-61",
+    "title": "Spaghetti Carbonara",
+    "cuisine": "Italienisch",
+    "tags": [
+      "Klassiker",
+      "Schnell"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-38",
+        "grams": 400
+      },
+      {
+        "productId": "p-136",
+        "grams": 150
+      },
+      {
+        "productId": "p-31",
+        "grams": 180
+      },
+      {
+        "productId": "p-133",
+        "grams": 80
+      }
+    ],
+    "instructions": [
+      "Pancetta in Würfeln ohne zusätzliches Fett langsam knusprig auslassen.",
+      "Eidotter mit fein geriebenem Käse und viel schwarzem Pfeffer verrühren.",
+      "Nudeln bissfest kochen, etwas Kochwasser aufheben.",
+      "Nudeln vom Herd genommen mit der Eimasse und dem Speckfett vermengen — Kochwasser macht die Sauce cremig, Hitze macht Rührei."
+    ],
+    "cookingTimeMin": 25,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/spaghetti-carbonara.jpg",
+    "emoji": "🍝"
+  },
+  {
+    "id": "r-62",
+    "title": "Risotto ai funghi",
+    "cuisine": "Italienisch",
+    "tags": [
+      "Klassiker",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-134",
+        "grams": 350
+      },
+      {
+        "productId": "p-10",
+        "grams": 400
+      },
+      {
+        "productId": "p-06",
+        "grams": 100
+      },
+      {
+        "productId": "p-133",
+        "grams": 80
+      },
+      {
+        "productId": "p-26",
+        "grams": 50
+      }
+    ],
+    "instructions": [
+      "Pilze in Scheiben scharf anbraten und beiseitestellen — sonst wässern sie im Risotto.",
+      "Zwiebel glasig dünsten, Reis zugeben und glasig rösten, mit Weißwein ablöschen.",
+      "Nach und nach heiße Brühe zugießen und rühren, bis der Reis in etwa 18 Minuten cremig ist.",
+      "Vom Herd Butter und Parmesan einrühren, Pilze unterheben und 2 Minuten ruhen lassen."
+    ],
+    "cookingTimeMin": 40,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/risotto-ai-funghi.jpg",
+    "emoji": "🍄"
+  },
+  {
+    "id": "r-63",
+    "title": "Lasagne al forno",
+    "cuisine": "Italienisch",
+    "tags": [
+      "Ofen",
+      "Familienessen"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-137",
+        "grams": 250
+      },
+      {
+        "productId": "p-17",
+        "grams": 500
+      },
+      {
+        "productId": "p-40",
+        "grams": 700
+      },
+      {
+        "productId": "p-24",
+        "grams": 500
+      },
+      {
+        "productId": "p-26",
+        "grams": 50
+      },
+      {
+        "productId": "p-44",
+        "grams": 50
+      },
+      {
+        "productId": "p-133",
+        "grams": 80
+      }
+    ],
+    "instructions": [
+      "Faschiertes mit Zwiebel, Karotte und Sellerie anbraten, Tomaten zugeben und 45 Minuten leise köcheln.",
+      "Aus Butter, Mehl und Milch eine glatte Béchamel rühren und mit Muskat würzen.",
+      "Abwechselnd Ragù, Teigblätter und Béchamel schichten, oben Béchamel und Parmesan.",
+      "Bei 190 °C 35 Minuten backen und vor dem Anschneiden 10 Minuten rasten lassen."
+    ],
+    "cookingTimeMin": 75,
+    "servings": 6,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/lasagne-al-forno.jpg",
+    "emoji": "🍝"
+  },
+  {
+    "id": "r-64",
+    "title": "Melanzane alla Parmigiana",
+    "cuisine": "Italienisch",
+    "tags": [
+      "Ofen",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-92",
+        "grams": 700
+      },
+      {
+        "productId": "p-40",
+        "grams": 500
+      },
+      {
+        "productId": "p-32",
+        "grams": 250
+      },
+      {
+        "productId": "p-133",
+        "grams": 80
+      },
+      {
+        "productId": "p-135",
+        "grams": 20
+      },
+      {
+        "productId": "p-41",
+        "grams": 40
+      }
+    ],
+    "instructions": [
+      "Melanzani in Scheiben schneiden, salzen, abtropfen lassen und goldbraun braten.",
+      "Tomaten mit Knoblauch und Basilikum zu einer dicken Sauce einkochen.",
+      "Melanzani, Sauce, Mozzarella und Parmesan schichten.",
+      "Bei 190 °C 30 Minuten backen und lauwarm servieren."
+    ],
+    "cookingTimeMin": 60,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/melanzane-alla-parmigiana.jpg",
+    "emoji": "🍆"
+  },
+  {
+    "id": "r-65",
+    "title": "Pasta e fagioli",
+    "cuisine": "Italienisch",
+    "tags": [
+      "Suppe",
+      "Budget",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegan",
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-140",
+        "grams": 800
+      },
+      {
+        "productId": "p-153",
+        "grams": 250
+      },
+      {
+        "productId": "p-40",
+        "grams": 300
+      },
+      {
+        "productId": "p-06",
+        "grams": 100
+      },
+      {
+        "productId": "p-07",
+        "grams": 100
+      },
+      {
+        "productId": "p-41",
+        "grams": 30
+      }
+    ],
+    "instructions": [
+      "Zwiebel und Karotte fein würfeln und in Öl weich dünsten.",
+      "Die Hälfte der Bohnen pürieren, den Rest ganz lassen — das gibt Bindung und Biss.",
+      "Mit Tomaten und Wasser aufgießen und 15 Minuten köcheln.",
+      "Nudeln direkt in der Suppe garen und mit Olivenöl und Pfeffer servieren."
+    ],
+    "cookingTimeMin": 35,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/pasta-e-fagioli.jpg",
+    "emoji": "🫘"
+  },
+  {
+    "id": "r-66",
+    "title": "Pizza Margherita",
+    "cuisine": "Italienisch",
+    "tags": [
+      "Ofen",
+      "Familienessen",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-67",
+        "grams": 400
+      },
+      {
+        "productId": "p-40",
+        "grams": 300
+      },
+      {
+        "productId": "p-32",
+        "grams": 250
+      },
+      {
+        "productId": "p-135",
+        "grams": 20
+      },
+      {
+        "productId": "p-41",
+        "grams": 20
+      }
+    ],
+    "instructions": [
+      "Backrohr mit Blech auf höchste Stufe vorheizen.",
+      "Teig dünn ausziehen, Tomaten nur mit Salz und Öl würzen und dünn aufstreichen.",
+      "Mozzarella abtropfen lassen, zupfen und auflegen.",
+      "8-10 Minuten backen und erst nach dem Backen Basilikum und Olivenöl daraufgeben."
+    ],
+    "cookingTimeMin": 30,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/pizza-margherita.jpg",
     "emoji": "🍕"
+  },
+  {
+    "id": "r-67",
+    "title": "Classic Cheeseburger",
+    "cuisine": "Amerikanisch",
+    "tags": [
+      "Familienessen",
+      "Schnell"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-148",
+        "grams": 300
+      },
+      {
+        "productId": "p-17",
+        "grams": 500
+      },
+      {
+        "productId": "p-141",
+        "grams": 120
+      },
+      {
+        "productId": "p-03",
+        "grams": 200
+      },
+      {
+        "productId": "p-06",
+        "grams": 80
+      },
+      {
+        "productId": "p-160",
+        "grams": 20
+      }
+    ],
+    "instructions": [
+      "Faschiertes nur locker zu Laibchen formen und erst in der Pfanne salzen.",
+      "Auf sehr heißer Pfanne pro Seite 2-3 Minuten braten, nicht andrücken.",
+      "Käse auflegen und zugedeckt schmelzen lassen.",
+      "Buns kurz anrösten und mit Senf, Zwiebel und Tomate belegen."
+    ],
+    "cookingTimeMin": 30,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/classic-cheeseburger.jpg",
+    "emoji": "🍔"
+  },
+  {
+    "id": "r-68",
+    "title": "Chili con Carne",
+    "cuisine": "Amerikanisch",
+    "tags": [
+      "One-Pot",
+      "Meal Prep"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-17",
+        "grams": 500
+      },
+      {
+        "productId": "p-151",
+        "grams": 800
+      },
+      {
+        "productId": "p-150",
+        "grams": 300
+      },
+      {
+        "productId": "p-40",
+        "grams": 500
+      },
+      {
+        "productId": "p-06",
+        "grams": 150
+      },
+      {
+        "productId": "p-08",
+        "grams": 200
+      },
+      {
+        "productId": "p-39",
+        "grams": 250
+      }
+    ],
+    "instructions": [
+      "Faschiertes krümelig braun braten — Farbe ist Geschmack.",
+      "Zwiebel und Paprika zugeben, mit Kreuzkümmel, Paprikapulver und Chili würzen.",
+      "Tomaten und Bohnen zugeben und 30 Minuten offen köcheln lassen.",
+      "Mais erst zum Schluss unterrühren und mit Reis servieren."
+    ],
+    "cookingTimeMin": 50,
+    "servings": 6,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/chili-con-carne.jpg",
+    "emoji": "🌶️"
+  },
+  {
+    "id": "r-69",
+    "title": "Mac and Cheese",
+    "cuisine": "Amerikanisch",
+    "tags": [
+      "Ofen",
+      "Comfort Food",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-153",
+        "grams": 400
+      },
+      {
+        "productId": "p-141",
+        "grams": 250
+      },
+      {
+        "productId": "p-24",
+        "grams": 500
+      },
+      {
+        "productId": "p-26",
+        "grams": 50
+      },
+      {
+        "productId": "p-44",
+        "grams": 50
+      }
+    ],
+    "instructions": [
+      "Nudeln knapp bissfest kochen.",
+      "Aus Butter und Mehl eine helle Einbrenn rühren und mit Milch glatt aufgießen.",
+      "Käse vom Herd genommen einrühren und mit Senfpulver und Muskat würzen.",
+      "Mit den Nudeln vermengen, in eine Form füllen und 15 Minuten überbacken."
+    ],
+    "cookingTimeMin": 35,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/mac-and-cheese.jpg",
+    "emoji": "🧀"
+  },
+  {
+    "id": "r-70",
+    "title": "Buttermilk Pancakes",
+    "cuisine": "Amerikanisch",
+    "tags": [
+      "Frühstück",
+      "Schnell",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-44",
+        "grams": 300
+      },
+      {
+        "productId": "p-142",
+        "grams": 500
+      },
+      {
+        "productId": "p-31",
+        "grams": 120
+      },
+      {
+        "productId": "p-143",
+        "grams": 16
+      },
+      {
+        "productId": "p-144",
+        "grams": 40
+      },
+      {
+        "productId": "p-146",
+        "grams": 100
+      }
+    ],
+    "instructions": [
+      "Trockene und feuchte Zutaten getrennt verrühren.",
+      "Beides nur kurz zusammenrühren — Klümpchen sind erwünscht, sonst werden die Pancakes zäh.",
+      "Teig 10 Minuten stehen lassen und portionsweise in wenig Butter backen.",
+      "Wenden, sobald die Oberfläche Blasen wirft. Mit Ahornsirup servieren."
+    ],
+    "cookingTimeMin": 25,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/buttermilk-pancakes.jpg",
+    "emoji": "🥞"
+  },
+  {
+    "id": "r-71",
+    "title": "BBQ Pulled Chicken",
+    "cuisine": "Amerikanisch",
+    "tags": [
+      "Ofen",
+      "Meal Prep"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-152",
+        "grams": 1000
+      },
+      {
+        "productId": "p-147",
+        "grams": 250
+      },
+      {
+        "productId": "p-148",
+        "grams": 300
+      },
+      {
+        "productId": "p-104",
+        "grams": 300
+      },
+      {
+        "productId": "p-112",
+        "grams": 60
+      }
+    ],
+    "instructions": [
+      "Hühnerkeulen würzen und im Rohr bei 160 °C eine Stunde zugedeckt schmoren.",
+      "Fleisch von den Knochen zupfen und mit der Hälfte der Sauce vermengen.",
+      "Noch 15 Minuten offen backen, bis die Ränder karamellisieren.",
+      "Kraut fein hobeln, mit Mayonnaise und Essig zu Coleslaw mischen und alles im Bun servieren."
+    ],
+    "cookingTimeMin": 90,
+    "servings": 6,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/bbq-pulled-chicken.jpg",
+    "emoji": "🍗"
+  },
+  {
+    "id": "r-72",
+    "title": "Cornbread",
+    "cuisine": "Amerikanisch",
+    "tags": [
+      "Beilage",
+      "Backen",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-45",
+        "grams": 250
+      },
+      {
+        "productId": "p-44",
+        "grams": 150
+      },
+      {
+        "productId": "p-142",
+        "grams": 400
+      },
+      {
+        "productId": "p-31",
+        "grams": 120
+      },
+      {
+        "productId": "p-143",
+        "grams": 16
+      },
+      {
+        "productId": "p-26",
+        "grams": 60
+      }
+    ],
+    "instructions": [
+      "Gusspfanne mit Butter im Rohr auf 200 °C vorheizen.",
+      "Maisgrieß, Mehl, Backpulver und Salz mischen.",
+      "Buttermilch und Eier unterrühren, bis der Teig eben verbunden ist.",
+      "In die heiße Pfanne gießen — es soll zischen — und 25 Minuten goldbraun backen."
+    ],
+    "cookingTimeMin": 40,
+    "servings": 6,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/cornbread.jpg",
+    "emoji": "🌽"
+  },
+  {
+    "id": "r-73",
+    "title": "Banana Bread",
+    "cuisine": "Amerikanisch",
+    "tags": [
+      "Backen",
+      "Resteküche",
+      "Vegetarisch"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-02",
+        "grams": 400
+      },
+      {
+        "productId": "p-44",
+        "grams": 300
+      },
+      {
+        "productId": "p-144",
+        "grams": 150
+      },
+      {
+        "productId": "p-31",
+        "grams": 120
+      },
+      {
+        "productId": "p-26",
+        "grams": 120
+      },
+      {
+        "productId": "p-143",
+        "grams": 16
+      },
+      {
+        "productId": "p-102",
+        "grams": 80
+      }
+    ],
+    "instructions": [
+      "Sehr reife Bananen mit der Gabel zerdrücken.",
+      "Weiche Butter mit Zucker schaumig rühren, Eier einzeln unterrühren.",
+      "Bananen, Mehl mit Backpulver und die Nüsse nur kurz unterheben.",
+      "In der Kastenform bei 175 °C 50 Minuten backen — Stäbchenprobe machen."
+    ],
+    "cookingTimeMin": 70,
+    "servings": 8,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/banana-bread.jpg",
+    "emoji": "🍌"
   }
 ]

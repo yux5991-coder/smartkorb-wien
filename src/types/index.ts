@@ -66,6 +66,8 @@ export interface Product {
   emoji: string;
   allergens: Allergen[];
   vegan: boolean;
+  /** Contains no meat or fish (dairy and eggs are allowed). */
+  vegetarian: boolean;
   /**
    * Ready meals, chilled convenience and frozen dishes — the things people
    * actually buy on offer next to raw ingredients.
@@ -115,10 +117,18 @@ export interface RecipeIngredient {
 export interface Recipe {
   id: RecipeId;
   title: string;
-  /** Free-form tags, first one is used as the cuisine label. */
+  /**
+   * Kitchen the dish comes from: "Österreichisch", "Türkisch", "Kaukasisch",
+   * "Polnisch", "Ukrainisch", "Balkan", "Chinesisch", "Japanisch",
+   * "Koreanisch", "Thailändisch", "Vietnamesisch", "Italienisch",
+   * "Amerikanisch" or "International". Drives the Kulinarik filter.
+   */
+  cuisine: string;
+  /** Free-form usage tags: "Schnell", "Ofen", "Budget", "Meal Prep" … */
   tags: string[];
+  /** Derived from the ingredients by the recipe build step, never by hand. */
   dietTags: DietPreference[];
-  /** Allergens this recipe is free of. */
+  /** Allergens this recipe is free of — also derived from the ingredients. */
   allergenFree: Allergen[];
   ingredients: RecipeIngredient[];
   instructions: string[];

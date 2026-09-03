@@ -115,6 +115,14 @@ export const guessCategory = (name: string, hint?: string): ProductCategory => {
 export const guessAllergens = (name: string): Allergen[] =>
   ALLERGEN_KEYWORDS.filter(([, pattern]) => pattern.test(name)).map(([allergen]) => allergen);
 
+/** Contains no meat or fish — dairy and eggs are fine. */
+export const guessVegetarian = (name: string, category?: ProductCategory): boolean => {
+  if (category === 'Fleisch & Fisch') return false;
+  return !/fleisch|huhn|hühner|hendl|rind|schwein|pute|lamm|wurst|würstel|schinken|speck|salami|sucuk|chorizo|leberkäse|fisch|lachs|thunfisch|garnele|gelatine|bolognese|cordon/i.test(
+    name,
+  );
+};
+
 export const guessVegan = (name: string, category?: ProductCategory): boolean => {
   if (category === 'Fleisch & Fisch') return false;
   if (category === 'Fertig & Convenience') return /vegan|veggie|falafel|hummus/i.test(name) && !NON_VEGAN.test(name);
@@ -214,6 +222,7 @@ export class ProductCatalogue {
       emoji: EMOJI_BY_CATEGORY[category],
       allergens: guessAllergens(input.name),
       vegan: guessVegan(input.name, category),
+      vegetarian: guessVegetarian(input.name, category),
     };
 
     this.register(product);

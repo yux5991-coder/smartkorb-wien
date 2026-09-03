@@ -88,7 +88,13 @@ export const validateCatalog = (input: unknown, options: ValidateOptions = {}): 
   if (stores.length === 0) throw new CatalogValidationError('no valid stores');
   const storeIds = new Set(stores.map((store) => store.id));
 
-  const rawProducts = asArray(raw.products, 'products');
+  const rawProducts = asArray(raw.products, 'products').map((item) => {
+    const p = item as Product;
+    // older snapshots may predate the vegetarian flag
+    return p && typeof p === 'object' && typeof p.vegetarian !== 'boolean'
+      ? { ...p, vegetarian: p.category !== 'Fleisch & Fisch' }
+      : p;
+  });
   const products = rawProducts.filter((item): item is Product => {
     const p = item as Product;
     return (

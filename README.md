@@ -50,12 +50,13 @@ Requirements: Node.js 20+, Expo SDK 57.
    Samstag") and whether the offer runs chain-wide or in one branch. Ready meals
    and chilled convenience are in the feed next to raw produce — their own
    category, `Fertig & Convenience`.
-3. **Kulinarik** — recipe grid with cuisine / time / diet filters and two
-   assistant features (`Premium` badge): **„Was koche ich?“** ranks recipes
-   against today's offers and the saved profile, **„Ich möchte X kochen“** turns
-   a dish name into exact amounts, the cheapest chain per ingredient and a total.
-   On first use a questionnaire asks for diet, allergies and budget; it can be
-   skipped and is stored in AsyncStorage.
+3. **Kulinarik** — 73 recipes from 14 kitchens (see below), filterable by
+   cuisine, dish type, cooking time and diet, plus two assistant features
+   (`Premium` badge): **„Was koche ich?“** ranks recipes against today's offers
+   and the saved profile, **„Ich möchte X kochen“** turns a dish name into exact
+   amounts, the cheapest chain per ingredient and a total. On first use a
+   questionnaire asks for diet, allergies and budget; it can be skipped and is
+   stored in AsyncStorage.
 4. **Profil** — saved recipes, activity log, the questionnaire as editable
    settings, and the current data source (branch count, offer count, origins).
 
@@ -144,6 +145,30 @@ OSM data is licensed under the **ODbL**: the app credits
 "© OpenStreetMap contributors" in the profile tab, and published derived data has
 to stay under the same licence. Overpass is a free shared service — the workflow
 therefore queries it once a week, not on every run.
+
+## Recipe catalogue
+
+73 recipes across the kitchens people in Vienna actually cook from:
+Österreichisch, Türkisch, Kaukasisch, Polnisch, Ukrainisch, Balkan,
+Chinesisch, Japanisch, Koreanisch, Thailändisch, Vietnamesisch, Italienisch,
+Amerikanisch and a small International set. Every recipe carries a `cuisine`,
+usage tags ("Schnell", "Ofen", "Budget", "Meal Prep" …), exact amounts in grams
+and its own instructions.
+
+Two fields are **derived from the ingredients, never written by hand**:
+
+- `dietTags` — a recipe counts as vegan / vegetarian only if every single
+  product does (`Product.vegan` / `Product.vegetarian`);
+- `allergenFree` — the allergens none of its products contain.
+
+`pipeline/test/recipes.test.ts` enforces exactly that, so a hand-edited recipe
+claiming to be vegan while containing butter fails in CI instead of on a user's
+phone. The same tests check that no recipe references an unknown product and
+that the catalogue stays broad (≥ 50 recipes, ≥ 10 cuisines).
+
+Because every ingredient is a catalogue product, each recipe is priced from the
+running offers: the cards show the price per portion and which chains the
+cheapest basket points to.
 
 ## Chain logos
 

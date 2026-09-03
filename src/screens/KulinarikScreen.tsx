@@ -50,6 +50,7 @@ export const KulinarikScreen: React.FC = () => {
     logActivity,
   } = profile;
 
+  const [cuisineFilter, setCuisineFilter] = useState<string | null>(null);
   const [tagFilter, setTagFilter] = useState<string | null>(null);
   const [timeFilter, setTimeFilter] = useState(0);
   const [dietFilter, setDietFilter] = useState<DietPreference | null>(null);
@@ -79,12 +80,13 @@ export const KulinarikScreen: React.FC = () => {
   const visibleRecipes = useMemo(
     () =>
       catalog.recipes.filter((recipe) => {
+        if (cuisineFilter && recipe.cuisine !== cuisineFilter) return false;
         if (tagFilter && !recipe.tags.includes(tagFilter)) return false;
         if (timeFilter > 0 && recipe.cookingTimeMin > timeFilter) return false;
         if (dietFilter && !recipe.dietTags.includes(dietFilter)) return false;
         return true;
       }),
-    [catalog, tagFilter, timeFilter, dietFilter],
+    [catalog, cuisineFilter, tagFilter, timeFilter, dietFilter],
   );
 
   const runSuggestions = async () => {
@@ -188,7 +190,30 @@ export const KulinarikScreen: React.FC = () => {
               style={styles.filterScroll}
               contentContainerStyle={styles.filterRow}
             >
-              <Chip label="Alle Küchen" selected={tagFilter === null} onPress={() => setTagFilter(null)} compact />
+              <Chip
+                label="Alle Küchen"
+                selected={cuisineFilter === null}
+                onPress={() => setCuisineFilter(null)}
+                compact
+              />
+              {catalog.cuisines.map((cuisine) => (
+                <Chip
+                  key={cuisine}
+                  label={cuisine}
+                  selected={cuisineFilter === cuisine}
+                  onPress={() => setCuisineFilter(cuisineFilter === cuisine ? null : cuisine)}
+                  compact
+                />
+              ))}
+            </ScrollView>
+
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              style={styles.filterScroll}
+              contentContainerStyle={styles.filterRow}
+            >
+              <Chip label="Alle Arten" selected={tagFilter === null} onPress={() => setTagFilter(null)} compact />
               {catalog.recipeTags.map((tag) => (
                 <Chip
                   key={tag}

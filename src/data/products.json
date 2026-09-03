@@ -9,7 +9,8 @@
     "basePrice": 2.99,
     "emoji": "🍎",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-02",
@@ -21,7 +22,8 @@
     "basePrice": 1.79,
     "emoji": "🍌",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-03",
@@ -32,7 +34,8 @@
     "basePrice": 2.49,
     "emoji": "🍅",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-04",
@@ -44,7 +47,8 @@
     "basePrice": 1.29,
     "emoji": "🥒",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-05",
@@ -55,7 +59,8 @@
     "basePrice": 3.49,
     "emoji": "🥔",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-06",
@@ -67,7 +72,8 @@
     "basePrice": 1.89,
     "emoji": "🧅",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-07",
@@ -79,7 +85,8 @@
     "basePrice": 1.69,
     "emoji": "🥕",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-08",
@@ -91,7 +98,8 @@
     "basePrice": 2.99,
     "emoji": "🫑",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-09",
@@ -103,7 +111,8 @@
     "basePrice": 2.79,
     "emoji": "🥬",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-10",
@@ -114,7 +123,8 @@
     "basePrice": 1.99,
     "emoji": "🍄",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-11",
@@ -125,7 +135,8 @@
     "basePrice": 2.29,
     "emoji": "🥬",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-12",
@@ -137,7 +148,8 @@
     "basePrice": 1.49,
     "emoji": "🧄",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-13",
@@ -149,7 +161,8 @@
     "basePrice": 2.19,
     "emoji": "🍋",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-14",
@@ -161,7 +174,8 @@
     "basePrice": 1.99,
     "emoji": "🥑",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-15",
@@ -172,7 +186,8 @@
     "basePrice": 3.99,
     "emoji": "🍓",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-16",
@@ -183,7 +198,8 @@
     "basePrice": 6.99,
     "emoji": "🍗",
     "allergens": [],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": false
   },
   {
     "id": "p-17",
@@ -194,7 +210,8 @@
     "basePrice": 5.49,
     "emoji": "🥩",
     "allergens": [],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": false
   },
   {
     "id": "p-18",
@@ -205,7 +222,8 @@
     "basePrice": 5.99,
     "emoji": "🥩",
     "allergens": [],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": false
   },
   {
     "id": "p-19",
@@ -216,7 +234,8 @@
     "basePrice": 7.49,
     "emoji": "🥩",
     "allergens": [],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": false
   },
   {
     "id": "p-20",
@@ -229,7 +248,8 @@
     "allergens": [
       "fisch"
     ],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": false
   },
   {
     "id": "p-21",
@@ -242,7 +262,8 @@
     "allergens": [
       "fisch"
     ],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": false
   },
   {
     "id": "p-22",
@@ -253,7 +274,8 @@
     "basePrice": 2.79,
     "emoji": "🌭",
     "allergens": [],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": false
   },
   {
     "id": "p-23",
@@ -264,7 +286,8 @@
     "basePrice": 2.49,
     "emoji": "🍖",
     "allergens": [],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": false
   },
   {
     "id": "p-24",
@@ -277,7 +300,8 @@
     "allergens": [
       "laktose"
     ],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": true
   },
   {
     "id": "p-25",
@@ -290,7 +314,8 @@
     "allergens": [
       "laktose"
     ],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": true
   },
   {
     "id": "p-26",
@@ -303,7 +328,8 @@
     "allergens": [
       "laktose"
     ],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": true
   },
   {
     "id": "p-27",
@@ -316,7 +342,8 @@
     "allergens": [
       "laktose"
     ],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": true
   },
   {
     "id": "p-28",
@@ -329,7 +356,8 @@
     "allergens": [
       "laktose"
     ],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": true
   },
   {
     "id": "p-29",
@@ -342,7 +370,8 @@
     "allergens": [
       "laktose"
     ],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": true
   },
   {
     "id": "p-30",
@@ -355,7 +384,8 @@
     "allergens": [
       "laktose"
     ],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": true
   },
   {
     "id": "p-31",
@@ -369,7 +399,8 @@
     "allergens": [
       "ei"
     ],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": true
   },
   {
     "id": "p-32",
@@ -382,7 +413,8 @@
     "allergens": [
       "laktose"
     ],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": true
   },
   {
     "id": "p-33",
@@ -395,7 +427,8 @@
     "allergens": [
       "gluten"
     ],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-34",
@@ -408,7 +441,8 @@
     "allergens": [
       "gluten"
     ],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-35",
@@ -422,7 +456,8 @@
     "allergens": [
       "gluten"
     ],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-36",
@@ -435,7 +470,8 @@
     "allergens": [
       "gluten"
     ],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-37",
@@ -451,7 +487,8 @@
       "laktose",
       "ei"
     ],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": true
   },
   {
     "id": "p-38",
@@ -464,7 +501,8 @@
     "allergens": [
       "gluten"
     ],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-39",
@@ -475,7 +513,8 @@
     "basePrice": 3.29,
     "emoji": "🍚",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-40",
@@ -486,7 +525,8 @@
     "basePrice": 1.39,
     "emoji": "🥫",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-41",
@@ -497,7 +537,8 @@
     "basePrice": 7.99,
     "emoji": "🫒",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-42",
@@ -508,7 +549,8 @@
     "basePrice": 2.29,
     "emoji": "🫘",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-43",
@@ -519,7 +561,8 @@
     "basePrice": 1.09,
     "emoji": "🫘",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-44",
@@ -532,7 +575,8 @@
     "allergens": [
       "gluten"
     ],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-45",
@@ -543,7 +587,8 @@
     "basePrice": 1.79,
     "emoji": "🌽",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-46",
@@ -554,7 +599,8 @@
     "basePrice": 1.69,
     "emoji": "🥥",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-47",
@@ -567,7 +613,8 @@
     "allergens": [
       "nuesse"
     ],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-48",
@@ -578,7 +625,8 @@
     "basePrice": 5.99,
     "emoji": "🍯",
     "allergens": [],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": true
   },
   {
     "id": "p-49",
@@ -591,7 +639,8 @@
     "allergens": [
       "gluten"
     ],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-50",
@@ -602,7 +651,8 @@
     "basePrice": 2.49,
     "emoji": "🌶️",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-51",
@@ -613,7 +663,8 @@
     "basePrice": 3.29,
     "emoji": "💧",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-52",
@@ -624,7 +675,8 @@
     "basePrice": 1.99,
     "emoji": "🧃",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-53",
@@ -635,7 +687,8 @@
     "basePrice": 2.49,
     "emoji": "🍊",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-54",
@@ -646,7 +699,8 @@
     "basePrice": 12.99,
     "emoji": "☕",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-55",
@@ -659,7 +713,8 @@
     "allergens": [
       "gluten"
     ],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-56",
@@ -670,7 +725,8 @@
     "basePrice": 1.99,
     "emoji": "🫛",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-57",
@@ -681,7 +737,8 @@
     "basePrice": 2.99,
     "emoji": "🫐",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-58",
@@ -692,7 +749,8 @@
     "basePrice": 2.49,
     "emoji": "🍟",
     "allergens": [],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-59",
@@ -705,7 +763,8 @@
     "allergens": [
       "soja"
     ],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-60",
@@ -718,7 +777,8 @@
     "allergens": [
       "gluten"
     ],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-61",
@@ -731,7 +791,8 @@
     "allergens": [
       "nuesse"
     ],
-    "vegan": true
+    "vegan": true,
+    "vegetarian": true
   },
   {
     "id": "p-62",
@@ -747,7 +808,8 @@
       "laktose",
       "ei"
     ],
-    "vegan": false
+    "vegan": false,
+    "vegetarian": true
   },
   {
     "id": "p-63",
@@ -762,7 +824,8 @@
       "ei"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-64",
@@ -776,7 +839,8 @@
       "gluten"
     ],
     "vegan": true,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-65",
@@ -791,7 +855,8 @@
     ],
     "vegan": true,
     "convenience": true,
-    "pieceGrams": 80
+    "pieceGrams": 80,
+    "vegetarian": true
   },
   {
     "id": "p-66",
@@ -808,7 +873,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "pieceGrams": 80
+    "pieceGrams": 80,
+    "vegetarian": true
   },
   {
     "id": "p-67",
@@ -822,7 +888,8 @@
       "gluten"
     ],
     "vegan": true,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-68",
@@ -836,7 +903,8 @@
       "gluten"
     ],
     "vegan": true,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-69",
@@ -848,7 +916,8 @@
     "emoji": "🥫",
     "allergens": [],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": false
   },
   {
     "id": "p-70",
@@ -863,7 +932,8 @@
       "laktose"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-71",
@@ -877,7 +947,8 @@
       "soja"
     ],
     "vegan": true,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-72",
@@ -891,7 +962,8 @@
       "laktose"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-73",
@@ -903,7 +975,8 @@
     "emoji": "🥗",
     "allergens": [],
     "vegan": true,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-74",
@@ -918,7 +991,8 @@
       "ei"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-75",
@@ -932,7 +1006,8 @@
       "gluten"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-76",
@@ -947,7 +1022,8 @@
       "ei"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-77",
@@ -962,7 +1038,8 @@
       "ei"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": false
   },
   {
     "id": "p-78",
@@ -979,7 +1056,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "pieceGrams": 200
+    "pieceGrams": 200,
+    "vegetarian": false
   },
   {
     "id": "p-79",
@@ -994,7 +1072,8 @@
       "soja"
     ],
     "vegan": true,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-80",
@@ -1009,7 +1088,8 @@
       "gluten"
     ],
     "vegan": true,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-81",
@@ -1025,7 +1105,8 @@
       "gluten"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": false
   },
   {
     "id": "p-82",
@@ -1040,7 +1121,8 @@
       "laktose"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": false
   },
   {
     "id": "p-83",
@@ -1052,7 +1134,8 @@
     "emoji": "🥓",
     "allergens": [],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": false
   },
   {
     "id": "p-84",
@@ -1066,7 +1149,8 @@
       "laktose"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-85",
@@ -1081,7 +1165,8 @@
       "laktose"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-86",
@@ -1096,7 +1181,8 @@
       "laktose"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": false
   },
   {
     "id": "p-87",
@@ -1112,7 +1198,8 @@
       "laktose"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-88",
@@ -1127,7 +1214,8 @@
       "gluten"
     ],
     "vegan": false,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": false
   },
   {
     "id": "p-89",
@@ -1139,7 +1227,8 @@
     "emoji": "🥘",
     "allergens": [],
     "vegan": true,
-    "convenience": true
+    "convenience": true,
+    "vegetarian": true
   },
   {
     "id": "p-90",
@@ -1156,6 +1245,930 @@
     ],
     "vegan": false,
     "convenience": true,
-    "pieceGrams": 80
+    "pieceGrams": 80,
+    "vegetarian": true
+  },
+  {
+    "id": "p-91",
+    "name": "Bulgur",
+    "category": "Vorratskammer",
+    "unit": "500 g",
+    "baseGrams": 500,
+    "basePrice": 1.79,
+    "emoji": "🌾",
+    "allergens": [
+      "gluten"
+    ],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-92",
+    "name": "Melanzani",
+    "category": "Obst & Gemüse",
+    "unit": "1 Stk",
+    "baseGrams": 350,
+    "basePrice": 1.49,
+    "emoji": "🍆",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true,
+    "pieceGrams": 350
+  },
+  {
+    "id": "p-93",
+    "name": "Fladenbrot",
+    "category": "Brot & Gebäck",
+    "unit": "400 g",
+    "baseGrams": 400,
+    "basePrice": 1.69,
+    "emoji": "🫓",
+    "allergens": [
+      "gluten"
+    ],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-94",
+    "name": "Schafkäse",
+    "category": "Milchprodukte",
+    "unit": "200 g",
+    "baseGrams": 200,
+    "basePrice": 2.49,
+    "emoji": "🧀",
+    "allergens": [
+      "laktose"
+    ],
+    "vegan": false,
+    "vegetarian": true
+  },
+  {
+    "id": "p-95",
+    "name": "Paprikamark",
+    "category": "Vorratskammer",
+    "unit": "300 g",
+    "baseGrams": 300,
+    "basePrice": 2.79,
+    "emoji": "🌶️",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-96",
+    "name": "Tomatenmark",
+    "category": "Vorratskammer",
+    "unit": "200 g",
+    "baseGrams": 200,
+    "basePrice": 1.19,
+    "emoji": "🥫",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-97",
+    "name": "Tahini",
+    "category": "Vorratskammer",
+    "unit": "300 g",
+    "baseGrams": 300,
+    "basePrice": 3.99,
+    "emoji": "🥣",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-98",
+    "name": "Lammfaschiertes",
+    "category": "Fleisch & Fisch",
+    "unit": "400 g",
+    "baseGrams": 400,
+    "basePrice": 6.49,
+    "emoji": "🥩",
+    "allergens": [],
+    "vegan": false,
+    "vegetarian": false
+  },
+  {
+    "id": "p-99",
+    "name": "Sucuk",
+    "category": "Fleisch & Fisch",
+    "unit": "200 g",
+    "baseGrams": 200,
+    "basePrice": 3.49,
+    "emoji": "🌭",
+    "allergens": [],
+    "vegan": false,
+    "vegetarian": false
+  },
+  {
+    "id": "p-100",
+    "name": "Petersilie",
+    "category": "Obst & Gemüse",
+    "unit": "1 Bund",
+    "baseGrams": 30,
+    "basePrice": 0.99,
+    "emoji": "🌿",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true,
+    "pieceGrams": 30
+  },
+  {
+    "id": "p-101",
+    "name": "Koriander frisch",
+    "category": "Obst & Gemüse",
+    "unit": "1 Bund",
+    "baseGrams": 25,
+    "basePrice": 0.99,
+    "emoji": "🌿",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true,
+    "pieceGrams": 25
+  },
+  {
+    "id": "p-102",
+    "name": "Walnüsse",
+    "category": "Süßes & Snacks",
+    "unit": "200 g",
+    "baseGrams": 200,
+    "basePrice": 3.49,
+    "emoji": "🌰",
+    "allergens": [
+      "nuesse"
+    ],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-103",
+    "name": "Sauerkraut",
+    "category": "Vorratskammer",
+    "unit": "500 g",
+    "baseGrams": 500,
+    "basePrice": 1.49,
+    "emoji": "🥬",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-104",
+    "name": "Weißkraut",
+    "category": "Obst & Gemüse",
+    "unit": "1 kg",
+    "baseGrams": 1000,
+    "basePrice": 1.49,
+    "emoji": "🥬",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-105",
+    "name": "Rote Rüben",
+    "category": "Obst & Gemüse",
+    "unit": "500 g",
+    "baseGrams": 500,
+    "basePrice": 1.79,
+    "emoji": "🍠",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-106",
+    "name": "Sauerrahm",
+    "category": "Milchprodukte",
+    "unit": "250 g",
+    "baseGrams": 250,
+    "basePrice": 1.19,
+    "emoji": "🥛",
+    "allergens": [
+      "laktose"
+    ],
+    "vegan": false,
+    "vegetarian": true
+  },
+  {
+    "id": "p-107",
+    "name": "Dill",
+    "category": "Obst & Gemüse",
+    "unit": "1 Bund",
+    "baseGrams": 25,
+    "basePrice": 0.99,
+    "emoji": "🌿",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true,
+    "pieceGrams": 25
+  },
+  {
+    "id": "p-108",
+    "name": "Buchweizen",
+    "category": "Vorratskammer",
+    "unit": "500 g",
+    "baseGrams": 500,
+    "basePrice": 2.49,
+    "emoji": "🌾",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-109",
+    "name": "Krakauer",
+    "category": "Fleisch & Fisch",
+    "unit": "250 g",
+    "baseGrams": 250,
+    "basePrice": 3.29,
+    "emoji": "🌭",
+    "allergens": [],
+    "vegan": false,
+    "vegetarian": false
+  },
+  {
+    "id": "p-110",
+    "name": "Räucherspeck",
+    "category": "Fleisch & Fisch",
+    "unit": "200 g",
+    "baseGrams": 200,
+    "basePrice": 2.99,
+    "emoji": "🥓",
+    "allergens": [],
+    "vegan": false,
+    "vegetarian": false
+  },
+  {
+    "id": "p-111",
+    "name": "Dörrpflaumen",
+    "category": "Süßes & Snacks",
+    "unit": "200 g",
+    "baseGrams": 200,
+    "basePrice": 2.49,
+    "emoji": "🍑",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-112",
+    "name": "Mayonnaise",
+    "category": "Vorratskammer",
+    "unit": "250 g",
+    "baseGrams": 250,
+    "basePrice": 1.99,
+    "emoji": "🥚",
+    "allergens": [
+      "ei"
+    ],
+    "vegan": false,
+    "vegetarian": true
+  },
+  {
+    "id": "p-113",
+    "name": "Ajvar",
+    "category": "Vorratskammer",
+    "unit": "350 g",
+    "baseGrams": 350,
+    "basePrice": 2.99,
+    "emoji": "🌶️",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-114",
+    "name": "Sojasauce",
+    "category": "Vorratskammer",
+    "unit": "250 ml",
+    "baseGrams": 250,
+    "basePrice": 2.29,
+    "emoji": "🍶",
+    "allergens": [
+      "soja",
+      "gluten"
+    ],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-115",
+    "name": "Reisessig",
+    "category": "Vorratskammer",
+    "unit": "250 ml",
+    "baseGrams": 250,
+    "basePrice": 2.19,
+    "emoji": "🍶",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-116",
+    "name": "Sesamöl",
+    "category": "Vorratskammer",
+    "unit": "250 ml",
+    "baseGrams": 250,
+    "basePrice": 3.49,
+    "emoji": "🫗",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-117",
+    "name": "Ingwer",
+    "category": "Obst & Gemüse",
+    "unit": "200 g",
+    "baseGrams": 200,
+    "basePrice": 1.49,
+    "emoji": "🫚",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-118",
+    "name": "Frühlingszwiebeln",
+    "category": "Obst & Gemüse",
+    "unit": "1 Bund",
+    "baseGrams": 100,
+    "basePrice": 0.99,
+    "emoji": "🧅",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true,
+    "pieceGrams": 100
+  },
+  {
+    "id": "p-119",
+    "name": "Tofu natur",
+    "category": "Fertig & Convenience",
+    "unit": "400 g",
+    "baseGrams": 400,
+    "basePrice": 2.49,
+    "emoji": "🧊",
+    "allergens": [
+      "soja"
+    ],
+    "vegan": true,
+    "vegetarian": true,
+    "convenience": true
+  },
+  {
+    "id": "p-120",
+    "name": "Reisnudeln",
+    "category": "Vorratskammer",
+    "unit": "250 g",
+    "baseGrams": 250,
+    "basePrice": 2.29,
+    "emoji": "🍜",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-121",
+    "name": "Mie-Nudeln",
+    "category": "Vorratskammer",
+    "unit": "250 g",
+    "baseGrams": 250,
+    "basePrice": 1.99,
+    "emoji": "🍜",
+    "allergens": [
+      "gluten",
+      "ei"
+    ],
+    "vegan": false,
+    "vegetarian": true
+  },
+  {
+    "id": "p-122",
+    "name": "Sushi-Reis",
+    "category": "Vorratskammer",
+    "unit": "500 g",
+    "baseGrams": 500,
+    "basePrice": 2.79,
+    "emoji": "🍚",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-123",
+    "name": "Nori-Blätter",
+    "category": "Vorratskammer",
+    "unit": "25 g",
+    "baseGrams": 25,
+    "basePrice": 2.99,
+    "emoji": "🌿",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-124",
+    "name": "Kimchi",
+    "category": "Fertig & Convenience",
+    "unit": "300 g",
+    "baseGrams": 300,
+    "basePrice": 3.99,
+    "emoji": "🌶️",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true,
+    "convenience": true
+  },
+  {
+    "id": "p-125",
+    "name": "Gochujang",
+    "category": "Vorratskammer",
+    "unit": "200 g",
+    "baseGrams": 200,
+    "basePrice": 3.49,
+    "emoji": "🌶️",
+    "allergens": [
+      "soja",
+      "gluten"
+    ],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-126",
+    "name": "Miso-Paste",
+    "category": "Vorratskammer",
+    "unit": "300 g",
+    "baseGrams": 300,
+    "basePrice": 3.29,
+    "emoji": "🍲",
+    "allergens": [
+      "soja"
+    ],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-127",
+    "name": "Fischsauce",
+    "category": "Vorratskammer",
+    "unit": "200 ml",
+    "baseGrams": 200,
+    "basePrice": 2.49,
+    "emoji": "🐟",
+    "allergens": [
+      "fisch"
+    ],
+    "vegan": false,
+    "vegetarian": false
+  },
+  {
+    "id": "p-128",
+    "name": "Limetten",
+    "category": "Obst & Gemüse",
+    "unit": "3 Stk",
+    "baseGrams": 180,
+    "basePrice": 1.49,
+    "emoji": "🍋",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true,
+    "pieceGrams": 60
+  },
+  {
+    "id": "p-129",
+    "name": "Pak Choi",
+    "category": "Obst & Gemüse",
+    "unit": "300 g",
+    "baseGrams": 300,
+    "basePrice": 2.29,
+    "emoji": "🥬",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-130",
+    "name": "Erdnüsse",
+    "category": "Süßes & Snacks",
+    "unit": "200 g",
+    "baseGrams": 200,
+    "basePrice": 1.99,
+    "emoji": "🥜",
+    "allergens": [
+      "nuesse"
+    ],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-131",
+    "name": "Chilischoten",
+    "category": "Obst & Gemüse",
+    "unit": "50 g",
+    "baseGrams": 50,
+    "basePrice": 1.29,
+    "emoji": "🌶️",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-132",
+    "name": "Rindfleisch geschnetzelt",
+    "category": "Fleisch & Fisch",
+    "unit": "400 g",
+    "baseGrams": 400,
+    "basePrice": 7.49,
+    "emoji": "🥩",
+    "allergens": [],
+    "vegan": false,
+    "vegetarian": false
+  },
+  {
+    "id": "p-133",
+    "name": "Parmesan",
+    "category": "Milchprodukte",
+    "unit": "150 g",
+    "baseGrams": 150,
+    "basePrice": 3.49,
+    "emoji": "🧀",
+    "allergens": [
+      "laktose"
+    ],
+    "vegan": false,
+    "vegetarian": true
+  },
+  {
+    "id": "p-134",
+    "name": "Risottoreis",
+    "category": "Vorratskammer",
+    "unit": "500 g",
+    "baseGrams": 500,
+    "basePrice": 2.49,
+    "emoji": "🍚",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-135",
+    "name": "Basilikum",
+    "category": "Obst & Gemüse",
+    "unit": "1 Topf",
+    "baseGrams": 30,
+    "basePrice": 1.99,
+    "emoji": "🌿",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true,
+    "pieceGrams": 30
+  },
+  {
+    "id": "p-136",
+    "name": "Pancetta",
+    "category": "Fleisch & Fisch",
+    "unit": "150 g",
+    "baseGrams": 150,
+    "basePrice": 2.99,
+    "emoji": "🥓",
+    "allergens": [],
+    "vegan": false,
+    "vegetarian": false
+  },
+  {
+    "id": "p-137",
+    "name": "Lasagneblätter",
+    "category": "Vorratskammer",
+    "unit": "500 g",
+    "baseGrams": 500,
+    "basePrice": 1.99,
+    "emoji": "🍝",
+    "allergens": [
+      "gluten"
+    ],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-138",
+    "name": "Ricotta",
+    "category": "Milchprodukte",
+    "unit": "250 g",
+    "baseGrams": 250,
+    "basePrice": 2.19,
+    "emoji": "🧀",
+    "allergens": [
+      "laktose"
+    ],
+    "vegan": false,
+    "vegetarian": true
+  },
+  {
+    "id": "p-139",
+    "name": "Rucola",
+    "category": "Obst & Gemüse",
+    "unit": "125 g",
+    "baseGrams": 125,
+    "basePrice": 1.79,
+    "emoji": "🥬",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-140",
+    "name": "Weiße Bohnen (Dose)",
+    "category": "Vorratskammer",
+    "unit": "400 g",
+    "baseGrams": 400,
+    "basePrice": 1.09,
+    "emoji": "🫘",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-141",
+    "name": "Cheddar",
+    "category": "Milchprodukte",
+    "unit": "200 g",
+    "baseGrams": 200,
+    "basePrice": 2.99,
+    "emoji": "🧀",
+    "allergens": [
+      "laktose"
+    ],
+    "vegan": false,
+    "vegetarian": true
+  },
+  {
+    "id": "p-142",
+    "name": "Buttermilch",
+    "category": "Milchprodukte",
+    "unit": "500 ml",
+    "baseGrams": 500,
+    "basePrice": 1.09,
+    "emoji": "🥛",
+    "allergens": [
+      "laktose"
+    ],
+    "vegan": false,
+    "vegetarian": true
+  },
+  {
+    "id": "p-143",
+    "name": "Backpulver",
+    "category": "Vorratskammer",
+    "unit": "3 x 16 g",
+    "baseGrams": 48,
+    "basePrice": 0.79,
+    "emoji": "🧂",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-144",
+    "name": "Kristallzucker",
+    "category": "Vorratskammer",
+    "unit": "1 kg",
+    "baseGrams": 1000,
+    "basePrice": 1.29,
+    "emoji": "🍬",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-145",
+    "name": "Brauner Zucker",
+    "category": "Vorratskammer",
+    "unit": "500 g",
+    "baseGrams": 500,
+    "basePrice": 1.99,
+    "emoji": "🍬",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-146",
+    "name": "Ahornsirup",
+    "category": "Vorratskammer",
+    "unit": "250 ml",
+    "baseGrams": 250,
+    "basePrice": 4.99,
+    "emoji": "🍯",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-147",
+    "name": "BBQ-Sauce",
+    "category": "Vorratskammer",
+    "unit": "450 ml",
+    "baseGrams": 450,
+    "basePrice": 2.49,
+    "emoji": "🍖",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-148",
+    "name": "Burger-Buns",
+    "category": "Brot & Gebäck",
+    "unit": "4 Stk",
+    "baseGrams": 300,
+    "basePrice": 1.99,
+    "emoji": "🍔",
+    "allergens": [
+      "gluten"
+    ],
+    "vegan": true,
+    "vegetarian": true,
+    "pieceGrams": 75
+  },
+  {
+    "id": "p-149",
+    "name": "Süßkartoffel",
+    "category": "Obst & Gemüse",
+    "unit": "1 kg",
+    "baseGrams": 1000,
+    "basePrice": 2.99,
+    "emoji": "🍠",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-150",
+    "name": "Mais (Dose)",
+    "category": "Vorratskammer",
+    "unit": "300 g",
+    "baseGrams": 300,
+    "basePrice": 1.19,
+    "emoji": "🌽",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-151",
+    "name": "Kidneybohnen (Dose)",
+    "category": "Vorratskammer",
+    "unit": "400 g",
+    "baseGrams": 400,
+    "basePrice": 1.09,
+    "emoji": "🫘",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-152",
+    "name": "Hühnerkeulen",
+    "category": "Fleisch & Fisch",
+    "unit": "1 kg",
+    "baseGrams": 1000,
+    "basePrice": 5.99,
+    "emoji": "🍗",
+    "allergens": [],
+    "vegan": false,
+    "vegetarian": false
+  },
+  {
+    "id": "p-153",
+    "name": "Makkaroni",
+    "category": "Vorratskammer",
+    "unit": "500 g",
+    "baseGrams": 500,
+    "basePrice": 1.29,
+    "emoji": "🍝",
+    "allergens": [
+      "gluten"
+    ],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-154",
+    "name": "Semmelbrösel",
+    "category": "Vorratskammer",
+    "unit": "500 g",
+    "baseGrams": 500,
+    "basePrice": 1.29,
+    "emoji": "🍞",
+    "allergens": [
+      "gluten"
+    ],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-155",
+    "name": "Tafelspitz",
+    "category": "Fleisch & Fisch",
+    "unit": "800 g",
+    "baseGrams": 800,
+    "basePrice": 11.99,
+    "emoji": "🥩",
+    "allergens": [],
+    "vegan": false,
+    "vegetarian": false
+  },
+  {
+    "id": "p-156",
+    "name": "Weizengrieß",
+    "category": "Vorratskammer",
+    "unit": "500 g",
+    "baseGrams": 500,
+    "basePrice": 1.29,
+    "emoji": "🌾",
+    "allergens": [
+      "gluten"
+    ],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-157",
+    "name": "Fleckerl",
+    "category": "Vorratskammer",
+    "unit": "500 g",
+    "baseGrams": 500,
+    "basePrice": 1.49,
+    "emoji": "🍝",
+    "allergens": [
+      "gluten"
+    ],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-158",
+    "name": "Suppenwürze",
+    "category": "Vorratskammer",
+    "unit": "250 g",
+    "baseGrams": 250,
+    "basePrice": 2.49,
+    "emoji": "🍲",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-159",
+    "name": "Kren",
+    "category": "Obst & Gemüse",
+    "unit": "100 g",
+    "baseGrams": 100,
+    "basePrice": 1.99,
+    "emoji": "🌱",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-160",
+    "name": "Senf",
+    "category": "Vorratskammer",
+    "unit": "200 g",
+    "baseGrams": 200,
+    "basePrice": 1.29,
+    "emoji": "🌭",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-161",
+    "name": "Weißweinessig",
+    "category": "Vorratskammer",
+    "unit": "500 ml",
+    "baseGrams": 500,
+    "basePrice": 1.19,
+    "emoji": "🍶",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
+  },
+  {
+    "id": "p-162",
+    "name": "Marillenmarmelade",
+    "category": "Vorratskammer",
+    "unit": "450 g",
+    "baseGrams": 450,
+    "basePrice": 2.49,
+    "emoji": "🍑",
+    "allergens": [],
+    "vegan": true,
+    "vegetarian": true
   }
 ]

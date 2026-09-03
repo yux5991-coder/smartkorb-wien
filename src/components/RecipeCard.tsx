@@ -43,6 +43,9 @@ export const RecipeCard: React.FC<Props> = ({ recipe, saved, onPress, onToggleSa
       </View>
 
       <View style={styles.body}>
+        <Text style={styles.cuisine} numberOfLines={1}>
+          {recipe.cuisine}
+        </Text>
         <Text style={styles.title} numberOfLines={2}>
           {recipe.title}
         </Text>
@@ -98,6 +101,14 @@ const styles = StyleSheet.create({
   },
   body: {
     padding: spacing.md,
+  },
+  cuisine: {
+    fontSize: 10,
+    fontWeight: '800',
+    color: colors.primary,
+    letterSpacing: 0.4,
+    textTransform: 'uppercase',
+    marginBottom: 2,
   },
   title: {
     fontSize: 14,

@@ -37,7 +37,7 @@ export const RecipeDetailSheet: React.FC<Props> = ({
       visible={visible}
       onClose={onClose}
       title={recipe.title}
-      subtitle={`${recipe.tags.join(' · ')} · ${recipe.cookingTimeMin} Min · ${recipe.servings} Portionen`}
+      subtitle={[recipe.cuisine, ...recipe.tags, `${recipe.cookingTimeMin} Min`, `${recipe.servings} Portionen`].join(' · ')}
     >
       <ScrollView showsVerticalScrollIndicator={false}>
         <PlaceholderImage
