@@ -138,6 +138,9 @@ const de = {
   'profile.branches': 'Filialen in Wien',
   'profile.offersToday': 'Aktionen heute',
   'profile.sources': 'Quellen',
+  'profile.resetData': 'Daten zurücksetzen',
+  'profile.resetHint':
+    'Verwirft die zuletzt geladenen Aktionen auf diesem Gerät und lädt sie neu — hilft, wenn die App noch alte Inhalte zeigt.',
   'profile.storesIncomplete':
     'Unvollständig: Wien hat mehrere hundert Filialen dieser Ketten. Führe „npm run data:refresh -- --update-seed“ aus, um die echte Liste aus OpenStreetMap zu laden.',
   'profile.preferences': 'Ernährung & Vorlieben',
@@ -327,6 +330,9 @@ const en: Record<TranslationKey, string> = {
   'profile.branches': 'Stores in Vienna',
   'profile.offersToday': 'Deals today',
   'profile.sources': 'Sources',
+  'profile.resetData': 'Reset data',
+  'profile.resetHint':
+    'Discards the deals cached on this device and loads them again — use it if the app still shows old content.',
   'profile.storesIncomplete':
     'Incomplete: Vienna has several hundred branches of these chains. Run "npm run data:refresh -- --update-seed" to fetch the real list from OpenStreetMap.',
   'profile.preferences': 'Diet & preferences',

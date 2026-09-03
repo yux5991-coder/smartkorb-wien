@@ -10,15 +10,27 @@
  */
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { SNAPSHOT_CACHE_KEY, SNAPSHOT_TIMEOUT_MS, SNAPSHOT_URL } from '../config';
+import {
+  CATALOG_SCHEMA_VERSION,
+  SNAPSHOT_CACHE_KEY,
+  SNAPSHOT_TIMEOUT_MS,
+  SNAPSHOT_URL,
+} from '../config';
 import type { Catalog } from '../types';
-import { bundledRecipes } from './bundled';
+import { bundledCatalog, bundledFingerprint, bundledRecipes } from './bundled';
+import { evaluateCache, type CacheStamp } from './cachePolicy';
 import { validateCatalog } from './validateCatalog';
 
-interface CachedSnapshot {
+interface CachedSnapshot extends Partial<CacheStamp> {
   fetchedAt: string;
   catalog: Catalog;
 }
+
+const currentStamp = (): CacheStamp => ({
+  schemaVersion: CATALOG_SCHEMA_VERSION,
+  bundledFingerprint,
+  generatedAt: bundledCatalog.generatedAt,
+});
 
 const validate = (raw: unknown): Catalog =>
   validateCatalog(raw, { fallbackRecipes: bundledRecipes, minDiscounts: 1 }).catalog;
@@ -29,6 +41,21 @@ export const readCachedCatalog = async (): Promise<{ catalog: Catalog; fetchedAt
     const stored = await AsyncStorage.getItem(SNAPSHOT_CACHE_KEY);
     if (!stored) return null;
     const parsed = JSON.parse(stored) as CachedSnapshot;
+
+    const decision = evaluateCache(
+      {
+        schemaVersion: parsed.schemaVersion,
+        bundledFingerprint: parsed.bundledFingerprint,
+        generatedAt: parsed.catalog?.generatedAt,
+      },
+      currentStamp(),
+    );
+    if (!decision.useCache) {
+      console.log(`[SmartKorb] discarding cached snapshot: ${decision.reason}`);
+      await AsyncStorage.removeItem(SNAPSHOT_CACHE_KEY).catch(() => undefined);
+      return null;
+    }
+
     return { catalog: validate(parsed.catalog), fetchedAt: parsed.fetchedAt };
   } catch (error) {
     console.warn('[SmartKorb] cached snapshot unusable, falling back to the bundle:', error);
@@ -39,7 +66,7 @@ export const readCachedCatalog = async (): Promise<{ catalog: Catalog; fetchedAt
 
 const writeCache = async (catalog: Catalog): Promise<string> => {
   const fetchedAt = new Date().toISOString();
-  const payload: CachedSnapshot = { fetchedAt, catalog };
+  const payload: CachedSnapshot = { fetchedAt, catalog, ...currentStamp() };
   await AsyncStorage.setItem(SNAPSHOT_CACHE_KEY, JSON.stringify(payload));
   return fetchedAt;
 };

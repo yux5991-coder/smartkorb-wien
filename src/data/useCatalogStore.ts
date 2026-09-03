@@ -11,7 +11,7 @@ import { create } from 'zustand';
 import { REFRESH_AFTER_HOURS, SNAPSHOT_URL } from '../config';
 import { bundledCatalog } from './bundled';
 import { indexCatalog, type CatalogIndex } from './catalog';
-import { fetchRemoteCatalog, readCachedCatalog } from './remote';
+import { clearCachedCatalog, fetchRemoteCatalog, readCachedCatalog } from './remote';
 
 export type SyncStatus = 'idle' | 'loading' | 'error';
 
@@ -28,6 +28,8 @@ interface CatalogState {
   booting: boolean;
   bootstrap: () => Promise<void>;
   refresh: (options?: { force?: boolean }) => Promise<void>;
+  /** Throw away the cached snapshot and go back to what the build ships. */
+  resetData: () => Promise<void>;
 }
 
 const MS_PER_HOUR = 60 * 60 * 1000;
@@ -71,6 +73,17 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     if (SNAPSHOT_URL && isStale(get().fetchedAt)) {
       await get().refresh();
     }
+  },
+
+  resetData: async () => {
+    await clearCachedCatalog();
+    set({
+      index: indexCatalog(bundledCatalog, 'bundled'),
+      fetchedAt: null,
+      status: 'idle',
+      error: null,
+    });
+    await get().refresh({ force: true });
   },
 
   refresh: async ({ force = false } = {}) => {

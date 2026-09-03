@@ -88,6 +88,12 @@ Three layers, so the app always has something to show:
 2. **Cache** — the last snapshot the device downloaded (AsyncStorage).
 3. **Remote snapshot** — the file the pipeline publishes once a day.
 
+The cache is stamped with the schema version and a fingerprint of the catalogue
+the build ships. On start, a cache written by a different build is discarded —
+otherwise a device that once downloaded a snapshot would keep showing that old
+catalogue after every app update, no matter how often it is restarted. *Profil →
+Daten zurücksetzen* clears it by hand.
+
 The app refreshes on start, when it returns to the foreground, on pull-to-refresh
 and via the button in the status bar — but never more often than
 `expo.extra.refreshAfterHours` (default 6 h). Every payload is validated

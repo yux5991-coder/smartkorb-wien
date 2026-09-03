@@ -26,6 +26,12 @@ export const SNAPSHOT_TIMEOUT_MS = 15000;
 export const SNAPSHOT_CACHE_KEY = 'smartkorb.catalog.v1';
 
 /**
+ * Bump when the catalogue's shape changes. A cache written under a different
+ * version is discarded rather than rendered with missing fields.
+ */
+export const CATALOG_SCHEMA_VERSION = 2;
+
+/**
  * Vienna has several hundred branches of the six chains. A catalog with fewer
  * is an incomplete branch list, not a small city — the profile says so instead
  * of quietly showing a stub.

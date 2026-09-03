@@ -9,7 +9,7 @@ import { Chip } from '../components/Chip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { DataStatusBar } from '../components/DataStatusBar';
 import { MIN_VIENNA_STORES } from '../config';
-import { getActiveDiscountViews, getRecipe, useCatalog } from '../data';
+import { getActiveDiscountViews, getRecipe, useCatalog, useCatalogStore } from '../data';
 import { costRecipe } from '../services/pricing';
 import { useProfileStore } from '../store/useProfileStore';
 import { colors, radius, shadow, spacing } from '../theme';
@@ -30,6 +30,7 @@ export const ProfileScreen: React.FC = () => {
   const catalog = useCatalog();
   const t = useT();
   const language = useLanguage();
+  const resetData = useCatalogStore((state) => state.resetData);
   const {
     dietPreference,
     allergies,
@@ -98,6 +99,15 @@ export const ProfileScreen: React.FC = () => {
           {catalog.stores.length < MIN_VIENNA_STORES ? (
             <Text style={styles.warningText}>{t('profile.storesIncomplete')}</Text>
           ) : null}
+
+          <Pressable
+            onPress={resetData}
+            accessibilityRole="button"
+            style={({ pressed }) => [styles.secondaryButton, pressed && styles.pressed]}
+          >
+            <Text style={styles.secondaryButtonText}>{t('profile.resetData')}</Text>
+          </Pressable>
+          <Text style={styles.hintText}>{t('profile.resetHint')}</Text>
           <View style={styles.settingRow}>
             <Text style={styles.settingLabel}>{t('profile.offersToday')}</Text>
             <Text style={styles.settingValue}>{getActiveDiscountViews(catalog).length}</Text>
@@ -333,6 +343,12 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: colors.textMuted,
     textAlign: 'center',
+  },
+  hintText: {
+    fontSize: 11,
+    color: colors.textMuted,
+    lineHeight: 16,
+    marginTop: 6,
   },
   warningText: {
     fontSize: 11,

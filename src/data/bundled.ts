@@ -7,6 +7,7 @@
  * the bundle means the prototype also works with no connectivity at all.
  */
 import type { Catalog, Discount, Product, Recipe, Retailer, Store } from '../types';
+import { fingerprint } from './cachePolicy';
 
 import discountsJson from './discounts.json';
 import seedMeta from './seed-meta.json';
@@ -47,6 +48,20 @@ const bundledDiscounts: Discount[] = (discountsJson as Discount[]).map((discount
 }));
 
 export const bundledRecipes = recipesJson as Recipe[];
+
+/**
+ * Fingerprint of what this build ships. It changes whenever the bundled
+ * products or recipes change — including a pure rename or translation — so a
+ * device holding an older cached catalogue does not keep showing it.
+ */
+export const bundledFingerprint = fingerprint([
+  REFERENCE_DATE,
+  String(bundledDiscounts.length),
+  ...(productsJson as Product[]).map(
+    (product) => `${product.name}|${product.nameEn ?? ''}|${product.basePrice}`,
+  ),
+  ...bundledRecipes.map((recipe) => `${recipe.title}|${recipe.titleEn ?? ''}`),
+]);
 
 export const bundledCatalog: Catalog = {
   generatedAt: `${REFERENCE_DATE}T04:00:00.000Z`,

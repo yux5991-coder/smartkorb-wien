@@ -5,6 +5,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
+import { evaluateCache, fingerprint } from '../../src/data/cachePolicy';
 import { packsFor, packTotalFor, usedCostFor } from '../../src/services/packMath';
 
 test('the basket pays for whole packs', () => {
@@ -38,4 +39,35 @@ test('basket and usage differ exactly by the leftovers', () => {
   assert.equal(basket, 2.0);
   assert.equal(used, 0.6);
   assert.ok(basket > used, 'the leftover stays in the fridge, not in the portion price');
+});
+
+test('a new build always beats the snapshot cached on the device', () => {
+  const current = { schemaVersion: 2, bundledFingerprint: 'abc', generatedAt: '2026-09-03T04:00:00Z' };
+
+  // same build, cached data at least as new -> keep using it
+  assert.equal(evaluateCache({ ...current }, current).useCache, true);
+  assert.equal(
+    evaluateCache({ ...current, generatedAt: '2026-09-04T04:00:00Z' }, current).useCache,
+    true,
+  );
+
+  // the build ships different catalogue content -> the cache must go, which is
+  // what makes an app update visible after a restart
+  assert.deepEqual(evaluateCache({ ...current, bundledFingerprint: 'old' }, current), {
+    useCache: false,
+    reason: 'build-has-newer-data',
+  });
+  assert.equal(evaluateCache({ ...current, schemaVersion: 1 }, current).reason, 'schema-changed');
+  assert.equal(
+    evaluateCache({ ...current, generatedAt: '2026-08-01T04:00:00Z' }, current).reason,
+    'older-than-bundled',
+  );
+  assert.equal(evaluateCache(null, current).reason, 'unreadable');
+});
+
+test('the fingerprint reacts to a rename or a translation', () => {
+  const base = ['Rispentomaten|Vine tomatoes|2.49', 'Gnocchi|Gnocchi|1.69'];
+  assert.equal(fingerprint(base), fingerprint([...base]));
+  assert.notEqual(fingerprint(base), fingerprint(['Rispentomaten|Tomatoes|2.49', base[1]]));
+  assert.notEqual(fingerprint(base), fingerprint([base[0], 'Gnocchi|Gnocchi|1.79']));
 });
