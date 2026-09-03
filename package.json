@@ -39,7 +39,8 @@
     "test": "node --import tsx --test pipeline/test/*.test.ts",
     "feed:check": "tsx pipeline/src/checkFeed.ts",
     "data:seed": "tsx pipeline/src/seed.ts",
-    "data:probe": "tsx pipeline/src/probe.ts"
+    "data:probe": "tsx pipeline/src/probe.ts",
+    "logos:check": "tsx pipeline/src/checkLogos.ts"
   },
   "private": true,
   "description": "SmartKorb Wien \u2014 prototype aggregating grocery discounts in Vienna"

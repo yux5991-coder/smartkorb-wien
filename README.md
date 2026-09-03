@@ -33,6 +33,7 @@ Requirements: Node.js 20+, Expo SDK 57.
 | `npm run feed:check -- <file.csv>` | validate a partner delivery before using it |
 | `npm run data:seed` | regenerate the offers bundled with the app |
 | `npm run data:probe -- --url <url>` | inspect a candidate offer endpoint and propose an adapter config |
+| `npm run logos:check` | show which chain logos are still placeholders |
 
 ## The four sections
 
@@ -146,18 +147,56 @@ therefore queries it once a week, not on every run.
 
 ## Chain logos
 
-`assets/logos/<retailerId>.png` holds the artwork the app shows on the map and
-on every offer card. The committed files are **placeholders** (a coloured badge
-with the chain's initials). To ship the real thing, overwrite them with the
-official artwork from each chain's press kit — same names, square, transparent
-background, ~240 × 240 px; no code change is needed, and if a file is missing the
-UI falls back to the initials badge.
+The app shows whatever PNG sits in `assets/logos/<retailerId>.png` — on the map
+markers and on every offer card. The six files committed here are
+**placeholders**: a coloured tile with the chain's initials, generated for this
+repository. They are not the real logos, and no code in the app can turn them
+into the real logos — the artwork has to be put in the folder.
 
-Logos are trademarks. Using them to identify the shop an offer belongs to is the
-normal, referential use an offer aggregator makes of them, but they must not be
-altered, recoloured or used as SmartKorb's own branding, and whether they may be
-redistributed inside a public repository depends on each chain's brand
-guidelines — check before committing them.
+**Replacing them (no code change, ~5 minutes):**
+
+1. Get the official artwork. Every chain publishes it in the press / newsroom
+   area of its own website (Spar, Billa and Billa Plus via REWE Group Austria,
+   Hofer, Lidl, Penny) — look for "Presse", "Newsroom", "Media" or
+   "Markenportal" and download the logo as PNG or SVG.
+2. Export each one square with a transparent background, about 240 × 240 px
+   (larger is fine — the app scales it down), and save it as PNG.
+3. Put the files in `assets/logos/` using exactly these names:
+
+   ```
+   assets/logos/spar.png
+   assets/logos/billa.png
+   assets/logos/billaplus.png
+   assets/logos/hofer.png
+   assets/logos/lidl.png
+   assets/logos/penny.png
+   ```
+
+4. Verify they were picked up:
+
+   ```bash
+   npm run logos:check
+   ```
+
+   Every line should read `custom`, not `PLACEHOLDER`, and report no format
+   problems.
+5. Restart the dev server with a clean cache — Metro caches bundled images, so
+   without this you keep seeing the old ones:
+
+   ```bash
+   npx expo start -c
+   ```
+
+If a file is missing or unreadable, the UI falls back to the coloured initials
+badge, so a wrong file can never break a screen.
+
+**Trademarks.** Chain logos are protected marks. Showing them to identify which
+shop an offer belongs to is the normal, referential use an offer aggregator
+makes of them, but they must not be altered, recoloured, or presented as
+SmartKorb's own branding. Whether the files may also be committed to a *public*
+repository depends on each chain's brand guidelines — check that before pushing
+them, and keep them out of the repository (load them at runtime instead) if a
+chain does not allow redistribution.
 
 ## Demo offers
 
