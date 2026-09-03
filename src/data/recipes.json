@@ -1,0 +1,368 @@
+[
+  {
+    "id": "r-01",
+    "title": "Wiener Erdäpfelgulasch",
+    "tags": ["Österreichisch", "Hausmannskost", "Budget"],
+    "dietTags": ["vegan", "vegetarisch", "omnivor"],
+    "allergenFree": ["gluten", "laktose", "nuesse", "ei", "fisch", "soja"],
+    "ingredients": [
+      { "productId": "p-05", "grams": 800 },
+      { "productId": "p-06", "grams": 250 },
+      { "productId": "p-08", "grams": 150 },
+      { "productId": "p-40", "grams": 200 },
+      { "productId": "p-41", "grams": 30 }
+    ],
+    "instructions": [
+      "Zwiebeln fein schneiden und im Olivenöl goldbraun anrösten.",
+      "Mit Paprikapulver und passierten Tomaten ablöschen, kurz einkochen lassen.",
+      "Erdäpfel schälen, würfeln und mit Wasser aufgießen.",
+      "Ca. 25 Minuten köcheln, bis das Gulasch sämig ist. Mit Salz, Kümmel und Majoran abschmecken."
+    ],
+    "cookingTimeMin": 40,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/erdaepfelgulasch.jpg",
+    "emoji": "🥘"
+  },
+  {
+    "id": "r-02",
+    "title": "Spaghetti Napoli",
+    "tags": ["Italienisch", "Schnell", "Budget"],
+    "dietTags": ["vegan", "vegetarisch", "omnivor"],
+    "allergenFree": ["laktose", "nuesse", "ei", "fisch", "soja"],
+    "ingredients": [
+      { "productId": "p-38", "grams": 500 },
+      { "productId": "p-40", "grams": 700 },
+      { "productId": "p-06", "grams": 120 },
+      { "productId": "p-12", "grams": 10 },
+      { "productId": "p-41", "grams": 30 }
+    ],
+    "instructions": [
+      "Spaghetti in Salzwasser bissfest kochen.",
+      "Zwiebel und Knoblauch im Olivenöl glasig anschwitzen.",
+      "Passierte Tomaten zugeben und 15 Minuten offen einkochen lassen.",
+      "Sauce mit Salz, Pfeffer und Basilikum abschmecken und mit den Nudeln vermengen."
+    ],
+    "cookingTimeMin": 25,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/spaghetti-napoli.jpg",
+    "emoji": "🍝"
+  },
+  {
+    "id": "r-03",
+    "title": "Gemüsecurry mit Kokosmilch",
+    "tags": ["Asiatisch", "Vegan", "One-Pot"],
+    "dietTags": ["vegan", "vegetarisch", "omnivor"],
+    "allergenFree": ["gluten", "laktose", "nuesse", "ei", "fisch", "soja"],
+    "ingredients": [
+      { "productId": "p-09", "grams": 300 },
+      { "productId": "p-08", "grams": 250 },
+      { "productId": "p-07", "grams": 200 },
+      { "productId": "p-46", "grams": 400 },
+      { "productId": "p-50", "grams": 60 },
+      { "productId": "p-39", "grams": 300 }
+    ],
+    "instructions": [
+      "Reis nach Packungsanweisung kochen.",
+      "Gemüse in mundgerechte Stücke schneiden.",
+      "Currypaste kurz anrösten, Gemüse zugeben und mit Kokosmilch aufgießen.",
+      "12 Minuten köcheln lassen und mit Limette und Salz abschmecken."
+    ],
+    "cookingTimeMin": 35,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/gemuesecurry.jpg",
+    "emoji": "🍛"
+  },
+  {
+    "id": "r-04",
+    "title": "Hühnerbrust mit Ofengemüse",
+    "tags": ["Mediterran", "Protein", "Ofen"],
+    "dietTags": ["omnivor"],
+    "allergenFree": ["gluten", "laktose", "nuesse", "ei", "fisch", "soja"],
+    "ingredients": [
+      { "productId": "p-16", "grams": 500 },
+      { "productId": "p-05", "grams": 700 },
+      { "productId": "p-09", "grams": 300 },
+      { "productId": "p-08", "grams": 200 },
+      { "productId": "p-41", "grams": 40 }
+    ],
+    "instructions": [
+      "Backrohr auf 200 °C vorheizen.",
+      "Erdäpfel, Zucchini und Paprika grob schneiden, mit Olivenöl und Kräutern marinieren.",
+      "Gemüse 20 Minuten backen, dann die gewürzte Hühnerbrust dazulegen.",
+      "Weitere 20 Minuten garen, bis das Fleisch durch ist."
+    ],
+    "cookingTimeMin": 45,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/huhn-ofengemuese.jpg",
+    "emoji": "🍗"
+  },
+  {
+    "id": "r-05",
+    "title": "Orientalische Linsensuppe",
+    "tags": ["Orientalisch", "Vegan", "Budget"],
+    "dietTags": ["vegan", "vegetarisch", "omnivor"],
+    "allergenFree": ["gluten", "laktose", "nuesse", "ei", "fisch", "soja"],
+    "ingredients": [
+      { "productId": "p-42", "grams": 300 },
+      { "productId": "p-07", "grams": 200 },
+      { "productId": "p-06", "grams": 150 },
+      { "productId": "p-40", "grams": 200 },
+      { "productId": "p-13", "grams": 60 },
+      { "productId": "p-41", "grams": 20 }
+    ],
+    "instructions": [
+      "Zwiebel und Karotten würfeln und im Öl anschwitzen.",
+      "Linsen, passierte Tomaten und 1,2 l Wasser zugeben.",
+      "20 Minuten weich köcheln, dann fein pürieren.",
+      "Mit Kreuzkümmel, Salz und Zitronensaft abschmecken."
+    ],
+    "cookingTimeMin": 30,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/linsensuppe.jpg",
+    "emoji": "🍲"
+  },
+  {
+    "id": "r-06",
+    "title": "Kaiserschmarrn mit Beeren",
+    "tags": ["Österreichisch", "Süßspeise", "Familienessen"],
+    "dietTags": ["vegetarisch", "omnivor"],
+    "allergenFree": ["nuesse", "fisch", "soja"],
+    "ingredients": [
+      { "productId": "p-44", "grams": 250 },
+      { "productId": "p-24", "grams": 500 },
+      { "productId": "p-31", "grams": 240 },
+      { "productId": "p-26", "grams": 60 },
+      { "productId": "p-57", "grams": 150 }
+    ],
+    "instructions": [
+      "Mehl, Milch, Eidotter und eine Prise Salz zu einem glatten Teig rühren.",
+      "Eiklar steif schlagen und unterheben.",
+      "Teig in Butter goldbraun backen, dann mit zwei Gabeln zerreißen.",
+      "Mit Staubzucker bestreuen und mit warmen Beeren servieren."
+    ],
+    "cookingTimeMin": 30,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/kaiserschmarrn.jpg",
+    "emoji": "🥞"
+  },
+  {
+    "id": "r-07",
+    "title": "Käsespätzle mit Röstzwiebeln",
+    "tags": ["Österreichisch", "Comfort Food"],
+    "dietTags": ["vegetarisch", "omnivor"],
+    "allergenFree": ["nuesse", "fisch", "soja"],
+    "ingredients": [
+      { "productId": "p-44", "grams": 400 },
+      { "productId": "p-31", "grams": 180 },
+      { "productId": "p-28", "grams": 200 },
+      { "productId": "p-06", "grams": 200 },
+      { "productId": "p-26", "grams": 50 }
+    ],
+    "instructions": [
+      "Mehl, Eier, Wasser und Salz zu einem zähen Teig rühren und 15 Minuten rasten lassen.",
+      "Teig durch ein Spätzlesieb in kochendes Salzwasser schaben.",
+      "Spätzle schichtweise mit geriebenem Bergkäse in eine Form geben.",
+      "Zwiebelringe in Butter rösten und über die Spätzle geben."
+    ],
+    "cookingTimeMin": 45,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/kaesespaetzle.jpg",
+    "emoji": "🧀"
+  },
+  {
+    "id": "r-08",
+    "title": "Lachs mit Erdäpfeln und Spinat",
+    "tags": ["Mediterran", "Protein", "Schnell"],
+    "dietTags": ["omnivor"],
+    "allergenFree": ["gluten", "laktose", "nuesse", "ei", "soja"],
+    "ingredients": [
+      { "productId": "p-20", "grams": 500 },
+      { "productId": "p-05", "grams": 800 },
+      { "productId": "p-11", "grams": 400 },
+      { "productId": "p-13", "grams": 100 },
+      { "productId": "p-41", "grams": 30 }
+    ],
+    "instructions": [
+      "Erdäpfel in Salzwasser kochen.",
+      "Lachsfilets salzen, pfeffern und in der Pfanne 3 Minuten pro Seite braten.",
+      "Spinat mit Knoblauch kurz zusammenfallen lassen.",
+      "Alles mit Zitronenspalten anrichten."
+    ],
+    "cookingTimeMin": 35,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/lachs-spinat.jpg",
+    "emoji": "🐟"
+  },
+  {
+    "id": "r-09",
+    "title": "Faschierte Laibchen mit Erdäpfelpüree",
+    "tags": ["Österreichisch", "Hausmannskost", "Familienessen"],
+    "dietTags": ["omnivor"],
+    "allergenFree": ["nuesse", "fisch", "soja"],
+    "ingredients": [
+      { "productId": "p-17", "grams": 500 },
+      { "productId": "p-31", "grams": 60 },
+      { "productId": "p-35", "grams": 100 },
+      { "productId": "p-05", "grams": 900 },
+      { "productId": "p-24", "grams": 150 },
+      { "productId": "p-26", "grams": 40 },
+      { "productId": "p-06", "grams": 120 }
+    ],
+    "instructions": [
+      "Semmeln einweichen, ausdrücken und mit Faschiertem, Ei und Zwiebel verkneten.",
+      "Laibchen formen und beidseitig goldbraun braten.",
+      "Erdäpfel weich kochen, mit heißer Milch und Butter stampfen.",
+      "Mit grünem Salat servieren."
+    ],
+    "cookingTimeMin": 50,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/faschierte-laibchen.jpg",
+    "emoji": "🍽️"
+  },
+  {
+    "id": "r-10",
+    "title": "Klassisches Rindsgulasch",
+    "tags": ["Österreichisch", "Sonntagsessen"],
+    "dietTags": ["omnivor"],
+    "allergenFree": ["laktose", "nuesse", "ei", "fisch", "soja"],
+    "ingredients": [
+      { "productId": "p-19", "grams": 700 },
+      { "productId": "p-06", "grams": 700 },
+      { "productId": "p-40", "grams": 150 },
+      { "productId": "p-41", "grams": 30 },
+      { "productId": "p-35", "grams": 200 }
+    ],
+    "instructions": [
+      "Zwiebeln in reichlich Öl dunkelbraun rösten.",
+      "Paprikapulver einrühren, mit Essig und Wasser ablöschen.",
+      "Fleischwürfel zugeben und 2 Stunden zugedeckt schmoren.",
+      "Mit Semmeln oder Nockerl servieren."
+    ],
+    "cookingTimeMin": 120,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/rindsgulasch.jpg",
+    "emoji": "🥘"
+  },
+  {
+    "id": "r-11",
+    "title": "Polenta mit Champignonragout",
+    "tags": ["Italienisch", "Vegetarisch", "Glutenfrei"],
+    "dietTags": ["vegetarisch", "omnivor"],
+    "allergenFree": ["gluten", "nuesse", "ei", "fisch", "soja"],
+    "ingredients": [
+      { "productId": "p-45", "grams": 250 },
+      { "productId": "p-10", "grams": 500 },
+      { "productId": "p-06", "grams": 120 },
+      { "productId": "p-30", "grams": 100 },
+      { "productId": "p-28", "grams": 60 },
+      { "productId": "p-41", "grams": 20 }
+    ],
+    "instructions": [
+      "Polenta in der vierfachen Menge Salzwasser einrühren und 10 Minuten quellen lassen.",
+      "Champignons blättrig schneiden und mit Zwiebel scharf anbraten.",
+      "Mit Schlagobers aufgießen und einkochen lassen.",
+      "Polenta mit geriebenem Bergkäse verfeinern und mit dem Ragout servieren."
+    ],
+    "cookingTimeMin": 40,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/polenta-champignons.jpg",
+    "emoji": "🍄"
+  },
+  {
+    "id": "r-12",
+    "title": "Kichererbsen-Bowl mit Avocado",
+    "tags": ["Orientalisch", "Vegan", "Meal Prep"],
+    "dietTags": ["vegan", "vegetarisch", "omnivor"],
+    "allergenFree": ["gluten", "laktose", "nuesse", "ei", "fisch", "soja"],
+    "ingredients": [
+      { "productId": "p-43", "grams": 800 },
+      { "productId": "p-14", "grams": 200 },
+      { "productId": "p-03", "grams": 250 },
+      { "productId": "p-04", "grams": 200 },
+      { "productId": "p-13", "grams": 50 },
+      { "productId": "p-41", "grams": 25 },
+      { "productId": "p-39", "grams": 250 }
+    ],
+    "instructions": [
+      "Reis kochen und auskühlen lassen.",
+      "Kichererbsen abspülen und mit Paprikapulver und Öl im Rohr 15 Minuten rösten.",
+      "Tomaten, Gurke und Avocado würfeln.",
+      "Alles in Schüsseln schichten und mit Zitronen-Öl-Dressing beträufeln."
+    ],
+    "cookingTimeMin": 20,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/kichererbsen-bowl.jpg",
+    "emoji": "🥗"
+  },
+  {
+    "id": "r-13",
+    "title": "Overnight Oats mit Beeren",
+    "tags": ["Frühstück", "Vegan", "Meal Prep"],
+    "dietTags": ["vegan", "vegetarisch", "omnivor"],
+    "allergenFree": ["laktose", "nuesse", "ei", "fisch", "soja"],
+    "ingredients": [
+      { "productId": "p-49", "grams": 200 },
+      { "productId": "p-33", "grams": 500 },
+      { "productId": "p-57", "grams": 200 },
+      { "productId": "p-02", "grams": 240 }
+    ],
+    "instructions": [
+      "Haferflocken mit Haferdrink verrühren und über Nacht kühl stellen.",
+      "Am Morgen die aufgetauten Beeren untermischen.",
+      "Mit Bananenscheiben belegen und nach Wunsch süßen."
+    ],
+    "cookingTimeMin": 10,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/overnight-oats.jpg",
+    "emoji": "🥣"
+  },
+  {
+    "id": "r-14",
+    "title": "Caprese mit Vollkornbrot",
+    "tags": ["Italienisch", "Vegetarisch", "Schnell"],
+    "dietTags": ["vegetarisch", "omnivor"],
+    "allergenFree": ["nuesse", "ei", "fisch", "soja"],
+    "ingredients": [
+      { "productId": "p-32", "grams": 250 },
+      { "productId": "p-03", "grams": 500 },
+      { "productId": "p-41", "grams": 30 },
+      { "productId": "p-34", "grams": 200 }
+    ],
+    "instructions": [
+      "Tomaten und Mozzarella in Scheiben schneiden.",
+      "Abwechselnd auf einem Teller anrichten.",
+      "Mit Olivenöl, Salz, Pfeffer und Basilikum würzen.",
+      "Mit geröstetem Vollkornbrot servieren."
+    ],
+    "cookingTimeMin": 15,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/caprese.jpg",
+    "emoji": "🍅"
+  },
+  {
+    "id": "r-15",
+    "title": "Thunfisch-Nudelsalat",
+    "tags": ["Mediterran", "Meal Prep", "Schnell"],
+    "dietTags": ["omnivor"],
+    "allergenFree": ["laktose", "nuesse", "ei", "soja"],
+    "ingredients": [
+      { "productId": "p-21", "grams": 240 },
+      { "productId": "p-38", "grams": 400 },
+      { "productId": "p-03", "grams": 300 },
+      { "productId": "p-04", "grams": 200 },
+      { "productId": "p-06", "grams": 80 },
+      { "productId": "p-41", "grams": 30 },
+      { "productId": "p-13", "grams": 40 }
+    ],
+    "instructions": [
+      "Nudeln kochen, abschrecken und auskühlen lassen.",
+      "Thunfisch abtropfen lassen und zerpflücken.",
+      "Tomaten, Gurke und Zwiebel klein schneiden.",
+      "Alles mit Olivenöl, Zitronensaft, Salz und Pfeffer marinieren."
+    ],
+    "cookingTimeMin": 25,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/thunfisch-nudelsalat.jpg",
+    "emoji": "🥗"
+  }
+]

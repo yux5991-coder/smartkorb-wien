@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "SmartKorb Wien",
+    "slug": "smartkorb-wien",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "at.smartkorb.wien.prototype"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E3F3ED",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "at.smartkorb.wien.prototype"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "scheme": "smartkorb",
+    "primaryColor": "#0E7C5A"
+  }
+}

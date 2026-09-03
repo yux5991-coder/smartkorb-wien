@@ -1,0 +1,220 @@
+import React, { useMemo, useState } from 'react';
+import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+import { BottomSheet } from '../components/BottomSheet';
+import { Chip } from '../components/Chip';
+import { DiscountCard } from '../components/DiscountCard';
+import { ScreenHeader } from '../components/ScreenHeader';
+import { StoreMap } from '../components/StoreMap';
+import type { MappedStore } from '../components/storeMapTypes';
+import { getActiveDiscountViews, getDiscountsForStore, getRetailer, getStore, retailers, stores } from '../data';
+import { useProfileStore } from '../store/useProfileStore';
+import { colors, radius, spacing } from '../theme';
+import { formatPrice } from '../utils/format';
+
+export const MapScreen: React.FC = () => {
+  const [activeRetailers, setActiveRetailers] = useState<string[]>([]);
+  const [selectedStoreId, setSelectedStoreId] = useState<string | null>(null);
+  const logActivity = useProfileStore((state) => state.logActivity);
+
+  const offersByStore = useMemo(() => {
+    const map = new Map<string, number>();
+    getActiveDiscountViews().forEach((view) => {
+      map.set(view.storeId, (map.get(view.storeId) ?? 0) + 1);
+    });
+    return map;
+  }, []);
+
+  const items = useMemo<MappedStore[]>(
+    () =>
+      stores
+        .filter((store) => activeRetailers.length === 0 || activeRetailers.includes(store.retailerId))
+        .map((store) => ({
+          store,
+          retailer: getRetailer(store.retailerId)!,
+          offerCount: offersByStore.get(store.id) ?? 0,
+        }))
+        .filter((item) => Boolean(item.retailer)),
+    [activeRetailers, offersByStore],
+  );
+
+  const selectedStore = selectedStoreId ? getStore(selectedStoreId) : null;
+  const selectedRetailer = selectedStore ? getRetailer(selectedStore.retailerId) : null;
+  const selectedDiscounts = selectedStoreId ? getDiscountsForStore(selectedStoreId) : [];
+
+  const toggleRetailer = (retailerId: string) =>
+    setActiveRetailers((current) =>
+      current.includes(retailerId)
+        ? current.filter((id) => id !== retailerId)
+        : [...current, retailerId],
+    );
+
+  const handleSelectStore = (storeId: string) => {
+    setSelectedStoreId(storeId);
+    const store = getStore(storeId);
+    if (store) logActivity('store_viewed', store.name);
+  };
+
+  const bestOffer = selectedDiscounts[0];
+
+  return (
+    <SafeAreaView style={styles.screen} edges={['top']}>
+      <ScreenHeader
+        title="Karte"
+        subtitle={`${items.length} Filialen · ${getActiveDiscountViews().length} laufende Aktionen`}
+      />
+
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.filterScroll}
+        contentContainerStyle={styles.filterRow}
+      >
+        <Chip
+          label="Alle"
+          selected={activeRetailers.length === 0}
+          onPress={() => setActiveRetailers([])}
+          compact
+        />
+        {retailers.map((retailer) => (
+          <Chip
+            key={retailer.id}
+            label={retailer.name}
+            dotColor={retailer.logoColor}
+            selected={activeRetailers.includes(retailer.id)}
+            onPress={() => toggleRetailer(retailer.id)}
+            compact
+          />
+        ))}
+      </ScrollView>
+
+      <View style={styles.mapWrapper}>
+        <StoreMap items={items} selectedStoreId={selectedStoreId} onSelectStore={handleSelectStore} />
+        {Platform.OS === 'web' ? null : (
+          <View style={styles.hint} pointerEvents="none">
+            <Text style={styles.hintText}>
+              Tippe auf ein Logo, um die Aktionen der Filiale zu sehen
+            </Text>
+          </View>
+        )}
+      </View>
+
+      <BottomSheet
+        visible={selectedStore !== null}
+        onClose={() => setSelectedStoreId(null)}
+        title={selectedStore?.name ?? ''}
+        subtitle={selectedStore ? `${selectedStore.address} · ${selectedStore.openingHours}` : undefined}
+      >
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.summaryRow}>
+            <View style={styles.summaryBox}>
+              <Text style={styles.summaryValue}>{selectedDiscounts.length}</Text>
+              <Text style={styles.summaryLabel}>Aktionen</Text>
+            </View>
+            <View style={styles.summaryBox}>
+              <Text style={styles.summaryValue}>
+                {bestOffer ? `−${bestOffer.discountPercent} %` : '–'}
+              </Text>
+              <Text style={styles.summaryLabel}>bester Rabatt</Text>
+            </View>
+            <View style={styles.summaryBox}>
+              <Text style={styles.summaryValue} numberOfLines={1}>
+                {bestOffer ? formatPrice(bestOffer.discountPrice) : '–'}
+              </Text>
+              <Text style={styles.summaryLabel} numberOfLines={1}>
+                {bestOffer ? bestOffer.product.name : 'kein Angebot'}
+              </Text>
+            </View>
+          </View>
+
+          <Text style={styles.sectionTitle}>
+            Aktuelle Rabatte {selectedRetailer ? `bei ${selectedRetailer.name}` : ''}
+          </Text>
+
+          {selectedDiscounts.length === 0 ? (
+            <Text style={styles.empty}>In dieser Filiale läuft gerade keine Aktion.</Text>
+          ) : (
+            selectedDiscounts.map((discount) => (
+              <DiscountCard
+                key={discount.id}
+                discount={discount}
+                hideStore
+                onPress={() => logActivity('discount_viewed', discount.product.name)}
+              />
+            ))
+          )}
+        </ScrollView>
+      </BottomSheet>
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    backgroundColor: colors.background,
+  },
+  filterScroll: {
+    flexGrow: 0,
+    flexShrink: 0,
+  },
+  filterRow: {
+    paddingHorizontal: spacing.lg,
+    paddingBottom: spacing.xs,
+  },
+  mapWrapper: {
+    flex: 1,
+    overflow: 'hidden',
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.md,
+    borderRadius: radius.lg,
+    backgroundColor: colors.surfaceMuted,
+  },
+  hint: {
+    position: 'absolute',
+    left: spacing.md,
+    right: spacing.md,
+    bottom: spacing.md,
+    backgroundColor: 'rgba(255,255,255,0.92)',
+    borderRadius: radius.pill,
+    paddingVertical: 8,
+    paddingHorizontal: spacing.md,
+  },
+  hintText: {
+    fontSize: 12,
+    color: colors.textMuted,
+    textAlign: 'center',
+  },
+  summaryRow: {
+    flexDirection: 'row',
+    marginBottom: spacing.lg,
+  },
+  summaryBox: {
+    flex: 1,
+    backgroundColor: colors.surface,
+    borderRadius: radius.md,
+    padding: spacing.md,
+    marginRight: spacing.sm,
+  },
+  summaryValue: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: colors.primaryDark,
+  },
+  summaryLabel: {
+    fontSize: 11,
+    color: colors.textMuted,
+  },
+  sectionTitle: {
+    fontSize: 15,
+    fontWeight: '700',
+    color: colors.text,
+    marginBottom: spacing.md,
+  },
+  empty: {
+    fontSize: 13,
+    color: colors.textMuted,
+    paddingVertical: spacing.lg,
+  },
+});

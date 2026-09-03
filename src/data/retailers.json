@@ -1,0 +1,8 @@
+[
+  { "id": "spar", "name": "Spar", "logoColor": "#00843D", "logoTextColor": "#FFFFFF", "logoInitials": "SP" },
+  { "id": "billa", "name": "Billa", "logoColor": "#E2001A", "logoTextColor": "#FFFFFF", "logoInitials": "BI" },
+  { "id": "billaplus", "name": "Billa Plus", "logoColor": "#F39200", "logoTextColor": "#3B2200", "logoInitials": "B+" },
+  { "id": "hofer", "name": "Hofer", "logoColor": "#0B3C8F", "logoTextColor": "#FFFFFF", "logoInitials": "HO" },
+  { "id": "lidl", "name": "Lidl", "logoColor": "#0093D0", "logoTextColor": "#08243D", "logoInitials": "LI" },
+  { "id": "penny", "name": "Penny", "logoColor": "#8E1B4A", "logoTextColor": "#FFFFFF", "logoInitials": "PE" }
+]

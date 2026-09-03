@@ -1,0 +1,642 @@
+[
+  {
+    "id": "d-001",
+    "storeId": "st-08",
+    "productId": "p-01",
+    "originalPrice": 3.14,
+    "discountPrice": 2.2,
+    "discountPercent": 30,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-05"
+  },
+  {
+    "id": "d-002",
+    "storeId": "st-05",
+    "productId": "p-01",
+    "originalPrice": 2.97,
+    "discountPrice": 2.67,
+    "discountPercent": 10,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-11"
+  },
+  {
+    "id": "d-003",
+    "storeId": "st-07",
+    "productId": "p-02",
+    "originalPrice": 1.77,
+    "discountPrice": 1.24,
+    "discountPercent": 30,
+    "validFrom": "2026-09-02",
+    "validTo": "2026-09-05"
+  },
+  {
+    "id": "d-004",
+    "storeId": "st-08",
+    "productId": "p-03",
+    "originalPrice": 2.5,
+    "discountPrice": 1.75,
+    "discountPercent": 30,
+    "validFrom": "2026-08-30",
+    "validTo": "2026-09-11"
+  },
+  {
+    "id": "d-005",
+    "storeId": "st-17",
+    "productId": "p-05",
+    "originalPrice": 3.4,
+    "discountPrice": 2.55,
+    "discountPercent": 25,
+    "validFrom": "2026-09-02",
+    "validTo": "2026-09-10"
+  },
+  {
+    "id": "d-006",
+    "storeId": "st-01",
+    "productId": "p-06",
+    "originalPrice": 1.86,
+    "discountPrice": 1.58,
+    "discountPercent": 15,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-07"
+  },
+  {
+    "id": "d-007",
+    "storeId": "st-12",
+    "productId": "p-06",
+    "originalPrice": 1.9,
+    "discountPrice": 1.52,
+    "discountPercent": 20,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-11"
+  },
+  {
+    "id": "d-008",
+    "storeId": "st-02",
+    "productId": "p-07",
+    "originalPrice": 1.69,
+    "discountPrice": 1.1,
+    "discountPercent": 35,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-09"
+  },
+  {
+    "id": "d-009",
+    "storeId": "st-22",
+    "productId": "p-08",
+    "originalPrice": 3.07,
+    "discountPrice": 2,
+    "discountPercent": 35,
+    "validFrom": "2026-09-02",
+    "validTo": "2026-09-07"
+  },
+  {
+    "id": "d-010",
+    "storeId": "st-10",
+    "productId": "p-09",
+    "originalPrice": 2.88,
+    "discountPrice": 1.87,
+    "discountPercent": 35,
+    "validFrom": "2026-08-30",
+    "validTo": "2026-09-05"
+  },
+  {
+    "id": "d-011",
+    "storeId": "st-12",
+    "productId": "p-10",
+    "originalPrice": 2.02,
+    "discountPrice": 1.35,
+    "discountPercent": 33,
+    "validFrom": "2026-08-20",
+    "validTo": "2026-08-26"
+  },
+  {
+    "id": "d-012",
+    "storeId": "st-08",
+    "productId": "p-12",
+    "originalPrice": 1.51,
+    "discountPrice": 0.91,
+    "discountPercent": 40,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-04"
+  },
+  {
+    "id": "d-013",
+    "storeId": "st-16",
+    "productId": "p-13",
+    "originalPrice": 2.18,
+    "discountPrice": 1.09,
+    "discountPercent": 50,
+    "validFrom": "2026-08-30",
+    "validTo": "2026-09-04"
+  },
+  {
+    "id": "d-014",
+    "storeId": "st-19",
+    "productId": "p-14",
+    "originalPrice": 1.98,
+    "discountPrice": 0.99,
+    "discountPercent": 50,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-07"
+  },
+  {
+    "id": "d-015",
+    "storeId": "st-16",
+    "productId": "p-15",
+    "originalPrice": 3.81,
+    "discountPrice": 3.43,
+    "discountPercent": 10,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-04"
+  },
+  {
+    "id": "d-016",
+    "storeId": "st-15",
+    "productId": "p-16",
+    "originalPrice": 6.66,
+    "discountPrice": 5,
+    "discountPercent": 25,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-10"
+  },
+  {
+    "id": "d-017",
+    "storeId": "st-16",
+    "productId": "p-16",
+    "originalPrice": 7.04,
+    "discountPrice": 6.34,
+    "discountPercent": 10,
+    "validFrom": "2026-09-08",
+    "validTo": "2026-09-17"
+  },
+  {
+    "id": "d-018",
+    "storeId": "st-18",
+    "productId": "p-17",
+    "originalPrice": 5.83,
+    "discountPrice": 4.37,
+    "discountPercent": 25,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-05"
+  },
+  {
+    "id": "d-019",
+    "storeId": "st-09",
+    "productId": "p-19",
+    "originalPrice": 7.88,
+    "discountPrice": 4.33,
+    "discountPercent": 45,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-11"
+  },
+  {
+    "id": "d-020",
+    "storeId": "st-14",
+    "productId": "p-20",
+    "originalPrice": 6.78,
+    "discountPrice": 3.73,
+    "discountPercent": 45,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-08"
+  },
+  {
+    "id": "d-021",
+    "storeId": "st-06",
+    "productId": "p-21",
+    "originalPrice": 3.2,
+    "discountPrice": 2.72,
+    "discountPercent": 15,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-13"
+  },
+  {
+    "id": "d-022",
+    "storeId": "st-17",
+    "productId": "p-21",
+    "originalPrice": 3.19,
+    "discountPrice": 1.75,
+    "discountPercent": 45,
+    "validFrom": "2026-08-20",
+    "validTo": "2026-08-26"
+  },
+  {
+    "id": "d-023",
+    "storeId": "st-21",
+    "productId": "p-22",
+    "originalPrice": 2.77,
+    "discountPrice": 1.94,
+    "discountPercent": 30,
+    "validFrom": "2026-08-31",
+    "validTo": "2026-09-09"
+  },
+  {
+    "id": "d-024",
+    "storeId": "st-17",
+    "productId": "p-23",
+    "originalPrice": 2.59,
+    "discountPrice": 1.94,
+    "discountPercent": 25,
+    "validFrom": "2026-09-02",
+    "validTo": "2026-09-09"
+  },
+  {
+    "id": "d-025",
+    "storeId": "st-14",
+    "productId": "p-24",
+    "originalPrice": 1.38,
+    "discountPrice": 1.17,
+    "discountPercent": 15,
+    "validFrom": "2026-09-02",
+    "validTo": "2026-09-08"
+  },
+  {
+    "id": "d-026",
+    "storeId": "st-18",
+    "productId": "p-26",
+    "originalPrice": 2.92,
+    "discountPrice": 2.19,
+    "discountPercent": 25,
+    "validFrom": "2026-08-31",
+    "validTo": "2026-09-08"
+  },
+  {
+    "id": "d-027",
+    "storeId": "st-12",
+    "productId": "p-26",
+    "originalPrice": 2.84,
+    "discountPrice": 2.41,
+    "discountPercent": 15,
+    "validFrom": "2026-08-31",
+    "validTo": "2026-09-08"
+  },
+  {
+    "id": "d-028",
+    "storeId": "st-15",
+    "productId": "p-27",
+    "originalPrice": 2.17,
+    "discountPrice": 1.74,
+    "discountPercent": 20,
+    "validFrom": "2026-08-31",
+    "validTo": "2026-09-04"
+  },
+  {
+    "id": "d-029",
+    "storeId": "st-05",
+    "productId": "p-28",
+    "originalPrice": 3.61,
+    "discountPrice": 2.71,
+    "discountPercent": 25,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-10"
+  },
+  {
+    "id": "d-030",
+    "storeId": "st-19",
+    "productId": "p-29",
+    "originalPrice": 1.15,
+    "discountPrice": 0.57,
+    "discountPercent": 50,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-10"
+  },
+  {
+    "id": "d-031",
+    "storeId": "st-02",
+    "productId": "p-30",
+    "originalPrice": 1.06,
+    "discountPrice": 0.9,
+    "discountPercent": 15,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-12"
+  },
+  {
+    "id": "d-032",
+    "storeId": "st-10",
+    "productId": "p-31",
+    "originalPrice": 3.32,
+    "discountPrice": 2.82,
+    "discountPercent": 15,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-08"
+  },
+  {
+    "id": "d-033",
+    "storeId": "st-08",
+    "productId": "p-31",
+    "originalPrice": 3.35,
+    "discountPrice": 2.68,
+    "discountPercent": 20,
+    "validFrom": "2026-08-20",
+    "validTo": "2026-08-26"
+  },
+  {
+    "id": "d-034",
+    "storeId": "st-20",
+    "productId": "p-33",
+    "originalPrice": 1.45,
+    "discountPrice": 1.01,
+    "discountPercent": 30,
+    "validFrom": "2026-09-09",
+    "validTo": "2026-09-17"
+  },
+  {
+    "id": "d-035",
+    "storeId": "st-01",
+    "productId": "p-34",
+    "originalPrice": 2.54,
+    "discountPrice": 1.27,
+    "discountPercent": 50,
+    "validFrom": "2026-08-30",
+    "validTo": "2026-09-12"
+  },
+  {
+    "id": "d-036",
+    "storeId": "st-04",
+    "productId": "p-35",
+    "originalPrice": 1.78,
+    "discountPrice": 1.6,
+    "discountPercent": 10,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-12"
+  },
+  {
+    "id": "d-037",
+    "storeId": "st-17",
+    "productId": "p-36",
+    "originalPrice": 1.35,
+    "discountPrice": 0.74,
+    "discountPercent": 45,
+    "validFrom": "2026-08-31",
+    "validTo": "2026-09-13"
+  },
+  {
+    "id": "d-038",
+    "storeId": "st-13",
+    "productId": "p-36",
+    "originalPrice": 1.37,
+    "discountPrice": 0.82,
+    "discountPercent": 40,
+    "validFrom": "2026-09-02",
+    "validTo": "2026-09-05"
+  },
+  {
+    "id": "d-039",
+    "storeId": "st-12",
+    "productId": "p-37",
+    "originalPrice": 2.39,
+    "discountPrice": 1.79,
+    "discountPercent": 25,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-13"
+  },
+  {
+    "id": "d-040",
+    "storeId": "st-12",
+    "productId": "p-38",
+    "originalPrice": 1.17,
+    "discountPrice": 0.88,
+    "discountPercent": 25,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-07"
+  },
+  {
+    "id": "d-041",
+    "storeId": "st-13",
+    "productId": "p-40",
+    "originalPrice": 1.46,
+    "discountPrice": 1.02,
+    "discountPercent": 30,
+    "validFrom": "2026-08-30",
+    "validTo": "2026-09-09"
+  },
+  {
+    "id": "d-042",
+    "storeId": "st-15",
+    "productId": "p-41",
+    "originalPrice": 8.04,
+    "discountPrice": 5.63,
+    "discountPercent": 30,
+    "validFrom": "2026-09-02",
+    "validTo": "2026-09-09"
+  },
+  {
+    "id": "d-043",
+    "storeId": "st-06",
+    "productId": "p-41",
+    "originalPrice": 8.32,
+    "discountPrice": 5.41,
+    "discountPercent": 35,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-12"
+  },
+  {
+    "id": "d-044",
+    "storeId": "st-15",
+    "productId": "p-42",
+    "originalPrice": 2.25,
+    "discountPrice": 1.35,
+    "discountPercent": 40,
+    "validFrom": "2026-08-20",
+    "validTo": "2026-08-26"
+  },
+  {
+    "id": "d-045",
+    "storeId": "st-09",
+    "productId": "p-43",
+    "originalPrice": 1.06,
+    "discountPrice": 0.74,
+    "discountPercent": 30,
+    "validFrom": "2026-08-31",
+    "validTo": "2026-09-04"
+  },
+  {
+    "id": "d-046",
+    "storeId": "st-06",
+    "productId": "p-44",
+    "originalPrice": 1.12,
+    "discountPrice": 0.78,
+    "discountPercent": 30,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-10"
+  },
+  {
+    "id": "d-047",
+    "storeId": "st-22",
+    "productId": "p-45",
+    "originalPrice": 1.75,
+    "discountPrice": 1.22,
+    "discountPercent": 30,
+    "validFrom": "2026-08-31",
+    "validTo": "2026-09-09"
+  },
+  {
+    "id": "d-048",
+    "storeId": "st-02",
+    "productId": "p-47",
+    "originalPrice": 3.58,
+    "discountPrice": 2.69,
+    "discountPercent": 25,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-08"
+  },
+  {
+    "id": "d-049",
+    "storeId": "st-17",
+    "productId": "p-48",
+    "originalPrice": 5.79,
+    "discountPrice": 4.34,
+    "discountPercent": 25,
+    "validFrom": "2026-08-31",
+    "validTo": "2026-09-07"
+  },
+  {
+    "id": "d-050",
+    "storeId": "st-20",
+    "productId": "p-49",
+    "originalPrice": 1.38,
+    "discountPrice": 1.1,
+    "discountPercent": 20,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-10"
+  },
+  {
+    "id": "d-051",
+    "storeId": "st-04",
+    "productId": "p-50",
+    "originalPrice": 2.47,
+    "discountPrice": 1.85,
+    "discountPercent": 25,
+    "validFrom": "2026-09-09",
+    "validTo": "2026-09-17"
+  },
+  {
+    "id": "d-052",
+    "storeId": "st-06",
+    "productId": "p-51",
+    "originalPrice": 3.45,
+    "discountPrice": 2.31,
+    "discountPercent": 33,
+    "validFrom": "2026-08-30",
+    "validTo": "2026-09-08"
+  },
+  {
+    "id": "d-053",
+    "storeId": "st-04",
+    "productId": "p-51",
+    "originalPrice": 3.31,
+    "discountPrice": 2.65,
+    "discountPercent": 20,
+    "validFrom": "2026-09-02",
+    "validTo": "2026-09-06"
+  },
+  {
+    "id": "d-054",
+    "storeId": "st-08",
+    "productId": "p-52",
+    "originalPrice": 2.04,
+    "discountPrice": 1.37,
+    "discountPercent": 33,
+    "validFrom": "2026-09-02",
+    "validTo": "2026-09-08"
+  },
+  {
+    "id": "d-055",
+    "storeId": "st-17",
+    "productId": "p-54",
+    "originalPrice": 12.95,
+    "discountPrice": 7.77,
+    "discountPercent": 40,
+    "validFrom": "2026-08-20",
+    "validTo": "2026-08-26"
+  },
+  {
+    "id": "d-056",
+    "storeId": "st-10",
+    "productId": "p-55",
+    "originalPrice": 6.16,
+    "discountPrice": 4.93,
+    "discountPercent": 20,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-05"
+  },
+  {
+    "id": "d-057",
+    "storeId": "st-17",
+    "productId": "p-56",
+    "originalPrice": 2.04,
+    "discountPrice": 1.12,
+    "discountPercent": 45,
+    "validFrom": "2026-08-30",
+    "validTo": "2026-09-04"
+  },
+  {
+    "id": "d-058",
+    "storeId": "st-19",
+    "productId": "p-56",
+    "originalPrice": 2.08,
+    "discountPrice": 1.77,
+    "discountPercent": 15,
+    "validFrom": "2026-09-02",
+    "validTo": "2026-09-07"
+  },
+  {
+    "id": "d-059",
+    "storeId": "st-22",
+    "productId": "p-57",
+    "originalPrice": 3.17,
+    "discountPrice": 2.38,
+    "discountPercent": 25,
+    "validFrom": "2026-09-02",
+    "validTo": "2026-09-04"
+  },
+  {
+    "id": "d-060",
+    "storeId": "st-21",
+    "productId": "p-58",
+    "originalPrice": 2.42,
+    "discountPrice": 1.94,
+    "discountPercent": 20,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-13"
+  },
+  {
+    "id": "d-061",
+    "storeId": "st-21",
+    "productId": "p-59",
+    "originalPrice": 1.47,
+    "discountPrice": 1.18,
+    "discountPercent": 20,
+    "validFrom": "2026-09-01",
+    "validTo": "2026-09-11"
+  },
+  {
+    "id": "d-062",
+    "storeId": "st-21",
+    "productId": "p-61",
+    "originalPrice": 2.51,
+    "discountPrice": 1.68,
+    "discountPercent": 33,
+    "validFrom": "2026-08-30",
+    "validTo": "2026-09-13"
+  },
+  {
+    "id": "d-063",
+    "storeId": "st-14",
+    "productId": "p-61",
+    "originalPrice": 2.42,
+    "discountPrice": 2.06,
+    "discountPercent": 15,
+    "validFrom": "2026-09-03",
+    "validTo": "2026-09-04"
+  },
+  {
+    "id": "d-064",
+    "storeId": "st-13",
+    "productId": "p-62",
+    "originalPrice": 3.13,
+    "discountPrice": 2.66,
+    "discountPercent": 15,
+    "validFrom": "2026-08-30",
+    "validTo": "2026-09-07"
+  }
+]
