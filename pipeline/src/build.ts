@@ -112,7 +112,7 @@ export const build = async (options: BuildOptions): Promise<Catalog> => {
         source: source.id,
       });
       allDiscounts.push(...discounts);
-      usedSources.push(source.label);
+      if (discounts.length > 0) usedSources.push(source.label);
       log(
         `${source.id}: ${stats.accepted}/${stats.input} offers accepted ` +
           `(+${stats.newProducts} new products, ${stats.droppedPrice} bad prices, ` +

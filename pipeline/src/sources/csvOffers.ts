@@ -73,7 +73,20 @@ export const createCsvOfferSource = (id: string, file: string): OfferSource => (
 
   fetchOffers: async (ctx: SourceContext): Promise<RawOffer[]> => {
     ctx.log(`reading offers from ${file}`);
-    const content = await readFile(file, 'utf8');
+
+    let content: string;
+    try {
+      content = await readFile(file, 'utf8');
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
+        // the feed is configured but the partner has not delivered yet —
+        // that is a normal state, not a broken run
+        ctx.log(`${file} not present yet — skipping this source`);
+        return [];
+      }
+      throw error;
+    }
+
     const rows = parseCsv(content);
 
     const offers: RawOffer[] = [];

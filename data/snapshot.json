@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T19:06:14.532Z",
+  "generatedAt": "2026-09-03T19:14:58.075Z",
   "retailers": [
     {
       "id": "spar",
@@ -1016,31 +1016,6 @@
         "ei"
       ],
       "vegan": false
-    },
-    {
-      "id": "p-auto-0001",
-      "name": "Chorizo Picante",
-      "category": "Fleisch & Fisch",
-      "unit": "150 g",
-      "baseGrams": 150,
-      "basePrice": 2.99,
-      "emoji": "🥩",
-      "allergens": [],
-      "vegan": false
-    },
-    {
-      "id": "p-auto-0002",
-      "name": "Hafer-Vollkornkekse mit Haselnuss",
-      "category": "Süßes & Snacks",
-      "unit": "250 g",
-      "baseGrams": 250,
-      "basePrice": 2.49,
-      "emoji": "🍫",
-      "allergens": [
-        "gluten",
-        "nuesse"
-      ],
-      "vegan": true
     }
   ],
   "discounts": [
@@ -1811,103 +1786,6 @@
       "validFrom": "2026-09-02",
       "validTo": "2026-09-10",
       "source": "mock"
-    },
-    {
-      "id": "d-2nuvco",
-      "retailerId": "billa",
-      "storeId": null,
-      "productId": "p-03",
-      "originalPrice": 2.49,
-      "discountPrice": 1.49,
-      "discountPercent": 40,
-      "validFrom": "2026-09-01",
-      "validTo": "2026-09-07",
-      "source": "partner-csv",
-      "sourceUrl": "https://example.invalid/offer/1"
-    },
-    {
-      "id": "d-fpgdl3",
-      "retailerId": "billa",
-      "storeId": null,
-      "productId": "p-24",
-      "originalPrice": 1.79,
-      "discountPrice": 1.29,
-      "discountPercent": 28,
-      "validFrom": "2026-09-01",
-      "validTo": "2026-09-07",
-      "source": "partner-csv"
-    },
-    {
-      "id": "d-hcrh6y",
-      "retailerId": "spar",
-      "storeId": null,
-      "productId": "p-16",
-      "originalPrice": 7.99,
-      "discountPrice": 4.99,
-      "discountPercent": 38,
-      "validFrom": "2026-09-02",
-      "validTo": "2026-09-08",
-      "source": "partner-csv"
-    },
-    {
-      "id": "d-og04cl",
-      "retailerId": "spar",
-      "storeId": "st-01",
-      "productId": "p-05",
-      "originalPrice": 3.99,
-      "discountPrice": 2.49,
-      "discountPercent": 38,
-      "validFrom": "2026-09-02",
-      "validTo": "2026-09-08",
-      "source": "partner-csv"
-    },
-    {
-      "id": "d-27ttif",
-      "retailerId": "hofer",
-      "storeId": null,
-      "productId": "p-28",
-      "originalPrice": 3.99,
-      "discountPrice": 2.79,
-      "discountPercent": 30,
-      "validFrom": "2026-09-03",
-      "validTo": "2026-09-09",
-      "source": "partner-csv"
-    },
-    {
-      "id": "d-45c7ym",
-      "retailerId": "lidl",
-      "storeId": null,
-      "productId": "p-auto-0001",
-      "originalPrice": 2.99,
-      "discountPrice": 1.99,
-      "discountPercent": 33,
-      "validFrom": "2026-09-03",
-      "validTo": "2026-09-06",
-      "source": "partner-csv"
-    },
-    {
-      "id": "d-nh7wgf",
-      "retailerId": "penny",
-      "storeId": null,
-      "productId": "p-51",
-      "originalPrice": 3.49,
-      "discountPrice": 2.29,
-      "discountPercent": 34,
-      "validFrom": "2026-09-01",
-      "validTo": "2026-09-10",
-      "source": "partner-csv"
-    },
-    {
-      "id": "d-kcfegn",
-      "retailerId": "penny",
-      "storeId": null,
-      "productId": "p-auto-0002",
-      "originalPrice": 2.49,
-      "discountPrice": 1.49,
-      "discountPercent": 40,
-      "validFrom": "2026-09-01",
-      "validTo": "2026-09-10",
-      "source": "partner-csv"
     }
   ],
   "recipes": [
@@ -2716,7 +2594,6 @@
     }
   ],
   "sources": [
-    "Demodaten (deterministisch erzeugt)",
-    "CSV-Feed (data/partner-feed.example.csv)"
+    "Demodaten (deterministisch erzeugt)"
   ]
 }

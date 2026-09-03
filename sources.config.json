@@ -22,6 +22,14 @@
       "type": "csv",
       "enabled": true,
       "label": "Partner-Feed (CSV)",
+      "file": "data/partner-feed.csv"
+    },
+    {
+      "_comment": "Beispieldatei mit dem erwarteten Format — siehe docs/partner-feed.md",
+      "id": "partner-csv-example",
+      "type": "csv",
+      "enabled": false,
+      "label": "Beispiel-Feed",
       "file": "data/partner-feed.example.csv"
     },
     {

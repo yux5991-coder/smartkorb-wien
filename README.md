@@ -30,6 +30,7 @@ Requirements: Node.js 20+, Expo SDK 57.
 | `npm run data:refresh -- --skip-stores` | offers only (the daily case) |
 | `npm run data:refresh -- --update-seed` | also rewrite the bundled fallback branch list |
 | `npm run data:check` | run everything, write nothing |
+| `npm run feed:check -- <file.csv>` | validate a partner delivery before using it |
 
 ## The four sections
 
@@ -123,17 +124,28 @@ therefore queries it once a week, not on every run.
 pipeline is built so that the *system* is finished and only the source has to be
 plugged in. Three ways to do that, in order of how defensible they are:
 
-1. **Partner feed (recommended, and the point of the grant).** A chain exports
-   its weekly offers; drop the file in and enable the `partner-csv` source:
+1. **Partner feed — enabled by default, and the point of the grant.** A chain
+   exports its weekly offers as CSV; the `partner-csv` source reads
+   `data/partner-feed.csv`. As long as that file is absent the source is simply
+   skipped, so the pipeline keeps working until the first delivery arrives.
 
-   ```json
-   { "id": "partner-csv", "type": "csv", "enabled": true, "file": "data/partner-feed.csv" }
-   ```
+   - The format to hand to a retailer is documented in
+     [`docs/partner-feed.md`](docs/partner-feed.md) (German, written to be sent
+     as-is), with a working example in `data/partner-feed.example.csv`.
+   - Columns: `retailerId,productName,unit,category,originalPrice,discountPrice,validFrom,validTo,storeExternalId,sourceUrl`;
+     an empty `storeExternalId` means the offer runs chain-wide, which is how
+     weekly flyers work. The parser accepts `,` or `;` and quoted fields.
+   - Check a delivery before trusting it:
 
-   Columns: `retailerId,productName,unit,category,originalPrice,discountPrice,validFrom,validTo,storeExternalId,sourceUrl`.
-   `data/partner-feed.example.csv` is a working example (`storeExternalId` empty
-   = the offer runs chain-wide, which is how weekly flyers work). The parser
-   accepts `,` or `;` and quoted fields.
+     ```bash
+     npm run feed:check -- data/partner-feed.csv
+     ```
+
+     It reports accepted rows, how many matched a known product, and every
+     rejection with its reason.
+   - The real feed is **not** committed (`data/partner-feed.csv` is gitignored —
+     a delivery can be confidential). For CI, set the repository secret
+     `PARTNER_FEED_URL` to a location the workflow may download it from.
 
 2. **A licensed aggregator.** Same shape, either as CSV or through the generic
    JSON adapter — one config entry, no code.
@@ -154,6 +166,27 @@ Bergkäse" still find the catalogue product, while lookalikes like
 "Hafer-Vollkornkekse" vs. "Haferdrink" deliberately do not), so recipes get real
 prices. Anything unknown becomes a new catalogue entry with a guessed category,
 pack size, allergens and vegan flag. `npm test` locks this behaviour down.
+
+## Repository setup
+
+The daily workflow and the app's `snapshotUrl` both assume this project lives in
+its own repository:
+
+```bash
+git init && git add -A && git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/<owner>/smartkorb-wien.git
+git push -u origin main
+```
+
+Then the workflow under `.github/workflows/` runs on schedule automatically.
+
+**Visibility matters for the snapshot:** `raw.githubusercontent.com` only serves
+files from a *public* repository without a token. In a private repository the
+daily commit still happens, but the app cannot download the file and stays on the
+bundled data. Either make the repository public, or publish `data/snapshot.json`
+somewhere else (S3, Netlify, any static host) and point `expo.extra.snapshotUrl`
+there.
 
 ## Daily updates
 

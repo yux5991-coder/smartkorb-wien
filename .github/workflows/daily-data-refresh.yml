@@ -41,6 +41,20 @@ jobs:
       # the pipeline's own tests — a broken normaliser must not reach the app
       - run: npm test
 
+      # The partner feed is not committed (it can be confidential). Set the
+      # repository secret PARTNER_FEED_URL to a location the pipeline may pull
+      # it from; without the secret the run simply skips that source.
+      - name: Fetch partner feed
+        env:
+          PARTNER_FEED_URL: ${{ secrets.PARTNER_FEED_URL }}
+        run: |
+          if [ -n "$PARTNER_FEED_URL" ]; then
+            curl -sSfL "$PARTNER_FEED_URL" -o data/partner-feed.csv
+            echo "partner feed downloaded ($(wc -l < data/partner-feed.csv) lines)"
+          else
+            echo "no PARTNER_FEED_URL secret set — running without a partner feed"
+          fi
+
       # Branch data changes slowly and Overpass is a shared free service, so it
       # is only queried on Mondays (or on demand).
       - name: Decide whether to refresh branches

@@ -26,7 +26,7 @@
     "scheme": "smartkorb",
     "primaryColor": "#0E7C5A",
     "extra": {
-      "snapshotUrl": "https://raw.githubusercontent.com/<owner>/<repo>/main/data/snapshot.json",
+      "snapshotUrl": "https://raw.githubusercontent.com/yux5991-coder/smartkorb-wien/main/data/snapshot.json",
       "refreshAfterHours": 6
     }
   }
