@@ -148,6 +148,9 @@ export const ShoppingListSheet: React.FC<ShoppingListProps> = ({
               ) : (
                 <Text style={styles.itemStoreText}>Aktuell keine Aktion — Normalpreis</Text>
               )}
+              {item.offer?.condition ? (
+                <Text style={styles.itemCondition}>{item.offer.condition}</Text>
+              ) : null}
             </View>
             <Text style={styles.itemPrice}>{formatPrice(item.price)}</Text>
           </View>
@@ -303,6 +306,12 @@ const styles = StyleSheet.create({
     color: colors.textMuted,
     marginLeft: 4,
     flexShrink: 1,
+  },
+  itemCondition: {
+    fontSize: 10,
+    color: colors.textMuted,
+    fontStyle: 'italic',
+    marginTop: 2,
   },
   itemPrice: {
     fontSize: 15,

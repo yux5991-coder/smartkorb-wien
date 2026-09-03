@@ -241,6 +241,15 @@ export const DiscountsScreen: React.FC = () => {
               </View>
             </View>
 
+            {detail.condition ? (
+              <View style={styles.detailCard}>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.detailLabel}>Bedingung</Text>
+                  <Text style={styles.detailValue}>{detail.condition}</Text>
+                </View>
+              </View>
+            ) : null}
+
             <View style={styles.detailCard}>
               <View style={{ flex: 1 }}>
                 <Text style={styles.detailLabel}>Aktionszeitraum</Text>

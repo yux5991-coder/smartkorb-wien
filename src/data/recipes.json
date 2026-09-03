@@ -2,15 +2,45 @@
   {
     "id": "r-01",
     "title": "Wiener Erdäpfelgulasch",
-    "tags": ["Österreichisch", "Hausmannskost", "Budget"],
-    "dietTags": ["vegan", "vegetarisch", "omnivor"],
-    "allergenFree": ["gluten", "laktose", "nuesse", "ei", "fisch", "soja"],
+    "tags": [
+      "Österreichisch",
+      "Hausmannskost",
+      "Budget"
+    ],
+    "dietTags": [
+      "vegan",
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-05", "grams": 800 },
-      { "productId": "p-06", "grams": 250 },
-      { "productId": "p-08", "grams": 150 },
-      { "productId": "p-40", "grams": 200 },
-      { "productId": "p-41", "grams": 30 }
+      {
+        "productId": "p-05",
+        "grams": 800
+      },
+      {
+        "productId": "p-06",
+        "grams": 250
+      },
+      {
+        "productId": "p-08",
+        "grams": 150
+      },
+      {
+        "productId": "p-40",
+        "grams": 200
+      },
+      {
+        "productId": "p-41",
+        "grams": 30
+      }
     ],
     "instructions": [
       "Zwiebeln fein schneiden und im Olivenöl goldbraun anrösten.",
@@ -26,15 +56,44 @@
   {
     "id": "r-02",
     "title": "Spaghetti Napoli",
-    "tags": ["Italienisch", "Schnell", "Budget"],
-    "dietTags": ["vegan", "vegetarisch", "omnivor"],
-    "allergenFree": ["laktose", "nuesse", "ei", "fisch", "soja"],
+    "tags": [
+      "Italienisch",
+      "Schnell",
+      "Budget"
+    ],
+    "dietTags": [
+      "vegan",
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-38", "grams": 500 },
-      { "productId": "p-40", "grams": 700 },
-      { "productId": "p-06", "grams": 120 },
-      { "productId": "p-12", "grams": 10 },
-      { "productId": "p-41", "grams": 30 }
+      {
+        "productId": "p-38",
+        "grams": 500
+      },
+      {
+        "productId": "p-40",
+        "grams": 700
+      },
+      {
+        "productId": "p-06",
+        "grams": 120
+      },
+      {
+        "productId": "p-12",
+        "grams": 10
+      },
+      {
+        "productId": "p-41",
+        "grams": 30
+      }
     ],
     "instructions": [
       "Spaghetti in Salzwasser bissfest kochen.",
@@ -50,16 +109,49 @@
   {
     "id": "r-03",
     "title": "Gemüsecurry mit Kokosmilch",
-    "tags": ["Asiatisch", "Vegan", "One-Pot"],
-    "dietTags": ["vegan", "vegetarisch", "omnivor"],
-    "allergenFree": ["gluten", "laktose", "nuesse", "ei", "fisch", "soja"],
+    "tags": [
+      "Asiatisch",
+      "Vegan",
+      "One-Pot"
+    ],
+    "dietTags": [
+      "vegan",
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-09", "grams": 300 },
-      { "productId": "p-08", "grams": 250 },
-      { "productId": "p-07", "grams": 200 },
-      { "productId": "p-46", "grams": 400 },
-      { "productId": "p-50", "grams": 60 },
-      { "productId": "p-39", "grams": 300 }
+      {
+        "productId": "p-09",
+        "grams": 300
+      },
+      {
+        "productId": "p-08",
+        "grams": 250
+      },
+      {
+        "productId": "p-07",
+        "grams": 200
+      },
+      {
+        "productId": "p-46",
+        "grams": 400
+      },
+      {
+        "productId": "p-50",
+        "grams": 60
+      },
+      {
+        "productId": "p-39",
+        "grams": 300
+      }
     ],
     "instructions": [
       "Reis nach Packungsanweisung kochen.",
@@ -75,15 +167,43 @@
   {
     "id": "r-04",
     "title": "Hühnerbrust mit Ofengemüse",
-    "tags": ["Mediterran", "Protein", "Ofen"],
-    "dietTags": ["omnivor"],
-    "allergenFree": ["gluten", "laktose", "nuesse", "ei", "fisch", "soja"],
+    "tags": [
+      "Mediterran",
+      "Protein",
+      "Ofen"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-16", "grams": 500 },
-      { "productId": "p-05", "grams": 700 },
-      { "productId": "p-09", "grams": 300 },
-      { "productId": "p-08", "grams": 200 },
-      { "productId": "p-41", "grams": 40 }
+      {
+        "productId": "p-16",
+        "grams": 500
+      },
+      {
+        "productId": "p-05",
+        "grams": 700
+      },
+      {
+        "productId": "p-09",
+        "grams": 300
+      },
+      {
+        "productId": "p-08",
+        "grams": 200
+      },
+      {
+        "productId": "p-41",
+        "grams": 40
+      }
     ],
     "instructions": [
       "Backrohr auf 200 °C vorheizen.",
@@ -99,16 +219,49 @@
   {
     "id": "r-05",
     "title": "Orientalische Linsensuppe",
-    "tags": ["Orientalisch", "Vegan", "Budget"],
-    "dietTags": ["vegan", "vegetarisch", "omnivor"],
-    "allergenFree": ["gluten", "laktose", "nuesse", "ei", "fisch", "soja"],
+    "tags": [
+      "Orientalisch",
+      "Vegan",
+      "Budget"
+    ],
+    "dietTags": [
+      "vegan",
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-42", "grams": 300 },
-      { "productId": "p-07", "grams": 200 },
-      { "productId": "p-06", "grams": 150 },
-      { "productId": "p-40", "grams": 200 },
-      { "productId": "p-13", "grams": 60 },
-      { "productId": "p-41", "grams": 20 }
+      {
+        "productId": "p-42",
+        "grams": 300
+      },
+      {
+        "productId": "p-07",
+        "grams": 200
+      },
+      {
+        "productId": "p-06",
+        "grams": 150
+      },
+      {
+        "productId": "p-40",
+        "grams": 200
+      },
+      {
+        "productId": "p-13",
+        "grams": 60
+      },
+      {
+        "productId": "p-41",
+        "grams": 20
+      }
     ],
     "instructions": [
       "Zwiebel und Karotten würfeln und im Öl anschwitzen.",
@@ -124,15 +277,41 @@
   {
     "id": "r-06",
     "title": "Kaiserschmarrn mit Beeren",
-    "tags": ["Österreichisch", "Süßspeise", "Familienessen"],
-    "dietTags": ["vegetarisch", "omnivor"],
-    "allergenFree": ["nuesse", "fisch", "soja"],
+    "tags": [
+      "Österreichisch",
+      "Süßspeise",
+      "Familienessen"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-44", "grams": 250 },
-      { "productId": "p-24", "grams": 500 },
-      { "productId": "p-31", "grams": 240 },
-      { "productId": "p-26", "grams": 60 },
-      { "productId": "p-57", "grams": 150 }
+      {
+        "productId": "p-44",
+        "grams": 250
+      },
+      {
+        "productId": "p-24",
+        "grams": 500
+      },
+      {
+        "productId": "p-31",
+        "grams": 240
+      },
+      {
+        "productId": "p-26",
+        "grams": 60
+      },
+      {
+        "productId": "p-57",
+        "grams": 150
+      }
     ],
     "instructions": [
       "Mehl, Milch, Eidotter und eine Prise Salz zu einem glatten Teig rühren.",
@@ -148,15 +327,40 @@
   {
     "id": "r-07",
     "title": "Käsespätzle mit Röstzwiebeln",
-    "tags": ["Österreichisch", "Comfort Food"],
-    "dietTags": ["vegetarisch", "omnivor"],
-    "allergenFree": ["nuesse", "fisch", "soja"],
+    "tags": [
+      "Österreichisch",
+      "Comfort Food"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-44", "grams": 400 },
-      { "productId": "p-31", "grams": 180 },
-      { "productId": "p-28", "grams": 200 },
-      { "productId": "p-06", "grams": 200 },
-      { "productId": "p-26", "grams": 50 }
+      {
+        "productId": "p-44",
+        "grams": 400
+      },
+      {
+        "productId": "p-31",
+        "grams": 180
+      },
+      {
+        "productId": "p-28",
+        "grams": 200
+      },
+      {
+        "productId": "p-06",
+        "grams": 200
+      },
+      {
+        "productId": "p-26",
+        "grams": 50
+      }
     ],
     "instructions": [
       "Mehl, Eier, Wasser und Salz zu einem zähen Teig rühren und 15 Minuten rasten lassen.",
@@ -172,15 +376,42 @@
   {
     "id": "r-08",
     "title": "Lachs mit Erdäpfeln und Spinat",
-    "tags": ["Mediterran", "Protein", "Schnell"],
-    "dietTags": ["omnivor"],
-    "allergenFree": ["gluten", "laktose", "nuesse", "ei", "soja"],
+    "tags": [
+      "Mediterran",
+      "Protein",
+      "Schnell"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-20", "grams": 500 },
-      { "productId": "p-05", "grams": 800 },
-      { "productId": "p-11", "grams": 400 },
-      { "productId": "p-13", "grams": 100 },
-      { "productId": "p-41", "grams": 30 }
+      {
+        "productId": "p-20",
+        "grams": 500
+      },
+      {
+        "productId": "p-05",
+        "grams": 800
+      },
+      {
+        "productId": "p-11",
+        "grams": 400
+      },
+      {
+        "productId": "p-13",
+        "grams": 100
+      },
+      {
+        "productId": "p-41",
+        "grams": 30
+      }
     ],
     "instructions": [
       "Erdäpfel in Salzwasser kochen.",
@@ -196,17 +427,48 @@
   {
     "id": "r-09",
     "title": "Faschierte Laibchen mit Erdäpfelpüree",
-    "tags": ["Österreichisch", "Hausmannskost", "Familienessen"],
-    "dietTags": ["omnivor"],
-    "allergenFree": ["nuesse", "fisch", "soja"],
+    "tags": [
+      "Österreichisch",
+      "Hausmannskost",
+      "Familienessen"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-17", "grams": 500 },
-      { "productId": "p-31", "grams": 60 },
-      { "productId": "p-35", "grams": 100 },
-      { "productId": "p-05", "grams": 900 },
-      { "productId": "p-24", "grams": 150 },
-      { "productId": "p-26", "grams": 40 },
-      { "productId": "p-06", "grams": 120 }
+      {
+        "productId": "p-17",
+        "grams": 500
+      },
+      {
+        "productId": "p-31",
+        "grams": 60
+      },
+      {
+        "productId": "p-35",
+        "grams": 100
+      },
+      {
+        "productId": "p-05",
+        "grams": 900
+      },
+      {
+        "productId": "p-24",
+        "grams": 150
+      },
+      {
+        "productId": "p-26",
+        "grams": 40
+      },
+      {
+        "productId": "p-06",
+        "grams": 120
+      }
     ],
     "instructions": [
       "Semmeln einweichen, ausdrücken und mit Faschiertem, Ei und Zwiebel verkneten.",
@@ -222,15 +484,41 @@
   {
     "id": "r-10",
     "title": "Klassisches Rindsgulasch",
-    "tags": ["Österreichisch", "Sonntagsessen"],
-    "dietTags": ["omnivor"],
-    "allergenFree": ["laktose", "nuesse", "ei", "fisch", "soja"],
+    "tags": [
+      "Österreichisch",
+      "Sonntagsessen"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-19", "grams": 700 },
-      { "productId": "p-06", "grams": 700 },
-      { "productId": "p-40", "grams": 150 },
-      { "productId": "p-41", "grams": 30 },
-      { "productId": "p-35", "grams": 200 }
+      {
+        "productId": "p-19",
+        "grams": 700
+      },
+      {
+        "productId": "p-06",
+        "grams": 700
+      },
+      {
+        "productId": "p-40",
+        "grams": 150
+      },
+      {
+        "productId": "p-41",
+        "grams": 30
+      },
+      {
+        "productId": "p-35",
+        "grams": 200
+      }
     ],
     "instructions": [
       "Zwiebeln in reichlich Öl dunkelbraun rösten.",
@@ -246,16 +534,47 @@
   {
     "id": "r-11",
     "title": "Polenta mit Champignonragout",
-    "tags": ["Italienisch", "Vegetarisch", "Glutenfrei"],
-    "dietTags": ["vegetarisch", "omnivor"],
-    "allergenFree": ["gluten", "nuesse", "ei", "fisch", "soja"],
+    "tags": [
+      "Italienisch",
+      "Vegetarisch",
+      "Glutenfrei"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-45", "grams": 250 },
-      { "productId": "p-10", "grams": 500 },
-      { "productId": "p-06", "grams": 120 },
-      { "productId": "p-30", "grams": 100 },
-      { "productId": "p-28", "grams": 60 },
-      { "productId": "p-41", "grams": 20 }
+      {
+        "productId": "p-45",
+        "grams": 250
+      },
+      {
+        "productId": "p-10",
+        "grams": 500
+      },
+      {
+        "productId": "p-06",
+        "grams": 120
+      },
+      {
+        "productId": "p-30",
+        "grams": 100
+      },
+      {
+        "productId": "p-28",
+        "grams": 60
+      },
+      {
+        "productId": "p-41",
+        "grams": 20
+      }
     ],
     "instructions": [
       "Polenta in der vierfachen Menge Salzwasser einrühren und 10 Minuten quellen lassen.",
@@ -271,17 +590,53 @@
   {
     "id": "r-12",
     "title": "Kichererbsen-Bowl mit Avocado",
-    "tags": ["Orientalisch", "Vegan", "Meal Prep"],
-    "dietTags": ["vegan", "vegetarisch", "omnivor"],
-    "allergenFree": ["gluten", "laktose", "nuesse", "ei", "fisch", "soja"],
+    "tags": [
+      "Orientalisch",
+      "Vegan",
+      "Meal Prep"
+    ],
+    "dietTags": [
+      "vegan",
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "gluten",
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-43", "grams": 800 },
-      { "productId": "p-14", "grams": 200 },
-      { "productId": "p-03", "grams": 250 },
-      { "productId": "p-04", "grams": 200 },
-      { "productId": "p-13", "grams": 50 },
-      { "productId": "p-41", "grams": 25 },
-      { "productId": "p-39", "grams": 250 }
+      {
+        "productId": "p-43",
+        "grams": 800
+      },
+      {
+        "productId": "p-14",
+        "grams": 200
+      },
+      {
+        "productId": "p-03",
+        "grams": 250
+      },
+      {
+        "productId": "p-04",
+        "grams": 200
+      },
+      {
+        "productId": "p-13",
+        "grams": 50
+      },
+      {
+        "productId": "p-41",
+        "grams": 25
+      },
+      {
+        "productId": "p-39",
+        "grams": 250
+      }
     ],
     "instructions": [
       "Reis kochen und auskühlen lassen.",
@@ -297,14 +652,40 @@
   {
     "id": "r-13",
     "title": "Overnight Oats mit Beeren",
-    "tags": ["Frühstück", "Vegan", "Meal Prep"],
-    "dietTags": ["vegan", "vegetarisch", "omnivor"],
-    "allergenFree": ["laktose", "nuesse", "ei", "fisch", "soja"],
+    "tags": [
+      "Frühstück",
+      "Vegan",
+      "Meal Prep"
+    ],
+    "dietTags": [
+      "vegan",
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-49", "grams": 200 },
-      { "productId": "p-33", "grams": 500 },
-      { "productId": "p-57", "grams": 200 },
-      { "productId": "p-02", "grams": 240 }
+      {
+        "productId": "p-49",
+        "grams": 200
+      },
+      {
+        "productId": "p-33",
+        "grams": 500
+      },
+      {
+        "productId": "p-57",
+        "grams": 200
+      },
+      {
+        "productId": "p-02",
+        "grams": 240
+      }
     ],
     "instructions": [
       "Haferflocken mit Haferdrink verrühren und über Nacht kühl stellen.",
@@ -319,14 +700,38 @@
   {
     "id": "r-14",
     "title": "Caprese mit Vollkornbrot",
-    "tags": ["Italienisch", "Vegetarisch", "Schnell"],
-    "dietTags": ["vegetarisch", "omnivor"],
-    "allergenFree": ["nuesse", "ei", "fisch", "soja"],
+    "tags": [
+      "Italienisch",
+      "Vegetarisch",
+      "Schnell"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "ei",
+      "fisch",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-32", "grams": 250 },
-      { "productId": "p-03", "grams": 500 },
-      { "productId": "p-41", "grams": 30 },
-      { "productId": "p-34", "grams": 200 }
+      {
+        "productId": "p-32",
+        "grams": 250
+      },
+      {
+        "productId": "p-03",
+        "grams": 500
+      },
+      {
+        "productId": "p-41",
+        "grams": 30
+      },
+      {
+        "productId": "p-34",
+        "grams": 200
+      }
     ],
     "instructions": [
       "Tomaten und Mozzarella in Scheiben schneiden.",
@@ -342,17 +747,49 @@
   {
     "id": "r-15",
     "title": "Thunfisch-Nudelsalat",
-    "tags": ["Mediterran", "Meal Prep", "Schnell"],
-    "dietTags": ["omnivor"],
-    "allergenFree": ["laktose", "nuesse", "ei", "soja"],
+    "tags": [
+      "Mediterran",
+      "Meal Prep",
+      "Schnell"
+    ],
+    "dietTags": [
+      "omnivor"
+    ],
+    "allergenFree": [
+      "laktose",
+      "nuesse",
+      "ei",
+      "soja"
+    ],
     "ingredients": [
-      { "productId": "p-21", "grams": 240 },
-      { "productId": "p-38", "grams": 400 },
-      { "productId": "p-03", "grams": 300 },
-      { "productId": "p-04", "grams": 200 },
-      { "productId": "p-06", "grams": 80 },
-      { "productId": "p-41", "grams": 30 },
-      { "productId": "p-13", "grams": 40 }
+      {
+        "productId": "p-21",
+        "grams": 240
+      },
+      {
+        "productId": "p-38",
+        "grams": 400
+      },
+      {
+        "productId": "p-03",
+        "grams": 300
+      },
+      {
+        "productId": "p-04",
+        "grams": 200
+      },
+      {
+        "productId": "p-06",
+        "grams": 80
+      },
+      {
+        "productId": "p-41",
+        "grams": 30
+      },
+      {
+        "productId": "p-13",
+        "grams": 40
+      }
     ],
     "instructions": [
       "Nudeln kochen, abschrecken und auskühlen lassen.",
@@ -364,5 +801,151 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/thunfisch-nudelsalat.jpg",
     "emoji": "🥗"
+  },
+  {
+    "id": "r-16",
+    "title": "Schnelle Gnocchi-Pfanne mit Pesto",
+    "tags": [
+      "Italienisch",
+      "Schnell",
+      "Fertig & Convenience"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "ei",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-64",
+        "grams": 500
+      },
+      {
+        "productId": "p-70",
+        "grams": 120
+      },
+      {
+        "productId": "p-03",
+        "grams": 250
+      },
+      {
+        "productId": "p-32",
+        "grams": 125
+      }
+    ],
+    "instructions": [
+      "Gnocchi ohne Vorkochen in etwas Öl 6 Minuten goldbraun braten.",
+      "Halbierte Tomaten zugeben und kurz mitbraten.",
+      "Pfanne vom Herd nehmen und das Pesto unterrühren.",
+      "Mit Mozzarella-Stücken bestreuen und sofort servieren."
+    ],
+    "cookingTimeMin": 15,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/gnocchi-pfanne.jpg",
+    "emoji": "🥟"
+  },
+  {
+    "id": "r-17",
+    "title": "Knödel mit Ei und Blattsalat",
+    "tags": [
+      "Österreichisch",
+      "Resteküche",
+      "Fertig & Convenience"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-66",
+        "grams": 320
+      },
+      {
+        "productId": "p-31",
+        "grams": 240
+      },
+      {
+        "productId": "p-73",
+        "grams": 200
+      },
+      {
+        "productId": "p-06",
+        "grams": 100
+      },
+      {
+        "productId": "p-26",
+        "grams": 30
+      }
+    ],
+    "instructions": [
+      "Semmelknödel in Scheiben schneiden und in Butter anrösten.",
+      "Zwiebelringe mitrösten, bis sie Farbe nehmen.",
+      "Verquirlte Eier darübergeben und stocken lassen.",
+      "Mit gewaschenem Blattsalat und Kürbiskernöl servieren."
+    ],
+    "cookingTimeMin": 20,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/knoedel-mit-ei.jpg",
+    "emoji": "🍳"
+  },
+  {
+    "id": "r-18",
+    "title": "TK-Pizza aufgepeppt",
+    "tags": [
+      "Italienisch",
+      "Schnell",
+      "Fertig & Convenience"
+    ],
+    "dietTags": [
+      "vegetarisch",
+      "omnivor"
+    ],
+    "allergenFree": [
+      "nuesse",
+      "fisch",
+      "soja"
+    ],
+    "ingredients": [
+      {
+        "productId": "p-85",
+        "grams": 700
+      },
+      {
+        "productId": "p-03",
+        "grams": 200
+      },
+      {
+        "productId": "p-10",
+        "grams": 125
+      },
+      {
+        "productId": "p-11",
+        "grams": 100
+      },
+      {
+        "productId": "p-32",
+        "grams": 125
+      }
+    ],
+    "instructions": [
+      "Backrohr auf 220 °C vorheizen.",
+      "Tiefkühlpizzen mit Tomatenscheiben, Champignons und Spinat belegen.",
+      "Mozzarella darüber zupfen.",
+      "10-12 Minuten backen, bis der Rand knusprig ist."
+    ],
+    "cookingTimeMin": 18,
+    "servings": 4,
+    "imageUrl": "https://cdn.smartkorb.example/recipes/tk-pizza.jpg",
+    "emoji": "🍕"
   }
 ]

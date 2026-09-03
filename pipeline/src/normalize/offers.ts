@@ -101,11 +101,12 @@ export const normalizeOffers = (
       validFrom,
       validTo: validTo < validFrom ? validFrom : validTo,
       source: options.source,
+      ...(offer.condition ? { condition: offer.condition } : {}),
       ...(offer.sourceUrl ? { sourceUrl: offer.sourceUrl } : {}),
     };
 
     // the same product can appear twice in a feed — keep the better price
-    const key = `${discount.retailerId}|${discount.storeId ?? '*'}|${discount.productId}|${discount.validFrom}`;
+    const key = `${discount.retailerId}|${discount.storeId ?? '*'}|${discount.productId}|${discount.validFrom}|${discount.condition ?? ''}`;
     const existing = byKey.get(key);
     if (existing) {
       stats.droppedDuplicate += 1;

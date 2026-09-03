@@ -51,7 +51,7 @@ export const StoreMap: React.FC<StoreMapProps> = ({ items, selectedStoreId, onSe
         showsPointsOfInterests={false}
         toolbarEnabled={false}
       >
-        {visible.map(({ store, retailer, offerCount }) => (
+        {visible.map(({ store, retailer }) => (
           <Marker
             key={store.id}
             identifier={store.id}
@@ -60,11 +60,7 @@ export const StoreMap: React.FC<StoreMapProps> = ({ items, selectedStoreId, onSe
             tracksViewChanges={false}
             anchor={{ x: 0.5, y: 1 }}
           >
-            <StoreMarker
-              retailer={retailer}
-              offerCount={offerCount}
-              selected={selectedStoreId === store.id}
-            />
+            <StoreMarker retailer={retailer} selected={selectedStoreId === store.id} />
           </Marker>
         ))}
       </MapView>

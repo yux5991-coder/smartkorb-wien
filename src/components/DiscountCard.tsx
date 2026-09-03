@@ -44,6 +44,14 @@ export const DiscountCard: React.FC<Props> = ({ discount, onPress, hideStore = f
           <Text style={styles.oldPrice}>{formatPrice(discount.originalPrice)}</Text>
         </View>
 
+        {discount.condition ? (
+          <View style={styles.conditionPill}>
+            <Text style={styles.conditionText} numberOfLines={1}>
+              {discount.condition}
+            </Text>
+          </View>
+        ) : null}
+
         <View style={styles.footerRow}>
           {store ? null : <Text style={styles.scope}>in allen Filialen</Text>}
           <View style={styles.retailerRow}>
@@ -146,5 +154,18 @@ const styles = StyleSheet.create({
     color: colors.primary,
     fontWeight: '600',
     marginBottom: 2,
+  },
+  conditionPill: {
+    alignSelf: 'flex-start',
+    backgroundColor: colors.surfaceMuted,
+    borderRadius: radius.sm,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    marginTop: spacing.xs,
+  },
+  conditionText: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: colors.textMuted,
   },
 });

@@ -29,6 +29,21 @@ interface CatalogState {
 
 const MS_PER_HOUR = 60 * 60 * 1000;
 
+/** Technical failures are logged; the user gets a sentence they can act on. */
+const friendlyError = (error: unknown): string => {
+  const message = error instanceof Error ? error.message : String(error);
+  if (/no snapshot URL configured/i.test(message)) {
+    return 'Keine Datenquelle konfiguriert — es werden die mitgelieferten Demodaten angezeigt.';
+  }
+  if (/HTTP 4\d\d/.test(message)) {
+    return 'Die Aktionsdaten sind derzeit nicht abrufbar. Angezeigt werden die zuletzt geladenen Daten.';
+  }
+  if (/abort/i.test(message)) {
+    return 'Zeitüberschreitung beim Laden der Aktionen — bitte später erneut versuchen.';
+  }
+  return 'Keine Verbindung zu den Aktionsdaten. Angezeigt werden die zuletzt geladenen Daten.';
+};
+
 const isStale = (fetchedAt: string | null): boolean => {
   if (!fetchedAt) return true;
   return Date.now() - new Date(fetchedAt).getTime() > REFRESH_AFTER_HOURS * MS_PER_HOUR;
@@ -80,10 +95,8 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
       });
     } catch (error) {
       // keep whatever is on screen — stale data beats an empty app
-      set({
-        status: 'error',
-        error: error instanceof Error ? error.message : 'Aktualisierung fehlgeschlagen',
-      });
+      console.warn('[SmartKorb] snapshot refresh failed:', error);
+      set({ status: 'error', error: friendlyError(error) });
     }
   },
 }));

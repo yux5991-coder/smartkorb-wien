@@ -1,49 +1,54 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
+import { getRetailerLogo } from '../assets/retailerLogos';
 import { colors } from '../theme';
 import type { Retailer } from '../types';
 
 interface Props {
   retailer: Retailer;
-  /** Number of running offers, rendered as a small counter bubble. */
-  offerCount: number;
   selected?: boolean;
 }
 
 /**
- * Content of a custom `<Marker>` on the map — a rounded logo badge with a
- * pointer, instead of the platform default pin.
+ * Content of a custom `<Marker>`: the chain's logo on a white tile with a
+ * pointer in the chain colour, instead of the platform default pin. The colour
+ * keeps the chains apart at a glance even where the logos look similar.
  */
-export const StoreMarker: React.FC<Props> = ({ retailer, offerCount, selected = false }) => (
-  <View style={styles.wrapper}>
-    <View
-      style={[
-        styles.bubble,
-        { backgroundColor: retailer.logoColor },
-        selected && styles.bubbleSelected,
-      ]}
-    >
-      <Text style={[styles.initials, { color: retailer.logoTextColor }]} allowFontScaling={false}>
-        {retailer.logoInitials}
-      </Text>
-    </View>
-    <View style={[styles.pointer, { borderTopColor: retailer.logoColor }]} />
-    {offerCount > 0 ? (
-      <View style={styles.counter}>
-        <Text style={styles.counterText} allowFontScaling={false}>
-          {offerCount}
-        </Text>
+export const StoreMarker: React.FC<Props> = ({ retailer, selected = false }) => {
+  const logo = getRetailerLogo(retailer.id);
+
+  return (
+    <View style={styles.wrapper}>
+      <View
+        style={[
+          styles.bubble,
+          { borderColor: retailer.logoColor },
+          selected && styles.bubbleSelected,
+        ]}
+      >
+        {logo ? (
+          <Image source={logo} style={styles.logo} resizeMode="contain" />
+        ) : (
+          <Text
+            style={[styles.initials, { color: retailer.logoColor }]}
+            allowFontScaling={false}
+            numberOfLines={1}
+          >
+            {retailer.logoInitials}
+          </Text>
+        )}
       </View>
-    ) : null}
-  </View>
-);
+      <View style={[styles.pointer, { borderTopColor: retailer.logoColor }]} />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   wrapper: {
     alignItems: 'center',
-    width: 56,
-    height: 56,
+    width: 48,
+    height: 50,
   },
   bubble: {
     width: 38,
@@ -51,15 +56,19 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
     borderWidth: 2,
-    borderColor: '#FFFFFF',
   },
   bubbleSelected: {
     borderColor: colors.text,
-    transform: [{ scale: 1.12 }],
+    transform: [{ scale: 1.14 }],
+  },
+  logo: {
+    width: 28,
+    height: 28,
   },
   initials: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '800',
   },
   pointer: {
@@ -71,22 +80,5 @@ const styles = StyleSheet.create({
     borderLeftColor: 'transparent',
     borderRightColor: 'transparent',
     marginTop: -1,
-  },
-  counter: {
-    position: 'absolute',
-    top: -6,
-    right: 2,
-    minWidth: 18,
-    height: 18,
-    paddingHorizontal: 4,
-    borderRadius: 9,
-    backgroundColor: colors.text,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  counterText: {
-    color: colors.textInverse,
-    fontSize: 10,
-    fontWeight: '800',
   },
 });

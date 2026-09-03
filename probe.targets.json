@@ -1,0 +1,8 @@
+[
+  {
+    "id": "example-shape",
+    "retailerId": "billa",
+    "url": "https://dummyjson.com/products?limit=5",
+    "note": "Harmless public test API — proves the probe works end to end. Replace these entries with the endpoints you actually want to inspect."
+  }
+]

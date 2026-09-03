@@ -16,11 +16,11 @@ export type RecipeId = string;
 export interface Retailer {
   id: RetailerId;
   name: string;
-  /** Brand-ish background colour used for the placeholder logo. */
+  /** Brand colour — used for the marker outline and as the logo fallback. */
   logoColor: string;
   /** Foreground colour for the initials drawn on `logoColor`. */
   logoTextColor: string;
-  /** 1-2 characters shown inside the round placeholder logo. */
+  /** 1-2 characters shown when no logo image is available. */
   logoInitials: string;
 }
 
@@ -42,6 +42,7 @@ export type ProductCategory =
   | 'Fleisch & Fisch'
   | 'Milchprodukte'
   | 'Brot & Gebäck'
+  | 'Fertig & Convenience'
   | 'Vorratskammer'
   | 'Getränke'
   | 'Tiefkühl'
@@ -65,6 +66,11 @@ export interface Product {
   emoji: string;
   allergens: Allergen[];
   vegan: boolean;
+  /**
+   * Ready meals, chilled convenience and frozen dishes — the things people
+   * actually buy on offer next to raw ingredients.
+   */
+  convenience?: boolean;
 }
 
 /**
@@ -87,6 +93,11 @@ export interface Discount {
   validFrom: string;
   /** ISO date (YYYY-MM-DD), inclusive. */
   validTo: string;
+  /**
+   * Strings the flyers print next to the price: "nur mit Jö Bonus Club",
+   * "ab 2 Stück", "nur Samstag". Shown on the offer card.
+   */
+  condition?: string;
   /** Where this row came from — e.g. "billa-api", "partner-csv", "mock". */
   source?: string;
   /** Deep link to the offer at the retailer, when the source provides one. */

@@ -1,0 +1,45 @@
+# Inspect a candidate offer endpoint and get an adapter config proposal.
+#
+# Manual only. Open the chain's own website, look at the network requests its
+# offer page makes (DevTools → Network → Fetch/XHR), copy the request URL and
+# run this workflow with it. The job prints what the response looks like and
+# uploads a ready-to-review `sources.config.json` snippet as an artifact.
+#
+# This performs plain GET requests, like a browser. Whether the data may then be
+# used is a question of the retailer's terms of use — see README.
+name: Probe offer source
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'Endpoint URL to inspect'
+        required: true
+      retailer:
+        description: 'retailerId (spar, billa, billaplus, hofer, lidl, penny)'
+        required: true
+        default: 'billa'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+
+      - name: Probe
+        run: npm run data:probe -- --url "${{ inputs.url }}" --retailer "${{ inputs.retailer }}"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: probe-result
+          path: .probe/
+          retention-days: 7
+          if-no-files-found: warn

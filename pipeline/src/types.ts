@@ -38,6 +38,8 @@ export interface RawOffer {
   validFrom?: string;
   /** ISO date; defaults to the end of the week when the source does not say. */
   validTo?: string;
+  /** Flyer small print: "nur mit Jö Bonus Club", "ab 2 Stück", "nur Samstag". */
+  condition?: string;
   sourceUrl?: string;
 }
 

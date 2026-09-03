@@ -31,17 +31,24 @@ Requirements: Node.js 20+, Expo SDK 57.
 | `npm run data:refresh -- --update-seed` | also rewrite the bundled fallback branch list |
 | `npm run data:check` | run everything, write nothing |
 | `npm run feed:check -- <file.csv>` | validate a partner delivery before using it |
+| `npm run data:seed` | regenerate the offers bundled with the app |
+| `npm run data:probe -- --url <url>` | inspect a candidate offer endpoint and propose an adapter config |
 
 ## The four sections
 
-1. **Karte** — every branch on a map of Vienna, drawn as a *custom* marker
-   (chain colour, initials, offer counter) rather than a default pin. Tapping a
-   marker opens the branch with its address, opening hours and all offers valid
-   there. With the full OpenStreetMap dataset the city has several hundred
-   branches, so only the markers inside the current viewport are mounted.
+1. **Karte** — every branch on a map of Vienna, drawn as a *custom* marker: the
+   chain's logo on a white tile with a pointer in the chain colour, so the
+   chains stay apart at a glance. Tapping a marker opens the branch with its
+   address, opening hours and all offers valid there. With the full
+   OpenStreetMap dataset the city has several hundred branches, so only the
+   markers inside the current viewport are mounted.
 2. **Rabatte** — one mixed feed of every running offer, with debounced live
    search, chain chips, a filter sheet (chains, category, minimum discount,
-   sorting) and pull-to-refresh for a fresh snapshot.
+   sorting) and pull-to-refresh for a fresh snapshot. Cards show the flyer small
+   print where there is any ("nur mit Jö Bonus Club", "ab 2 Stück", "nur am
+   Samstag") and whether the offer runs chain-wide or in one branch. Ready meals
+   and chilled convenience are in the feed next to raw produce — their own
+   category, `Fertig & Convenience`.
 3. **Kulinarik** — recipe grid with cuisine / time / diet filters and two
    assistant features (`Premium` badge): **„Was koche ich?“** ranks recipes
    against today's offers and the saved profile, **„Ich möchte X kochen“** turns
@@ -118,6 +125,42 @@ OSM data is licensed under the **ODbL**: the app credits
 to stay under the same licence. Overpass is a free shared service — the workflow
 therefore queries it once a week, not on every run.
 
+## Chain logos
+
+`assets/logos/<retailerId>.png` holds the artwork the app shows on the map and
+on every offer card. The committed files are **placeholders** (a coloured badge
+with the chain's initials). To ship the real thing, overwrite them with the
+official artwork from each chain's press kit — same names, square, transparent
+background, ~240 × 240 px; no code change is needed, and if a file is missing the
+UI falls back to the initials badge.
+
+Logos are trademarks. Using them to identify the shop an offer belongs to is the
+normal, referential use an offer aggregator makes of them, but they must not be
+altered, recoloured or used as SmartKorb's own branding, and whether they may be
+redistributed inside a public repository depends on each chain's brand
+guidelines — check before committing them.
+
+## Demo offers
+
+Until a retailer feed is connected, the pipeline generates the feed itself — and
+"demo" is not allowed to mean "implausible", because the offer list is what the
+whole app is judged on. `pipeline/src/sources/mockOffers.ts` models how the
+chains actually promote:
+
+- Billa / Billa Plus / Spar run a Thursday-to-Wednesday flyer with many items, a
+  large share tied to the loyalty programme ("nur mit Jö Bonus Club", "nur mit
+  SPAR Clubkarte"); Hofer / Lidl / Penny run Monday-to-Saturday with fewer but
+  deeper cuts and the occasional single-day special ("Super Samstag").
+- Discounts come from the ladder the flyers advertise (−20/−25/−30/−33/−40/−50 %),
+  and both the shelf price and the promo price are searched so that they land on
+  endings a price tag really shows (…,99 / …,49 / …,29) *and* still produce
+  exactly that percentage — no "2,31 statt 2,89".
+- Ready meals and convenience are promoted as heavily as raw produce.
+
+That is roughly 270 offers per week across the six chains. `npm run data:seed`
+regenerates the copy bundled with the app; the pipeline uses the same generator
+for the snapshot, so there is only ever one set of numbers.
+
 ## Real offer data
 
 **There is no public, documented API for Austrian grocery discounts.** The
@@ -154,7 +197,23 @@ plugged in. Three ways to do that, in order of how defensible they are:
    **templates** (`billa-web`, `spar-web`) that show the shape: `url` with
    `{page}` / `{pageSize}`, `itemsPath` to the array, `map` with dot paths per
    field, `priceDivisor: 100` for cent-based APIs, `requestDelayMs` for polite
-   pacing. The URLs in the templates are placeholders — before enabling one you
+   pacing.
+
+   You do not have to reverse-engineer that shape by hand. Open the chain's
+   offer page, copy the request its own site makes (DevTools → Network →
+   Fetch/XHR) and run:
+
+   ```bash
+   npm run data:probe -- --url "<the URL you copied>" --retailer billa
+   ```
+
+   The probe fetches it, finds the array of offers, guesses which fields hold
+   the name, both prices, the pack size and the validity dates, and writes a
+   ready-to-review config snippet to `.probe/`. The same thing runs as the
+   **Probe offer source** workflow (manual trigger) if you would rather do it
+   from the GitHub UI — it uploads the result as an artifact.
+
+   The URLs in the templates are placeholders. Before enabling such a source you
    have to point it at the real endpoint **and** check that retailer's terms of
    use and robots policy. Scraping without permission is a legal risk, not a
    technical one, and an endpoint can change without notice; that is why the
@@ -175,18 +234,18 @@ its own repository:
 ```bash
 git init && git add -A && git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/<owner>/smartkorb-wien.git
+git remote add origin https://github.com/yux5991-coder/smartkorb-wien.git
 git push -u origin main
 ```
 
 Then the workflow under `.github/workflows/` runs on schedule automatically.
 
 **Visibility matters for the snapshot:** `raw.githubusercontent.com` only serves
-files from a *public* repository without a token. In a private repository the
-daily commit still happens, but the app cannot download the file and stays on the
-bundled data. Either make the repository public, or publish `data/snapshot.json`
-somewhere else (S3, Netlify, any static host) and point `expo.extra.snapshotUrl`
-there.
+files from a *public* repository without a token. This project's repository is
+public, which is what makes `expo.extra.snapshotUrl` work as configured. If it is
+ever made private, the daily commit still happens but the app can no longer
+download the file — publish `data/snapshot.json` somewhere else (S3, Netlify, any
+static host) and point the URL there.
 
 ## Daily updates
 
@@ -240,9 +299,10 @@ scripts/           Windows refresh script
 ```ts
 retailers   { id, name, logoColor, logoTextColor, logoInitials }
 stores      { id, retailerId, name, address, district, lat, lng, openingHours }
-products    { id, name, category, unit, baseGrams, basePrice, emoji, allergens, vegan }
+products    { id, name, category, unit, baseGrams, basePrice, emoji, allergens, vegan,
+              convenience? }
 discounts   { id, retailerId, storeId | null, productId, originalPrice, discountPrice,
-              discountPercent, validFrom, validTo, source?, sourceUrl? }
+              discountPercent, validFrom, validTo, condition?, source?, sourceUrl? }
 recipes     { id, title, tags[], dietTags[], allergenFree[], ingredients[{ productId, grams }],
               instructions[], cookingTimeMin, servings, imageUrl, emoji }
 userProfile { dietPreference, allergies[], budgetPerPortion, savedRecipeIds[], activityLog[],
@@ -251,7 +311,9 @@ userProfile { dietPreference, allergies[], budgetPerPortion, savedRecipeIds[], a
 
 `storeId: null` means the offer runs in every branch of that chain — the normal
 case for a weekly flyer. Branch-specific offers carry the branch id and are shown
-with its district.
+with its district. `condition` is the small print the flyer prints next to the
+price and `convenience` marks ready meals and chilled convenience, which get
+their own category in the feed.
 
 ## AI features
 
@@ -278,9 +340,8 @@ needs a Google Maps API key in `app.json` (`android.config.googleMaps.apiKey`).
 ## Product photos
 
 Product and recipe images are emoji placeholders (`PlaceholderImage`). The
-`imageUrl` field exists in the model for real photography; chain logos are
-neutral placeholder badges (coloured circle + initials), deliberately not the
-real trademarks.
+`imageUrl` field exists in the model for real photography. Chain logos are a
+separate matter — see "Chain logos" above.
 
 ## Deliberately out of scope
 

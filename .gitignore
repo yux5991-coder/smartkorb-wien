@@ -42,3 +42,6 @@ yarn-error.*
 
 # partner deliveries (may be confidential) - the example file is committed instead
 data/partner-feed.csv
+
+# probe output (raw third-party responses)
+.probe/

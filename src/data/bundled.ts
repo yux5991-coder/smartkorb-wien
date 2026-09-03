@@ -9,6 +9,7 @@
 import type { Catalog, Discount, Product, Recipe, Retailer, Store } from '../types';
 
 import discountsJson from './discounts.json';
+import seedMeta from './seed-meta.json';
 import productsJson from './products.json';
 import recipesJson from './recipes.json';
 import retailersJson from './retailers.json';
@@ -17,12 +18,12 @@ import storesJson from './stores.json';
 /**
  * DEMO MODE
  * ---------
- * The bundled offers were authored for the week of `REFERENCE_DATE`. So the
- * seed data never looks expired, the bundled dates are shifted to the current
- * week. Snapshots coming from the pipeline carry real dates and are never
- * shifted — see `shiftDemoDates` below.
+ * The bundled offers were generated for the flyer week of `REFERENCE_DATE`
+ * (see `npm run data:seed`). So the fallback never looks expired, the bundled
+ * dates are shifted by the distance between that day and today. Snapshots from
+ * the pipeline carry real dates and are never shifted.
  */
-const REFERENCE_DATE = '2026-09-03';
+const REFERENCE_DATE = seedMeta.referenceDate;
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
 const toUtcDate = (isoDate: string) => new Date(`${isoDate}T00:00:00Z`);

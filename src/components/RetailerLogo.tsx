@@ -1,6 +1,7 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
+import { getRetailerLogo } from '../assets/retailerLogos';
 import type { Retailer } from '../types';
 
 interface Props {
@@ -11,33 +12,69 @@ interface Props {
 }
 
 /**
- * Placeholder logo: a coloured circle with the chain's initials.
- * Deliberately NOT the real trademark — swap for licensed assets later.
+ * The chain's logo. Falls back to a coloured badge with its initials when no
+ * artwork is bundled for that chain (see `src/assets/retailerLogos.ts`).
  */
-export const RetailerLogo: React.FC<Props> = ({ retailer, size = 36, bordered = false }) => (
-  <View
-    style={[
-      styles.circle,
-      {
-        width: size,
-        height: size,
-        borderRadius: size / 2,
-        backgroundColor: retailer.logoColor,
-        borderWidth: bordered ? 2 : 0,
-      },
-    ]}
-  >
-    <Text
-      style={[styles.initials, { color: retailer.logoTextColor, fontSize: size * 0.4 }]}
-      numberOfLines={1}
-      allowFontScaling={false}
+export const RetailerLogo: React.FC<Props> = ({ retailer, size = 36, bordered = false }) => {
+  const [failed, setFailed] = useState(false);
+  const logo = getRetailerLogo(retailer.id);
+
+  if (logo && !failed) {
+    return (
+      <View
+        style={[
+          styles.imageWrap,
+          {
+            width: size,
+            height: size,
+            borderRadius: size / 2,
+            borderWidth: bordered ? 2 : 0,
+          },
+        ]}
+      >
+        <Image
+          source={logo}
+          style={{ width: size * 0.86, height: size * 0.86 }}
+          resizeMode="contain"
+          onError={() => setFailed(true)}
+          accessibilityLabel={retailer.name}
+        />
+      </View>
+    );
+  }
+
+  return (
+    <View
+      style={[
+        styles.circle,
+        {
+          width: size,
+          height: size,
+          borderRadius: size / 2,
+          backgroundColor: retailer.logoColor,
+          borderWidth: bordered ? 2 : 0,
+        },
+      ]}
     >
-      {retailer.logoInitials}
-    </Text>
-  </View>
-);
+      <Text
+        style={[styles.initials, { color: retailer.logoTextColor, fontSize: size * 0.4 }]}
+        numberOfLines={1}
+        allowFontScaling={false}
+      >
+        {retailer.logoInitials}
+      </Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
+  imageWrap: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
+    borderColor: '#FFFFFF',
+    overflow: 'hidden',
+  },
   circle: {
     alignItems: 'center',
     justifyContent: 'center',

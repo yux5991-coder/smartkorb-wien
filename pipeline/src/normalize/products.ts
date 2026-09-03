@@ -14,6 +14,7 @@ const CATEGORY_KEYWORDS: [ProductCategory, RegExp][] = [
   ['Milchprodukte', /milch|joghurt|butter|käse|gouda|bergkäse|topfen|obers|sahne|ei\b|eier|mozzarella|rahm|frischkäse|skyr|haferdrink|sojadrink|mandeldrink/i],
   ['Brot & Gebäck', /brot|semmel|weckerl|toast|croissant|gebäck|kipferl|baguette|striezel|brioche/i],
   ['Tiefkühl', /tk-|tiefkühl|gefroren|eis\b|pizza tk/i],
+  ['Fertig & Convenience', /fertig|convenience|aufstrich|hummus|pesto|sugo|knödel|gnocchi|spätzle|salat gewaschen|wrap|sushi|falafel|patties|cordon|paniert|suppe|teig|leberkäse|püree|menü|snack-box/i],
   ['Getränke', /wasser|saft|limonade|cola|bier|wein|kaffee|tee|energy|smoothie|spritzer/i],
   ['Süßes & Snacks', /schokolade|keks|riegel|chips|salzstang|snack|zucker|bonbon|gummibär|studentenfutter|nüsse|kuchen|torte/i],
   ['Vorratskammer', /nudel|spaghetti|pasta|reis|mehl|öl|essig|tomaten|linsen|kichererbsen|bohnen|polenta|kokosmilch|erdnussbutter|honig|hafer|gewürz|sauce|dose|konserve|müsli|marmelade/i],
@@ -35,6 +36,7 @@ const EMOJI_BY_CATEGORY: Record<ProductCategory, string> = {
   'Fleisch & Fisch': '🥩',
   Milchprodukte: '🥛',
   'Brot & Gebäck': '🍞',
+  'Fertig & Convenience': '🍱',
   Vorratskammer: '🥫',
   Getränke: '🥤',
   Tiefkühl: '🧊',
@@ -115,6 +117,7 @@ export const guessAllergens = (name: string): Allergen[] =>
 
 export const guessVegan = (name: string, category?: ProductCategory): boolean => {
   if (category === 'Fleisch & Fisch') return false;
+  if (category === 'Fertig & Convenience') return /vegan|veggie|falafel|hummus/i.test(name) && !NON_VEGAN.test(name);
   if (category === 'Milchprodukte') return /drink|pflanzlich|vegan|soja|hafer|mandel/i.test(name);
   return !NON_VEGAN.test(name);
 };

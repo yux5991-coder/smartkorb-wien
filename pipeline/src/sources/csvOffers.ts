@@ -7,7 +7,7 @@
  * way to test the pipeline with real numbers.
  *
  * Expected header (order does not matter):
- *   retailerId,productName,unit,category,originalPrice,discountPrice,validFrom,validTo,storeExternalId,sourceUrl
+ *   retailerId,productName,unit,category,originalPrice,discountPrice,validFrom,validTo,storeExternalId,condition,sourceUrl
  */
 import { readFile } from 'node:fs/promises';
 
@@ -107,6 +107,7 @@ export const createCsvOfferSource = (id: string, file: string): OfferSource => (
         discountPrice,
         validFrom: row.validFrom || undefined,
         validTo: row.validTo || undefined,
+        condition: row.condition || undefined,
         sourceUrl: row.sourceUrl || undefined,
       });
     });

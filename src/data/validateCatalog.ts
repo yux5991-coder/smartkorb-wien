@@ -125,6 +125,7 @@ export const validateCatalog = (input: unknown, options: ValidateOptions = {}): 
       ...d,
       storeId: d.storeId ?? null,
       discountPercent: percent,
+      ...(isNonEmptyString(d.condition) ? { condition: d.condition.slice(0, 80) } : {}),
     });
   });
 
