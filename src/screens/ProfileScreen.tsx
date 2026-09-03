@@ -2,9 +2,10 @@ import React, { useMemo, useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { OnboardingForm, BUDGET_OPTIONS } from '../components/OnboardingModal';
+import { OnboardingForm, budgetLabel } from '../components/OnboardingModal';
 import { PlaceholderImage } from '../components/PlaceholderImage';
 import { RecipeDetailSheet } from '../components/RecipeDetailSheet';
+import { Chip } from '../components/Chip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { DataStatusBar } from '../components/DataStatusBar';
 import { getActiveDiscountViews, getRecipe, useCatalog } from '../data';
@@ -12,18 +13,22 @@ import { costRecipe } from '../services/pricing';
 import { useProfileStore } from '../store/useProfileStore';
 import { colors, radius, shadow, spacing } from '../theme';
 import type { Recipe } from '../types';
-import { formatPrice } from '../utils/format';
-import { activityLabels, allergenLabels, dietLabels } from '../utils/labels';
-
-const formatTimestamp = (iso: string): string => {
-  const date = new Date(iso);
-  const pad = (value: number) => String(value).padStart(2, '0');
-  return `${pad(date.getDate())}.${pad(date.getMonth() + 1)}. ${pad(date.getHours())}:${pad(date.getMinutes())}`;
-};
+import { formatPrice, formatTimestamp } from '../utils/format';
+import {
+  LANGUAGES,
+  activityLabel,
+  allergenLabel,
+  dietLabel,
+  recipeTitle,
+  useLanguage,
+  useT,
+} from '../i18n';
 
 export const ProfileScreen: React.FC = () => {
   const insets = useSafeAreaInsets();
   const catalog = useCatalog();
+  const t = useT();
+  const language = useLanguage();
   const {
     dietPreference,
     allergies,
@@ -31,6 +36,7 @@ export const ProfileScreen: React.FC = () => {
     savedRecipeIds,
     activityLog,
     onboardingStatus,
+    setLanguage,
     completeOnboarding,
     restartOnboarding,
     toggleSavedRecipe,
@@ -48,14 +54,11 @@ export const ProfileScreen: React.FC = () => {
     [catalog, savedRecipeIds],
   );
 
-  const budgetLabel =
-    BUDGET_OPTIONS.find((option) => option.value === budgetPerPortion)?.label ?? 'Kein Limit';
-
-  const statusLabel: Record<string, string> = {
-    pending: 'noch nicht ausgefüllt',
-    completed: 'ausgefüllt',
-    skipped: 'übersprungen',
-  };
+  const statusKeys = {
+    pending: 'onboarding.pending',
+    completed: 'onboarding.completed',
+    skipped: 'onboarding.skipped',
+  } as const;
 
   return (
     <SafeAreaView style={styles.screen} edges={['top']}>
@@ -63,24 +66,40 @@ export const ProfileScreen: React.FC = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xl }}
       >
-        <ScreenHeader title="Profil" subtitle="Deine Rezepte, Einstellungen und Aktivitäten" />
+        <ScreenHeader title={t('profile.title')} subtitle={t('profile.subtitle')} />
 
         <DataStatusBar />
 
         <View style={styles.card}>
           <View style={styles.cardHeader}>
-            <Text style={styles.cardTitle}>Datenquelle</Text>
+            <Text style={styles.cardTitle}>{t('profile.language')}</Text>
+          </View>
+          <View style={styles.chipRow}>
+            {LANGUAGES.map((option) => (
+              <Chip
+                key={option.code}
+                label={option.label}
+                selected={language === option.code}
+                onPress={() => setLanguage(option.code)}
+              />
+            ))}
+          </View>
+        </View>
+
+        <View style={styles.card}>
+          <View style={styles.cardHeader}>
+            <Text style={styles.cardTitle}>{t('profile.dataSource')}</Text>
           </View>
           <View style={styles.settingRow}>
-            <Text style={styles.settingLabel}>Filialen in Wien</Text>
+            <Text style={styles.settingLabel}>{t('profile.branches')}</Text>
             <Text style={styles.settingValue}>{catalog.stores.length}</Text>
           </View>
           <View style={styles.settingRow}>
-            <Text style={styles.settingLabel}>Aktionen heute</Text>
+            <Text style={styles.settingLabel}>{t('profile.offersToday')}</Text>
             <Text style={styles.settingValue}>{getActiveDiscountViews(catalog).length}</Text>
           </View>
           <View style={styles.settingRow}>
-            <Text style={styles.settingLabel}>Quellen</Text>
+            <Text style={styles.settingLabel}>{t('profile.sources')}</Text>
             <Text style={styles.settingValue} numberOfLines={2}>
               {catalog.catalog.sources.join(', ')}
             </Text>
@@ -90,31 +109,31 @@ export const ProfileScreen: React.FC = () => {
         {/* --- Einstellungen ------------------------------------------------ */}
         <View style={styles.card}>
           <View style={styles.cardHeader}>
-            <Text style={styles.cardTitle}>Ernährung & Vorlieben</Text>
+            <Text style={styles.cardTitle}>{t('profile.preferences')}</Text>
             <Pressable onPress={() => setEditVisible(true)} accessibilityRole="button" hitSlop={8}>
-              <Text style={styles.link}>Bearbeiten</Text>
+              <Text style={styles.link}>{t('profile.edit')}</Text>
             </Pressable>
           </View>
 
           <View style={styles.settingRow}>
-            <Text style={styles.settingLabel}>Ernährung</Text>
-            <Text style={styles.settingValue}>{dietLabels[dietPreference]}</Text>
+            <Text style={styles.settingLabel}>{t('profile.diet')}</Text>
+            <Text style={styles.settingValue}>{dietLabel(dietPreference, language)}</Text>
           </View>
           <View style={styles.settingRow}>
-            <Text style={styles.settingLabel}>Allergien</Text>
+            <Text style={styles.settingLabel}>{t('profile.allergies')}</Text>
             <Text style={styles.settingValue}>
               {allergies.length === 0
-                ? 'keine angegeben'
-                : allergies.map((allergen) => allergenLabels[allergen]).join(', ')}
+                ? t('profile.noAllergies')
+                : allergies.map((allergen) => allergenLabel(allergen, language)).join(', ')}
             </Text>
           </View>
           <View style={styles.settingRow}>
-            <Text style={styles.settingLabel}>Budget pro Portion</Text>
-            <Text style={styles.settingValue}>{budgetLabel}</Text>
+            <Text style={styles.settingLabel}>{t('profile.budget')}</Text>
+            <Text style={styles.settingValue}>{budgetLabel(budgetPerPortion, t)}</Text>
           </View>
           <View style={styles.settingRow}>
-            <Text style={styles.settingLabel}>Fragebogen</Text>
-            <Text style={styles.settingValue}>{statusLabel[onboardingStatus]}</Text>
+            <Text style={styles.settingLabel}>{t('profile.questionnaire')}</Text>
+            <Text style={styles.settingValue}>{t(statusKeys[onboardingStatus])}</Text>
           </View>
 
           <Pressable
@@ -122,24 +141,19 @@ export const ProfileScreen: React.FC = () => {
             accessibilityRole="button"
             style={({ pressed }) => [styles.secondaryButton, pressed && styles.pressed]}
           >
-            <Text style={styles.secondaryButtonText}>
-              Fragebogen beim nächsten Besuch der Kulinarik erneut zeigen
-            </Text>
+            <Text style={styles.secondaryButtonText}>{t('profile.restart')}</Text>
           </Pressable>
         </View>
 
         {/* --- Gespeicherte Rezepte ----------------------------------------- */}
         <View style={styles.card}>
           <View style={styles.cardHeader}>
-            <Text style={styles.cardTitle}>Gespeicherte Rezepte</Text>
+            <Text style={styles.cardTitle}>{t('profile.savedRecipes')}</Text>
             <Text style={styles.counter}>{savedRecipes.length}</Text>
           </View>
 
           {savedRecipes.length === 0 ? (
-            <Text style={styles.emptyText}>
-              Noch nichts gespeichert. Tippe in der Kulinarik auf das Herz, um Rezepte hier zu
-              sammeln.
-            </Text>
+            <Text style={styles.emptyText}>{t('profile.savedEmpty')}</Text>
           ) : (
             savedRecipes.map((recipe) => {
               const cost = costRecipe(catalog, recipe);
@@ -153,17 +167,18 @@ export const ProfileScreen: React.FC = () => {
                   <PlaceholderImage emoji={recipe.emoji} size={44} tint={colors.primarySoft} />
                   <View style={styles.savedBody}>
                     <Text style={styles.savedTitle} numberOfLines={1}>
-                      {recipe.title}
+                      {recipeTitle(recipe, language)}
                     </Text>
                     <Text style={styles.savedMeta}>
-                      {formatPrice(cost.pricePerPortion)} / Portion · {recipe.cookingTimeMin} Min
+                      {formatPrice(cost.pricePerPortion)} {t('common.perPortionShort')} ·{' '}
+                      {t('kitchen.minutes', { count: recipe.cookingTimeMin })}
                     </Text>
                   </View>
                   <Pressable
                     onPress={() => toggleSavedRecipe(recipe.id)}
                     hitSlop={10}
                     accessibilityRole="button"
-                    accessibilityLabel="Rezept entfernen"
+                    accessibilityLabel={t('kitchen.removeRecipe')}
                   >
                     <Text style={styles.heart}>❤️</Text>
                   </Pressable>
@@ -176,18 +191,16 @@ export const ProfileScreen: React.FC = () => {
         {/* --- Aktivität ---------------------------------------------------- */}
         <View style={styles.card}>
           <View style={styles.cardHeader}>
-            <Text style={styles.cardTitle}>Aktivität</Text>
+            <Text style={styles.cardTitle}>{t('profile.activity')}</Text>
             {activityLog.length > 0 ? (
               <Pressable onPress={clearActivityLog} accessibilityRole="button" hitSlop={8}>
-                <Text style={styles.link}>Leeren</Text>
+                <Text style={styles.link}>{t('profile.clear')}</Text>
               </Pressable>
             ) : null}
           </View>
 
           {activityLog.length === 0 ? (
-            <Text style={styles.emptyText}>
-              Hier erscheinen deine letzten Suchen, Filter und angesehenen Rabatte.
-            </Text>
+            <Text style={styles.emptyText}>{t('profile.activityEmpty')}</Text>
           ) : (
             activityLog.slice(0, 20).map((entry) => (
               <View key={entry.id} style={styles.activityRow}>
@@ -197,7 +210,7 @@ export const ProfileScreen: React.FC = () => {
                     {entry.label}
                   </Text>
                   <Text style={styles.activityType}>
-                    {activityLabels[entry.type] ?? entry.type} · {formatTimestamp(entry.at)}
+                    {activityLabel(entry.type, language)} · {formatTimestamp(entry.at)}
                   </Text>
                 </View>
               </View>
@@ -205,11 +218,7 @@ export const ProfileScreen: React.FC = () => {
           )}
         </View>
 
-        <Text style={styles.footnote}>
-          SmartKorb Wien · Filialdaten aus OpenStreetMap (ODbL). Aktionen aus der täglichen
-          Datenaktualisierung; ohne konfigurierte Quelle zeigt die App die mitgelieferten
-          Demodaten.
-        </Text>
+        <Text style={styles.footnote}>{t('profile.footnote')}</Text>
       </ScrollView>
 
       <RecipeDetailSheet
@@ -233,8 +242,8 @@ export const ProfileScreen: React.FC = () => {
               initialDiet={dietPreference}
               initialAllergies={allergies}
               initialBudget={budgetPerPortion}
-              title="Einstellungen"
-              intro="Diese Angaben nutzt die KI-Küche für ihre Vorschläge."
+              title={t('profile.settingsTitle')}
+              intro={t('profile.settingsIntro')}
               onSave={(input) => {
                 completeOnboarding(input);
                 setEditVisible(false);
@@ -260,6 +269,10 @@ const styles = StyleSheet.create({
     marginHorizontal: spacing.lg,
     marginBottom: spacing.lg,
     ...shadow.card,
+  },
+  chipRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   cardHeader: {
     flexDirection: 'row',

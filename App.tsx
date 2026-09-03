@@ -6,6 +6,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { useCatalogStore } from './src/data';
 import { RootNavigator } from './src/navigation/RootNavigator';
+import { useProfileStore } from './src/store/useProfileStore';
+import { setFormatLanguage } from './src/utils/format';
 
 /**
  * SmartKorb Wien.
@@ -15,6 +17,7 @@ import { RootNavigator } from './src/navigation/RootNavigator';
  * `src/data/index.ts`.
  */
 export default function App() {
+  const language = useProfileStore((state) => state.language);
   const bootstrap = useCatalogStore((state) => state.bootstrap);
   const refresh = useCatalogStore((state) => state.refresh);
   const appState = useRef(AppState.currentState);
@@ -22,6 +25,9 @@ export default function App() {
   useEffect(() => {
     bootstrap();
   }, [bootstrap]);
+
+  // prices, dates and amounts follow the UI language
+  setFormatLanguage(language);
 
   // coming back from the background is the natural moment to pick up the day's
   // new offers — `refresh` itself no-ops while the data is still fresh

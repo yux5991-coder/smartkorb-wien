@@ -1,6 +1,7 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
+import { categoryLabel, useLanguage, useT } from '../i18n';
 import { colors, radius, shadow, spacing } from '../theme';
 import type { DiscountView } from '../types';
 import { formatPrice, formatRemainingDays, formatValidTo } from '../utils/format';
@@ -16,6 +17,8 @@ interface Props {
 
 export const DiscountCard: React.FC<Props> = ({ discount, onPress, hideStore = false }) => {
   const { product, retailer, store } = discount;
+  const t = useT();
+  const language = useLanguage();
 
   return (
     <Pressable
@@ -36,7 +39,7 @@ export const DiscountCard: React.FC<Props> = ({ discount, onPress, hideStore = f
         </View>
 
         <Text style={styles.meta} numberOfLines={1}>
-          {product.unit} · {product.category}
+          {product.unit} · {categoryLabel(product.category, language)}
         </Text>
 
         <View style={styles.priceRow}>
@@ -53,7 +56,7 @@ export const DiscountCard: React.FC<Props> = ({ discount, onPress, hideStore = f
         ) : null}
 
         <View style={styles.footerRow}>
-          {store ? null : <Text style={styles.scope}>in allen Filialen</Text>}
+          {store ? null : <Text style={styles.scope}>{t('discounts.chainWide')}</Text>}
           <View style={styles.retailerRow}>
             <RetailerLogo retailer={retailer} size={22} />
             <Text style={styles.retailerName} numberOfLines={1}>

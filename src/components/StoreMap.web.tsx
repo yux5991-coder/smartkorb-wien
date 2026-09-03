@@ -1,6 +1,7 @@
 import React from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
+import { useT } from '../i18n';
 import { colors, radius, spacing } from '../theme';
 import { RetailerLogo } from './RetailerLogo';
 import type { StoreMapProps } from './storeMapTypes';
@@ -10,11 +11,15 @@ import type { StoreMapProps } from './storeMapTypes';
  * Expo Go on a phone; in the browser we degrade to a simple branch list so the
  * rest of the app stays usable.
  */
-export const StoreMap: React.FC<StoreMapProps> = ({ items, selectedStoreId, onSelectStore }) => (
+export const StoreMap: React.FC<StoreMapProps> = ({ items, selectedStoreId, onSelectStore }) => {
+  const t = useT();
+
+  return (
   <ScrollView style={styles.container} contentContainerStyle={styles.content}>
     <Text style={styles.notice}>
-      Die interaktive Karte steht in Expo Go auf iOS und Android zur Verfügung. Im Browser siehst du
-      die Filialen als Liste{items.length > 150 ? ` (erste 150 von ${items.length})` : ''}.
+      {t('map.webNotice', {
+        extra: items.length > 150 ? ` (1–150 / ${items.length})` : '',
+      })}
     </Text>
     {items.slice(0, 150).map(({ store, retailer, offerCount }) => (
       <Pressable
@@ -31,7 +36,8 @@ export const StoreMap: React.FC<StoreMapProps> = ({ items, selectedStoreId, onSe
       </Pressable>
     ))}
   </ScrollView>
-);
+  );
+};
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background },

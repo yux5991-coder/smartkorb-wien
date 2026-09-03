@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { useCatalog } from '../data';
+import { cuisineLabel, recipeTitle, tagLabel, unitLabel, useLanguage, useT } from '../i18n';
 import { costRecipe } from '../services/pricing';
 import { colors, radius, spacing } from '../theme';
 import type { Recipe } from '../types';
@@ -26,6 +27,8 @@ export const RecipeDetailSheet: React.FC<Props> = ({
   onToggleSave,
 }) => {
   const catalog = useCatalog();
+  const t = useT();
+  const language = useLanguage();
   const cost = useMemo(() => (recipe ? costRecipe(catalog, recipe) : null), [catalog, recipe]);
 
   if (!recipe || !cost) {
@@ -36,8 +39,13 @@ export const RecipeDetailSheet: React.FC<Props> = ({
     <BottomSheet
       visible={visible}
       onClose={onClose}
-      title={recipe.title}
-      subtitle={[recipe.cuisine, ...recipe.tags, `${recipe.cookingTimeMin} Min`, `${recipe.servings} Portionen`].join(' · ')}
+      title={recipeTitle(recipe, language)}
+      subtitle={[
+        cuisineLabel(recipe.cuisine, language),
+        ...recipe.tags.map((tag) => tagLabel(tag, language)),
+        t('kitchen.minutes', { count: recipe.cookingTimeMin }),
+        t('kitchen.servings', { count: recipe.servings }),
+      ].join(' · ')}
     >
       <ScrollView showsVerticalScrollIndicator={false}>
         <PlaceholderImage
@@ -51,30 +59,39 @@ export const RecipeDetailSheet: React.FC<Props> = ({
         <View style={styles.summary}>
           <View>
             <Text style={styles.summaryValue}>{formatPrice(cost.pricePerPortion)}</Text>
-            <Text style={styles.summaryLabel}>pro Portion</Text>
+            <Text style={styles.summaryLabel}>{t('common.perPortion')}</Text>
           </View>
           <View>
-            <Text style={styles.summaryValue}>{formatPrice(cost.total)}</Text>
-            <Text style={styles.summaryLabel}>gesamt</Text>
+            <Text style={styles.summaryValue}>{formatPrice(cost.basketTotal)}</Text>
+            <Text style={styles.summaryLabel}>{t('kitchen.basket')}</Text>
           </View>
           <View>
             <Text style={[styles.summaryValue, { color: colors.accent }]}>
               {formatPrice(cost.savings)}
             </Text>
-            <Text style={styles.summaryLabel}>gespart</Text>
+            <Text style={styles.summaryLabel}>{t('kitchen.saved.short')}</Text>
           </View>
         </View>
 
-        <Text style={styles.sectionTitle}>Zutaten & günstigster Einkauf</Text>
+        <Text style={styles.sectionTitle}>{t('kitchen.ingredients')}</Text>
         {cost.items.map((item) => (
           <View key={item.product.id} style={styles.ingredientRow}>
             <Text style={styles.ingredientEmoji}>{item.product.emoji}</Text>
             <View style={styles.ingredientBody}>
               <Text style={styles.ingredientName}>{item.product.name}</Text>
-              <Text style={styles.ingredientMeta}>{formatAmount(item.grams, item.product)}</Text>
+              <Text style={styles.ingredientMeta}>
+                {t('kitchen.needed', { amount: formatAmount(item.grams, item.product) })}
+              </Text>
+              <Text style={styles.ingredientMeta}>
+                {t('kitchen.packLine', {
+                  packs: item.packs,
+                  unit: unitLabel(item.product.unit, language),
+                  price: formatPrice(item.packPrice),
+                })}
+              </Text>
             </View>
             <View style={styles.ingredientRight}>
-              <Text style={styles.ingredientPrice}>{formatPrice(item.price)}</Text>
+              <Text style={styles.ingredientPrice}>{formatPrice(item.packTotal)}</Text>
               {item.offer ? (
                 <View style={styles.offerRow}>
                   <RetailerLogo retailer={item.offer.retailer} size={18} />
@@ -83,13 +100,21 @@ export const RecipeDetailSheet: React.FC<Props> = ({
                   </Text>
                 </View>
               ) : (
-                <Text style={styles.noOffer}>Normalpreis</Text>
+                <Text style={styles.noOffer}>{t('common.regularPrice')}</Text>
               )}
             </View>
           </View>
         ))}
 
-        <Text style={styles.sectionTitle}>Zubereitung</Text>
+        <Text style={styles.costNote}>
+          {t('kitchen.costNote', {
+            basket: formatPrice(cost.basketTotal),
+            used: formatPrice(cost.usedTotal),
+            servings: recipe.servings,
+          })}
+        </Text>
+
+        <Text style={styles.sectionTitle}>{t('kitchen.preparation')}</Text>
         {recipe.instructions.map((step, index) => (
           <View key={step} style={styles.stepRow}>
             <View style={styles.stepNumber}>
@@ -105,7 +130,7 @@ export const RecipeDetailSheet: React.FC<Props> = ({
           style={({ pressed }) => [styles.saveButton, saved && styles.saveButtonActive, pressed && styles.pressed]}
         >
           <Text style={[styles.saveButtonText, saved && styles.saveButtonTextActive]}>
-            {saved ? '❤️  Gespeichert' : '🤍  Rezept speichern'}
+            {saved ? `❤️  ${t('kitchen.saved')}` : `🤍  ${t('kitchen.saveRecipe')}`}
           </Text>
         </Pressable>
       </ScrollView>
@@ -185,6 +210,12 @@ const styles = StyleSheet.create({
     fontSize: 11,
     color: colors.textMuted,
     marginTop: 2,
+  },
+  costNote: {
+    fontSize: 11,
+    color: colors.textMuted,
+    lineHeight: 16,
+    marginTop: spacing.xs,
   },
   stepRow: {
     flexDirection: 'row',

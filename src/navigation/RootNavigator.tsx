@@ -7,6 +7,7 @@ import { DiscountsScreen } from '../screens/DiscountsScreen';
 import { KulinarikScreen } from '../screens/KulinarikScreen';
 import { MapScreen } from '../screens/MapScreen';
 import { ProfileScreen } from '../screens/ProfileScreen';
+import { useT } from '../i18n';
 import { colors } from '../theme';
 
 export type RootTabParamList = {
@@ -26,11 +27,22 @@ const icons: Record<keyof RootTabParamList, keyof typeof Ionicons.glyphMap> = {
 };
 
 /** The four sections of the app, as a bottom tab bar. */
-export const RootNavigator: React.FC = () => (
+const TAB_LABELS = {
+  Karte: 'tab.map',
+  Rabatte: 'tab.discounts',
+  Kulinarik: 'tab.kitchen',
+  Profil: 'tab.profile',
+} as const;
+
+export const RootNavigator: React.FC = () => {
+  const t = useT();
+
+  return (
   <NavigationContainer>
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
+        tabBarLabel: t(TAB_LABELS[route.name]),
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.textMuted,
         tabBarStyle: {
@@ -52,4 +64,5 @@ export const RootNavigator: React.FC = () => (
       <Tab.Screen name="Profil" component={ProfileScreen} />
     </Tab.Navigator>
   </NavigationContainer>
-);
+  );
+};

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
+import { recipeTitle, unitLabel, useLanguage, useT } from '../i18n';
 import type { DishSuggestion, ShoppingList } from '../services/ai';
 import { colors, radius, spacing } from '../theme';
 import type { Recipe } from '../types';
@@ -34,24 +35,24 @@ export const DishSuggestionsSheet: React.FC<SuggestionsProps> = ({
   personalised,
   onClose,
   onOpenRecipe,
-}) => (
+}) => {
+  const t = useT();
+  const language = useLanguage();
+
+  return (
   <BottomSheet
     visible={visible}
     onClose={onClose}
-    title="Was koche ich?"
-    subtitle={
-      personalised
-        ? 'Vorschläge aus den aktuellen Aktionen — abgestimmt auf dein Profil'
-        : 'Allgemeine Vorschläge aus den aktuellen Aktionen (Profil nicht eingerichtet)'
-    }
+    title={t('ai.suggestTitle')}
+    subtitle={personalised ? t('ai.suggestSubtitlePersonal') : t('ai.suggestSubtitleGeneric')}
   >
     {loading ? (
-      <Loading label="Die KI vergleicht gerade alle laufenden Aktionen …" />
+      <Loading label={t('ai.loadingSuggestions')} />
     ) : (
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.badgeRow}>
-          <PremiumBadge />
-          <Text style={styles.badgeNote}>Demo — läuft lokal auf Mock-Daten</Text>
+          <PremiumBadge label={t('common.premium')} />
+          <Text style={styles.badgeNote}>{t('common.demoNote')}</Text>
         </View>
 
         {suggestions.map(({ recipe, cost, reason }) => (
@@ -63,7 +64,7 @@ export const DishSuggestionsSheet: React.FC<SuggestionsProps> = ({
           >
             <PlaceholderImage emoji={recipe.emoji} size={54} tint={colors.primarySoft} />
             <View style={styles.suggestionBody}>
-              <Text style={styles.suggestionTitle}>{recipe.title}</Text>
+              <Text style={styles.suggestionTitle}>{recipeTitle(recipe, language)}</Text>
               <Text style={styles.suggestionReason} numberOfLines={2}>
                 {reason}
               </Text>
@@ -80,21 +81,19 @@ export const DishSuggestionsSheet: React.FC<SuggestionsProps> = ({
             </View>
             <View style={styles.suggestionPrice}>
               <Text style={styles.pricePerPortion}>{formatPrice(cost.pricePerPortion)}</Text>
-              <Text style={styles.pricePerPortionLabel}>/ Portion</Text>
+              <Text style={styles.pricePerPortionLabel}>{t('common.perPortionShort')}</Text>
             </View>
           </Pressable>
         ))}
 
         {suggestions.length === 0 ? (
-          <Text style={styles.empty}>
-            Mit deinen aktuellen Einstellungen passt gerade kein Gericht. Passe dein Profil an oder
-            versuche es morgen wieder.
-          </Text>
+          <Text style={styles.empty}>{t('ai.noSuggestions')}</Text>
         ) : null}
       </ScrollView>
     )}
   </BottomSheet>
-);
+  );
+};
 
 interface ShoppingListProps {
   visible: boolean;
@@ -109,20 +108,24 @@ export const ShoppingListSheet: React.FC<ShoppingListProps> = ({
   loading,
   list,
   onClose,
-}) => (
+}) => {
+  const t = useT();
+  const language = useLanguage();
+
+  return (
   <BottomSheet
     visible={visible}
     onClose={onClose}
-    title={list?.title ?? 'Einkaufsliste'}
+    title={list?.title ?? t('ai.listTitle')}
     subtitle={list?.note}
   >
     {loading || !list ? (
-      <Loading label="Die KI stellt deine Einkaufsliste zusammen …" />
+      <Loading label={t('ai.loadingList')} />
     ) : (
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.badgeRow}>
-          <PremiumBadge />
-          <Text style={styles.badgeNote}>Demo — läuft lokal auf Mock-Daten</Text>
+          <PremiumBadge label={t('common.premium')} />
+          <Text style={styles.badgeNote}>{t('common.demoNote')}</Text>
         </View>
 
         {list.warnings.map((warning) => (
@@ -136,7 +139,13 @@ export const ShoppingListSheet: React.FC<ShoppingListProps> = ({
             <Text style={styles.itemEmoji}>{item.product.emoji}</Text>
             <View style={styles.itemBody}>
               <Text style={styles.itemName}>{item.product.name}</Text>
-              <Text style={styles.itemAmount}>{formatAmount(item.grams, item.product)}</Text>
+              <Text style={styles.itemAmount}>
+                {t('ai.neededPacks', {
+                  amount: formatAmount(item.grams, item.product),
+                  packs: item.packs,
+                  unit: unitLabel(item.product.unit, language),
+                })}
+              </Text>
               {item.offer ? (
                 <View style={styles.itemStore}>
                   <RetailerLogo retailer={item.offer.retailer} size={16} />
@@ -146,36 +155,42 @@ export const ShoppingListSheet: React.FC<ShoppingListProps> = ({
                   </Text>
                 </View>
               ) : (
-                <Text style={styles.itemStoreText}>Aktuell keine Aktion — Normalpreis</Text>
+                <Text style={styles.itemStoreText}>{t('ai.noOffer')}</Text>
               )}
               {item.offer?.condition ? (
                 <Text style={styles.itemCondition}>{item.offer.condition}</Text>
               ) : null}
             </View>
-            <Text style={styles.itemPrice}>{formatPrice(item.price)}</Text>
+            <Text style={styles.itemPrice}>{formatPrice(item.packTotal)}</Text>
           </View>
         ))}
 
         <View style={styles.totalBox}>
           <View style={styles.totalRow}>
-            <Text style={styles.totalLabel}>Gesamt ({list.servings} Portionen)</Text>
-            <Text style={styles.totalValue}>{formatPrice(list.total)}</Text>
+            <Text style={styles.totalLabel}>{t('ai.basketWhole')}</Text>
+            <Text style={styles.totalValue}>{formatPrice(list.basketTotal)}</Text>
           </View>
           <View style={styles.totalRow}>
-            <Text style={styles.totalLabel}>Pro Portion</Text>
+            <Text style={styles.totalLabel}>{t('ai.usedFor', { count: list.servings })}</Text>
+            <Text style={styles.totalValue}>{formatPrice(list.usedTotal)}</Text>
+          </View>
+          <View style={styles.totalRow}>
+            <Text style={styles.totalLabel}>{t('common.perPortion')}</Text>
             <Text style={styles.totalValue}>{formatPrice(list.pricePerPortion)}</Text>
           </View>
           <View style={styles.totalRow}>
-            <Text style={styles.totalLabel}>Ersparnis durch Aktionen</Text>
+            <Text style={styles.totalLabel}>{t('ai.savings')}</Text>
             <Text style={[styles.totalValue, { color: colors.accent }]}>
               {formatPrice(list.savings)}
             </Text>
           </View>
+          <Text style={styles.totalNote}>{t('ai.leftoverNote')}</Text>
         </View>
       </ScrollView>
     )}
   </BottomSheet>
-);
+  );
+};
 
 const styles = StyleSheet.create({
   loading: {
@@ -339,5 +354,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '800',
     color: colors.primaryDark,
+  },
+  totalNote: {
+    fontSize: 11,
+    color: colors.primaryDark,
+    opacity: 0.8,
+    lineHeight: 15,
+    marginTop: 4,
   },
 });

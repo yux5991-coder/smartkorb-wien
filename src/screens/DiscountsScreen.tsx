@@ -16,7 +16,7 @@ import { DiscountCard } from '../components/DiscountCard';
 import {
   DiscountFilterSheet,
   defaultFilters,
-  sortLabels,
+  sortKeys,
   type DiscountFilters,
 } from '../components/DiscountFilterSheet';
 import { PlaceholderImage } from '../components/PlaceholderImage';
@@ -26,6 +26,7 @@ import { SearchBar } from '../components/SearchBar';
 import { DataStatusBar } from '../components/DataStatusBar';
 import { getActiveDiscountViews, useCatalog, useCatalogStore } from '../data';
 import { useDebouncedValue } from '../hooks/useDebouncedValue';
+import { useT } from '../i18n';
 import { useProfileStore } from '../store/useProfileStore';
 import { colors, radius, shadow, spacing } from '../theme';
 import type { DiscountView } from '../types';
@@ -43,6 +44,7 @@ export const DiscountsScreen: React.FC = () => {
   const logActivity = useProfileStore((state) => state.logActivity);
 
   const catalog = useCatalog();
+  const t = useT();
   const syncStatus = useCatalogStore((state) => state.status);
   const refresh = useCatalogStore((state) => state.refresh);
 
@@ -95,16 +97,19 @@ export const DiscountsScreen: React.FC = () => {
       changedRetailers,
       next.categories.join(', '),
       next.minPercent > 0 ? `ab ${next.minPercent} %` : '',
-      sortLabels[next.sort],
+      t(sortKeys[next.sort]),
     ].filter(Boolean);
-    logActivity('filter', parts.join(' · ') || 'Filter zurückgesetzt');
+    logActivity('filter', parts.join(' · ') || t('filter.reset'));
   };
 
   return (
     <SafeAreaView style={styles.screen} edges={['top']}>
       <ScreenHeader
-        title="Rabatte"
-        subtitle={`${visibleDiscounts.length} von ${allDiscounts.length} Aktionen in Wien`}
+        title={t('discounts.title')}
+        subtitle={t('discounts.subtitle', {
+          visible: visibleDiscounts.length,
+          total: allDiscounts.length,
+        })}
       />
 
       <DataStatusBar />
@@ -116,7 +121,7 @@ export const DiscountsScreen: React.FC = () => {
         <Pressable
           onPress={() => setFilterVisible(true)}
           accessibilityRole="button"
-          accessibilityLabel="Filter öffnen"
+          accessibilityLabel={t('filter.open')}
           style={({ pressed }) => [styles.filterButton, pressed && styles.pressed]}
         >
           <Text style={styles.filterIcon}>⚙︎</Text>
@@ -135,7 +140,7 @@ export const DiscountsScreen: React.FC = () => {
         contentContainerStyle={styles.quickFilters}
       >
         <Chip
-          label="Alle Ketten"
+          label={t('discounts.allChains')}
           selected={filters.retailerIds.length === 0}
           onPress={() => applyFilters({ ...filters, retailerIds: [] })}
           compact
@@ -185,10 +190,8 @@ export const DiscountsScreen: React.FC = () => {
         )}
         ListEmptyComponent={
           <View style={styles.empty}>
-            <Text style={styles.emptyTitle}>Keine Treffer</Text>
-            <Text style={styles.emptyText}>
-              Passe die Suche oder die Filter an, um mehr Aktionen zu sehen.
-            </Text>
+            <Text style={styles.emptyTitle}>{t('discounts.emptyTitle')}</Text>
+            <Text style={styles.emptyText}>{t('discounts.emptyText')}</Text>
           </View>
         }
       />
@@ -233,9 +236,11 @@ export const DiscountsScreen: React.FC = () => {
                   </>
                 ) : (
                   <Text style={styles.detailStoreAddress}>
-                    Gilt in allen{' '}
-                    {catalog.stores.filter((store) => store.retailerId === detail.retailerId).length}{' '}
-                    Filialen in Wien
+                    {t('discounts.allBranches', {
+                      count: catalog.stores.filter(
+                        (store) => store.retailerId === detail.retailerId,
+                      ).length,
+                    })}
                   </Text>
                 )}
               </View>
@@ -244,7 +249,7 @@ export const DiscountsScreen: React.FC = () => {
             {detail.condition ? (
               <View style={styles.detailCard}>
                 <View style={{ flex: 1 }}>
-                  <Text style={styles.detailLabel}>Bedingung</Text>
+                  <Text style={styles.detailLabel}>{t('discounts.condition')}</Text>
                   <Text style={styles.detailValue}>{detail.condition}</Text>
                 </View>
               </View>
@@ -252,17 +257,14 @@ export const DiscountsScreen: React.FC = () => {
 
             <View style={styles.detailCard}>
               <View style={{ flex: 1 }}>
-                <Text style={styles.detailLabel}>Aktionszeitraum</Text>
+                <Text style={styles.detailLabel}>{t('discounts.period')}</Text>
                 <Text style={styles.detailValue}>
                   {detail.validFrom.split('-').reverse().join('.')} – {formatValidTo(detail.validTo).replace('bis ', '')}
                 </Text>
               </View>
             </View>
 
-            <Text style={styles.detailNote}>
-              Preise stammen aus Demodaten. Sobald die Handelsketten angebunden sind, kommen sie
-              live aus deren Aktionsfeeds.
-            </Text>
+            <Text style={styles.detailNote}>{t('discounts.sourceNote')}</Text>
           </ScrollView>
         ) : null}
       </BottomSheet>

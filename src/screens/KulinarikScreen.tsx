@@ -20,21 +20,24 @@ import { RecipeDetailSheet } from '../components/RecipeDetailSheet';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { useCatalog } from '../data';
 import { buildShoppingList, suggestDishes, type DishSuggestion, type ShoppingList } from '../services/ai';
+import { cuisineLabel, dietLabel, tagLabel, useLanguage, useT } from '../i18n';
 import { useProfileStore } from '../store/useProfileStore';
 import { colors, radius, shadow, spacing } from '../theme';
 import type { DietPreference, Recipe } from '../types';
-import { allDiets, dietLabels } from '../utils/labels';
+import { allDiets } from '../utils/labels';
 
 const TIME_FILTERS = [
-  { label: 'Alle', value: 0 },
-  { label: 'bis 20 Min', value: 20 },
-  { label: 'bis 30 Min', value: 30 },
-  { label: 'bis 45 Min', value: 45 },
-];
+  { key: 'common.all', value: 0 },
+  { key: 'kitchen.time20', value: 20 },
+  { key: 'kitchen.time30', value: 30 },
+  { key: 'kitchen.time45', value: 45 },
+] as const;
 
 export const KulinarikScreen: React.FC = () => {
   const insets = useSafeAreaInsets();
   const catalog = useCatalog();
+  const t = useT();
+  const language = useLanguage();
 
   const profile = useProfileStore();
   const {
@@ -135,21 +138,17 @@ export const KulinarikScreen: React.FC = () => {
         )}
         ListHeaderComponent={
           <View>
-            <ScreenHeader
-              title="Kulinarik"
-              subtitle="Gerichte, die zu den aktuellen Aktionen passen"
-            />
+            <ScreenHeader title={t('kitchen.title')} subtitle={t('kitchen.subtitle')} />
 
             <View style={styles.aiCard}>
               <View style={styles.aiHeader}>
-                <Text style={styles.aiTitle}>KI-Küche</Text>
-                <PremiumBadge />
+                <Text style={styles.aiTitle}>{t('kitchen.aiTitle')}</Text>
+                <PremiumBadge label={t('common.premium')} />
               </View>
               <Text style={styles.aiSubtitle}>
-                Vorschläge auf Basis der laufenden Rabatte
                 {onboardingStatus === 'completed'
-                  ? ' und deines Geschmacksprofils.'
-                  : ' — Profil im Reiter „Profil“ einrichten für persönliche Tipps.'}
+                  ? t('kitchen.aiSubtitlePersonal')
+                  : t('kitchen.aiSubtitleGeneric')}
               </Text>
 
               <Pressable
@@ -157,7 +156,7 @@ export const KulinarikScreen: React.FC = () => {
                 accessibilityRole="button"
                 style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
               >
-                <Text style={styles.primaryButtonText}>Was koche ich?</Text>
+                <Text style={styles.primaryButtonText}>{t('kitchen.whatToCook')}</Text>
               </Pressable>
 
               <View style={styles.inputRow}>
@@ -165,16 +164,16 @@ export const KulinarikScreen: React.FC = () => {
                   style={styles.input}
                   value={dishQuery}
                   onChangeText={setDishQuery}
-                  placeholder="Ich möchte … kochen (z. B. Lasagne)"
+                  placeholder={t('kitchen.dishPlaceholder')}
                   placeholderTextColor={colors.textMuted}
                   returnKeyType="send"
                   onSubmitEditing={runShoppingList}
-                  accessibilityLabel="Gericht eingeben"
+                  accessibilityLabel={t('kitchen.dishPlaceholder')}
                 />
                 <Pressable
                   onPress={runShoppingList}
                   accessibilityRole="button"
-                  accessibilityLabel="Zutaten berechnen"
+                  accessibilityLabel={t('kitchen.calcIngredients')}
                   style={({ pressed }) => [styles.sendButton, pressed && styles.pressed]}
                 >
                   <Text style={styles.sendButtonText}>→</Text>
@@ -182,7 +181,7 @@ export const KulinarikScreen: React.FC = () => {
               </View>
             </View>
 
-            <Text style={styles.sectionTitle}>Rezepte ({visibleRecipes.length})</Text>
+            <Text style={styles.sectionTitle}>{t('kitchen.recipes', { count: visibleRecipes.length })}</Text>
 
             <ScrollView
               horizontal
@@ -191,7 +190,7 @@ export const KulinarikScreen: React.FC = () => {
               contentContainerStyle={styles.filterRow}
             >
               <Chip
-                label="Alle Küchen"
+                label={t('kitchen.allCuisines')}
                 selected={cuisineFilter === null}
                 onPress={() => setCuisineFilter(null)}
                 compact
@@ -199,7 +198,7 @@ export const KulinarikScreen: React.FC = () => {
               {catalog.cuisines.map((cuisine) => (
                 <Chip
                   key={cuisine}
-                  label={cuisine}
+                  label={cuisineLabel(cuisine, language)}
                   selected={cuisineFilter === cuisine}
                   onPress={() => setCuisineFilter(cuisineFilter === cuisine ? null : cuisine)}
                   compact
@@ -213,11 +212,16 @@ export const KulinarikScreen: React.FC = () => {
               style={styles.filterScroll}
               contentContainerStyle={styles.filterRow}
             >
-              <Chip label="Alle Arten" selected={tagFilter === null} onPress={() => setTagFilter(null)} compact />
+              <Chip
+                label={t('kitchen.allTypes')}
+                selected={tagFilter === null}
+                onPress={() => setTagFilter(null)}
+                compact
+              />
               {catalog.recipeTags.map((tag) => (
                 <Chip
                   key={tag}
-                  label={tag}
+                  label={tagLabel(tag, language)}
                   selected={tagFilter === tag}
                   onPress={() => setTagFilter(tagFilter === tag ? null : tag)}
                   compact
@@ -233,8 +237,8 @@ export const KulinarikScreen: React.FC = () => {
             >
               {TIME_FILTERS.map((option) => (
                 <Chip
-                  key={option.label}
-                  label={option.label}
+                  key={option.key}
+                  label={t(option.key)}
                   selected={timeFilter === option.value}
                   onPress={() => setTimeFilter(option.value)}
                   compact
@@ -245,7 +249,7 @@ export const KulinarikScreen: React.FC = () => {
                 .map((diet) => (
                   <Chip
                     key={diet}
-                    label={dietLabels[diet]}
+                    label={dietLabel(diet, language)}
                     selected={dietFilter === diet}
                     onPress={() => setDietFilter(dietFilter === diet ? null : diet)}
                     compact
@@ -255,7 +259,7 @@ export const KulinarikScreen: React.FC = () => {
           </View>
         }
         ListEmptyComponent={
-          <Text style={styles.empty}>Keine Rezepte für diese Filterkombination.</Text>
+          <Text style={styles.empty}>{t('kitchen.empty')}</Text>
         }
       />
 

@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import MapView, { Marker, PROVIDER_DEFAULT, type Region } from 'react-native-maps';
 
+import { useT } from '../i18n';
 import { colors, radius, spacing } from '../theme';
 import { StoreMarker } from './StoreMarker';
 import { VIENNA_REGION, type StoreMapProps } from './storeMapTypes';
@@ -18,6 +19,7 @@ const MAX_MARKERS = 120;
 
 export const StoreMap: React.FC<StoreMapProps> = ({ items, selectedStoreId, onSelectStore }) => {
   const [region, setRegion] = useState<Region>(VIENNA_REGION);
+  const t = useT();
 
   const { visible, hidden } = useMemo(() => {
     const latPadding = region.latitudeDelta * 0.6;
@@ -67,9 +69,7 @@ export const StoreMap: React.FC<StoreMapProps> = ({ items, selectedStoreId, onSe
 
       {hidden > 0 ? (
         <View style={styles.zoomHint} pointerEvents="none">
-          <Text style={styles.zoomHintText}>
-            {hidden} weitere Filialen — zoome hinein, um sie zu sehen
-          </Text>
+          <Text style={styles.zoomHintText}>{t('map.zoomHint', { count: hidden })}</Text>
         </View>
       ) : null}
     </View>

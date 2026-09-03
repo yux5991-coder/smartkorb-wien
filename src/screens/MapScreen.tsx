@@ -16,12 +16,14 @@ import {
   getStore,
   useCatalog,
 } from '../data';
+import { useT } from '../i18n';
 import { useProfileStore } from '../store/useProfileStore';
 import { colors, radius, spacing } from '../theme';
 import { formatPrice } from '../utils/format';
 
 export const MapScreen: React.FC = () => {
   const catalog = useCatalog();
+  const t = useT();
   const [activeRetailers, setActiveRetailers] = useState<string[]>([]);
   const [selectedStoreId, setSelectedStoreId] = useState<string | null>(null);
   const logActivity = useProfileStore((state) => state.logActivity);
@@ -64,10 +66,12 @@ export const MapScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.screen} edges={['top']}>
       <ScreenHeader
-        title="Karte"
-        subtitle={`${items.length} von ${catalog.stores.length} Filialen · ${
-          getActiveDiscountViews(catalog).length
-        } laufende Aktionen`}
+        title={t('map.title')}
+        subtitle={t('map.subtitle', {
+          visible: items.length,
+          total: catalog.stores.length,
+          offers: getActiveDiscountViews(catalog).length,
+        })}
       />
 
       <ScrollView
@@ -77,7 +81,7 @@ export const MapScreen: React.FC = () => {
         contentContainerStyle={styles.filterRow}
       >
         <Chip
-          label="Alle"
+          label={t('map.allChains')}
           selected={activeRetailers.length === 0}
           onPress={() => setActiveRetailers([])}
           compact
@@ -98,9 +102,7 @@ export const MapScreen: React.FC = () => {
         <StoreMap items={items} selectedStoreId={selectedStoreId} onSelectStore={handleSelectStore} />
         {Platform.OS === 'web' ? null : (
           <View style={styles.hint} pointerEvents="none">
-            <Text style={styles.hintText}>
-              Tippe auf ein Logo, um die Aktionen der Filiale zu sehen
-            </Text>
+            <Text style={styles.hintText}>{t('map.hint')}</Text>
           </View>
         )}
       </View>
@@ -115,30 +117,32 @@ export const MapScreen: React.FC = () => {
           <View style={styles.summaryRow}>
             <View style={styles.summaryBox}>
               <Text style={styles.summaryValue}>{selectedDiscounts.length}</Text>
-              <Text style={styles.summaryLabel}>Aktionen</Text>
+              <Text style={styles.summaryLabel}>{t('map.offers')}</Text>
             </View>
             <View style={styles.summaryBox}>
               <Text style={styles.summaryValue}>
                 {bestOffer ? `−${bestOffer.discountPercent} %` : '–'}
               </Text>
-              <Text style={styles.summaryLabel}>bester Rabatt</Text>
+              <Text style={styles.summaryLabel}>{t('map.bestDiscount')}</Text>
             </View>
             <View style={styles.summaryBox}>
               <Text style={styles.summaryValue} numberOfLines={1}>
                 {bestOffer ? formatPrice(bestOffer.discountPrice) : '–'}
               </Text>
               <Text style={styles.summaryLabel} numberOfLines={1}>
-                {bestOffer ? bestOffer.product.name : 'kein Angebot'}
+                {bestOffer ? bestOffer.product.name : t('map.noOffer')}
               </Text>
             </View>
           </View>
 
           <Text style={styles.sectionTitle}>
-            Aktuelle Rabatte {selectedRetailer ? `bei ${selectedRetailer.name}` : ''}
+            {selectedRetailer
+              ? t('map.currentOffersAt', { retailer: selectedRetailer.name })
+              : t('map.currentOffers')}
           </Text>
 
           {selectedDiscounts.length === 0 ? (
-            <Text style={styles.empty}>In dieser Filiale läuft gerade keine Aktion.</Text>
+            <Text style={styles.empty}>{t('map.empty')}</Text>
           ) : (
             selectedDiscounts.map((discount) => (
               <DiscountCard

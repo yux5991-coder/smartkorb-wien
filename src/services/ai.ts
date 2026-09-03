@@ -42,9 +42,16 @@
 
 import { getActiveDiscountViews, getProduct, type CatalogIndex } from '../data';
 import type { Allergen, Product, Recipe, UserProfile } from '../types';
-import { priceForAmount } from '../utils/format';
-import { allergenLabels } from '../utils/labels';
-import { costRecipe, discountCoverage, type CostedIngredient, type RecipeCost } from './pricing';
+import { formatPrice } from '../utils/format';
+import { packsFor, usedCostFor } from './packMath';
+import { allergenLabel, recipeTitle, translate } from '../i18n';
+import {
+  costRecipe,
+  discountCoverage,
+  summariseCost,
+  type CostedIngredient,
+  type RecipeCost,
+} from './pricing';
 
 /** Simulated network latency so the UI shows its loading states. */
 const MOCK_LATENCY_MS = 700;
@@ -63,7 +70,10 @@ export interface ShoppingList {
   matchedRecipeId?: string;
   servings: number;
   items: CostedIngredient[];
-  total: number;
+  /** What the basket costs: whole packs. */
+  basketTotal: number;
+  /** Cost of the amounts the recipe actually uses. */
+  usedTotal: number;
   pricePerPortion: number;
   savings: number;
   warnings: string[];
@@ -86,6 +96,7 @@ export const suggestDishes = async (
 ): Promise<DishSuggestion[]> => {
   await delay(MOCK_LATENCY_MS);
 
+  const lang = profile.language;
   const personalised = profile.onboardingStatus === 'completed';
 
   const candidates = index.recipes
@@ -116,15 +127,23 @@ export const suggestDishes = async (
       .sort((a, b) => (b.offer?.discountPercent ?? 0) - (a.offer?.discountPercent ?? 0))[0];
 
     const parts: string[] = [
-      `${Math.round(coverage * 100)} % der Zutaten sind gerade im Angebot`,
+      translate(lang, 'ai.reasonCoverage', { percent: Math.round(coverage * 100) }),
     ];
     if (highlight?.offer) {
       parts.push(
-        `${highlight.product.name} −${highlight.offer.discountPercent} % bei ${highlight.offer.retailer.name}`,
+        translate(lang, 'ai.reasonHighlight', {
+          product: highlight.product.name,
+          percent: highlight.offer.discountPercent,
+          retailer: highlight.offer.retailer.name,
+        }),
       );
     }
     if (personalised && profile.budgetPerPortion !== null) {
-      parts.push(`Budget ${profile.budgetPerPortion.toFixed(2).replace('.', ',')} € pro Portion beachtet`);
+      parts.push(
+        translate(lang, 'ai.reasonBudget', {
+          budget: formatPrice(profile.budgetPerPortion),
+        }),
+      );
     }
 
     return { recipe, cost, reason: parts.join(' · ') };
@@ -191,11 +210,18 @@ const buildItemsFromProducts = (
 ): CostedIngredient[] =>
   entries.map(({ product, grams }) => {
     const offer = index.cheapestByProduct.get(product.id);
-    const regularPrice = priceForAmount(product.basePrice, product.baseGrams, grams);
-    const price = offer
-      ? priceForAmount(offer.discountPrice, product.baseGrams, grams)
-      : regularPrice;
-    return { product, grams, price, regularPrice, offer };
+    const packPrice = offer ? offer.discountPrice : product.basePrice;
+    const packs = packsFor(grams, product.baseGrams);
+    return {
+      product,
+      grams,
+      packs,
+      packPrice,
+      packTotal: packs * packPrice,
+      regularPackTotal: packs * product.basePrice,
+      usedCost: usedCostFor(grams, product.baseGrams, packPrice),
+      offer,
+    };
   });
 
 /**
@@ -209,6 +235,7 @@ export const buildShoppingList = async (
 ): Promise<ShoppingList> => {
   await delay(MOCK_LATENCY_MS);
 
+  const lang = profile.language;
   const recipe = findRecipeByName(index.recipes, query);
 
   let title: string;
@@ -219,11 +246,14 @@ export const buildShoppingList = async (
 
   if (recipe) {
     const cost = costRecipe(index, recipe);
-    title = recipe.title;
+    title = recipeTitle(recipe, lang);
     servings = recipe.servings;
     items = cost.items;
     matchedRecipeId = recipe.id;
-    note = `Aus unserem Rezeptkatalog · ${recipe.cookingTimeMin} Min · ${recipe.servings} Portionen`;
+    note = translate(lang, 'ai.noteCatalogue', {
+      minutes: recipe.cookingTimeMin,
+      servings: recipe.servings,
+    });
   } else {
     const needle = normalise(query);
     const hit = DISH_KEYWORDS.find((entry) =>
@@ -250,19 +280,18 @@ export const buildShoppingList = async (
           .filter(dietFilter)
           .slice(0, 6);
 
-    title = query.trim() || 'Einkaufsliste';
+    title = query.trim() || translate(lang, 'ai.listTitle');
     servings = hit?.servings ?? 4;
     items = buildItemsFromProducts(
       index,
       chosen.map((product) => ({ product, grams: guessAmount(product) })),
     );
     note = hit
-      ? `Geschätzte Mengen für ${servings} Portionen — die KI gleicht sie mit den aktuellen Aktionen ab.`
-      : 'Kein passendes Rezept gefunden — hier ein Vorschlag aus den stärksten Aktionen dieser Woche.';
+      ? translate(lang, 'ai.noteEstimated', { servings })
+      : translate(lang, 'ai.noteFallback');
   }
 
-  const total = items.reduce((sum, item) => sum + item.price, 0);
-  const regularTotal = items.reduce((sum, item) => sum + item.regularPrice, 0);
+  const cost = summariseCost(items, servings);
 
   const warnings: string[] = [];
   if (profile.onboardingStatus === 'completed') {
@@ -273,7 +302,9 @@ export const buildShoppingList = async (
       }),
     );
     hits.forEach((allergen) =>
-      warnings.push(`Enthält ${allergenLabels[allergen]} — laut deinem Profil zu vermeiden.`),
+      warnings.push(
+        translate(lang, 'ai.warnAllergen', { allergen: allergenLabel(allergen, lang) }),
+      ),
     );
     if (profile.dietPreference !== 'omnivor') {
       const nonVegan = items.filter((item) => !item.product.vegan);
@@ -283,7 +314,10 @@ export const buildShoppingList = async (
           : nonVegan.filter((item) => item.product.category === 'Fleisch & Fisch');
       if (conflicting.length > 0) {
         warnings.push(
-          `Nicht ${profile.dietPreference}: ${conflicting.map((item) => item.product.name).join(', ')}.`,
+          translate(lang, 'ai.warnDiet', {
+            diet: profile.dietPreference,
+            products: conflicting.map((item) => item.product.name).join(', '),
+          }),
         );
       }
     }
@@ -294,9 +328,10 @@ export const buildShoppingList = async (
     matchedRecipeId,
     servings,
     items,
-    total,
-    pricePerPortion: total / Math.max(1, servings),
-    savings: Math.max(0, regularTotal - total),
+    basketTotal: cost.basketTotal,
+    usedTotal: cost.usedTotal,
+    pricePerPortion: cost.pricePerPortion,
+    savings: cost.savings,
     warnings,
     note,
   };

@@ -51,7 +51,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/erdaepfelgulasch.jpg",
     "emoji": "🥘",
-    "cuisine": "Österreichisch"
+    "cuisine": "Österreichisch",
+    "titleEn": "Viennese Potato Goulash"
   },
   {
     "id": "r-02",
@@ -104,7 +105,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/spaghetti-napoli.jpg",
     "emoji": "🍝",
-    "cuisine": "Italienisch"
+    "cuisine": "Italienisch",
+    "titleEn": "Spaghetti Napoli"
   },
   {
     "id": "r-03",
@@ -162,7 +164,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/gemuesecurry.jpg",
     "emoji": "🍛",
-    "cuisine": "Thailändisch"
+    "cuisine": "Thailändisch",
+    "titleEn": "Vegetable Curry with Coconut Milk"
   },
   {
     "id": "r-04",
@@ -214,11 +217,12 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/huhn-ofengemuese.jpg",
     "emoji": "🍗",
-    "cuisine": "International"
+    "cuisine": "International",
+    "titleEn": "Chicken Breast with Roast Vegetables"
   },
   {
     "id": "r-05",
-    "title": "Mercimek Çorbası – türkische Linsensuppe",
+    "title": "Türkische Linsensuppe (Mercimek Çorbası)",
     "tags": [
       "Vegan",
       "Budget"
@@ -272,7 +276,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/linsensuppe.jpg",
     "emoji": "🍲",
-    "cuisine": "Türkisch"
+    "cuisine": "Türkisch",
+    "titleEn": "Turkish Lentil Soup (Mercimek Çorbası)"
   },
   {
     "id": "r-06",
@@ -322,7 +327,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/kaiserschmarrn.jpg",
     "emoji": "🥞",
-    "cuisine": "Österreichisch"
+    "cuisine": "Österreichisch",
+    "titleEn": "Kaiserschmarrn with Berries"
   },
   {
     "id": "r-07",
@@ -371,7 +377,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/kaesespaetzle.jpg",
     "emoji": "🧀",
-    "cuisine": "Österreichisch"
+    "cuisine": "Österreichisch",
+    "titleEn": "Cheese Spätzle with Fried Onions"
   },
   {
     "id": "r-08",
@@ -422,7 +429,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/lachs-spinat.jpg",
     "emoji": "🐟",
-    "cuisine": "International"
+    "cuisine": "International",
+    "titleEn": "Salmon with Potatoes and Spinach"
   },
   {
     "id": "r-09",
@@ -479,7 +487,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/faschierte-laibchen.jpg",
     "emoji": "🍽️",
-    "cuisine": "Österreichisch"
+    "cuisine": "Österreichisch",
+    "titleEn": "Meat Patties with Mashed Potatoes"
   },
   {
     "id": "r-10",
@@ -529,7 +538,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/rindsgulasch.jpg",
     "emoji": "🥘",
-    "cuisine": "Österreichisch"
+    "cuisine": "Österreichisch",
+    "titleEn": "Classic Beef Goulash"
   },
   {
     "id": "r-11",
@@ -585,7 +595,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/polenta-champignons.jpg",
     "emoji": "🍄",
-    "cuisine": "Italienisch"
+    "cuisine": "Italienisch",
+    "titleEn": "Polenta with Mushroom Ragout"
   },
   {
     "id": "r-12",
@@ -647,7 +658,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/kichererbsen-bowl.jpg",
     "emoji": "🥗",
-    "cuisine": "International"
+    "cuisine": "International",
+    "titleEn": "Chickpea Bowl with Avocado"
   },
   {
     "id": "r-13",
@@ -696,7 +708,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/overnight-oats.jpg",
     "emoji": "🥣",
-    "cuisine": "International"
+    "cuisine": "International",
+    "titleEn": "Overnight Oats with Berries"
   },
   {
     "id": "r-14",
@@ -743,7 +756,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/caprese.jpg",
     "emoji": "🍅",
-    "cuisine": "Italienisch"
+    "cuisine": "Italienisch",
+    "titleEn": "Caprese with Wholegrain Bread"
   },
   {
     "id": "r-15",
@@ -801,7 +815,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/thunfisch-nudelsalat.jpg",
     "emoji": "🥗",
-    "cuisine": "International"
+    "cuisine": "International",
+    "titleEn": "Tuna Pasta Salad"
   },
   {
     "id": "r-16",
@@ -846,7 +861,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/gnocchi-pfanne.jpg",
     "emoji": "🥟",
-    "cuisine": "Italienisch"
+    "cuisine": "Italienisch",
+    "titleEn": "Quick Gnocchi Pan with Pesto"
   },
   {
     "id": "r-17",
@@ -895,11 +911,12 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/knoedel-mit-ei.jpg",
     "emoji": "🍳",
-    "cuisine": "Österreichisch"
+    "cuisine": "Österreichisch",
+    "titleEn": "Dumplings with Egg and Green Salad"
   },
   {
     "id": "r-18",
-    "title": "TK-Pizza aufgepeppt",
+    "title": "Aufgepeppte Tiefkühlpizza",
     "tags": [
       "Schnell"
     ],
@@ -945,7 +962,8 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/tk-pizza.jpg",
     "emoji": "🍕",
-    "cuisine": "Italienisch"
+    "cuisine": "Italienisch",
+    "titleEn": "Upgraded Frozen Pizza"
   },
   {
     "id": "r-19",
@@ -999,7 +1017,8 @@
     "cookingTimeMin": 40,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/wiener-schnitzel-vom-schwein.jpg",
-    "emoji": "🍖"
+    "emoji": "🍖",
+    "titleEn": "Viennese Schnitzel (Pork)"
   },
   {
     "id": "r-20",
@@ -1055,7 +1074,8 @@
     "cookingTimeMin": 150,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/tafelspitz-mit-apfelkren.jpg",
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "titleEn": "Boiled Beef with Apple Horseradish"
   },
   {
     "id": "r-21",
@@ -1110,7 +1130,8 @@
     "cookingTimeMin": 45,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/krautfleckerl.jpg",
-    "emoji": "🥬"
+    "emoji": "🥬",
+    "titleEn": "Cabbage Noodles (Krautfleckerl)"
   },
   {
     "id": "r-22",
@@ -1168,7 +1189,8 @@
     "cookingTimeMin": 30,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/wiener-erdäpfelsalat.jpg",
-    "emoji": "🥔"
+    "emoji": "🥔",
+    "titleEn": "Viennese Potato Salad"
   },
   {
     "id": "r-23",
@@ -1218,7 +1240,8 @@
     "cookingTimeMin": 40,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/grießnockerlsuppe.jpg",
-    "emoji": "🍲"
+    "emoji": "🍲",
+    "titleEn": "Semolina Dumpling Soup"
   },
   {
     "id": "r-24",
@@ -1272,7 +1295,8 @@
     "cookingTimeMin": 55,
     "servings": 6,
     "imageUrl": "https://cdn.smartkorb.example/recipes/apfelstrudel.jpg",
-    "emoji": "🥧"
+    "emoji": "🥧",
+    "titleEn": "Apple Strudel"
   },
   {
     "id": "r-25",
@@ -1330,11 +1354,12 @@
     "cookingTimeMin": 45,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/topfenknödel-mit-marillen.jpg",
-    "emoji": "🍑"
+    "emoji": "🍑",
+    "titleEn": "Quark Dumplings with Apricot"
   },
   {
     "id": "r-26",
-    "title": "Menemen",
+    "title": "Türkisches Rührei mit Paprika (Menemen)",
     "cuisine": "Türkisch",
     "tags": [
       "Frühstück",
@@ -1389,11 +1414,12 @@
     "cookingTimeMin": 20,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/menemen.jpg",
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "titleEn": "Turkish Scrambled Eggs (Menemen)"
   },
   {
     "id": "r-27",
-    "title": "Kısır",
+    "title": "Bulgursalat (Kısır)",
     "cuisine": "Türkisch",
     "tags": [
       "Salat",
@@ -1455,11 +1481,12 @@
     "cookingTimeMin": 30,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/kısır.jpg",
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "titleEn": "Bulgur Salad (Kısır)"
   },
   {
     "id": "r-28",
-    "title": "Karnıyarık",
+    "title": "Gefüllte Melanzani (Karnıyarık)",
     "cuisine": "Türkisch",
     "tags": [
       "Hauptspeise",
@@ -1515,11 +1542,12 @@
     "cookingTimeMin": 60,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/karnıyarık.jpg",
-    "emoji": "🍆"
+    "emoji": "🍆",
+    "titleEn": "Stuffed Aubergines (Karnıyarık)"
   },
   {
     "id": "r-29",
-    "title": "Köfte mit Bulgur",
+    "title": "Türkische Fleischbällchen mit Bulgur (Köfte)",
     "cuisine": "Türkisch",
     "tags": [
       "Hauptspeise",
@@ -1569,7 +1597,8 @@
     "cookingTimeMin": 35,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/köfte-mit-bulgur.jpg",
-    "emoji": "🍢"
+    "emoji": "🍢",
+    "titleEn": "Turkish Meatballs with Bulgur (Köfte)"
   },
   {
     "id": "r-30",
@@ -1619,11 +1648,12 @@
     "cookingTimeMin": 45,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/börek-mit-schafkäse-und-spinat.jpg",
-    "emoji": "🥟"
+    "emoji": "🥟",
+    "titleEn": "Börek with Feta and Spinach"
   },
   {
     "id": "r-31",
-    "title": "Cacık",
+    "title": "Joghurt-Gurken-Dip (Cacık)",
     "cuisine": "Türkisch",
     "tags": [
       "Vorspeise",
@@ -1672,11 +1702,12 @@
     "cookingTimeMin": 10,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/cacık.jpg",
-    "emoji": "🥒"
+    "emoji": "🥒",
+    "titleEn": "Yoghurt Cucumber Dip (Cacık)"
   },
   {
     "id": "r-32",
-    "title": "Ajapsandali",
+    "title": "Georgisches Gemüseragout (Ajapsandali)",
     "cuisine": "Kaukasisch",
     "tags": [
       "Gemüse",
@@ -1735,11 +1766,12 @@
     "cookingTimeMin": 45,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/ajapsandali.jpg",
-    "emoji": "🍆"
+    "emoji": "🍆",
+    "titleEn": "Georgian Vegetable Stew (Ajapsandali)"
   },
   {
     "id": "r-33",
-    "title": "Lobio",
+    "title": "Georgischer Bohneneintopf (Lobio)",
     "cuisine": "Kaukasisch",
     "tags": [
       "Eintopf",
@@ -1793,11 +1825,12 @@
     "cookingTimeMin": 35,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/lobio.jpg",
-    "emoji": "🫘"
+    "emoji": "🫘",
+    "titleEn": "Georgian Bean Stew (Lobio)"
   },
   {
     "id": "r-34",
-    "title": "Chakhokhbili",
+    "title": "Georgisches Hühnerragout (Chakhokhbili)",
     "cuisine": "Kaukasisch",
     "tags": [
       "Hauptspeise",
@@ -1849,11 +1882,12 @@
     "cookingTimeMin": 50,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/chakhokhbili.jpg",
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "titleEn": "Georgian Chicken Stew (Chakhokhbili)"
   },
   {
     "id": "r-35",
-    "title": "Badrijani – Melanzaniröllchen mit Walnuss",
+    "title": "Melanzaniröllchen mit Walnusspaste (Badrijani)",
     "cuisine": "Kaukasisch",
     "tags": [
       "Vorspeise",
@@ -1906,11 +1940,12 @@
     "cookingTimeMin": 40,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/badrijani-–-melanzaniröllchen-mit-walnuss.jpg",
-    "emoji": "🌰"
+    "emoji": "🌰",
+    "titleEn": "Aubergine Rolls with Walnut Paste (Badrijani)"
   },
   {
     "id": "r-36",
-    "title": "Khachapuri",
+    "title": "Georgisches Käsebrot (Chatschapuri)",
     "cuisine": "Kaukasisch",
     "tags": [
       "Gebäck",
@@ -1960,11 +1995,12 @@
     "cookingTimeMin": 50,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/khachapuri.jpg",
-    "emoji": "🧀"
+    "emoji": "🧀",
+    "titleEn": "Georgian Cheese Bread (Khachapuri)"
   },
   {
     "id": "r-37",
-    "title": "Bigos",
+    "title": "Polnischer Krauteintopf (Bigos)",
     "cuisine": "Polnisch",
     "tags": [
       "Eintopf",
@@ -2020,11 +2056,12 @@
     "cookingTimeMin": 90,
     "servings": 6,
     "imageUrl": "https://cdn.smartkorb.example/recipes/bigos.jpg",
-    "emoji": "🥘"
+    "emoji": "🥘",
+    "titleEn": "Polish Cabbage Stew (Bigos)"
   },
   {
     "id": "r-38",
-    "title": "Pierogi ruskie",
+    "title": "Teigtaschen mit Erdäpfel-Topfen-Fülle (Pierogi ruskie)",
     "cuisine": "Polnisch",
     "tags": [
       "Teigtaschen",
@@ -2071,11 +2108,12 @@
     "cookingTimeMin": 75,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/pierogi-ruskie.jpg",
-    "emoji": "🥟"
+    "emoji": "🥟",
+    "titleEn": "Potato and Curd Dumplings (Pierogi ruskie)"
   },
   {
     "id": "r-39",
-    "title": "Gołąbki",
+    "title": "Gefüllte Krautrouladen (Gołąbki)",
     "cuisine": "Polnisch",
     "tags": [
       "Hauptspeise",
@@ -2123,11 +2161,12 @@
     "cookingTimeMin": 80,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/gołąbki.jpg",
-    "emoji": "🥬"
+    "emoji": "🥬",
+    "titleEn": "Stuffed Cabbage Rolls (Gołąbki)"
   },
   {
     "id": "r-40",
-    "title": "Placki ziemniaczane",
+    "title": "Polnische Erdäpfelpuffer (Placki)",
     "cuisine": "Polnisch",
     "tags": [
       "Schnell",
@@ -2174,11 +2213,12 @@
     "cookingTimeMin": 35,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/placki-ziemniaczane.jpg",
-    "emoji": "🥔"
+    "emoji": "🥔",
+    "titleEn": "Polish Potato Pancakes (Placki)"
   },
   {
     "id": "r-41",
-    "title": "Borschtsch",
+    "title": "Rote-Rüben-Suppe (Borschtsch)",
     "cuisine": "Ukrainisch",
     "tags": [
       "Suppe",
@@ -2238,11 +2278,12 @@
     "cookingTimeMin": 60,
     "servings": 6,
     "imageUrl": "https://cdn.smartkorb.example/recipes/borschtsch.jpg",
-    "emoji": "🍲"
+    "emoji": "🍲",
+    "titleEn": "Beetroot Soup (Borscht)"
   },
   {
     "id": "r-42",
-    "title": "Wareniki mit Erdäpfeln",
+    "title": "Teigtaschen mit Erdäpfelfülle (Wareniki)",
     "cuisine": "Ukrainisch",
     "tags": [
       "Teigtaschen",
@@ -2289,11 +2330,12 @@
     "cookingTimeMin": 70,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/wareniki-mit-erdäpfeln.jpg",
-    "emoji": "🥟"
+    "emoji": "🥟",
+    "titleEn": "Potato Dumplings (Varenyky)"
   },
   {
     "id": "r-43",
-    "title": "Syrniki",
+    "title": "Topfenpuffer (Syrniki)",
     "cuisine": "Ukrainisch",
     "tags": [
       "Frühstück",
@@ -2344,7 +2386,8 @@
     "cookingTimeMin": 30,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/syrniki.jpg",
-    "emoji": "🥞"
+    "emoji": "🥞",
+    "titleEn": "Curd Cheese Pancakes (Syrniki)"
   },
   {
     "id": "r-44",
@@ -2395,7 +2438,8 @@
     "cookingTimeMin": 35,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/ćevapčići-mit-ajvar.jpg",
-    "emoji": "🍢"
+    "emoji": "🍢",
+    "titleEn": "Ćevapčići with Ajvar"
   },
   {
     "id": "r-45",
@@ -2452,11 +2496,12 @@
     "cookingTimeMin": 15,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/šopska-salat.jpg",
-    "emoji": "🥗"
+    "emoji": "🥗",
+    "titleEn": "Shopska Salad"
   },
   {
     "id": "r-46",
-    "title": "Mapo Tofu",
+    "title": "Scharfer Tofu nach Sichuan-Art (Mapo Tofu)",
     "cuisine": "Chinesisch",
     "tags": [
       "Wok",
@@ -2510,7 +2555,8 @@
     "cookingTimeMin": 30,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/mapo-tofu.jpg",
-    "emoji": "🌶️"
+    "emoji": "🌶️",
+    "titleEn": "Sichuan-Style Spicy Tofu (Mapo Tofu)"
   },
   {
     "id": "r-47",
@@ -2565,7 +2611,8 @@
     "cookingTimeMin": 20,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/gebratener-reis-mit-ei.jpg",
-    "emoji": "🍚"
+    "emoji": "🍚",
+    "titleEn": "Egg Fried Rice"
   },
   {
     "id": "r-48",
@@ -2620,7 +2667,8 @@
     "cookingTimeMin": 25,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/wok-nudeln-mit-pak-choi.jpg",
-    "emoji": "🍜"
+    "emoji": "🍜",
+    "titleEn": "Wok Noodles with Pak Choi"
   },
   {
     "id": "r-49",
@@ -2674,11 +2722,12 @@
     "cookingTimeMin": 30,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/rindfleisch-mit-pak-choi.jpg",
-    "emoji": "🥩"
+    "emoji": "🥩",
+    "titleEn": "Beef with Pak Choi"
   },
   {
     "id": "r-50",
-    "title": "Oyakodon",
+    "title": "Hühnchen-Ei-Reisschüssel (Oyakodon)",
     "cuisine": "Japanisch",
     "tags": [
       "Reisgericht",
@@ -2727,7 +2776,8 @@
     "cookingTimeMin": 30,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/oyakodon.jpg",
-    "emoji": "🍚"
+    "emoji": "🍚",
+    "titleEn": "Chicken and Egg Rice Bowl (Oyakodon)"
   },
   {
     "id": "r-51",
@@ -2777,7 +2827,8 @@
     "cookingTimeMin": 15,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/miso-suppe-mit-tofu.jpg",
-    "emoji": "🍲"
+    "emoji": "🍲",
+    "titleEn": "Miso Soup with Tofu"
   },
   {
     "id": "r-52",
@@ -2831,11 +2882,12 @@
     "cookingTimeMin": 30,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/teriyaki-hühnchen.jpg",
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "titleEn": "Teriyaki Chicken"
   },
   {
     "id": "r-53",
-    "title": "Kimchi-Jjigae",
+    "title": "Kimchi-Eintopf (Kimchi-Jjigae)",
     "cuisine": "Koreanisch",
     "tags": [
       "Eintopf",
@@ -2885,11 +2937,12 @@
     "cookingTimeMin": 35,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/kimchi-jjigae.jpg",
-    "emoji": "🍲"
+    "emoji": "🍲",
+    "titleEn": "Kimchi Stew (Kimchi-Jjigae)"
   },
   {
     "id": "r-54",
-    "title": "Bibimbap",
+    "title": "Koreanische Reisschüssel (Bibimbap)",
     "cuisine": "Koreanisch",
     "tags": [
       "Reisgericht",
@@ -2942,7 +2995,8 @@
     "cookingTimeMin": 40,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/bibimbap.jpg",
-    "emoji": "🍚"
+    "emoji": "🍚",
+    "titleEn": "Korean Rice Bowl (Bibimbap)"
   },
   {
     "id": "r-55",
@@ -2994,11 +3048,12 @@
     "cookingTimeMin": 25,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/kimchi-pfannkuchen.jpg",
-    "emoji": "🥞"
+    "emoji": "🥞",
+    "titleEn": "Kimchi Pancakes"
   },
   {
     "id": "r-56",
-    "title": "Pad Thai",
+    "title": "Gebratene Reisnudeln (Pad Thai)",
     "cuisine": "Thailändisch",
     "tags": [
       "Wok",
@@ -3050,7 +3105,8 @@
     "cookingTimeMin": 30,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/pad-thai.jpg",
-    "emoji": "🍜"
+    "emoji": "🍜",
+    "titleEn": "Pad Thai"
   },
   {
     "id": "r-57",
@@ -3106,11 +3162,12 @@
     "cookingTimeMin": 30,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/rotes-curry-mit-huhn.jpg",
-    "emoji": "🍛"
+    "emoji": "🍛",
+    "titleEn": "Red Curry with Chicken"
   },
   {
     "id": "r-58",
-    "title": "Tom Kha Gai",
+    "title": "Kokossuppe mit Huhn (Tom Kha Gai)",
     "cuisine": "Thailändisch",
     "tags": [
       "Suppe",
@@ -3162,11 +3219,12 @@
     "cookingTimeMin": 25,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/tom-kha-gai.jpg",
-    "emoji": "🥥"
+    "emoji": "🥥",
+    "titleEn": "Coconut Chicken Soup (Tom Kha Gai)"
   },
   {
     "id": "r-59",
-    "title": "Phở Gà",
+    "title": "Vietnamesische Hühnersuppe (Phở Gà)",
     "cuisine": "Vietnamesisch",
     "tags": [
       "Suppe",
@@ -3221,11 +3279,12 @@
     "cookingTimeMin": 60,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/phở-gà.jpg",
-    "emoji": "🍜"
+    "emoji": "🍜",
+    "titleEn": "Vietnamese Chicken Noodle Soup (Phở Gà)"
   },
   {
     "id": "r-60",
-    "title": "Bánh mì mit Hühnerstreifen",
+    "title": "Vietnamesisches Sandwich mit Huhn (Bánh mì)",
     "cuisine": "Vietnamesisch",
     "tags": [
       "Sandwich",
@@ -3278,7 +3337,8 @@
     "cookingTimeMin": 25,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/bánh-mì-mit-hühnerstreifen.jpg",
-    "emoji": "🥖"
+    "emoji": "🥖",
+    "titleEn": "Vietnamese Chicken Sandwich (Bánh mì)"
   },
   {
     "id": "r-61",
@@ -3323,11 +3383,12 @@
     "cookingTimeMin": 25,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/spaghetti-carbonara.jpg",
-    "emoji": "🍝"
+    "emoji": "🍝",
+    "titleEn": "Spaghetti Carbonara"
   },
   {
     "id": "r-62",
-    "title": "Risotto ai funghi",
+    "title": "Risotto mit Champignons",
     "cuisine": "Italienisch",
     "tags": [
       "Klassiker",
@@ -3375,11 +3436,12 @@
     "cookingTimeMin": 40,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/risotto-ai-funghi.jpg",
-    "emoji": "🍄"
+    "emoji": "🍄",
+    "titleEn": "Mushroom Risotto"
   },
   {
     "id": "r-63",
-    "title": "Lasagne al forno",
+    "title": "Lasagne aus dem Ofen",
     "cuisine": "Italienisch",
     "tags": [
       "Ofen",
@@ -3433,11 +3495,12 @@
     "cookingTimeMin": 75,
     "servings": 6,
     "imageUrl": "https://cdn.smartkorb.example/recipes/lasagne-al-forno.jpg",
-    "emoji": "🍝"
+    "emoji": "🍝",
+    "titleEn": "Baked Lasagne"
   },
   {
     "id": "r-64",
-    "title": "Melanzane alla Parmigiana",
+    "title": "Überbackene Melanzani (Parmigiana)",
     "cuisine": "Italienisch",
     "tags": [
       "Ofen",
@@ -3489,11 +3552,12 @@
     "cookingTimeMin": 60,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/melanzane-alla-parmigiana.jpg",
-    "emoji": "🍆"
+    "emoji": "🍆",
+    "titleEn": "Aubergine Parmigiana"
   },
   {
     "id": "r-65",
-    "title": "Pasta e fagioli",
+    "title": "Nudel-Bohnen-Suppe (Pasta e fagioli)",
     "cuisine": "Italienisch",
     "tags": [
       "Suppe",
@@ -3547,7 +3611,8 @@
     "cookingTimeMin": 35,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/pasta-e-fagioli.jpg",
-    "emoji": "🫘"
+    "emoji": "🫘",
+    "titleEn": "Pasta and Bean Soup"
   },
   {
     "id": "r-66",
@@ -3599,11 +3664,12 @@
     "cookingTimeMin": 30,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/pizza-margherita.jpg",
-    "emoji": "🍕"
+    "emoji": "🍕",
+    "titleEn": "Pizza Margherita"
   },
   {
     "id": "r-67",
-    "title": "Classic Cheeseburger",
+    "title": "Cheeseburger",
     "cuisine": "Amerikanisch",
     "tags": [
       "Familienessen",
@@ -3653,7 +3719,8 @@
     "cookingTimeMin": 30,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/classic-cheeseburger.jpg",
-    "emoji": "🍔"
+    "emoji": "🍔",
+    "titleEn": "Classic Cheeseburger"
   },
   {
     "id": "r-68",
@@ -3713,11 +3780,12 @@
     "cookingTimeMin": 50,
     "servings": 6,
     "imageUrl": "https://cdn.smartkorb.example/recipes/chili-con-carne.jpg",
-    "emoji": "🌶️"
+    "emoji": "🌶️",
+    "titleEn": "Chili con Carne"
   },
   {
     "id": "r-69",
-    "title": "Mac and Cheese",
+    "title": "Makkaroni mit Käsesauce (Mac and Cheese)",
     "cuisine": "Amerikanisch",
     "tags": [
       "Ofen",
@@ -3765,11 +3833,12 @@
     "cookingTimeMin": 35,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/mac-and-cheese.jpg",
-    "emoji": "🧀"
+    "emoji": "🧀",
+    "titleEn": "Mac and Cheese"
   },
   {
     "id": "r-70",
-    "title": "Buttermilk Pancakes",
+    "title": "Buttermilch-Pancakes",
     "cuisine": "Amerikanisch",
     "tags": [
       "Frühstück",
@@ -3820,11 +3889,12 @@
     "cookingTimeMin": 25,
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/buttermilk-pancakes.jpg",
-    "emoji": "🥞"
+    "emoji": "🥞",
+    "titleEn": "Buttermilk Pancakes"
   },
   {
     "id": "r-71",
-    "title": "BBQ Pulled Chicken",
+    "title": "BBQ-Pulled-Chicken im Bun",
     "cuisine": "Amerikanisch",
     "tags": [
       "Ofen",
@@ -3870,11 +3940,12 @@
     "cookingTimeMin": 90,
     "servings": 6,
     "imageUrl": "https://cdn.smartkorb.example/recipes/bbq-pulled-chicken.jpg",
-    "emoji": "🍗"
+    "emoji": "🍗",
+    "titleEn": "BBQ Pulled Chicken"
   },
   {
     "id": "r-72",
-    "title": "Cornbread",
+    "title": "Maisbrot (Cornbread)",
     "cuisine": "Amerikanisch",
     "tags": [
       "Beilage",
@@ -3925,11 +3996,12 @@
     "cookingTimeMin": 40,
     "servings": 6,
     "imageUrl": "https://cdn.smartkorb.example/recipes/cornbread.jpg",
-    "emoji": "🌽"
+    "emoji": "🌽",
+    "titleEn": "Cornbread"
   },
   {
     "id": "r-73",
-    "title": "Banana Bread",
+    "title": "Bananenbrot",
     "cuisine": "Amerikanisch",
     "tags": [
       "Backen",
@@ -3983,6 +4055,7 @@
     "cookingTimeMin": 70,
     "servings": 8,
     "imageUrl": "https://cdn.smartkorb.example/recipes/banana-bread.jpg",
-    "emoji": "🍌"
+    "emoji": "🍌",
+    "titleEn": "Banana Bread"
   }
 ]

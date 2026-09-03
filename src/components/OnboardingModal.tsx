@@ -3,16 +3,18 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { colors, radius, spacing } from '../theme';
 import type { Allergen, DietPreference } from '../types';
-import { allAllergens, allDiets, allergenLabels, dietLabels } from '../utils/labels';
+import { allergenLabel, dietLabel, useLanguage, useT } from '../i18n';
+import { formatPrice } from '../utils/format';
+import { allAllergens, allDiets } from '../utils/labels';
 import { Chip } from './Chip';
 
-export const BUDGET_OPTIONS: { label: string; value: number | null }[] = [
-  { label: 'bis 2,00 €', value: 2 },
-  { label: 'bis 3,50 €', value: 3.5 },
-  { label: 'bis 5,00 €', value: 5 },
-  { label: 'bis 8,00 €', value: 8 },
-  { label: 'Kein Limit', value: null },
-];
+export const BUDGET_VALUES: (number | null)[] = [2, 3.5, 5, 8, null];
+
+/** "bis 3,50 €" / "up to €3.50" / "Kein Limit" */
+export const budgetLabel = (
+  value: number | null,
+  t: (key: 'budget.none' | 'budget.upTo', params?: Record<string, string | number>) => string,
+): string => (value === null ? t('budget.none') : t('budget.upTo', { amount: formatPrice(value) }));
 
 interface Props {
   visible: boolean;
@@ -43,9 +45,11 @@ export const OnboardingForm: React.FC<Props> = ({
   onSave,
   onSkip,
   onClose,
-  title = 'Dein Geschmacksprofil',
-  intro = 'Damit wir dir passende Gerichte aus den aktuellen Aktionen vorschlagen können.',
+  title,
+  intro,
 }) => {
+  const t = useT();
+  const language = useLanguage();
   const [diet, setDiet] = useState<DietPreference>(initialDiet);
   const [allergies, setAllergies] = useState<Allergen[]>(initialAllergies);
   const [budget, setBudget] = useState<number | null>(initialBudget);
@@ -74,42 +78,42 @@ export const OnboardingForm: React.FC<Props> = ({
         contentContainerStyle={styles.scrollContent}
         keyboardShouldPersistTaps="handled"
       >
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.intro}>{intro}</Text>
+        <Text style={styles.title}>{title ?? t('onboarding.title')}</Text>
+        <Text style={styles.intro}>{intro ?? t('onboarding.intro')}</Text>
 
-        <Text style={styles.sectionTitle}>Ernährung</Text>
+        <Text style={styles.sectionTitle}>{t('onboarding.diet')}</Text>
         <View style={styles.chipRow}>
           {allDiets.map((option) => (
             <Chip
               key={option}
-              label={dietLabels[option]}
+              label={dietLabel(option, language)}
               selected={diet === option}
               onPress={() => setDiet(option)}
             />
           ))}
         </View>
 
-        <Text style={styles.sectionTitle}>Allergien & Unverträglichkeiten</Text>
-        <Text style={styles.hint}>Mehrfachauswahl möglich</Text>
+        <Text style={styles.sectionTitle}>{t('onboarding.allergies')}</Text>
+        <Text style={styles.hint}>{t('onboarding.multiHint')}</Text>
         <View style={styles.chipRow}>
           {allAllergens.map((allergen) => (
             <Chip
               key={allergen}
-              label={allergenLabels[allergen]}
+              label={allergenLabel(allergen, language)}
               selected={allergies.includes(allergen)}
               onPress={() => toggleAllergy(allergen)}
             />
           ))}
         </View>
 
-        <Text style={styles.sectionTitle}>Budget pro Portion</Text>
+        <Text style={styles.sectionTitle}>{t('onboarding.budget')}</Text>
         <View style={styles.chipRow}>
-          {BUDGET_OPTIONS.map((option) => (
+          {BUDGET_VALUES.map((value) => (
             <Chip
-              key={option.label}
-              label={option.label}
-              selected={budget === option.value}
-              onPress={() => setBudget(option.value)}
+              key={String(value)}
+              label={budgetLabel(value, t)}
+              selected={budget === value}
+              onPress={() => setBudget(value)}
             />
           ))}
         </View>
@@ -121,7 +125,7 @@ export const OnboardingForm: React.FC<Props> = ({
           onPress={() => onSave({ dietPreference: diet, allergies, budgetPerPortion: budget })}
           style={({ pressed }) => [styles.primaryButton, pressed && styles.pressed]}
         >
-          <Text style={styles.primaryButtonText}>Speichern & loslegen</Text>
+          <Text style={styles.primaryButtonText}>{t('onboarding.save')}</Text>
         </Pressable>
 
         {onSkip ? (
@@ -130,7 +134,7 @@ export const OnboardingForm: React.FC<Props> = ({
             onPress={onSkip}
             style={({ pressed }) => [styles.secondaryButton, pressed && styles.pressed]}
           >
-            <Text style={styles.secondaryButtonText}>Überspringen, später einrichten</Text>
+            <Text style={styles.secondaryButtonText}>{t('onboarding.skip')}</Text>
           </Pressable>
         ) : null}
 
@@ -140,7 +144,7 @@ export const OnboardingForm: React.FC<Props> = ({
             onPress={onClose}
             style={({ pressed }) => [styles.secondaryButton, pressed && styles.pressed]}
           >
-            <Text style={styles.secondaryButtonText}>Abbrechen</Text>
+            <Text style={styles.secondaryButtonText}>{t('common.cancel')}</Text>
           </Pressable>
         ) : null}
       </View>

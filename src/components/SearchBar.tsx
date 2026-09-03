@@ -1,6 +1,7 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
+import { useT } from '../i18n';
 import { colors, radius, spacing } from '../theme';
 
 interface Props {
@@ -9,19 +10,22 @@ interface Props {
   placeholder?: string;
 }
 
-export const SearchBar: React.FC<Props> = ({ value, onChangeText, placeholder }) => (
+export const SearchBar: React.FC<Props> = ({ value, onChangeText, placeholder }) => {
+  const t = useT();
+
+  return (
   <View style={styles.wrapper}>
     <Text style={styles.icon}>🔍</Text>
     <TextInput
       style={styles.input}
       value={value}
       onChangeText={onChangeText}
-      placeholder={placeholder ?? 'Produkt suchen …'}
+      placeholder={placeholder ?? t('discounts.searchPlaceholder')}
       placeholderTextColor={colors.textMuted}
       autoCorrect={false}
       returnKeyType="search"
       clearButtonMode="while-editing"
-      accessibilityLabel="Produktsuche"
+      accessibilityLabel={t('discounts.searchPlaceholder')}
     />
     {value.length > 0 ? (
       <Pressable onPress={() => onChangeText('')} hitSlop={10} accessibilityRole="button">
@@ -29,7 +33,8 @@ export const SearchBar: React.FC<Props> = ({ value, onChangeText, placeholder })
       </Pressable>
     ) : null}
   </View>
-);
+  );
+};
 
 const styles = StyleSheet.create({
   wrapper: {

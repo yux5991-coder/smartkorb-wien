@@ -2,21 +2,15 @@ import React from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { useCatalogStore } from '../data';
+import { useT } from '../i18n';
+import { formatTimestamp } from '../utils/format';
 import { colors, radius, spacing } from '../theme';
 
-const formatStamp = (iso: string): string => {
-  const date = new Date(iso);
-  const pad = (value: number) => String(value).padStart(2, '0');
-  return `${pad(date.getDate())}.${pad(date.getMonth() + 1)}., ${pad(date.getHours())}:${pad(
-    date.getMinutes(),
-  )}`;
-};
-
-const originLabels: Record<string, string> = {
-  bundled: 'Demodaten aus der App',
-  cache: 'zuletzt geladene Aktionen',
-  remote: 'aktuelle Aktionen',
-};
+const ORIGIN_KEYS = {
+  bundled: 'data.bundled',
+  cache: 'data.cache',
+  remote: 'data.remote',
+} as const;
 
 /**
  * One line telling the user how fresh the offer data is and letting them pull a
@@ -25,9 +19,13 @@ const originLabels: Record<string, string> = {
  */
 export const DataStatusBar: React.FC = () => {
   const { index, status, fetchedAt, error, refresh } = useCatalogStore();
+  const t = useT();
 
   const stamp = fetchedAt ?? index.catalog.generatedAt;
-  const label = `${originLabels[index.origin] ?? index.origin} · Stand ${formatStamp(stamp)}`;
+  const label = t('data.status', {
+    origin: t(ORIGIN_KEYS[index.origin]),
+    stamp: formatTimestamp(stamp),
+  });
 
   return (
     <View style={styles.row}>
@@ -37,7 +35,7 @@ export const DataStatusBar: React.FC = () => {
         </Text>
         {error ? (
           <Text style={styles.error} numberOfLines={2}>
-            {error}
+            {t(error)}
           </Text>
         ) : null}
       </View>
@@ -48,11 +46,11 @@ export const DataStatusBar: React.FC = () => {
         <Pressable
           onPress={() => refresh({ force: true })}
           accessibilityRole="button"
-          accessibilityLabel="Aktionen aktualisieren"
+          accessibilityLabel={t('data.refreshA11y')}
           hitSlop={8}
           style={({ pressed }) => [styles.button, pressed && styles.pressed]}
         >
-          <Text style={styles.buttonText}>Aktualisieren</Text>
+          <Text style={styles.buttonText}>{t('data.refresh')}</Text>
         </Pressable>
       )}
     </View>

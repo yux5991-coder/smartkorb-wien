@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { useCatalog } from '../data';
+import { cuisineLabel, recipeTitle, useLanguage, useT } from '../i18n';
 import { costRecipe, retailerNames } from '../services/pricing';
 import { colors, radius, shadow, spacing } from '../theme';
 import type { Recipe } from '../types';
@@ -17,6 +18,8 @@ interface Props {
 
 export const RecipeCard: React.FC<Props> = ({ recipe, saved, onPress, onToggleSave }) => {
   const catalog = useCatalog();
+  const t = useT();
+  const language = useLanguage();
   const cost = useMemo(() => costRecipe(catalog, recipe), [catalog, recipe]);
   const cheapestRetailers = useMemo(() => retailerNames(cost), [cost]);
 
@@ -32,29 +35,33 @@ export const RecipeCard: React.FC<Props> = ({ recipe, saved, onPress, onToggleSa
           onPress={onToggleSave}
           hitSlop={8}
           accessibilityRole="button"
-          accessibilityLabel={saved ? 'Rezept entfernen' : 'Rezept speichern'}
+          accessibilityLabel={saved ? t('kitchen.removeRecipe') : t('kitchen.saveRecipe')}
           style={styles.heart}
         >
           <Text style={styles.heartIcon}>{saved ? '❤️' : '🤍'}</Text>
         </Pressable>
         <View style={styles.timePill}>
-          <Text style={styles.timeText}>{recipe.cookingTimeMin} Min</Text>
+          <Text style={styles.timeText}>{t('kitchen.minutes', { count: recipe.cookingTimeMin })}</Text>
         </View>
       </View>
 
       <View style={styles.body}>
         <Text style={styles.cuisine} numberOfLines={1}>
-          {recipe.cuisine}
+          {cuisineLabel(recipe.cuisine, language)}
         </Text>
         <Text style={styles.title} numberOfLines={2}>
-          {recipe.title}
+          {recipeTitle(recipe, language)}
         </Text>
-        <Text style={styles.price}>{formatPrice(cost.pricePerPortion)} / Portion</Text>
+        <Text style={styles.price}>
+          {formatPrice(cost.pricePerPortion)} {t('common.perPortionShort')}
+        </Text>
         <Text style={styles.stores} numberOfLines={2}>
-          {cheapestRetailers ? `Günstig bei ${cheapestRetailers}` : 'Keine Aktion aktiv'}
+          {cheapestRetailers
+            ? t('kitchen.cheapAt', { retailers: cheapestRetailers })
+            : t('kitchen.noOfferActive')}
         </Text>
         {cost.savings > 0.05 ? (
-          <Text style={styles.savings}>Du sparst {formatPrice(cost.savings)}</Text>
+          <Text style={styles.savings}>{t('kitchen.youSave', { amount: formatPrice(cost.savings) })}</Text>
         ) : null}
       </View>
     </Pressable>

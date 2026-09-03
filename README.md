@@ -4,8 +4,9 @@ Mobile app (React Native + Expo, TypeScript) that aggregates the daily grocery
 discounts of Vienna's supermarket chains (Spar, Billa, Billa Plus, Hofer, Lidl,
 Penny) in one place and helps to plan shopping and cooking around them.
 
-The user interface is entirely in **German** (target audience: Vienna residents).
-Code, comments and commit messages are in English.
+The user interface ships in **German** (target audience: Vienna residents) and
+can be switched to **English** in the profile. Code, comments and commit
+messages are in English.
 
 ## Quick start
 
@@ -146,6 +147,24 @@ OSM data is licensed under the **ODbL**: the app credits
 to stay under the same licence. Overpass is a free shared service — the workflow
 therefore queries it once a week, not on every run.
 
+## Languages
+
+The UI language lives in the user profile (*Profil → Sprache*), is persisted
+with the rest of the profile and takes effect immediately — including number and
+date formats (`2,49 €` / `bis 12.09.` vs `€2.49` / `until 12/09`).
+
+- `src/i18n/translations.ts` holds both dictionaries. The English record is typed
+  as `Record<TranslationKey, string>`, so a key added to German that is missing
+  in English fails the type check.
+- `useT()` returns `t('key', { params })` for components; `translate(lang, key)`
+  is the non-hook variant the assistant uses for its answers.
+- Recipe titles exist in both languages (`title` / `titleEn`); cuisines, product
+  categories and dish tags have English labels.
+- **Catalogue data stays German**: product names, chain names and the flyer small
+  print are what the retailers publish — a Billa offer is called
+  "Rispentomaten" in any UI language. Only pack unit words (`Stk` → `pcs`,
+  `Bund` → `bunch`) are swapped.
+
 ## Recipe catalogue
 
 73 recipes across the kitchens people in Vienna actually cook from:
@@ -167,8 +186,22 @@ phone. The same tests check that no recipe references an unknown product and
 that the catalogue stays broad (≥ 50 recipes, ≥ 10 cuisines).
 
 Because every ingredient is a catalogue product, each recipe is priced from the
-running offers: the cards show the price per portion and which chains the
-cheapest basket points to.
+running offers — see below for how.
+
+## How prices are calculated
+
+Two numbers, deliberately different, because mixing them is what makes a
+shopping app feel wrong:
+
+| | What it means | How it is computed |
+| --- | --- | --- |
+| **Einkauf / Basket** | What you hand over at the till | Whole packs: `ceil(needed / pack size)` packs at the pack price — nobody sells 10 g of garlic, so a recipe needing 10 g is charged one 200 g jar |
+| **Pro Portion / Per portion** | What the meal costs you | Only the amount the recipe uses, divided by the servings — the rest of the jar belongs to the next meal |
+
+Offers apply to the pack price, and the savings figure compares the basket
+against the same basket at regular prices. `src/services/packMath.ts` holds the
+arithmetic, free of any data or React Native import, and
+`pipeline/test/pricing.test.ts` covers it.
 
 ## Chain logos
 

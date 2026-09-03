@@ -116,7 +116,10 @@ export interface RecipeIngredient {
 
 export interface Recipe {
   id: RecipeId;
+  /** German title — the app's default language. */
   title: string;
+  /** English title, used when the profile language is 'en'. */
+  titleEn?: string;
   /**
    * Kitchen the dish comes from: "Österreichisch", "Türkisch", "Kaukasisch",
    * "Polnisch", "Ukrainisch", "Balkan", "Chinesisch", "Japanisch",
@@ -150,6 +153,8 @@ export interface ActivityLogEntry {
 }
 
 export interface UserProfile {
+  /** UI language — 'de' (default) or 'en'. */
+  language: 'de' | 'en';
   dietPreference: DietPreference;
   allergies: Allergen[];
   /** Budget per portion in EUR; `null` means "no limit". */

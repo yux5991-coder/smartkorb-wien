@@ -10,6 +10,8 @@ import type {
   UserProfile,
 } from '../types';
 
+type Language = UserProfile['language'];
+
 const ACTIVITY_LOG_LIMIT = 40;
 
 /** Key of the AsyncStorage record that holds the whole user profile. */
@@ -18,6 +20,7 @@ export const PROFILE_STORAGE_KEY = 'smartkorb.profile.v1';
 interface ProfileState extends UserProfile {
   /** True once the persisted profile has been read from AsyncStorage. */
   hydrated: boolean;
+  setLanguage: (language: Language) => void;
   setDietPreference: (diet: DietPreference) => void;
   toggleAllergy: (allergen: Allergen) => void;
   setAllergies: (allergens: Allergen[]) => void;
@@ -37,6 +40,7 @@ interface ProfileState extends UserProfile {
 }
 
 const initialProfile: UserProfile = {
+  language: 'de',
   dietPreference: 'omnivor',
   allergies: [],
   budgetPerPortion: null,
@@ -57,6 +61,8 @@ export const useProfileStore = create<ProfileState>()(
     (set, get) => ({
       ...initialProfile,
       hydrated: false,
+
+      setLanguage: (language) => set({ language }),
 
       setDietPreference: (dietPreference) => set({ dietPreference }),
 
@@ -108,6 +114,7 @@ export const useProfileStore = create<ProfileState>()(
       name: PROFILE_STORAGE_KEY,
       storage: createJSONStorage(() => AsyncStorage),
       partialize: (state) => ({
+        language: state.language,
         dietPreference: state.dietPreference,
         allergies: state.allergies,
         budgetPerPortion: state.budgetPerPortion,

@@ -2,6 +2,7 @@ import React from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { useCatalog } from '../data';
+import { categoryLabel, useLanguage, useT, type TranslationKey } from '../i18n';
 import { colors, radius, spacing } from '../theme';
 import type { ProductCategory } from '../types';
 import { BottomSheet } from './BottomSheet';
@@ -23,10 +24,10 @@ export const defaultFilters: DiscountFilters = {
   sort: 'percent',
 };
 
-export const sortLabels: Record<SortOption, string> = {
-  percent: 'Höchster Rabatt',
-  priceAsc: 'Niedrigster Preis',
-  alpha: 'Name A–Z',
+export const sortKeys: Record<SortOption, TranslationKey> = {
+  percent: 'sort.percent',
+  priceAsc: 'sort.priceAsc',
+  alpha: 'sort.alpha',
 };
 
 const percentSteps = [0, 20, 30, 40];
@@ -47,6 +48,8 @@ export const DiscountFilterSheet: React.FC<Props> = ({
   resultCount,
 }) => {
   const catalog = useCatalog();
+  const t = useT();
+  const language = useLanguage();
 
   const toggleRetailer = (retailerId: string) =>
     onChange({
@@ -68,11 +71,11 @@ export const DiscountFilterSheet: React.FC<Props> = ({
     <BottomSheet
       visible={visible}
       onClose={onClose}
-      title="Filter & Sortierung"
-      subtitle={`${resultCount} Angebote gefunden`}
+      title={t('filter.title')}
+      subtitle={t('filter.found', { count: resultCount })}
     >
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Text style={styles.sectionTitle}>Handelsketten</Text>
+        <Text style={styles.sectionTitle}>{t('filter.chains')}</Text>
         <View style={styles.row}>
           {catalog.retailers.map((retailer) => (
             <Chip
@@ -85,36 +88,36 @@ export const DiscountFilterSheet: React.FC<Props> = ({
           ))}
         </View>
 
-        <Text style={styles.sectionTitle}>Kategorie</Text>
+        <Text style={styles.sectionTitle}>{t('filter.category')}</Text>
         <View style={styles.row}>
           {catalog.categories.map((category) => (
             <Chip
               key={category}
-              label={category}
+              label={categoryLabel(category, language)}
               selected={filters.categories.includes(category)}
               onPress={() => toggleCategory(category)}
             />
           ))}
         </View>
 
-        <Text style={styles.sectionTitle}>Mindestrabatt</Text>
+        <Text style={styles.sectionTitle}>{t('filter.minDiscount')}</Text>
         <View style={styles.row}>
           {percentSteps.map((step) => (
             <Chip
               key={step}
-              label={step === 0 ? 'Alle' : `ab ${step} %`}
+              label={step === 0 ? t('common.all') : t('filter.from', { percent: step })}
               selected={filters.minPercent === step}
               onPress={() => onChange({ ...filters, minPercent: step })}
             />
           ))}
         </View>
 
-        <Text style={styles.sectionTitle}>Sortierung</Text>
+        <Text style={styles.sectionTitle}>{t('filter.sorting')}</Text>
         <View style={styles.row}>
-          {(Object.keys(sortLabels) as SortOption[]).map((option) => (
+          {(Object.keys(sortKeys) as SortOption[]).map((option) => (
             <Chip
               key={option}
-              label={sortLabels[option]}
+              label={t(sortKeys[option])}
               selected={filters.sort === option}
               onPress={() => onChange({ ...filters, sort: option })}
             />
@@ -127,14 +130,14 @@ export const DiscountFilterSheet: React.FC<Props> = ({
             style={({ pressed }) => [styles.resetButton, pressed && styles.pressed]}
             accessibilityRole="button"
           >
-            <Text style={styles.resetText}>Zurücksetzen</Text>
+            <Text style={styles.resetText}>{t('filter.reset')}</Text>
           </Pressable>
           <Pressable
             onPress={onClose}
             style={({ pressed }) => [styles.applyButton, pressed && styles.pressed]}
             accessibilityRole="button"
           >
-            <Text style={styles.applyText}>{resultCount} Angebote anzeigen</Text>
+            <Text style={styles.applyText}>{t('filter.apply', { count: resultCount })}</Text>
           </Pressable>
         </View>
       </ScrollView>

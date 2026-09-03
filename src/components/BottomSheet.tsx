@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { useT } from '../i18n';
 import { colors, radius, spacing } from '../theme';
 
 interface Props {
@@ -24,6 +25,7 @@ export const BottomSheet: React.FC<Props> = ({
   maxHeightRatio = 0.85,
 }) => {
   const insets = useSafeAreaInsets();
+  const t = useT();
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
@@ -49,7 +51,7 @@ export const BottomSheet: React.FC<Props> = ({
                 ) : null}
               </View>
               <Pressable onPress={onClose} hitSlop={12} accessibilityRole="button">
-                <Text style={styles.close}>Schließen</Text>
+                <Text style={styles.close}>{t('common.close')}</Text>
               </Pressable>
             </View>
           ) : null}

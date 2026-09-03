@@ -15,12 +15,15 @@ import { fetchRemoteCatalog, readCachedCatalog } from './remote';
 
 export type SyncStatus = 'idle' | 'loading' | 'error';
 
+/** Translation keys the status bar renders. */
+export type ErrorKey = 'error.noSource' | 'error.http' | 'error.timeout' | 'error.offline';
+
 interface CatalogState {
   index: CatalogIndex;
   status: SyncStatus;
   /** When the data currently on screen was downloaded (null for bundled data). */
   fetchedAt: string | null;
-  error: string | null;
+  error: ErrorKey | null;
   /** True while the very first bootstrap is running. */
   booting: boolean;
   bootstrap: () => Promise<void>;
@@ -29,19 +32,16 @@ interface CatalogState {
 
 const MS_PER_HOUR = 60 * 60 * 1000;
 
-/** Technical failures are logged; the user gets a sentence they can act on. */
-const friendlyError = (error: unknown): string => {
+/**
+ * Technical failures are logged; the UI gets a translation key so the message
+ * follows the selected language.
+ */
+const errorKey = (error: unknown): ErrorKey => {
   const message = error instanceof Error ? error.message : String(error);
-  if (/no snapshot URL configured/i.test(message)) {
-    return 'Keine Datenquelle konfiguriert — es werden die mitgelieferten Demodaten angezeigt.';
-  }
-  if (/HTTP 4\d\d/.test(message)) {
-    return 'Die Aktionsdaten sind derzeit nicht abrufbar. Angezeigt werden die zuletzt geladenen Daten.';
-  }
-  if (/abort/i.test(message)) {
-    return 'Zeitüberschreitung beim Laden der Aktionen — bitte später erneut versuchen.';
-  }
-  return 'Keine Verbindung zu den Aktionsdaten. Angezeigt werden die zuletzt geladenen Daten.';
+  if (/no snapshot URL configured/i.test(message)) return 'error.noSource';
+  if (/HTTP 4\d\d/.test(message)) return 'error.http';
+  if (/abort/i.test(message)) return 'error.timeout';
+  return 'error.offline';
 };
 
 const isStale = (fetchedAt: string | null): boolean => {
@@ -75,10 +75,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
 
   refresh: async ({ force = false } = {}) => {
     if (!SNAPSHOT_URL) {
-      set({
-        status: 'error',
-        error: 'Keine Datenquelle konfiguriert — die App zeigt die mitgelieferten Demodaten.',
-      });
+      set({ status: 'error', error: 'error.noSource' });
       return;
     }
     if (get().status === 'loading') return;
@@ -96,7 +93,7 @@ export const useCatalogStore = create<CatalogState>()((set, get) => ({
     } catch (error) {
       // keep whatever is on screen — stale data beats an empty app
       console.warn('[SmartKorb] snapshot refresh failed:', error);
-      set({ status: 'error', error: friendlyError(error) });
+      set({ status: 'error', error: errorKey(error) });
     }
   },
 }));
