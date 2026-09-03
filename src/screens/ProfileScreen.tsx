@@ -6,7 +6,8 @@ import { OnboardingForm, BUDGET_OPTIONS } from '../components/OnboardingModal';
 import { PlaceholderImage } from '../components/PlaceholderImage';
 import { RecipeDetailSheet } from '../components/RecipeDetailSheet';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { getRecipe } from '../data';
+import { DataStatusBar } from '../components/DataStatusBar';
+import { getActiveDiscountViews, getRecipe, useCatalog } from '../data';
 import { costRecipe } from '../services/pricing';
 import { useProfileStore } from '../store/useProfileStore';
 import { colors, radius, shadow, spacing } from '../theme';
@@ -22,6 +23,7 @@ const formatTimestamp = (iso: string): string => {
 
 export const ProfileScreen: React.FC = () => {
   const insets = useSafeAreaInsets();
+  const catalog = useCatalog();
   const {
     dietPreference,
     allergies,
@@ -39,8 +41,11 @@ export const ProfileScreen: React.FC = () => {
   const [detailRecipe, setDetailRecipe] = useState<Recipe | null>(null);
 
   const savedRecipes = useMemo(
-    () => savedRecipeIds.map(getRecipe).filter((recipe): recipe is Recipe => Boolean(recipe)),
-    [savedRecipeIds],
+    () =>
+      savedRecipeIds
+        .map((id) => getRecipe(catalog, id))
+        .filter((recipe): recipe is Recipe => Boolean(recipe)),
+    [catalog, savedRecipeIds],
   );
 
   const budgetLabel =
@@ -59,6 +64,28 @@ export const ProfileScreen: React.FC = () => {
         contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xl }}
       >
         <ScreenHeader title="Profil" subtitle="Deine Rezepte, Einstellungen und Aktivitäten" />
+
+        <DataStatusBar />
+
+        <View style={styles.card}>
+          <View style={styles.cardHeader}>
+            <Text style={styles.cardTitle}>Datenquelle</Text>
+          </View>
+          <View style={styles.settingRow}>
+            <Text style={styles.settingLabel}>Filialen in Wien</Text>
+            <Text style={styles.settingValue}>{catalog.stores.length}</Text>
+          </View>
+          <View style={styles.settingRow}>
+            <Text style={styles.settingLabel}>Aktionen heute</Text>
+            <Text style={styles.settingValue}>{getActiveDiscountViews(catalog).length}</Text>
+          </View>
+          <View style={styles.settingRow}>
+            <Text style={styles.settingLabel}>Quellen</Text>
+            <Text style={styles.settingValue} numberOfLines={2}>
+              {catalog.catalog.sources.join(', ')}
+            </Text>
+          </View>
+        </View>
 
         {/* --- Einstellungen ------------------------------------------------ */}
         <View style={styles.card}>
@@ -115,7 +142,7 @@ export const ProfileScreen: React.FC = () => {
             </Text>
           ) : (
             savedRecipes.map((recipe) => {
-              const cost = costRecipe(recipe);
+              const cost = costRecipe(catalog, recipe);
               return (
                 <Pressable
                   key={recipe.id}
@@ -179,8 +206,9 @@ export const ProfileScreen: React.FC = () => {
         </View>
 
         <Text style={styles.footnote}>
-          SmartKorb Wien · Prototyp mit Demodaten. Die Aktionen stammen aus lokalen Mock-Dateien,
-          nicht von den Handelsketten.
+          SmartKorb Wien · Filialdaten aus OpenStreetMap (ODbL). Aktionen aus der täglichen
+          Datenaktualisierung; ohne konfigurierte Quelle zeigt die App die mitgelieferten
+          Demodaten.
         </Text>
       </ScrollView>
 

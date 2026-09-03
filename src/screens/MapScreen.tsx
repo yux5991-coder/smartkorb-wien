@@ -8,40 +8,43 @@ import { DiscountCard } from '../components/DiscountCard';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { StoreMap } from '../components/StoreMap';
 import type { MappedStore } from '../components/storeMapTypes';
-import { getActiveDiscountViews, getDiscountsForStore, getRetailer, getStore, retailers, stores } from '../data';
+import {
+  countOffersForStore,
+  getActiveDiscountViews,
+  getDiscountsForStore,
+  getRetailer,
+  getStore,
+  useCatalog,
+} from '../data';
 import { useProfileStore } from '../store/useProfileStore';
 import { colors, radius, spacing } from '../theme';
 import { formatPrice } from '../utils/format';
 
 export const MapScreen: React.FC = () => {
+  const catalog = useCatalog();
   const [activeRetailers, setActiveRetailers] = useState<string[]>([]);
   const [selectedStoreId, setSelectedStoreId] = useState<string | null>(null);
   const logActivity = useProfileStore((state) => state.logActivity);
 
-  const offersByStore = useMemo(() => {
-    const map = new Map<string, number>();
-    getActiveDiscountViews().forEach((view) => {
-      map.set(view.storeId, (map.get(view.storeId) ?? 0) + 1);
-    });
-    return map;
-  }, []);
-
   const items = useMemo<MappedStore[]>(
     () =>
-      stores
+      catalog.stores
         .filter((store) => activeRetailers.length === 0 || activeRetailers.includes(store.retailerId))
         .map((store) => ({
           store,
-          retailer: getRetailer(store.retailerId)!,
-          offerCount: offersByStore.get(store.id) ?? 0,
+          retailer: getRetailer(catalog, store.retailerId)!,
+          offerCount: countOffersForStore(catalog, store),
         }))
         .filter((item) => Boolean(item.retailer)),
-    [activeRetailers, offersByStore],
+    [catalog, activeRetailers],
   );
 
-  const selectedStore = selectedStoreId ? getStore(selectedStoreId) : null;
-  const selectedRetailer = selectedStore ? getRetailer(selectedStore.retailerId) : null;
-  const selectedDiscounts = selectedStoreId ? getDiscountsForStore(selectedStoreId) : [];
+  const selectedStore = selectedStoreId ? getStore(catalog, selectedStoreId) : null;
+  const selectedRetailer = selectedStore ? getRetailer(catalog, selectedStore.retailerId) : null;
+  const selectedDiscounts = useMemo(
+    () => (selectedStoreId ? getDiscountsForStore(catalog, selectedStoreId) : []),
+    [catalog, selectedStoreId],
+  );
 
   const toggleRetailer = (retailerId: string) =>
     setActiveRetailers((current) =>
@@ -52,7 +55,7 @@ export const MapScreen: React.FC = () => {
 
   const handleSelectStore = (storeId: string) => {
     setSelectedStoreId(storeId);
-    const store = getStore(storeId);
+    const store = getStore(catalog, storeId);
     if (store) logActivity('store_viewed', store.name);
   };
 
@@ -62,7 +65,9 @@ export const MapScreen: React.FC = () => {
     <SafeAreaView style={styles.screen} edges={['top']}>
       <ScreenHeader
         title="Karte"
-        subtitle={`${items.length} Filialen · ${getActiveDiscountViews().length} laufende Aktionen`}
+        subtitle={`${items.length} von ${catalog.stores.length} Filialen · ${
+          getActiveDiscountViews(catalog).length
+        } laufende Aktionen`}
       />
 
       <ScrollView
@@ -77,7 +82,7 @@ export const MapScreen: React.FC = () => {
           onPress={() => setActiveRetailers([])}
           compact
         />
-        {retailers.map((retailer) => (
+        {catalog.retailers.map((retailer) => (
           <Chip
             key={retailer.id}
             label={retailer.name}

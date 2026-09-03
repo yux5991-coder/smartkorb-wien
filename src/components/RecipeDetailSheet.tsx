@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
+import { useCatalog } from '../data';
 import { costRecipe } from '../services/pricing';
 import { colors, radius, spacing } from '../theme';
 import type { Recipe } from '../types';
@@ -24,7 +25,8 @@ export const RecipeDetailSheet: React.FC<Props> = ({
   onClose,
   onToggleSave,
 }) => {
-  const cost = useMemo(() => (recipe ? costRecipe(recipe) : null), [recipe]);
+  const catalog = useCatalog();
+  const cost = useMemo(() => (recipe ? costRecipe(catalog, recipe) : null), [catalog, recipe]);
 
   if (!recipe || !cost) {
     return <BottomSheet visible={false} onClose={onClose}>{null}</BottomSheet>;

@@ -24,6 +24,10 @@
       "favicon": "./assets/favicon.png"
     },
     "scheme": "smartkorb",
-    "primaryColor": "#0E7C5A"
+    "primaryColor": "#0E7C5A",
+    "extra": {
+      "snapshotUrl": "https://raw.githubusercontent.com/<owner>/<repo>/main/data/snapshot.json",
+      "refreshAfterHours": 6
+    }
   }
 }

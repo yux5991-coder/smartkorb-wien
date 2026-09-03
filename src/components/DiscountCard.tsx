@@ -45,10 +45,13 @@ export const DiscountCard: React.FC<Props> = ({ discount, onPress, hideStore = f
         </View>
 
         <View style={styles.footerRow}>
+          {store ? null : <Text style={styles.scope}>in allen Filialen</Text>}
           <View style={styles.retailerRow}>
             <RetailerLogo retailer={retailer} size={22} />
             <Text style={styles.retailerName} numberOfLines={1}>
-              {hideStore ? retailer.name : `${retailer.name} · ${store.district}`}
+              {hideStore || !store
+                ? retailer.name
+                : `${retailer.name} · ${store.district}`}
             </Text>
           </View>
           <Text style={styles.validity} numberOfLines={1}>
@@ -137,5 +140,11 @@ const styles = StyleSheet.create({
     fontSize: 11,
     color: colors.textMuted,
     marginTop: 4,
+  },
+  scope: {
+    fontSize: 11,
+    color: colors.primary,
+    fontWeight: '600',
+    marginBottom: 2,
   },
 });

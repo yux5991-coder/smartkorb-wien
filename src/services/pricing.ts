@@ -2,7 +2,7 @@
  * Turns a recipe into a shopping list with real prices, based on the offers
  * that are currently running in Vienna.
  */
-import { getCheapestOfferForProduct, getProduct } from '../data';
+import { getCheapestOfferForProduct, getProduct, type CatalogIndex } from '../data';
 import type { DiscountView, Product, Recipe, RecipeIngredient } from '../types';
 import { priceForAmount } from '../utils/format';
 
@@ -22,15 +22,18 @@ export interface RecipeCost {
   total: number;
   pricePerPortion: number;
   savings: number;
-  /** Stores that carry at least one of the discounted ingredients. */
-  bestStores: DiscountView[];
+  /** Offers behind the cheapest basket — one per retailer. */
+  bestOffers: DiscountView[];
 }
 
-const costIngredient = (ingredient: RecipeIngredient): CostedIngredient | null => {
-  const product = getProduct(ingredient.productId);
+const costIngredient = (
+  index: CatalogIndex,
+  ingredient: RecipeIngredient,
+): CostedIngredient | null => {
+  const product = getProduct(index, ingredient.productId);
   if (!product) return null;
 
-  const offer = getCheapestOfferForProduct(product.id);
+  const offer = getCheapestOfferForProduct(index, product.id);
   const regularPrice = priceForAmount(product.basePrice, product.baseGrams, ingredient.grams);
   const price = offer
     ? priceForAmount(offer.discountPrice, product.baseGrams, ingredient.grams)
@@ -39,18 +42,18 @@ const costIngredient = (ingredient: RecipeIngredient): CostedIngredient | null =
   return { product, grams: ingredient.grams, price, regularPrice, offer };
 };
 
-export const costRecipe = (recipe: Recipe): RecipeCost => {
+export const costRecipe = (index: CatalogIndex, recipe: Recipe): RecipeCost => {
   const items = recipe.ingredients
-    .map(costIngredient)
+    .map((ingredient) => costIngredient(index, ingredient))
     .filter((item): item is CostedIngredient => item !== null);
 
   const total = items.reduce((sum, item) => sum + item.price, 0);
   const regularTotal = items.reduce((sum, item) => sum + item.regularPrice, 0);
 
-  const bestStores: DiscountView[] = [];
+  const bestOffers: DiscountView[] = [];
   items.forEach((item) => {
-    if (item.offer && !bestStores.some((view) => view.storeId === item.offer!.storeId)) {
-      bestStores.push(item.offer);
+    if (item.offer && !bestOffers.some((view) => view.retailerId === item.offer!.retailerId)) {
+      bestOffers.push(item.offer);
     }
   });
 
@@ -59,13 +62,19 @@ export const costRecipe = (recipe: Recipe): RecipeCost => {
     total,
     pricePerPortion: total / Math.max(1, recipe.servings),
     savings: Math.max(0, regularTotal - total),
-    bestStores,
+    bestOffers,
   };
 };
 
 /** Share of a recipe's ingredients that are currently on sale (0…1). */
-export const discountCoverage = (recipe: Recipe): number => {
-  const cost = costRecipe(recipe);
+export const discountCoverage = (index: CatalogIndex, recipe: Recipe): number => {
+  const cost = costRecipe(index, recipe);
   if (cost.items.length === 0) return 0;
   return cost.items.filter((item) => item.offer).length / cost.items.length;
 };
+
+/** "Spar, Hofer" — the chains a recipe's cheapest basket points to. */
+export const retailerNames = (cost: RecipeCost, limit = 2): string =>
+  Array.from(new Set(cost.bestOffers.map((view) => view.retailer.name)))
+    .slice(0, limit)
+    .join(', ');

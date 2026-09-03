@@ -40,7 +40,7 @@
  * dietPreference / allergies / budgetPerPortion and the recipe catalogue.
  */
 
-import { getActiveDiscountViews, getProduct, recipes } from '../data';
+import { getActiveDiscountViews, getProduct, type CatalogIndex } from '../data';
 import type { Allergen, Product, Recipe, UserProfile } from '../types';
 import { priceForAmount } from '../utils/format';
 import { allergenLabels } from '../utils/labels';
@@ -80,19 +80,22 @@ const conflictingAllergens = (recipe: Recipe, allergies: Allergen[]): Allergen[]
  * "Was koche ich?" — ranks the recipe catalogue against today's offers and the
  * user's preferences and returns the 3-5 best matches.
  */
-export const suggestDishes = async (profile: UserProfile): Promise<DishSuggestion[]> => {
+export const suggestDishes = async (
+  index: CatalogIndex,
+  profile: UserProfile,
+): Promise<DishSuggestion[]> => {
   await delay(MOCK_LATENCY_MS);
 
   const personalised = profile.onboardingStatus === 'completed';
 
-  const candidates = recipes
+  const candidates = index.recipes
     .filter((recipe) => (personalised ? matchesDiet(recipe, profile) : true))
     .filter((recipe) =>
       personalised ? conflictingAllergens(recipe, profile.allergies).length === 0 : true,
     )
     .map((recipe) => {
-      const cost = costRecipe(recipe);
-      const coverage = discountCoverage(recipe);
+      const cost = costRecipe(index, recipe);
+      const coverage = discountCoverage(index, recipe);
       const budget = personalised ? profile.budgetPerPortion : null;
       const withinBudget = budget === null || cost.pricePerPortion <= budget;
       const score =
@@ -155,7 +158,7 @@ const normalise = (value: string): string =>
     .replace(/ß/g, 'ss')
     .trim();
 
-const findRecipeByName = (query: string): Recipe | undefined => {
+const findRecipeByName = (recipes: Recipe[], query: string): Recipe | undefined => {
   const needle = normalise(query);
   if (needle.length < 3) return undefined;
   return (
@@ -183,12 +186,11 @@ const guessAmount = (product: Product): number => {
 };
 
 const buildItemsFromProducts = (
+  index: CatalogIndex,
   entries: { product: Product; grams: number }[],
 ): CostedIngredient[] =>
   entries.map(({ product, grams }) => {
-    const offer = getActiveDiscountViews()
-      .filter((view) => view.productId === product.id)
-      .sort((a, b) => a.discountPrice - b.discountPrice)[0];
+    const offer = index.cheapestByProduct.get(product.id);
     const regularPrice = priceForAmount(product.basePrice, product.baseGrams, grams);
     const price = offer
       ? priceForAmount(offer.discountPrice, product.baseGrams, grams)
@@ -201,12 +203,13 @@ const buildItemsFromProducts = (
  * the cheapest store per ingredient.
  */
 export const buildShoppingList = async (
+  index: CatalogIndex,
   query: string,
   profile: UserProfile,
 ): Promise<ShoppingList> => {
   await delay(MOCK_LATENCY_MS);
 
-  const recipe = findRecipeByName(query);
+  const recipe = findRecipeByName(index.recipes, query);
 
   let title: string;
   let servings: number;
@@ -215,7 +218,7 @@ export const buildShoppingList = async (
   let matchedRecipeId: string | undefined;
 
   if (recipe) {
-    const cost = costRecipe(recipe);
+    const cost = costRecipe(index, recipe);
     title = recipe.title;
     servings = recipe.servings;
     items = cost.items;
@@ -235,9 +238,11 @@ export const buildShoppingList = async (
     };
 
     const chosen = hit
-      ? (hit.productIds.map(getProduct).filter(Boolean) as Product[])
+      ? (hit.productIds
+          .map((productId) => getProduct(index, productId))
+          .filter(Boolean) as Product[])
       : // no keyword hit: take the strongest current offers as a starting basket
-        getActiveDiscountViews()
+        getActiveDiscountViews(index)
           .slice()
           .sort((a, b) => b.discountPercent - a.discountPercent)
           .map((view) => view.product)
@@ -247,7 +252,10 @@ export const buildShoppingList = async (
 
     title = query.trim() || 'Einkaufsliste';
     servings = hit?.servings ?? 4;
-    items = buildItemsFromProducts(chosen.map((product) => ({ product, grams: guessAmount(product) })));
+    items = buildItemsFromProducts(
+      index,
+      chosen.map((product) => ({ product, grams: guessAmount(product) })),
+    );
     note = hit
       ? `Geschätzte Mengen für ${servings} Portionen — die KI gleicht sie mit den aktuellen Aktionen ab.`
       : 'Kein passendes Rezept gefunden — hier ein Vorschlag aus den stärksten Aktionen dieser Woche.';
@@ -295,4 +303,4 @@ export const buildShoppingList = async (
 };
 
 /** Small helper used by the UI to show how many offers feed the assistant. */
-export const activeOfferCount = (): number => getActiveDiscountViews().length;
+export const activeOfferCount = (index: CatalogIndex): number => getActiveDiscountViews(index).length;

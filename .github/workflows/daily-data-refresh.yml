@@ -1,0 +1,77 @@
+# Daily offer refresh.
+#
+# Runs the data pipeline, validates the result and commits the new snapshot.
+# The app downloads that file (expo.extra.snapshotUrl), so a green run here is
+# what makes yesterday's offers disappear from every phone.
+name: Daily data refresh
+
+on:
+  schedule:
+    # 04:10 UTC = 06:10 in Vienna (summer) / 05:10 (winter) — flyers are online by then
+    - cron: '10 4 * * *'
+  workflow_dispatch:
+    inputs:
+      refresh_stores:
+        description: 'Also refresh the branch list from OpenStreetMap'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+
+      # the pipeline's own tests — a broken normaliser must not reach the app
+      - run: npm test
+
+      # Branch data changes slowly and Overpass is a shared free service, so it
+      # is only queried on Mondays (or on demand).
+      - name: Decide whether to refresh branches
+        id: mode
+        run: |
+          if [ "${{ inputs.refresh_stores }}" = "true" ] || [ "$(date -u +%u)" = "1" ]; then
+            echo "flags=--update-seed" >> "$GITHUB_OUTPUT"
+          else
+            echo "flags=--skip-stores" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build snapshot
+        run: npm run data:refresh -- ${{ steps.mode.outputs.flags }}
+
+      - name: Commit snapshot if it changed
+        run: |
+          if git diff --quiet -- data/snapshot.json src/data/stores.json; then
+            echo "snapshot unchanged — nothing to publish"
+            exit 0
+          fi
+          git config user.name "smartkorb-data-bot"
+          git config user.email "actions@github.com"
+          git add data/snapshot.json src/data/stores.json
+          git commit -m "chore(data): daily refresh $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Keep the snapshot as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: snapshot
+          path: data/snapshot.json
+          retention-days: 14
+          if-no-files-found: warn

@@ -18,7 +18,7 @@ import { PremiumBadge } from '../components/PremiumBadge';
 import { RecipeCard } from '../components/RecipeCard';
 import { RecipeDetailSheet } from '../components/RecipeDetailSheet';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { recipeTags, recipes } from '../data';
+import { useCatalog } from '../data';
 import { buildShoppingList, suggestDishes, type DishSuggestion, type ShoppingList } from '../services/ai';
 import { useProfileStore } from '../store/useProfileStore';
 import { colors, radius, shadow, spacing } from '../theme';
@@ -34,6 +34,7 @@ const TIME_FILTERS = [
 
 export const KulinarikScreen: React.FC = () => {
   const insets = useSafeAreaInsets();
+  const catalog = useCatalog();
 
   const profile = useProfileStore();
   const {
@@ -77,20 +78,20 @@ export const KulinarikScreen: React.FC = () => {
 
   const visibleRecipes = useMemo(
     () =>
-      recipes.filter((recipe) => {
+      catalog.recipes.filter((recipe) => {
         if (tagFilter && !recipe.tags.includes(tagFilter)) return false;
         if (timeFilter > 0 && recipe.cookingTimeMin > timeFilter) return false;
         if (dietFilter && !recipe.dietTags.includes(dietFilter)) return false;
         return true;
       }),
-    [tagFilter, timeFilter, dietFilter],
+    [catalog, tagFilter, timeFilter, dietFilter],
   );
 
   const runSuggestions = async () => {
     setSuggestionsVisible(true);
     setSuggestionsLoading(true);
     logActivity('ai_request', 'Was koche ich?');
-    const result = await suggestDishes(useProfileStore.getState());
+    const result = await suggestDishes(catalog, useProfileStore.getState());
     setSuggestions(result);
     setSuggestionsLoading(false);
   };
@@ -101,7 +102,7 @@ export const KulinarikScreen: React.FC = () => {
     setListVisible(true);
     setListLoading(true);
     logActivity('ai_request', `Ich möchte kochen: ${query}`);
-    const result = await buildShoppingList(query, useProfileStore.getState());
+    const result = await buildShoppingList(catalog, query, useProfileStore.getState());
     setShoppingList(result);
     setListLoading(false);
   };
@@ -188,7 +189,7 @@ export const KulinarikScreen: React.FC = () => {
               contentContainerStyle={styles.filterRow}
             >
               <Chip label="Alle Küchen" selected={tagFilter === null} onPress={() => setTagFilter(null)} compact />
-              {recipeTags.map((tag) => (
+              {catalog.recipeTags.map((tag) => (
                 <Chip
                   key={tag}
                   label={tag}

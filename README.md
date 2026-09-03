@@ -1,138 +1,255 @@
-# SmartKorb Wien — Prototype
+# SmartKorb Wien
 
-Mobile prototype (React Native + Expo, TypeScript) that aggregates the daily grocery discounts
-of Vienna's supermarket chains (Spar, Billa, Billa Plus, Hofer, Lidl, Penny) in one place and
-helps to plan shopping and cooking around them.
+Mobile app (React Native + Expo, TypeScript) that aggregates the daily grocery
+discounts of Vienna's supermarket chains (Spar, Billa, Billa Plus, Hofer, Lidl,
+Penny) in one place and helps to plan shopping and cooking around them.
 
-The app is a **clickable prototype running on local mock data** — there are no retailer
-partnerships or official APIs yet. The data layer is shaped like a real backend response so the
-mock source can be swapped for HTTP calls without touching the screens.
-
-The user interface is entirely in **German** (target audience: Vienna residents). Code, comments
-and commit messages are in English.
+The user interface is entirely in **German** (target audience: Vienna residents).
+Code, comments and commit messages are in English.
 
 ## Quick start
 
 ```bash
-cd smartkorb-wien
 npm install
 npx expo start
 ```
 
-Then scan the QR code with **Expo Go** (iOS / Android) or press `i` / `a` to open a simulator.
-`npx expo start --web` runs a browser build too — with a list fallback instead of the map, see
-"Maps" below.
+Scan the QR code with **Expo Go** (iOS / Android), or press `i` / `a` for a
+simulator. `npx expo start --web` also works — with a branch list instead of the
+map, because `react-native-maps` has no web implementation.
 
-Requirements: Node.js 20+ and the Expo Go app (Expo SDK 57).
-
-Useful scripts:
+Requirements: Node.js 20+, Expo SDK 57.
 
 | Command | Purpose |
 | --- | --- |
-| `npm start` | start the Metro dev server (same as `npx expo start`) |
-| `npm run android` / `npm run ios` | start and open a simulator/emulator |
-| `npm run web` | run the browser build |
-| `npm run typecheck` | TypeScript check (`tsc --noEmit`) |
+| `npm start` | Metro dev server |
+| `npm run android` / `npm run ios` / `npm run web` | start on a device, simulator or browser |
+| `npm run typecheck` | TypeScript for the app *and* the pipeline |
+| `npm test` | pipeline unit tests (matching, normalising, validation) |
+| `npm run data:refresh` | build a new data snapshot (branches + offers) |
+| `npm run data:refresh -- --skip-stores` | offers only (the daily case) |
+| `npm run data:refresh -- --update-seed` | also rewrite the bundled fallback branch list |
+| `npm run data:check` | run everything, write nothing |
 
 ## The four sections
 
-1. **Karte** — Vienna map (`react-native-maps`) with 22 branches. Every branch is drawn as a
-   *custom* marker (rounded logo badge with the chain's colour, initials and an offer counter),
-   not as a default pin. Tapping a marker opens a bottom sheet with the address, opening hours
-   and all offers running in that branch. Chips at the top filter the map by chain.
-2. **Rabatte** — one mixed feed of every running offer (`FlatList`), with a debounced live
-   product search, quick chain chips, a filter sheet (chains multi-select, category, minimum
-   discount, sorting by discount / price / name) and a detail sheet per offer.
-3. **Kulinarik** — recipe grid (2 columns) with cuisine, cooking-time and diet filters, plus the
-   two assistant features, both marked with a `Premium` badge:
-   - **„Was koche ich?“** ranks the recipe catalogue against today's offers and the saved
-     profile and returns 3-5 dishes with price per portion and where to buy the ingredients.
-   - **„Ich möchte X kochen“** takes a free-text dish name and answers with exact ingredient
-     amounts, the cheapest store per ingredient and the total / per-portion price.
-   On the **first visit** to this tab a questionnaire asks for diet, allergies and budget per
-   portion. It can be dismissed with *„Überspringen, später einrichten“* — the assistant then
-   works in generic mode. The answer is stored in AsyncStorage and the questionnaire never
-   appears again unless it is re-armed from the profile.
-4. **Profil** — saved recipes (the heart button), an activity log (viewed offers, searches,
-   filters, assistant requests) and the questionnaire as editable settings.
+1. **Karte** — every branch on a map of Vienna, drawn as a *custom* marker
+   (chain colour, initials, offer counter) rather than a default pin. Tapping a
+   marker opens the branch with its address, opening hours and all offers valid
+   there. With the full OpenStreetMap dataset the city has several hundred
+   branches, so only the markers inside the current viewport are mounted.
+2. **Rabatte** — one mixed feed of every running offer, with debounced live
+   search, chain chips, a filter sheet (chains, category, minimum discount,
+   sorting) and pull-to-refresh for a fresh snapshot.
+3. **Kulinarik** — recipe grid with cuisine / time / diet filters and two
+   assistant features (`Premium` badge): **„Was koche ich?“** ranks recipes
+   against today's offers and the saved profile, **„Ich möchte X kochen“** turns
+   a dish name into exact amounts, the cheapest chain per ingredient and a total.
+   On first use a questionnaire asks for diet, allergies and budget; it can be
+   skipped and is stored in AsyncStorage.
+4. **Profil** — saved recipes, activity log, the questionnaire as editable
+   settings, and the current data source (branch count, offer count, origins).
+
+## Where the data comes from
+
+```
+ OpenStreetMap (Overpass)          retailer / partner offer sources
+   all Vienna branches                (CSV feed, JSON endpoint, mock)
+            \                                  /
+             \                                /
+              +----------- pipeline/ --------+
+                 match onto the product catalogue,
+                 normalise pack sizes, prices, dates,
+                 validate (refuses a broken feed)
+                              |
+                     data/snapshot.json          <- committed daily by CI
+                              |
+                   raw.githubusercontent.com
+                              |
+                          the app
+             remote snapshot -> AsyncStorage cache -> bundled seed
+```
+
+Three layers, so the app always has something to show:
+
+1. **Bundled seed** (`src/data/*.json`) — ships inside the build, works offline
+   and on the first start. Its offers are clearly labelled as demo data.
+2. **Cache** — the last snapshot the device downloaded (AsyncStorage).
+3. **Remote snapshot** — the file the pipeline publishes once a day.
+
+The app refreshes on start, when it returns to the foreground, on pull-to-refresh
+and via the button in the status bar — but never more often than
+`expo.extra.refreshAfterHours` (default 6 h). Every payload is validated
+(`src/data/validateCatalog.ts`) before it is allowed on screen: rows with
+dangling references or impossible prices are dropped, and a feed that loses more
+than half of its rows is rejected as a whole, leaving the previous data in place.
+
+### Configuring the source
+
+`app.json`:
+
+```json
+"extra": {
+  "snapshotUrl": "https://raw.githubusercontent.com/<owner>/<repo>/main/data/snapshot.json",
+  "refreshAfterHours": 6
+}
+```
+
+While the URL still contains the `<owner>/<repo>` placeholder the app stays on
+the bundled data and says so in the UI. Any endpoint serving the same JSON shape
+works — a raw GitHub file, S3, or a real API later on.
+
+## All branches in Vienna (OpenStreetMap)
+
+```bash
+npm run data:refresh -- --update-seed
+```
+
+queries the Overpass API for every `shop=supermarket` inside the Vienna city
+boundary, keeps the branches whose brand maps to one of our chains
+(`BILLA PLUS`/`MERKUR` → Billa Plus, `INTERSPAR`/`EUROSPAR`/`SPAR` → Spar, …),
+derives the district from the postcode, deduplicates shops that OSM stores both
+as a node and as a building outline, and writes them into the snapshot (and,
+with `--update-seed`, into the bundled fallback).
+
+OSM data is licensed under the **ODbL**: the app credits
+"© OpenStreetMap contributors" in the profile tab, and published derived data has
+to stay under the same licence. Overpass is a free shared service — the workflow
+therefore queries it once a week, not on every run.
+
+## Real offer data
+
+**There is no public, documented API for Austrian grocery discounts.** The
+pipeline is built so that the *system* is finished and only the source has to be
+plugged in. Three ways to do that, in order of how defensible they are:
+
+1. **Partner feed (recommended, and the point of the grant).** A chain exports
+   its weekly offers; drop the file in and enable the `partner-csv` source:
+
+   ```json
+   { "id": "partner-csv", "type": "csv", "enabled": true, "file": "data/partner-feed.csv" }
+   ```
+
+   Columns: `retailerId,productName,unit,category,originalPrice,discountPrice,validFrom,validTo,storeExternalId,sourceUrl`.
+   `data/partner-feed.example.csv` is a working example (`storeExternalId` empty
+   = the offer runs chain-wide, which is how weekly flyers work). The parser
+   accepts `,` or `;` and quoted fields.
+
+2. **A licensed aggregator.** Same shape, either as CSV or through the generic
+   JSON adapter — one config entry, no code.
+
+3. **A retailer's own JSON endpoint.** `sources.config.json` contains disabled
+   **templates** (`billa-web`, `spar-web`) that show the shape: `url` with
+   `{page}` / `{pageSize}`, `itemsPath` to the array, `map` with dot paths per
+   field, `priceDivisor: 100` for cent-based APIs, `requestDelayMs` for polite
+   pacing. The URLs in the templates are placeholders — before enabling one you
+   have to point it at the real endpoint **and** check that retailer's terms of
+   use and robots policy. Scraping without permission is a legal risk, not a
+   technical one, and an endpoint can change without notice; that is why the
+   fallback chain above exists.
+
+Whatever the source, offers are matched onto the product catalogue by name
+(brand prefixes such as "SPAR Premium Hühnerbrustfilet" or "Zurück zum Ursprung
+Bergkäse" still find the catalogue product, while lookalikes like
+"Hafer-Vollkornkekse" vs. "Haferdrink" deliberately do not), so recipes get real
+prices. Anything unknown becomes a new catalogue entry with a guessed category,
+pack size, allergens and vegan flag. `npm test` locks this behaviour down.
+
+## Daily updates
+
+**GitHub Actions** (`.github/workflows/daily-data-refresh.yml`) runs at 04:10 UTC
+(06:10 Vienna in summer): install → `npm test` → `npm run data:refresh` →
+commit `data/snapshot.json` if it changed. Branches are refreshed on Mondays or
+on demand (`workflow_dispatch` with `refresh_stores`). A failing pipeline exits
+non-zero, so a broken snapshot is never committed; the previous file stays live
+and GitHub notifies the repository owner about the failed run.
+
+The workflow needs nothing but the repository itself: it uses the built-in
+`GITHUB_TOKEN` with `contents: write`.
+
+**Windows alternative** (`scripts/refresh-data.ps1`), if you would rather run it
+on a PC:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\refresh-data.ps1 -Push
+```
+
+Register it once with Task Scheduler (daily at 06:15):
+
+```powershell
+schtasks /create /tn "SmartKorb Datenupdate" /sc daily /st 06:15 ^
+  /tr "powershell -ExecutionPolicy Bypass -File C:\Users\<user>\...\smartkorb-wien\scripts\refresh-data.ps1 -Push"
+```
 
 ## Project structure
 
 ```
 src/
-  data/          mock JSON + the data access layer (index.ts)
-  types/         domain model shared by everything
-  store/         Zustand store, persisted to AsyncStorage
-  services/      pricing calculations and the assistant (ai.ts)
-  components/    reusable UI (cards, sheets, chips, markers …)
-  screens/       the four tabs
-  navigation/    bottom tab navigator
-  hooks/, utils/, theme/
+  config.ts        snapshot URL and refresh interval (from app.json → expo.extra)
+  data/            bundled seed, catalog index + selectors, remote loader,
+                   validation, the zustand store the screens read from
+  types/           domain model shared by app and pipeline
+  store/           user profile (diet, allergies, saved recipes, activity log)
+  services/        pricing calculations and the assistant (ai.ts)
+  components/      cards, sheets, chips, map markers, data status bar
+  screens/         the four tabs
+pipeline/
+  src/sources/     Overpass branches, CSV feed, generic JSON endpoint, mock
+  src/normalize/   product matching, branch and offer normalisation
+  src/build.ts     fetch → normalise → validate → snapshot
+  test/            unit tests for all of the above
+data/              snapshot.json (published) and the example partner feed
+scripts/           Windows refresh script
 ```
 
-## Mock data
-
-`src/data/` contains 6 retailers, 22 branches across real Vienna districts, 62 products,
-64 offers (≈56 of them valid today, the rest expired or starting next week so the validity
-filter is exercised) and 15 recipes.
-
-The entities follow the model that a backend would expose:
+### Data model
 
 ```ts
 retailers   { id, name, logoColor, logoTextColor, logoInitials }
 stores      { id, retailerId, name, address, district, lat, lng, openingHours }
 products    { id, name, category, unit, baseGrams, basePrice, emoji, allergens, vegan }
-discounts   { id, storeId, productId, originalPrice, discountPrice, discountPercent,
-              validFrom, validTo }
+discounts   { id, retailerId, storeId | null, productId, originalPrice, discountPrice,
+              discountPercent, validFrom, validTo, source?, sourceUrl? }
 recipes     { id, title, tags[], dietTags[], allergenFree[], ingredients[{ productId, grams }],
               instructions[], cookingTimeMin, servings, imageUrl, emoji }
 userProfile { dietPreference, allergies[], budgetPerPortion, savedRecipeIds[], activityLog[],
               onboardingStatus }
 ```
 
-**Demo mode:** the offers were authored for the week of `REFERENCE_DATE` (`src/data/index.ts`)
-and the whole dataset is shifted so that it always looks current. Remove that shift together
-with the mock import.
+`storeId: null` means the offer runs in every branch of that chain — the normal
+case for a weekly flyer. Branch-specific offers carry the branch id and are shown
+with its district.
 
-### Connecting a real backend
+## AI features
 
-Everything goes through `src/data/index.ts`; see the `TODO(backend)` marker at the top of the
-file. Replace the JSON imports with an API client (e.g. `GET /v1/discounts?city=vienna`) and
-keep the exported function names — the screens depend only on those.
-
-Product and recipe photos are placeholders (emoji tiles, `PlaceholderImage`); the `imageUrl`
-field already exists in the recipe model for real images. The chain logos are neutral
-placeholder badges (coloured circle + initials), deliberately not the real trademarks.
-
-### Connecting a real LLM
-
-`src/services/ai.ts` computes both assistant answers locally but is written as an API boundary:
-both public functions are `async` and return plain data. The file contains a commented
-`callAI()` stub with a `TODO(ai)` describing the request shape, the JSON contract and the note
-that the key must live behind our own backend rather than in the app bundle.
+`src/services/ai.ts` computes both assistant answers locally from the current
+offers and the saved profile, but is written as an API boundary: both public
+functions are `async` and return plain data. The file contains a commented
+`callAI()` stub with a `TODO(ai)` describing the request shape, the JSON contract
+and the requirement that the API key lives behind our own backend rather than in
+the app bundle.
 
 ## Styling
 
-Plain `StyleSheet.create` with central design tokens in `src/theme/`. NativeWind was considered
-but the token approach keeps the Expo Go setup free of extra Babel/Metro configuration, which
-matters for a prototype that has to run from a QR code on any reviewer's phone.
+Plain `StyleSheet.create` with design tokens in `src/theme/`. NativeWind was
+considered but the token approach keeps the Expo Go setup free of extra
+Babel/Metro configuration, which matters for an app that has to run from a QR
+code on any reviewer's phone.
 
 ## Maps
 
-`react-native-maps` renders through Apple Maps on iOS and Google Maps on Android and works in
-Expo Go out of the box. A standalone Android build would additionally need a Google Maps API key
-in `app.json` (`android.config.googleMaps.apiKey`). The web build has no map implementation, so
-`StoreMap.web.tsx` degrades to a branch list.
+`react-native-maps` renders through Apple Maps on iOS and Google Maps on Android
+and works in Expo Go out of the box. A standalone Android build additionally
+needs a Google Maps API key in `app.json` (`android.config.googleMaps.apiKey`).
 
-## Resetting the local state
+## Product photos
 
-The profile (questionnaire answers, saved recipes, activity log) lives under the AsyncStorage
-key `smartkorb.profile.v1`. In Expo Go, reinstalling / clearing the app data resets it; inside
-the app, *Profil → „Fragebogen beim nächsten Besuch der Kulinarik erneut zeigen“* re-arms the
-onboarding.
+Product and recipe images are emoji placeholders (`PlaceholderImage`). The
+`imageUrl` field exists in the model for real photography; chain logos are
+neutral placeholder badges (coloured circle + initials), deliberately not the
+real trademarks.
 
 ## Deliberately out of scope
 
-- No authentication and no server-side database — AsyncStorage is enough for the prototype.
-- No payment flow; the paid features are only marked with a `Premium` badge.
-- No live retailer integration; see the `TODO(backend)` marker above.
+- No authentication and no server-side database — AsyncStorage is enough.
+- No payment flow; paid features are only marked with a `Premium` badge.

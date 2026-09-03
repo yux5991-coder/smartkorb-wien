@@ -68,10 +68,12 @@ export const DishSuggestionsSheet: React.FC<SuggestionsProps> = ({
                 {reason}
               </Text>
               <View style={styles.storeRow}>
-                {cost.bestStores.slice(0, 4).map((view) => (
+                {cost.bestOffers.slice(0, 4).map((view) => (
                   <View key={view.id} style={styles.storeChip}>
                     <RetailerLogo retailer={view.retailer} size={16} />
-                    <Text style={styles.storeChipText}>{view.store.district}</Text>
+                    <Text style={styles.storeChipText}>
+                      {view.store ? view.store.district : view.retailer.name}
+                    </Text>
                   </View>
                 ))}
               </View>
@@ -139,7 +141,8 @@ export const ShoppingListSheet: React.FC<ShoppingListProps> = ({
                 <View style={styles.itemStore}>
                   <RetailerLogo retailer={item.offer.retailer} size={16} />
                   <Text style={styles.itemStoreText} numberOfLines={1}>
-                    {item.offer.store.name} · −{item.offer.discountPercent} %
+                    {item.offer.store ? item.offer.store.name : `${item.offer.retailer.name} · alle Filialen`} · −
+                    {item.offer.discountPercent} %
                   </Text>
                 </View>
               ) : (

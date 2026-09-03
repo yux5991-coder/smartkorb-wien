@@ -14,9 +14,9 @@ export const StoreMap: React.FC<StoreMapProps> = ({ items, selectedStoreId, onSe
   <ScrollView style={styles.container} contentContainerStyle={styles.content}>
     <Text style={styles.notice}>
       Die interaktive Karte steht in Expo Go auf iOS und Android zur Verfügung. Im Browser siehst du
-      die Filialen als Liste.
+      die Filialen als Liste{items.length > 150 ? ` (erste 150 von ${items.length})` : ''}.
     </Text>
-    {items.map(({ store, retailer, offerCount }) => (
+    {items.slice(0, 150).map(({ store, retailer, offerCount }) => (
       <Pressable
         key={store.id}
         onPress={() => onSelectStore(store.id)}

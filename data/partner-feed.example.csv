@@ -1,0 +1,9 @@
+retailerId,productName,unit,category,originalPrice,discountPrice,validFrom,validTo,storeExternalId,sourceUrl
+billa,Rispentomaten,500 g,Obst & Gemüse,2.49,1.49,2026-09-01,2026-09-07,,https://example.invalid/offer/1
+billa,"Ja! Natürlich Bio-Vollmilch 3,5 %",1 l,Milchprodukte,1.79,1.29,2026-09-01,2026-09-07,,
+spar,SPAR Premium Hühnerbrustfilet,500 g,Fleisch & Fisch,7.99,4.99,2026-09-02,2026-09-08,,
+spar,Erdäpfel festkochend,2 kg,Obst & Gemüse,3.99,2.49,2026-09-02,2026-09-08,st-01,
+hofer,Zurück zum Ursprung Bergkäse,200 g,Milchprodukte,3.99,2.79,2026-09-03,2026-09-09,,
+lidl,Chorizo Picante,150 g,Fleisch & Fisch,2.99,1.99,2026-09-03,2026-09-06,,
+penny,Mineralwasser prickelnd,"6 x 1,5 l",Getränke,3.49,2.29,2026-09-01,2026-09-10,,
+penny,Hafer-Vollkornkekse mit Haselnuss,250 g,Süßes & Snacks,2.49,1.49,2026-09-01,2026-09-10,,

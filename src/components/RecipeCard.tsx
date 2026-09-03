@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-import { costRecipe } from '../services/pricing';
+import { useCatalog } from '../data';
+import { costRecipe, retailerNames } from '../services/pricing';
 import { colors, radius, shadow, spacing } from '../theme';
 import type { Recipe } from '../types';
 import { formatPrice } from '../utils/format';
@@ -15,12 +16,9 @@ interface Props {
 }
 
 export const RecipeCard: React.FC<Props> = ({ recipe, saved, onPress, onToggleSave }) => {
-  const cost = useMemo(() => costRecipe(recipe), [recipe]);
-  const cheapestRetailers = useMemo(
-    () =>
-      Array.from(new Set(cost.bestStores.map((view) => view.retailer.name))).slice(0, 2).join(', '),
-    [cost.bestStores],
-  );
+  const catalog = useCatalog();
+  const cost = useMemo(() => costRecipe(catalog, recipe), [catalog, recipe]);
+  const cheapestRetailers = useMemo(() => retailerNames(cost), [cost]);
 
   return (
     <Pressable

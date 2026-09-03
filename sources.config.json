@@ -1,0 +1,79 @@
+{
+  "_readme": "Data sources for the daily refresh. Only 'enabled: true' sources run. See README → 'Anbindung echter Aktionsdaten' before switching a retailer source on: the endpoints below are TEMPLATES, they must be verified against the retailer's current API and cleared against its terms of use.",
+  "city": "Wien",
+  "minDiscounts": 20,
+  "stores": {
+    "enabled": true,
+    "overpassUrl": "https://overpass-api.de/api/interpreter"
+  },
+  "output": {
+    "snapshot": "data/snapshot.json",
+    "seedStores": "src/data/stores.json"
+  },
+  "offers": [
+    {
+      "id": "mock",
+      "type": "mock",
+      "enabled": true,
+      "label": "Demodaten (bis echte Quellen angebunden sind)"
+    },
+    {
+      "id": "partner-csv",
+      "type": "csv",
+      "enabled": true,
+      "label": "Partner-Feed (CSV)",
+      "file": "data/partner-feed.example.csv"
+    },
+    {
+      "_comment": "TEMPLATE — endpoint, itemsPath and map must be verified before enabling.",
+      "id": "billa-web",
+      "type": "http-json",
+      "enabled": false,
+      "retailerId": "billa",
+      "url": "https://example-retailer-api.invalid/offers?page={page}&pageSize={pageSize}",
+      "itemsPath": "data.items",
+      "priceDivisor": 100,
+      "requestDelayMs": 1500,
+      "pagination": {
+        "pageParam": "page",
+        "startPage": 0,
+        "maxPages": 20,
+        "pageSize": 100
+      },
+      "map": {
+        "productName": "name",
+        "unit": "grammage",
+        "category": "category.name",
+        "originalPrice": "price.regular",
+        "discountPrice": "price.final",
+        "validFrom": "price.validFrom",
+        "validTo": "price.validTo",
+        "sourceUrl": "url"
+      }
+    },
+    {
+      "_comment": "TEMPLATE — see billa-web.",
+      "id": "spar-web",
+      "type": "http-json",
+      "enabled": false,
+      "retailerId": "spar",
+      "url": "https://example-retailer-api.invalid/search?hitsPerPage={pageSize}&page={page}",
+      "itemsPath": "hits",
+      "requestDelayMs": 1500,
+      "pagination": {
+        "startPage": 0,
+        "maxPages": 20,
+        "pageSize": 100
+      },
+      "map": {
+        "productName": "masterValues.title",
+        "unit": "masterValues.short-description",
+        "category": "masterValues.category-names[0]",
+        "originalPrice": "masterValues.regular-price",
+        "discountPrice": "masterValues.price",
+        "validTo": "masterValues.price-valid-to",
+        "sourceUrl": "masterValues.url"
+      }
+    }
+  ]
+}

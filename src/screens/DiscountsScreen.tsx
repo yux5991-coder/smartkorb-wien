@@ -1,5 +1,13 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { FlatList, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+  FlatList,
+  Pressable,
+  RefreshControl,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { BottomSheet } from '../components/BottomSheet';
@@ -15,7 +23,8 @@ import { PlaceholderImage } from '../components/PlaceholderImage';
 import { RetailerLogo } from '../components/RetailerLogo';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { SearchBar } from '../components/SearchBar';
-import { getActiveDiscountViews, retailers } from '../data';
+import { DataStatusBar } from '../components/DataStatusBar';
+import { getActiveDiscountViews, useCatalog, useCatalogStore } from '../data';
 import { useDebouncedValue } from '../hooks/useDebouncedValue';
 import { useProfileStore } from '../store/useProfileStore';
 import { colors, radius, shadow, spacing } from '../theme';
@@ -33,8 +42,12 @@ export const DiscountsScreen: React.FC = () => {
   const debouncedQuery = useDebouncedValue(query, 300);
   const logActivity = useProfileStore((state) => state.logActivity);
 
+  const catalog = useCatalog();
+  const syncStatus = useCatalogStore((state) => state.status);
+  const refresh = useCatalogStore((state) => state.refresh);
+
   // The whole feed: every running offer of every chain, mixed together.
-  const allDiscounts = useMemo(() => getActiveDiscountViews(), []);
+  const allDiscounts = useMemo(() => getActiveDiscountViews(catalog), [catalog]);
 
   const visibleDiscounts = useMemo(() => {
     const needle = normalise(debouncedQuery);
@@ -75,7 +88,7 @@ export const DiscountsScreen: React.FC = () => {
   const applyFilters = (next: DiscountFilters) => {
     setFilters(next);
     const changedRetailers = next.retailerIds
-      .map((id) => retailers.find((retailer) => retailer.id === id)?.name)
+      .map((id) => catalog.retailers.find((retailer) => retailer.id === id)?.name)
       .filter(Boolean)
       .join(', ');
     const parts = [
@@ -93,6 +106,8 @@ export const DiscountsScreen: React.FC = () => {
         title="Rabatte"
         subtitle={`${visibleDiscounts.length} von ${allDiscounts.length} Aktionen in Wien`}
       />
+
+      <DataStatusBar />
 
       <View style={styles.searchRow}>
         <View style={styles.searchBar}>
@@ -125,7 +140,7 @@ export const DiscountsScreen: React.FC = () => {
           onPress={() => applyFilters({ ...filters, retailerIds: [] })}
           compact
         />
-        {retailers.map((retailer) => (
+        {catalog.retailers.map((retailer) => (
           <Chip
             key={retailer.id}
             label={retailer.name}
@@ -152,6 +167,13 @@ export const DiscountsScreen: React.FC = () => {
         initialNumToRender={8}
         windowSize={11}
         removeClippedSubviews
+        refreshControl={
+          <RefreshControl
+            refreshing={syncStatus === 'loading'}
+            onRefresh={() => refresh({ force: true })}
+            tintColor={colors.primary}
+          />
+        }
         renderItem={({ item }) => (
           <DiscountCard
             discount={item}
@@ -201,9 +223,21 @@ export const DiscountsScreen: React.FC = () => {
             <View style={styles.detailCard}>
               <RetailerLogo retailer={detail.retailer} size={40} />
               <View style={styles.detailStore}>
-                <Text style={styles.detailStoreName}>{detail.store.name}</Text>
-                <Text style={styles.detailStoreAddress}>{detail.store.address}</Text>
-                <Text style={styles.detailStoreAddress}>{detail.store.openingHours}</Text>
+                <Text style={styles.detailStoreName}>
+                  {detail.store ? detail.store.name : detail.retailer.name}
+                </Text>
+                {detail.store ? (
+                  <>
+                    <Text style={styles.detailStoreAddress}>{detail.store.address}</Text>
+                    <Text style={styles.detailStoreAddress}>{detail.store.openingHours}</Text>
+                  </>
+                ) : (
+                  <Text style={styles.detailStoreAddress}>
+                    Gilt in allen{' '}
+                    {catalog.stores.filter((store) => store.retailerId === detail.retailerId).length}{' '}
+                    Filialen in Wien
+                  </Text>
+                )}
               </View>
             </View>
 

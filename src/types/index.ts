@@ -67,10 +67,18 @@ export interface Product {
   vegan: boolean;
 }
 
-/** One offer: a product on sale in one specific store. */
+/**
+ * One offer.
+ *
+ * Austrian chains publish most of their offers chain-wide (the weekly
+ * "Flugblatt"), so `storeId` is null for those and the offer applies to every
+ * branch of `retailerId`. Branch-specific offers carry a concrete `storeId`.
+ */
 export interface Discount {
   id: DiscountId;
-  storeId: StoreId;
+  retailerId: RetailerId;
+  /** `null` = valid in every branch of the retailer. */
+  storeId: StoreId | null;
   productId: ProductId;
   originalPrice: number;
   discountPrice: number;
@@ -79,6 +87,10 @@ export interface Discount {
   validFrom: string;
   /** ISO date (YYYY-MM-DD), inclusive. */
   validTo: string;
+  /** Where this row came from — e.g. "billa-api", "partner-csv", "mock". */
+  source?: string;
+  /** Deep link to the offer at the retailer, when the source provides one. */
+  sourceUrl?: string;
 }
 
 export type DietPreference = 'omnivor' | 'vegetarisch' | 'vegan';
@@ -129,6 +141,26 @@ export interface UserProfile {
 /** A discount enriched with its product / store / retailer for rendering. */
 export interface DiscountView extends Discount {
   product: Product;
-  store: Store;
   retailer: Retailer;
+  /** `null` for chain-wide offers that are not tied to one branch. */
+  store: Store | null;
 }
+
+/**
+ * Everything the app renders, in one object. Either the JSON bundled with the
+ * build, the last snapshot cached on the device, or a fresh snapshot from the
+ * data pipeline (see `pipeline/` and `src/data/catalog.ts`).
+ */
+export interface Catalog {
+  /** ISO timestamp of when the data was assembled. */
+  generatedAt: string;
+  retailers: Retailer[];
+  stores: Store[];
+  products: Product[];
+  discounts: Discount[];
+  recipes: Recipe[];
+  /** Names of the sources that contributed to this snapshot. */
+  sources: string[];
+}
+
+export type CatalogOrigin = 'bundled' | 'cache' | 'remote';

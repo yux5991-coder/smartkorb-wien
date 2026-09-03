@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import { productCategories, retailers } from '../data';
+import { useCatalog } from '../data';
 import { colors, radius, spacing } from '../theme';
 import type { ProductCategory } from '../types';
 import { BottomSheet } from './BottomSheet';
@@ -46,6 +46,8 @@ export const DiscountFilterSheet: React.FC<Props> = ({
   onClose,
   resultCount,
 }) => {
+  const catalog = useCatalog();
+
   const toggleRetailer = (retailerId: string) =>
     onChange({
       ...filters,
@@ -72,7 +74,7 @@ export const DiscountFilterSheet: React.FC<Props> = ({
       <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={styles.sectionTitle}>Handelsketten</Text>
         <View style={styles.row}>
-          {retailers.map((retailer) => (
+          {catalog.retailers.map((retailer) => (
             <Chip
               key={retailer.id}
               label={retailer.name}
@@ -85,7 +87,7 @@ export const DiscountFilterSheet: React.FC<Props> = ({
 
         <Text style={styles.sectionTitle}>Kategorie</Text>
         <View style={styles.row}>
-          {productCategories.map((category) => (
+          {catalog.categories.map((category) => (
             <Chip
               key={category}
               label={category}

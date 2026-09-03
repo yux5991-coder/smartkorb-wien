@@ -1,0 +1,2722 @@
+{
+  "generatedAt": "2026-09-03T19:06:14.532Z",
+  "retailers": [
+    {
+      "id": "spar",
+      "name": "Spar",
+      "logoColor": "#00843D",
+      "logoTextColor": "#FFFFFF",
+      "logoInitials": "SP"
+    },
+    {
+      "id": "billa",
+      "name": "Billa",
+      "logoColor": "#E2001A",
+      "logoTextColor": "#FFFFFF",
+      "logoInitials": "BI"
+    },
+    {
+      "id": "billaplus",
+      "name": "Billa Plus",
+      "logoColor": "#F39200",
+      "logoTextColor": "#3B2200",
+      "logoInitials": "B+"
+    },
+    {
+      "id": "hofer",
+      "name": "Hofer",
+      "logoColor": "#0B3C8F",
+      "logoTextColor": "#FFFFFF",
+      "logoInitials": "HO"
+    },
+    {
+      "id": "lidl",
+      "name": "Lidl",
+      "logoColor": "#0093D0",
+      "logoTextColor": "#08243D",
+      "logoInitials": "LI"
+    },
+    {
+      "id": "penny",
+      "name": "Penny",
+      "logoColor": "#8E1B4A",
+      "logoTextColor": "#FFFFFF",
+      "logoInitials": "PE"
+    }
+  ],
+  "stores": [
+    {
+      "id": "st-01",
+      "retailerId": "spar",
+      "name": "Spar Stephansplatz",
+      "address": "Rotenturmstraße 12, 1010 Wien",
+      "district": "Innere Stadt",
+      "lat": 48.2093,
+      "lng": 16.3742,
+      "openingHours": "Mo-Fr 7:00-20:00, Sa 7:00-18:00"
+    },
+    {
+      "id": "st-02",
+      "retailerId": "billa",
+      "name": "Billa Schottentor",
+      "address": "Universitätsstraße 4, 1010 Wien",
+      "district": "Innere Stadt",
+      "lat": 48.2143,
+      "lng": 16.3621,
+      "openingHours": "Mo-Fr 7:15-20:00, Sa 7:15-18:00"
+    },
+    {
+      "id": "st-03",
+      "retailerId": "billaplus",
+      "name": "Billa Plus Praterstern",
+      "address": "Lassallestraße 5, 1020 Wien",
+      "district": "Leopoldstadt",
+      "lat": 48.2186,
+      "lng": 16.3925,
+      "openingHours": "Mo-Sa 7:00-20:00"
+    },
+    {
+      "id": "st-04",
+      "retailerId": "hofer",
+      "name": "Hofer Taborstraße",
+      "address": "Taborstraße 48, 1020 Wien",
+      "district": "Leopoldstadt",
+      "lat": 48.2229,
+      "lng": 16.3805,
+      "openingHours": "Mo-Fr 7:40-20:00, Sa 7:40-18:00"
+    },
+    {
+      "id": "st-05",
+      "retailerId": "billa",
+      "name": "Billa Wien Mitte",
+      "address": "Landstraßer Hauptstraße 1, 1030 Wien",
+      "district": "Landstraße",
+      "lat": 48.2059,
+      "lng": 16.3849,
+      "openingHours": "Mo-Sa 7:00-21:00"
+    },
+    {
+      "id": "st-06",
+      "retailerId": "lidl",
+      "name": "Lidl Erdberg",
+      "address": "Erdbergstraße 168, 1030 Wien",
+      "district": "Landstraße",
+      "lat": 48.1928,
+      "lng": 16.4062,
+      "openingHours": "Mo-Sa 7:30-20:00"
+    },
+    {
+      "id": "st-07",
+      "retailerId": "spar",
+      "name": "Spar Naschmarkt",
+      "address": "Rechte Wienzeile 15, 1040 Wien",
+      "district": "Wieden",
+      "lat": 48.1985,
+      "lng": 16.3648,
+      "openingHours": "Mo-Fr 7:00-19:30, Sa 7:00-18:00"
+    },
+    {
+      "id": "st-08",
+      "retailerId": "penny",
+      "name": "Penny Margaretengürtel",
+      "address": "Margaretengürtel 102, 1050 Wien",
+      "district": "Margareten",
+      "lat": 48.1836,
+      "lng": 16.3517,
+      "openingHours": "Mo-Sa 7:00-20:00"
+    },
+    {
+      "id": "st-09",
+      "retailerId": "billa",
+      "name": "Billa Mariahilfer Straße",
+      "address": "Mariahilfer Straße 88, 1070 Wien",
+      "district": "Neubau",
+      "lat": 48.1979,
+      "lng": 16.3457,
+      "openingHours": "Mo-Sa 7:00-20:00"
+    },
+    {
+      "id": "st-10",
+      "retailerId": "hofer",
+      "name": "Hofer Gumpendorfer Straße",
+      "address": "Gumpendorfer Straße 142, 1060 Wien",
+      "district": "Mariahilf",
+      "lat": 48.1917,
+      "lng": 16.3405,
+      "openingHours": "Mo-Fr 7:40-20:00, Sa 7:40-18:00"
+    },
+    {
+      "id": "st-11",
+      "retailerId": "spar",
+      "name": "Spar Josefstädter Straße",
+      "address": "Josefstädter Straße 61, 1080 Wien",
+      "district": "Josefstadt",
+      "lat": 48.2107,
+      "lng": 16.3438,
+      "openingHours": "Mo-Fr 7:00-19:30, Sa 7:00-18:00"
+    },
+    {
+      "id": "st-12",
+      "retailerId": "billaplus",
+      "name": "Billa Plus Alser Straße",
+      "address": "Alser Straße 24, 1090 Wien",
+      "district": "Alsergrund",
+      "lat": 48.2166,
+      "lng": 16.3521,
+      "openingHours": "Mo-Sa 7:00-20:00"
+    },
+    {
+      "id": "st-13",
+      "retailerId": "lidl",
+      "name": "Lidl Reumannplatz",
+      "address": "Quellenstraße 149, 1100 Wien",
+      "district": "Favoriten",
+      "lat": 48.1748,
+      "lng": 16.3776,
+      "openingHours": "Mo-Sa 7:30-20:00"
+    },
+    {
+      "id": "st-14",
+      "retailerId": "penny",
+      "name": "Penny Favoritenstraße",
+      "address": "Favoritenstraße 118, 1100 Wien",
+      "district": "Favoriten",
+      "lat": 48.1791,
+      "lng": 16.3746,
+      "openingHours": "Mo-Sa 7:00-20:00"
+    },
+    {
+      "id": "st-15",
+      "retailerId": "hofer",
+      "name": "Hofer Simmeringer Hauptstraße",
+      "address": "Simmeringer Hauptstraße 96, 1110 Wien",
+      "district": "Simmering",
+      "lat": 48.1734,
+      "lng": 16.4197,
+      "openingHours": "Mo-Fr 7:40-20:00, Sa 7:40-18:00"
+    },
+    {
+      "id": "st-16",
+      "retailerId": "billa",
+      "name": "Billa Meidlinger Hauptstraße",
+      "address": "Meidlinger Hauptstraße 42, 1120 Wien",
+      "district": "Meidling",
+      "lat": 48.1782,
+      "lng": 16.3308,
+      "openingHours": "Mo-Sa 7:00-20:00"
+    },
+    {
+      "id": "st-17",
+      "retailerId": "spar",
+      "name": "Spar Hietzinger Hauptstraße",
+      "address": "Hietzinger Hauptstraße 22, 1130 Wien",
+      "district": "Hietzing",
+      "lat": 48.1866,
+      "lng": 16.2996,
+      "openingHours": "Mo-Fr 7:00-19:30, Sa 7:00-18:00"
+    },
+    {
+      "id": "st-18",
+      "retailerId": "lidl",
+      "name": "Lidl Thaliastraße",
+      "address": "Thaliastraße 125, 1160 Wien",
+      "district": "Ottakring",
+      "lat": 48.2113,
+      "lng": 16.3231,
+      "openingHours": "Mo-Sa 7:30-20:00"
+    },
+    {
+      "id": "st-19",
+      "retailerId": "penny",
+      "name": "Penny Währinger Gürtel",
+      "address": "Währinger Gürtel 96, 1180 Wien",
+      "district": "Währing",
+      "lat": 48.2263,
+      "lng": 16.3452,
+      "openingHours": "Mo-Sa 7:00-20:00"
+    },
+    {
+      "id": "st-20",
+      "retailerId": "billaplus",
+      "name": "Billa Plus Donauzentrum",
+      "address": "Wagramer Straße 81, 1220 Wien",
+      "district": "Donaustadt",
+      "lat": 48.2417,
+      "lng": 16.4381,
+      "openingHours": "Mo-Sa 8:00-20:00"
+    },
+    {
+      "id": "st-21",
+      "retailerId": "hofer",
+      "name": "Hofer Floridsdorfer Hauptstraße",
+      "address": "Floridsdorfer Hauptstraße 30, 1210 Wien",
+      "district": "Floridsdorf",
+      "lat": 48.2568,
+      "lng": 16.3993,
+      "openingHours": "Mo-Fr 7:40-20:00, Sa 7:40-18:00"
+    },
+    {
+      "id": "st-22",
+      "retailerId": "spar",
+      "name": "Spar Brigittenauer Lände",
+      "address": "Brigittenauer Lände 224, 1200 Wien",
+      "district": "Brigittenau",
+      "lat": 48.2401,
+      "lng": 16.3764,
+      "openingHours": "Mo-Fr 7:00-19:30, Sa 7:00-18:00"
+    }
+  ],
+  "products": [
+    {
+      "id": "p-01",
+      "name": "Äpfel Gala",
+      "category": "Obst & Gemüse",
+      "unit": "1 kg",
+      "baseGrams": 1000,
+      "pieceGrams": 170,
+      "basePrice": 2.99,
+      "emoji": "🍎",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-02",
+      "name": "Bananen",
+      "category": "Obst & Gemüse",
+      "unit": "1 kg",
+      "baseGrams": 1000,
+      "pieceGrams": 120,
+      "basePrice": 1.79,
+      "emoji": "🍌",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-03",
+      "name": "Rispentomaten",
+      "category": "Obst & Gemüse",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 2.49,
+      "emoji": "🍅",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-04",
+      "name": "Salatgurke",
+      "category": "Obst & Gemüse",
+      "unit": "1 Stk",
+      "baseGrams": 400,
+      "pieceGrams": 400,
+      "basePrice": 1.29,
+      "emoji": "🥒",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-05",
+      "name": "Erdäpfel festkochend",
+      "category": "Obst & Gemüse",
+      "unit": "2 kg",
+      "baseGrams": 2000,
+      "basePrice": 3.49,
+      "emoji": "🥔",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-06",
+      "name": "Zwiebeln gelb",
+      "category": "Obst & Gemüse",
+      "unit": "1 kg",
+      "baseGrams": 1000,
+      "pieceGrams": 110,
+      "basePrice": 1.89,
+      "emoji": "🧅",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-07",
+      "name": "Karotten",
+      "category": "Obst & Gemüse",
+      "unit": "1 kg",
+      "baseGrams": 1000,
+      "pieceGrams": 90,
+      "basePrice": 1.69,
+      "emoji": "🥕",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-08",
+      "name": "Paprika rot",
+      "category": "Obst & Gemüse",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "pieceGrams": 170,
+      "basePrice": 2.99,
+      "emoji": "🫑",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-09",
+      "name": "Zucchini",
+      "category": "Obst & Gemüse",
+      "unit": "1 kg",
+      "baseGrams": 1000,
+      "pieceGrams": 250,
+      "basePrice": 2.79,
+      "emoji": "🥬",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-10",
+      "name": "Champignons",
+      "category": "Obst & Gemüse",
+      "unit": "250 g",
+      "baseGrams": 250,
+      "basePrice": 1.99,
+      "emoji": "🍄",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-11",
+      "name": "Blattspinat frisch",
+      "category": "Obst & Gemüse",
+      "unit": "200 g",
+      "baseGrams": 200,
+      "basePrice": 2.29,
+      "emoji": "🥬",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-12",
+      "name": "Knoblauch",
+      "category": "Obst & Gemüse",
+      "unit": "200 g",
+      "baseGrams": 200,
+      "pieceGrams": 5,
+      "basePrice": 1.49,
+      "emoji": "🧄",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-13",
+      "name": "Zitronen",
+      "category": "Obst & Gemüse",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "pieceGrams": 100,
+      "basePrice": 2.19,
+      "emoji": "🍋",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-14",
+      "name": "Avocado",
+      "category": "Obst & Gemüse",
+      "unit": "1 Stk",
+      "baseGrams": 200,
+      "pieceGrams": 200,
+      "basePrice": 1.99,
+      "emoji": "🥑",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-15",
+      "name": "Erdbeeren",
+      "category": "Obst & Gemüse",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 3.99,
+      "emoji": "🍓",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-16",
+      "name": "Hühnerbrustfilet",
+      "category": "Fleisch & Fisch",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 6.99,
+      "emoji": "🍗",
+      "allergens": [],
+      "vegan": false
+    },
+    {
+      "id": "p-17",
+      "name": "Faschiertes gemischt",
+      "category": "Fleisch & Fisch",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 5.49,
+      "emoji": "🥩",
+      "allergens": [],
+      "vegan": false
+    },
+    {
+      "id": "p-18",
+      "name": "Schweinsschnitzel",
+      "category": "Fleisch & Fisch",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 5.99,
+      "emoji": "🥩",
+      "allergens": [],
+      "vegan": false
+    },
+    {
+      "id": "p-19",
+      "name": "Rindsgulasch",
+      "category": "Fleisch & Fisch",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 7.49,
+      "emoji": "🥩",
+      "allergens": [],
+      "vegan": false
+    },
+    {
+      "id": "p-20",
+      "name": "Lachsfilet",
+      "category": "Fleisch & Fisch",
+      "unit": "250 g",
+      "baseGrams": 250,
+      "basePrice": 6.49,
+      "emoji": "🐟",
+      "allergens": [
+        "fisch"
+      ],
+      "vegan": false
+    },
+    {
+      "id": "p-21",
+      "name": "Thunfisch in Wasser",
+      "category": "Fleisch & Fisch",
+      "unit": "3 x 80 g",
+      "baseGrams": 240,
+      "basePrice": 3.29,
+      "emoji": "🐟",
+      "allergens": [
+        "fisch"
+      ],
+      "vegan": false
+    },
+    {
+      "id": "p-22",
+      "name": "Frankfurter Würstel",
+      "category": "Fleisch & Fisch",
+      "unit": "250 g",
+      "baseGrams": 250,
+      "basePrice": 2.79,
+      "emoji": "🌭",
+      "allergens": [],
+      "vegan": false
+    },
+    {
+      "id": "p-23",
+      "name": "Beinschinken",
+      "category": "Fleisch & Fisch",
+      "unit": "150 g",
+      "baseGrams": 150,
+      "basePrice": 2.49,
+      "emoji": "🍖",
+      "allergens": [],
+      "vegan": false
+    },
+    {
+      "id": "p-24",
+      "name": "Vollmilch 3,5 %",
+      "category": "Milchprodukte",
+      "unit": "1 l",
+      "baseGrams": 1000,
+      "basePrice": 1.39,
+      "emoji": "🥛",
+      "allergens": [
+        "laktose"
+      ],
+      "vegan": false
+    },
+    {
+      "id": "p-25",
+      "name": "Naturjoghurt",
+      "category": "Milchprodukte",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 1.29,
+      "emoji": "🥣",
+      "allergens": [
+        "laktose"
+      ],
+      "vegan": false
+    },
+    {
+      "id": "p-26",
+      "name": "Butter",
+      "category": "Milchprodukte",
+      "unit": "250 g",
+      "baseGrams": 250,
+      "basePrice": 2.79,
+      "emoji": "🧈",
+      "allergens": [
+        "laktose"
+      ],
+      "vegan": false
+    },
+    {
+      "id": "p-27",
+      "name": "Gouda gerieben",
+      "category": "Milchprodukte",
+      "unit": "200 g",
+      "baseGrams": 200,
+      "basePrice": 2.19,
+      "emoji": "🧀",
+      "allergens": [
+        "laktose"
+      ],
+      "vegan": false
+    },
+    {
+      "id": "p-28",
+      "name": "Bergkäse",
+      "category": "Milchprodukte",
+      "unit": "200 g",
+      "baseGrams": 200,
+      "basePrice": 3.49,
+      "emoji": "🧀",
+      "allergens": [
+        "laktose"
+      ],
+      "vegan": false
+    },
+    {
+      "id": "p-29",
+      "name": "Topfen 20 %",
+      "category": "Milchprodukte",
+      "unit": "250 g",
+      "baseGrams": 250,
+      "basePrice": 1.19,
+      "emoji": "🥣",
+      "allergens": [
+        "laktose"
+      ],
+      "vegan": false
+    },
+    {
+      "id": "p-30",
+      "name": "Schlagobers",
+      "category": "Milchprodukte",
+      "unit": "250 ml",
+      "baseGrams": 250,
+      "basePrice": 1.09,
+      "emoji": "🥛",
+      "allergens": [
+        "laktose"
+      ],
+      "vegan": false
+    },
+    {
+      "id": "p-31",
+      "name": "Eier Freiland",
+      "category": "Milchprodukte",
+      "unit": "10 Stk",
+      "baseGrams": 600,
+      "pieceGrams": 60,
+      "basePrice": 3.49,
+      "emoji": "🥚",
+      "allergens": [
+        "ei"
+      ],
+      "vegan": false
+    },
+    {
+      "id": "p-32",
+      "name": "Mozzarella",
+      "category": "Milchprodukte",
+      "unit": "125 g",
+      "baseGrams": 125,
+      "basePrice": 0.99,
+      "emoji": "🧀",
+      "allergens": [
+        "laktose"
+      ],
+      "vegan": false
+    },
+    {
+      "id": "p-33",
+      "name": "Haferdrink",
+      "category": "Milchprodukte",
+      "unit": "1 l",
+      "baseGrams": 1000,
+      "basePrice": 1.49,
+      "emoji": "🥛",
+      "allergens": [
+        "gluten"
+      ],
+      "vegan": true
+    },
+    {
+      "id": "p-34",
+      "name": "Vollkornbrot",
+      "category": "Brot & Gebäck",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 2.49,
+      "emoji": "🍞",
+      "allergens": [
+        "gluten"
+      ],
+      "vegan": true
+    },
+    {
+      "id": "p-35",
+      "name": "Semmeln",
+      "category": "Brot & Gebäck",
+      "unit": "6 Stk",
+      "baseGrams": 300,
+      "pieceGrams": 50,
+      "basePrice": 1.74,
+      "emoji": "🥖",
+      "allergens": [
+        "gluten"
+      ],
+      "vegan": true
+    },
+    {
+      "id": "p-36",
+      "name": "Toastbrot",
+      "category": "Brot & Gebäck",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 1.29,
+      "emoji": "🍞",
+      "allergens": [
+        "gluten"
+      ],
+      "vegan": true
+    },
+    {
+      "id": "p-37",
+      "name": "Croissants",
+      "category": "Brot & Gebäck",
+      "unit": "4 Stk",
+      "baseGrams": 240,
+      "pieceGrams": 60,
+      "basePrice": 2.29,
+      "emoji": "🥐",
+      "allergens": [
+        "gluten",
+        "laktose",
+        "ei"
+      ],
+      "vegan": false
+    },
+    {
+      "id": "p-38",
+      "name": "Spaghetti",
+      "category": "Vorratskammer",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 1.19,
+      "emoji": "🍝",
+      "allergens": [
+        "gluten"
+      ],
+      "vegan": true
+    },
+    {
+      "id": "p-39",
+      "name": "Basmatireis",
+      "category": "Vorratskammer",
+      "unit": "1 kg",
+      "baseGrams": 1000,
+      "basePrice": 3.29,
+      "emoji": "🍚",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-40",
+      "name": "Passierte Tomaten",
+      "category": "Vorratskammer",
+      "unit": "700 g",
+      "baseGrams": 700,
+      "basePrice": 1.39,
+      "emoji": "🥫",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-41",
+      "name": "Olivenöl extra vergine",
+      "category": "Vorratskammer",
+      "unit": "750 ml",
+      "baseGrams": 750,
+      "basePrice": 7.99,
+      "emoji": "🫒",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-42",
+      "name": "Rote Linsen",
+      "category": "Vorratskammer",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 2.29,
+      "emoji": "🫘",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-43",
+      "name": "Kichererbsen (Dose)",
+      "category": "Vorratskammer",
+      "unit": "400 g",
+      "baseGrams": 400,
+      "basePrice": 1.09,
+      "emoji": "🫘",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-44",
+      "name": "Mehl glatt Type 700",
+      "category": "Vorratskammer",
+      "unit": "1 kg",
+      "baseGrams": 1000,
+      "basePrice": 1.09,
+      "emoji": "🌾",
+      "allergens": [
+        "gluten"
+      ],
+      "vegan": true
+    },
+    {
+      "id": "p-45",
+      "name": "Polenta",
+      "category": "Vorratskammer",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 1.79,
+      "emoji": "🌽",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-46",
+      "name": "Kokosmilch",
+      "category": "Vorratskammer",
+      "unit": "400 ml",
+      "baseGrams": 400,
+      "basePrice": 1.69,
+      "emoji": "🥥",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-47",
+      "name": "Erdnussbutter",
+      "category": "Vorratskammer",
+      "unit": "350 g",
+      "baseGrams": 350,
+      "basePrice": 3.49,
+      "emoji": "🥜",
+      "allergens": [
+        "nuesse"
+      ],
+      "vegan": true
+    },
+    {
+      "id": "p-48",
+      "name": "Honig",
+      "category": "Vorratskammer",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 5.99,
+      "emoji": "🍯",
+      "allergens": [],
+      "vegan": false
+    },
+    {
+      "id": "p-49",
+      "name": "Haferflocken",
+      "category": "Vorratskammer",
+      "unit": "500 g",
+      "baseGrams": 500,
+      "basePrice": 1.29,
+      "emoji": "🥣",
+      "allergens": [
+        "gluten"
+      ],
+      "vegan": true
+    },
+    {
+      "id": "p-50",
+      "name": "Currypaste rot",
+      "category": "Vorratskammer",
+      "unit": "200 g",
+      "baseGrams": 200,
+      "basePrice": 2.49,
+      "emoji": "🌶️",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-51",
+      "name": "Mineralwasser prickelnd",
+      "category": "Getränke",
+      "unit": "6 x 1,5 l",
+      "baseGrams": 9000,
+      "basePrice": 3.29,
+      "emoji": "💧",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-52",
+      "name": "Apfelsaft naturtrüb",
+      "category": "Getränke",
+      "unit": "1 l",
+      "baseGrams": 1000,
+      "basePrice": 1.99,
+      "emoji": "🧃",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-53",
+      "name": "Bio-Orangensaft",
+      "category": "Getränke",
+      "unit": "1 l",
+      "baseGrams": 1000,
+      "basePrice": 2.49,
+      "emoji": "🍊",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-54",
+      "name": "Kaffeebohnen",
+      "category": "Getränke",
+      "unit": "1 kg",
+      "baseGrams": 1000,
+      "basePrice": 12.99,
+      "emoji": "☕",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-55",
+      "name": "Märzenbier",
+      "category": "Getränke",
+      "unit": "6 x 0,5 l",
+      "baseGrams": 3000,
+      "basePrice": 5.99,
+      "emoji": "🍺",
+      "allergens": [
+        "gluten"
+      ],
+      "vegan": true
+    },
+    {
+      "id": "p-56",
+      "name": "TK-Erbsen",
+      "category": "Tiefkühl",
+      "unit": "750 g",
+      "baseGrams": 750,
+      "basePrice": 1.99,
+      "emoji": "🫛",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-57",
+      "name": "TK-Beerenmix",
+      "category": "Tiefkühl",
+      "unit": "300 g",
+      "baseGrams": 300,
+      "basePrice": 2.99,
+      "emoji": "🫐",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-58",
+      "name": "TK-Pommes",
+      "category": "Tiefkühl",
+      "unit": "1 kg",
+      "baseGrams": 1000,
+      "basePrice": 2.49,
+      "emoji": "🍟",
+      "allergens": [],
+      "vegan": true
+    },
+    {
+      "id": "p-59",
+      "name": "Zartbitterschokolade",
+      "category": "Süßes & Snacks",
+      "unit": "100 g",
+      "baseGrams": 100,
+      "basePrice": 1.49,
+      "emoji": "🍫",
+      "allergens": [
+        "soja"
+      ],
+      "vegan": true
+    },
+    {
+      "id": "p-60",
+      "name": "Salzstangerl",
+      "category": "Süßes & Snacks",
+      "unit": "250 g",
+      "baseGrams": 250,
+      "basePrice": 1.19,
+      "emoji": "🥨",
+      "allergens": [
+        "gluten"
+      ],
+      "vegan": true
+    },
+    {
+      "id": "p-61",
+      "name": "Studentenfutter",
+      "category": "Süßes & Snacks",
+      "unit": "200 g",
+      "baseGrams": 200,
+      "basePrice": 2.49,
+      "emoji": "🥜",
+      "allergens": [
+        "nuesse"
+      ],
+      "vegan": true
+    },
+    {
+      "id": "p-62",
+      "name": "Vanillekipferl",
+      "category": "Süßes & Snacks",
+      "unit": "200 g",
+      "baseGrams": 200,
+      "basePrice": 2.99,
+      "emoji": "🍪",
+      "allergens": [
+        "gluten",
+        "nuesse",
+        "laktose",
+        "ei"
+      ],
+      "vegan": false
+    },
+    {
+      "id": "p-auto-0001",
+      "name": "Chorizo Picante",
+      "category": "Fleisch & Fisch",
+      "unit": "150 g",
+      "baseGrams": 150,
+      "basePrice": 2.99,
+      "emoji": "🥩",
+      "allergens": [],
+      "vegan": false
+    },
+    {
+      "id": "p-auto-0002",
+      "name": "Hafer-Vollkornkekse mit Haselnuss",
+      "category": "Süßes & Snacks",
+      "unit": "250 g",
+      "baseGrams": 250,
+      "basePrice": 2.49,
+      "emoji": "🍫",
+      "allergens": [
+        "gluten",
+        "nuesse"
+      ],
+      "vegan": true
+    }
+  ],
+  "discounts": [
+    {
+      "id": "d-y4wcqf",
+      "retailerId": "billaplus",
+      "storeId": "st-12",
+      "productId": "p-01",
+      "originalPrice": 3.14,
+      "discountPrice": 2.2,
+      "discountPercent": 30,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-05",
+      "source": "mock"
+    },
+    {
+      "id": "d-kr00j5",
+      "retailerId": "spar",
+      "storeId": null,
+      "productId": "p-01",
+      "originalPrice": 3.02,
+      "discountPrice": 2.27,
+      "discountPercent": 25,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-06",
+      "source": "mock"
+    },
+    {
+      "id": "d-ijkxeb",
+      "retailerId": "hofer",
+      "storeId": null,
+      "productId": "p-02",
+      "originalPrice": 1.78,
+      "discountPrice": 1.33,
+      "discountPercent": 25,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-07",
+      "source": "mock"
+    },
+    {
+      "id": "d-yuz63y",
+      "retailerId": "hofer",
+      "storeId": null,
+      "productId": "p-03",
+      "originalPrice": 2.62,
+      "discountPrice": 1.83,
+      "discountPercent": 30,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-10",
+      "source": "mock"
+    },
+    {
+      "id": "d-pkx9j9",
+      "retailerId": "billaplus",
+      "storeId": "st-12",
+      "productId": "p-05",
+      "originalPrice": 3.41,
+      "discountPrice": 2.73,
+      "discountPercent": 20,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-05",
+      "source": "mock"
+    },
+    {
+      "id": "d-9std7c",
+      "retailerId": "billa",
+      "storeId": null,
+      "productId": "p-06",
+      "originalPrice": 1.87,
+      "discountPrice": 1.5,
+      "discountPercent": 20,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-05",
+      "source": "mock"
+    },
+    {
+      "id": "d-8pxbw9",
+      "retailerId": "billaplus",
+      "storeId": null,
+      "productId": "p-06",
+      "originalPrice": 1.96,
+      "discountPrice": 1.37,
+      "discountPercent": 30,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-10",
+      "source": "mock"
+    },
+    {
+      "id": "d-7lgwsq",
+      "retailerId": "billaplus",
+      "storeId": null,
+      "productId": "p-07",
+      "originalPrice": 1.72,
+      "discountPrice": 1.46,
+      "discountPercent": 15,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-10",
+      "source": "mock"
+    },
+    {
+      "id": "d-l9r0jg",
+      "retailerId": "hofer",
+      "storeId": "st-10",
+      "productId": "p-08",
+      "originalPrice": 2.95,
+      "discountPrice": 2.36,
+      "discountPercent": 20,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-10",
+      "source": "mock"
+    },
+    {
+      "id": "d-h8znjw",
+      "retailerId": "penny",
+      "storeId": null,
+      "productId": "p-09",
+      "originalPrice": 2.82,
+      "discountPrice": 2.4,
+      "discountPercent": 15,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-08",
+      "source": "mock"
+    },
+    {
+      "id": "d-8psurp",
+      "retailerId": "billaplus",
+      "storeId": null,
+      "productId": "p-10",
+      "originalPrice": 2.02,
+      "discountPrice": 1.21,
+      "discountPercent": 40,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-04",
+      "source": "mock"
+    },
+    {
+      "id": "d-d24dmw",
+      "retailerId": "lidl",
+      "storeId": null,
+      "productId": "p-12",
+      "originalPrice": 1.48,
+      "discountPrice": 0.74,
+      "discountPercent": 50,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-04",
+      "source": "mock"
+    },
+    {
+      "id": "d-frmbgh",
+      "retailerId": "penny",
+      "storeId": "st-14",
+      "productId": "p-13",
+      "originalPrice": 2.18,
+      "discountPrice": 1.09,
+      "discountPercent": 50,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-10",
+      "source": "mock"
+    },
+    {
+      "id": "d-en00tm",
+      "retailerId": "spar",
+      "storeId": null,
+      "productId": "p-14",
+      "originalPrice": 2.02,
+      "discountPrice": 1.82,
+      "discountPercent": 10,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-10",
+      "source": "mock"
+    },
+    {
+      "id": "d-yomis9",
+      "retailerId": "billaplus",
+      "storeId": null,
+      "productId": "p-15",
+      "originalPrice": 4.06,
+      "discountPrice": 3.65,
+      "discountPercent": 10,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-10",
+      "source": "mock"
+    },
+    {
+      "id": "d-jhm622",
+      "retailerId": "spar",
+      "storeId": null,
+      "productId": "p-16",
+      "originalPrice": 6.87,
+      "discountPrice": 4.81,
+      "discountPercent": 30,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-07",
+      "source": "mock"
+    },
+    {
+      "id": "d-4cyfvq",
+      "retailerId": "penny",
+      "storeId": "st-14",
+      "productId": "p-16",
+      "originalPrice": 6.73,
+      "discountPrice": 4.71,
+      "discountPercent": 30,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-11",
+      "source": "mock"
+    },
+    {
+      "id": "d-13hgds",
+      "retailerId": "spar",
+      "storeId": null,
+      "productId": "p-17",
+      "originalPrice": 5.63,
+      "discountPrice": 3.66,
+      "discountPercent": 35,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-11",
+      "source": "mock"
+    },
+    {
+      "id": "d-j3mpdd",
+      "retailerId": "billaplus",
+      "storeId": null,
+      "productId": "p-19",
+      "originalPrice": 7.34,
+      "discountPrice": 5.14,
+      "discountPercent": 30,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-05",
+      "source": "mock"
+    },
+    {
+      "id": "d-21vzdf",
+      "retailerId": "spar",
+      "storeId": null,
+      "productId": "p-20",
+      "originalPrice": 6.75,
+      "discountPrice": 3.38,
+      "discountPercent": 50,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-05",
+      "source": "mock"
+    },
+    {
+      "id": "d-ngbhyx",
+      "retailerId": "penny",
+      "storeId": "st-19",
+      "productId": "p-21",
+      "originalPrice": 3.26,
+      "discountPrice": 2.28,
+      "discountPercent": 30,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-10",
+      "source": "mock"
+    },
+    {
+      "id": "d-q25ll7",
+      "retailerId": "billaplus",
+      "storeId": null,
+      "productId": "p-21",
+      "originalPrice": 3.24,
+      "discountPrice": 2.11,
+      "discountPercent": 35,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-09",
+      "source": "mock"
+    },
+    {
+      "id": "d-try3mf",
+      "retailerId": "spar",
+      "storeId": null,
+      "productId": "p-22",
+      "originalPrice": 2.72,
+      "discountPrice": 2.04,
+      "discountPercent": 25,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-11",
+      "source": "mock"
+    },
+    {
+      "id": "d-3sr7jo",
+      "retailerId": "billaplus",
+      "storeId": null,
+      "productId": "p-23",
+      "originalPrice": 2.58,
+      "discountPrice": 1.55,
+      "discountPercent": 40,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-08",
+      "source": "mock"
+    },
+    {
+      "id": "d-d3rp4x",
+      "retailerId": "spar",
+      "storeId": "st-11",
+      "productId": "p-24",
+      "originalPrice": 1.44,
+      "discountPrice": 1.01,
+      "discountPercent": 30,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-06",
+      "source": "mock"
+    },
+    {
+      "id": "d-9vr1tl",
+      "retailerId": "billa",
+      "storeId": null,
+      "productId": "p-26",
+      "originalPrice": 2.66,
+      "discountPrice": 1.73,
+      "discountPercent": 35,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-07",
+      "source": "mock"
+    },
+    {
+      "id": "d-2uq4nc",
+      "retailerId": "lidl",
+      "storeId": null,
+      "productId": "p-26",
+      "originalPrice": 2.86,
+      "discountPrice": 2,
+      "discountPercent": 30,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-12",
+      "source": "mock"
+    },
+    {
+      "id": "d-49anci",
+      "retailerId": "spar",
+      "storeId": null,
+      "productId": "p-27",
+      "originalPrice": 2.26,
+      "discountPrice": 2.03,
+      "discountPercent": 10,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-05",
+      "source": "mock"
+    },
+    {
+      "id": "d-jd14h",
+      "retailerId": "billa",
+      "storeId": "st-05",
+      "productId": "p-28",
+      "originalPrice": 3.66,
+      "discountPrice": 2.56,
+      "discountPercent": 30,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-04",
+      "source": "mock"
+    },
+    {
+      "id": "d-plm5sd",
+      "retailerId": "spar",
+      "storeId": null,
+      "productId": "p-29",
+      "originalPrice": 1.18,
+      "discountPrice": 0.89,
+      "discountPercent": 25,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-04",
+      "source": "mock"
+    },
+    {
+      "id": "d-78rcd0",
+      "retailerId": "penny",
+      "storeId": null,
+      "productId": "p-30",
+      "originalPrice": 1.06,
+      "discountPrice": 0.74,
+      "discountPercent": 30,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-04",
+      "source": "mock"
+    },
+    {
+      "id": "d-pp09x3",
+      "retailerId": "penny",
+      "storeId": null,
+      "productId": "p-31",
+      "originalPrice": 3.71,
+      "discountPrice": 2.6,
+      "discountPercent": 30,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-05",
+      "source": "mock"
+    },
+    {
+      "id": "d-qdtozd",
+      "retailerId": "spar",
+      "storeId": "st-22",
+      "productId": "p-31",
+      "originalPrice": 3.32,
+      "discountPrice": 2.32,
+      "discountPercent": 30,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-12",
+      "source": "mock"
+    },
+    {
+      "id": "d-7g1k6q",
+      "retailerId": "lidl",
+      "storeId": null,
+      "productId": "p-33",
+      "originalPrice": 1.59,
+      "discountPrice": 1.07,
+      "discountPercent": 33,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-11",
+      "source": "mock"
+    },
+    {
+      "id": "d-ik1s2j",
+      "retailerId": "penny",
+      "storeId": null,
+      "productId": "p-34",
+      "originalPrice": 2.4,
+      "discountPrice": 1.92,
+      "discountPercent": 20,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-07",
+      "source": "mock"
+    },
+    {
+      "id": "d-mev8yu",
+      "retailerId": "lidl",
+      "storeId": null,
+      "productId": "p-35",
+      "originalPrice": 1.86,
+      "discountPrice": 1.67,
+      "discountPercent": 10,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-06",
+      "source": "mock"
+    },
+    {
+      "id": "d-aaverr",
+      "retailerId": "billa",
+      "storeId": "st-09",
+      "productId": "p-36",
+      "originalPrice": 1.28,
+      "discountPrice": 1.02,
+      "discountPercent": 20,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-11",
+      "source": "mock"
+    },
+    {
+      "id": "d-bav12a",
+      "retailerId": "penny",
+      "storeId": null,
+      "productId": "p-36",
+      "originalPrice": 1.33,
+      "discountPrice": 0.93,
+      "discountPercent": 30,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-08",
+      "source": "mock"
+    },
+    {
+      "id": "d-5br05d",
+      "retailerId": "billa",
+      "storeId": null,
+      "productId": "p-37",
+      "originalPrice": 2.24,
+      "discountPrice": 1.57,
+      "discountPercent": 30,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-10",
+      "source": "mock"
+    },
+    {
+      "id": "d-ouvyz3",
+      "retailerId": "billaplus",
+      "storeId": null,
+      "productId": "p-38",
+      "originalPrice": 1.23,
+      "discountPrice": 0.68,
+      "discountPercent": 45,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-06",
+      "source": "mock"
+    },
+    {
+      "id": "d-t07bzq",
+      "retailerId": "billaplus",
+      "storeId": "st-20",
+      "productId": "p-40",
+      "originalPrice": 1.35,
+      "discountPrice": 0.94,
+      "discountPercent": 30,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-06",
+      "source": "mock"
+    },
+    {
+      "id": "d-8ly4tz",
+      "retailerId": "hofer",
+      "storeId": null,
+      "productId": "p-41",
+      "originalPrice": 8.1,
+      "discountPrice": 5.43,
+      "discountPercent": 33,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-12",
+      "source": "mock"
+    },
+    {
+      "id": "d-r16kjk",
+      "retailerId": "billa",
+      "storeId": null,
+      "productId": "p-41",
+      "originalPrice": 8.14,
+      "discountPrice": 5.45,
+      "discountPercent": 33,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-07",
+      "source": "mock"
+    },
+    {
+      "id": "d-9uaspd",
+      "retailerId": "hofer",
+      "storeId": null,
+      "productId": "p-42",
+      "originalPrice": 2.29,
+      "discountPrice": 1.72,
+      "discountPercent": 25,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-07",
+      "source": "mock"
+    },
+    {
+      "id": "d-b9x60",
+      "retailerId": "spar",
+      "storeId": "st-22",
+      "productId": "p-43",
+      "originalPrice": 1.08,
+      "discountPrice": 0.7,
+      "discountPercent": 35,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-12",
+      "source": "mock"
+    },
+    {
+      "id": "d-hrddtv",
+      "retailerId": "billa",
+      "storeId": null,
+      "productId": "p-44",
+      "originalPrice": 1.06,
+      "discountPrice": 0.71,
+      "discountPercent": 33,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-07",
+      "source": "mock"
+    },
+    {
+      "id": "d-khm0e",
+      "retailerId": "hofer",
+      "storeId": null,
+      "productId": "p-45",
+      "originalPrice": 1.85,
+      "discountPrice": 1.48,
+      "discountPercent": 20,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-12",
+      "source": "mock"
+    },
+    {
+      "id": "d-5aquoc",
+      "retailerId": "billaplus",
+      "storeId": null,
+      "productId": "p-47",
+      "originalPrice": 3.39,
+      "discountPrice": 2.71,
+      "discountPercent": 20,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-06",
+      "source": "mock"
+    },
+    {
+      "id": "d-ij2w9d",
+      "retailerId": "billa",
+      "storeId": "st-09",
+      "productId": "p-48",
+      "originalPrice": 6.18,
+      "discountPrice": 4.63,
+      "discountPercent": 25,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-08",
+      "source": "mock"
+    },
+    {
+      "id": "d-c7h003",
+      "retailerId": "lidl",
+      "storeId": null,
+      "productId": "p-49",
+      "originalPrice": 1.29,
+      "discountPrice": 0.77,
+      "discountPercent": 40,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-06",
+      "source": "mock"
+    },
+    {
+      "id": "d-wfsmux",
+      "retailerId": "hofer",
+      "storeId": null,
+      "productId": "p-50",
+      "originalPrice": 2.42,
+      "discountPrice": 2.06,
+      "discountPercent": 15,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-11",
+      "source": "mock"
+    },
+    {
+      "id": "d-bup0gj",
+      "retailerId": "hofer",
+      "storeId": null,
+      "productId": "p-51",
+      "originalPrice": 3.13,
+      "discountPrice": 1.88,
+      "discountPercent": 40,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-05",
+      "source": "mock"
+    },
+    {
+      "id": "d-4aa27d",
+      "retailerId": "lidl",
+      "storeId": "st-18",
+      "productId": "p-51",
+      "originalPrice": 3.26,
+      "discountPrice": 2.44,
+      "discountPercent": 25,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-12",
+      "source": "mock"
+    },
+    {
+      "id": "d-pkopbw",
+      "retailerId": "billaplus",
+      "storeId": null,
+      "productId": "p-52",
+      "originalPrice": 2.11,
+      "discountPrice": 1.9,
+      "discountPercent": 10,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-05",
+      "source": "mock"
+    },
+    {
+      "id": "d-a7f9u5",
+      "retailerId": "spar",
+      "storeId": null,
+      "productId": "p-54",
+      "originalPrice": 13.77,
+      "discountPrice": 7.57,
+      "discountPercent": 45,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-06",
+      "source": "mock"
+    },
+    {
+      "id": "d-1lg443",
+      "retailerId": "hofer",
+      "storeId": null,
+      "productId": "p-55",
+      "originalPrice": 6.35,
+      "discountPrice": 4.13,
+      "discountPercent": 35,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-08",
+      "source": "mock"
+    },
+    {
+      "id": "d-o481z5",
+      "retailerId": "penny",
+      "storeId": "st-08",
+      "productId": "p-56",
+      "originalPrice": 2.04,
+      "discountPrice": 1.02,
+      "discountPercent": 50,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-04",
+      "source": "mock"
+    },
+    {
+      "id": "d-nx6x04",
+      "retailerId": "spar",
+      "storeId": null,
+      "productId": "p-56",
+      "originalPrice": 1.91,
+      "discountPrice": 1.34,
+      "discountPercent": 30,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-12",
+      "source": "mock"
+    },
+    {
+      "id": "d-46unxn",
+      "retailerId": "billaplus",
+      "storeId": null,
+      "productId": "p-57",
+      "originalPrice": 3.13,
+      "discountPrice": 2.82,
+      "discountPercent": 10,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-06",
+      "source": "mock"
+    },
+    {
+      "id": "d-oryacr",
+      "retailerId": "billaplus",
+      "storeId": null,
+      "productId": "p-58",
+      "originalPrice": 2.6,
+      "discountPrice": 1.95,
+      "discountPercent": 25,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-05",
+      "source": "mock"
+    },
+    {
+      "id": "d-p1rs24",
+      "retailerId": "billa",
+      "storeId": "st-16",
+      "productId": "p-59",
+      "originalPrice": 1.56,
+      "discountPrice": 1.33,
+      "discountPercent": 15,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-12",
+      "source": "mock"
+    },
+    {
+      "id": "d-g8hky2",
+      "retailerId": "spar",
+      "storeId": null,
+      "productId": "p-61",
+      "originalPrice": 2.65,
+      "discountPrice": 2.12,
+      "discountPercent": 20,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-06",
+      "source": "mock"
+    },
+    {
+      "id": "d-moji72",
+      "retailerId": "billa",
+      "storeId": null,
+      "productId": "p-61",
+      "originalPrice": 2.48,
+      "discountPrice": 2.11,
+      "discountPercent": 15,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-06",
+      "source": "mock"
+    },
+    {
+      "id": "d-rrgxc8",
+      "retailerId": "billa",
+      "storeId": null,
+      "productId": "p-62",
+      "originalPrice": 2.9,
+      "discountPrice": 1.74,
+      "discountPercent": 40,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-10",
+      "source": "mock"
+    },
+    {
+      "id": "d-2nuvco",
+      "retailerId": "billa",
+      "storeId": null,
+      "productId": "p-03",
+      "originalPrice": 2.49,
+      "discountPrice": 1.49,
+      "discountPercent": 40,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-07",
+      "source": "partner-csv",
+      "sourceUrl": "https://example.invalid/offer/1"
+    },
+    {
+      "id": "d-fpgdl3",
+      "retailerId": "billa",
+      "storeId": null,
+      "productId": "p-24",
+      "originalPrice": 1.79,
+      "discountPrice": 1.29,
+      "discountPercent": 28,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-07",
+      "source": "partner-csv"
+    },
+    {
+      "id": "d-hcrh6y",
+      "retailerId": "spar",
+      "storeId": null,
+      "productId": "p-16",
+      "originalPrice": 7.99,
+      "discountPrice": 4.99,
+      "discountPercent": 38,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-08",
+      "source": "partner-csv"
+    },
+    {
+      "id": "d-og04cl",
+      "retailerId": "spar",
+      "storeId": "st-01",
+      "productId": "p-05",
+      "originalPrice": 3.99,
+      "discountPrice": 2.49,
+      "discountPercent": 38,
+      "validFrom": "2026-09-02",
+      "validTo": "2026-09-08",
+      "source": "partner-csv"
+    },
+    {
+      "id": "d-27ttif",
+      "retailerId": "hofer",
+      "storeId": null,
+      "productId": "p-28",
+      "originalPrice": 3.99,
+      "discountPrice": 2.79,
+      "discountPercent": 30,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-09",
+      "source": "partner-csv"
+    },
+    {
+      "id": "d-45c7ym",
+      "retailerId": "lidl",
+      "storeId": null,
+      "productId": "p-auto-0001",
+      "originalPrice": 2.99,
+      "discountPrice": 1.99,
+      "discountPercent": 33,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-06",
+      "source": "partner-csv"
+    },
+    {
+      "id": "d-nh7wgf",
+      "retailerId": "penny",
+      "storeId": null,
+      "productId": "p-51",
+      "originalPrice": 3.49,
+      "discountPrice": 2.29,
+      "discountPercent": 34,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-10",
+      "source": "partner-csv"
+    },
+    {
+      "id": "d-kcfegn",
+      "retailerId": "penny",
+      "storeId": null,
+      "productId": "p-auto-0002",
+      "originalPrice": 2.49,
+      "discountPrice": 1.49,
+      "discountPercent": 40,
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-10",
+      "source": "partner-csv"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "r-01",
+      "title": "Wiener Erdäpfelgulasch",
+      "tags": [
+        "Österreichisch",
+        "Hausmannskost",
+        "Budget"
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarisch",
+        "omnivor"
+      ],
+      "allergenFree": [
+        "gluten",
+        "laktose",
+        "nuesse",
+        "ei",
+        "fisch",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-05",
+          "grams": 800
+        },
+        {
+          "productId": "p-06",
+          "grams": 250
+        },
+        {
+          "productId": "p-08",
+          "grams": 150
+        },
+        {
+          "productId": "p-40",
+          "grams": 200
+        },
+        {
+          "productId": "p-41",
+          "grams": 30
+        }
+      ],
+      "instructions": [
+        "Zwiebeln fein schneiden und im Olivenöl goldbraun anrösten.",
+        "Mit Paprikapulver und passierten Tomaten ablöschen, kurz einkochen lassen.",
+        "Erdäpfel schälen, würfeln und mit Wasser aufgießen.",
+        "Ca. 25 Minuten köcheln, bis das Gulasch sämig ist. Mit Salz, Kümmel und Majoran abschmecken."
+      ],
+      "cookingTimeMin": 40,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/erdaepfelgulasch.jpg",
+      "emoji": "🥘"
+    },
+    {
+      "id": "r-02",
+      "title": "Spaghetti Napoli",
+      "tags": [
+        "Italienisch",
+        "Schnell",
+        "Budget"
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarisch",
+        "omnivor"
+      ],
+      "allergenFree": [
+        "laktose",
+        "nuesse",
+        "ei",
+        "fisch",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-38",
+          "grams": 500
+        },
+        {
+          "productId": "p-40",
+          "grams": 700
+        },
+        {
+          "productId": "p-06",
+          "grams": 120
+        },
+        {
+          "productId": "p-12",
+          "grams": 10
+        },
+        {
+          "productId": "p-41",
+          "grams": 30
+        }
+      ],
+      "instructions": [
+        "Spaghetti in Salzwasser bissfest kochen.",
+        "Zwiebel und Knoblauch im Olivenöl glasig anschwitzen.",
+        "Passierte Tomaten zugeben und 15 Minuten offen einkochen lassen.",
+        "Sauce mit Salz, Pfeffer und Basilikum abschmecken und mit den Nudeln vermengen."
+      ],
+      "cookingTimeMin": 25,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/spaghetti-napoli.jpg",
+      "emoji": "🍝"
+    },
+    {
+      "id": "r-03",
+      "title": "Gemüsecurry mit Kokosmilch",
+      "tags": [
+        "Asiatisch",
+        "Vegan",
+        "One-Pot"
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarisch",
+        "omnivor"
+      ],
+      "allergenFree": [
+        "gluten",
+        "laktose",
+        "nuesse",
+        "ei",
+        "fisch",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-09",
+          "grams": 300
+        },
+        {
+          "productId": "p-08",
+          "grams": 250
+        },
+        {
+          "productId": "p-07",
+          "grams": 200
+        },
+        {
+          "productId": "p-46",
+          "grams": 400
+        },
+        {
+          "productId": "p-50",
+          "grams": 60
+        },
+        {
+          "productId": "p-39",
+          "grams": 300
+        }
+      ],
+      "instructions": [
+        "Reis nach Packungsanweisung kochen.",
+        "Gemüse in mundgerechte Stücke schneiden.",
+        "Currypaste kurz anrösten, Gemüse zugeben und mit Kokosmilch aufgießen.",
+        "12 Minuten köcheln lassen und mit Limette und Salz abschmecken."
+      ],
+      "cookingTimeMin": 35,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/gemuesecurry.jpg",
+      "emoji": "🍛"
+    },
+    {
+      "id": "r-04",
+      "title": "Hühnerbrust mit Ofengemüse",
+      "tags": [
+        "Mediterran",
+        "Protein",
+        "Ofen"
+      ],
+      "dietTags": [
+        "omnivor"
+      ],
+      "allergenFree": [
+        "gluten",
+        "laktose",
+        "nuesse",
+        "ei",
+        "fisch",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-16",
+          "grams": 500
+        },
+        {
+          "productId": "p-05",
+          "grams": 700
+        },
+        {
+          "productId": "p-09",
+          "grams": 300
+        },
+        {
+          "productId": "p-08",
+          "grams": 200
+        },
+        {
+          "productId": "p-41",
+          "grams": 40
+        }
+      ],
+      "instructions": [
+        "Backrohr auf 200 °C vorheizen.",
+        "Erdäpfel, Zucchini und Paprika grob schneiden, mit Olivenöl und Kräutern marinieren.",
+        "Gemüse 20 Minuten backen, dann die gewürzte Hühnerbrust dazulegen.",
+        "Weitere 20 Minuten garen, bis das Fleisch durch ist."
+      ],
+      "cookingTimeMin": 45,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/huhn-ofengemuese.jpg",
+      "emoji": "🍗"
+    },
+    {
+      "id": "r-05",
+      "title": "Orientalische Linsensuppe",
+      "tags": [
+        "Orientalisch",
+        "Vegan",
+        "Budget"
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarisch",
+        "omnivor"
+      ],
+      "allergenFree": [
+        "gluten",
+        "laktose",
+        "nuesse",
+        "ei",
+        "fisch",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-42",
+          "grams": 300
+        },
+        {
+          "productId": "p-07",
+          "grams": 200
+        },
+        {
+          "productId": "p-06",
+          "grams": 150
+        },
+        {
+          "productId": "p-40",
+          "grams": 200
+        },
+        {
+          "productId": "p-13",
+          "grams": 60
+        },
+        {
+          "productId": "p-41",
+          "grams": 20
+        }
+      ],
+      "instructions": [
+        "Zwiebel und Karotten würfeln und im Öl anschwitzen.",
+        "Linsen, passierte Tomaten und 1,2 l Wasser zugeben.",
+        "20 Minuten weich köcheln, dann fein pürieren.",
+        "Mit Kreuzkümmel, Salz und Zitronensaft abschmecken."
+      ],
+      "cookingTimeMin": 30,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/linsensuppe.jpg",
+      "emoji": "🍲"
+    },
+    {
+      "id": "r-06",
+      "title": "Kaiserschmarrn mit Beeren",
+      "tags": [
+        "Österreichisch",
+        "Süßspeise",
+        "Familienessen"
+      ],
+      "dietTags": [
+        "vegetarisch",
+        "omnivor"
+      ],
+      "allergenFree": [
+        "nuesse",
+        "fisch",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-44",
+          "grams": 250
+        },
+        {
+          "productId": "p-24",
+          "grams": 500
+        },
+        {
+          "productId": "p-31",
+          "grams": 240
+        },
+        {
+          "productId": "p-26",
+          "grams": 60
+        },
+        {
+          "productId": "p-57",
+          "grams": 150
+        }
+      ],
+      "instructions": [
+        "Mehl, Milch, Eidotter und eine Prise Salz zu einem glatten Teig rühren.",
+        "Eiklar steif schlagen und unterheben.",
+        "Teig in Butter goldbraun backen, dann mit zwei Gabeln zerreißen.",
+        "Mit Staubzucker bestreuen und mit warmen Beeren servieren."
+      ],
+      "cookingTimeMin": 30,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/kaiserschmarrn.jpg",
+      "emoji": "🥞"
+    },
+    {
+      "id": "r-07",
+      "title": "Käsespätzle mit Röstzwiebeln",
+      "tags": [
+        "Österreichisch",
+        "Comfort Food"
+      ],
+      "dietTags": [
+        "vegetarisch",
+        "omnivor"
+      ],
+      "allergenFree": [
+        "nuesse",
+        "fisch",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-44",
+          "grams": 400
+        },
+        {
+          "productId": "p-31",
+          "grams": 180
+        },
+        {
+          "productId": "p-28",
+          "grams": 200
+        },
+        {
+          "productId": "p-06",
+          "grams": 200
+        },
+        {
+          "productId": "p-26",
+          "grams": 50
+        }
+      ],
+      "instructions": [
+        "Mehl, Eier, Wasser und Salz zu einem zähen Teig rühren und 15 Minuten rasten lassen.",
+        "Teig durch ein Spätzlesieb in kochendes Salzwasser schaben.",
+        "Spätzle schichtweise mit geriebenem Bergkäse in eine Form geben.",
+        "Zwiebelringe in Butter rösten und über die Spätzle geben."
+      ],
+      "cookingTimeMin": 45,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/kaesespaetzle.jpg",
+      "emoji": "🧀"
+    },
+    {
+      "id": "r-08",
+      "title": "Lachs mit Erdäpfeln und Spinat",
+      "tags": [
+        "Mediterran",
+        "Protein",
+        "Schnell"
+      ],
+      "dietTags": [
+        "omnivor"
+      ],
+      "allergenFree": [
+        "gluten",
+        "laktose",
+        "nuesse",
+        "ei",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-20",
+          "grams": 500
+        },
+        {
+          "productId": "p-05",
+          "grams": 800
+        },
+        {
+          "productId": "p-11",
+          "grams": 400
+        },
+        {
+          "productId": "p-13",
+          "grams": 100
+        },
+        {
+          "productId": "p-41",
+          "grams": 30
+        }
+      ],
+      "instructions": [
+        "Erdäpfel in Salzwasser kochen.",
+        "Lachsfilets salzen, pfeffern und in der Pfanne 3 Minuten pro Seite braten.",
+        "Spinat mit Knoblauch kurz zusammenfallen lassen.",
+        "Alles mit Zitronenspalten anrichten."
+      ],
+      "cookingTimeMin": 35,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/lachs-spinat.jpg",
+      "emoji": "🐟"
+    },
+    {
+      "id": "r-09",
+      "title": "Faschierte Laibchen mit Erdäpfelpüree",
+      "tags": [
+        "Österreichisch",
+        "Hausmannskost",
+        "Familienessen"
+      ],
+      "dietTags": [
+        "omnivor"
+      ],
+      "allergenFree": [
+        "nuesse",
+        "fisch",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-17",
+          "grams": 500
+        },
+        {
+          "productId": "p-31",
+          "grams": 60
+        },
+        {
+          "productId": "p-35",
+          "grams": 100
+        },
+        {
+          "productId": "p-05",
+          "grams": 900
+        },
+        {
+          "productId": "p-24",
+          "grams": 150
+        },
+        {
+          "productId": "p-26",
+          "grams": 40
+        },
+        {
+          "productId": "p-06",
+          "grams": 120
+        }
+      ],
+      "instructions": [
+        "Semmeln einweichen, ausdrücken und mit Faschiertem, Ei und Zwiebel verkneten.",
+        "Laibchen formen und beidseitig goldbraun braten.",
+        "Erdäpfel weich kochen, mit heißer Milch und Butter stampfen.",
+        "Mit grünem Salat servieren."
+      ],
+      "cookingTimeMin": 50,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/faschierte-laibchen.jpg",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "r-10",
+      "title": "Klassisches Rindsgulasch",
+      "tags": [
+        "Österreichisch",
+        "Sonntagsessen"
+      ],
+      "dietTags": [
+        "omnivor"
+      ],
+      "allergenFree": [
+        "laktose",
+        "nuesse",
+        "ei",
+        "fisch",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-19",
+          "grams": 700
+        },
+        {
+          "productId": "p-06",
+          "grams": 700
+        },
+        {
+          "productId": "p-40",
+          "grams": 150
+        },
+        {
+          "productId": "p-41",
+          "grams": 30
+        },
+        {
+          "productId": "p-35",
+          "grams": 200
+        }
+      ],
+      "instructions": [
+        "Zwiebeln in reichlich Öl dunkelbraun rösten.",
+        "Paprikapulver einrühren, mit Essig und Wasser ablöschen.",
+        "Fleischwürfel zugeben und 2 Stunden zugedeckt schmoren.",
+        "Mit Semmeln oder Nockerl servieren."
+      ],
+      "cookingTimeMin": 120,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/rindsgulasch.jpg",
+      "emoji": "🥘"
+    },
+    {
+      "id": "r-11",
+      "title": "Polenta mit Champignonragout",
+      "tags": [
+        "Italienisch",
+        "Vegetarisch",
+        "Glutenfrei"
+      ],
+      "dietTags": [
+        "vegetarisch",
+        "omnivor"
+      ],
+      "allergenFree": [
+        "gluten",
+        "nuesse",
+        "ei",
+        "fisch",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-45",
+          "grams": 250
+        },
+        {
+          "productId": "p-10",
+          "grams": 500
+        },
+        {
+          "productId": "p-06",
+          "grams": 120
+        },
+        {
+          "productId": "p-30",
+          "grams": 100
+        },
+        {
+          "productId": "p-28",
+          "grams": 60
+        },
+        {
+          "productId": "p-41",
+          "grams": 20
+        }
+      ],
+      "instructions": [
+        "Polenta in der vierfachen Menge Salzwasser einrühren und 10 Minuten quellen lassen.",
+        "Champignons blättrig schneiden und mit Zwiebel scharf anbraten.",
+        "Mit Schlagobers aufgießen und einkochen lassen.",
+        "Polenta mit geriebenem Bergkäse verfeinern und mit dem Ragout servieren."
+      ],
+      "cookingTimeMin": 40,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/polenta-champignons.jpg",
+      "emoji": "🍄"
+    },
+    {
+      "id": "r-12",
+      "title": "Kichererbsen-Bowl mit Avocado",
+      "tags": [
+        "Orientalisch",
+        "Vegan",
+        "Meal Prep"
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarisch",
+        "omnivor"
+      ],
+      "allergenFree": [
+        "gluten",
+        "laktose",
+        "nuesse",
+        "ei",
+        "fisch",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-43",
+          "grams": 800
+        },
+        {
+          "productId": "p-14",
+          "grams": 200
+        },
+        {
+          "productId": "p-03",
+          "grams": 250
+        },
+        {
+          "productId": "p-04",
+          "grams": 200
+        },
+        {
+          "productId": "p-13",
+          "grams": 50
+        },
+        {
+          "productId": "p-41",
+          "grams": 25
+        },
+        {
+          "productId": "p-39",
+          "grams": 250
+        }
+      ],
+      "instructions": [
+        "Reis kochen und auskühlen lassen.",
+        "Kichererbsen abspülen und mit Paprikapulver und Öl im Rohr 15 Minuten rösten.",
+        "Tomaten, Gurke und Avocado würfeln.",
+        "Alles in Schüsseln schichten und mit Zitronen-Öl-Dressing beträufeln."
+      ],
+      "cookingTimeMin": 20,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/kichererbsen-bowl.jpg",
+      "emoji": "🥗"
+    },
+    {
+      "id": "r-13",
+      "title": "Overnight Oats mit Beeren",
+      "tags": [
+        "Frühstück",
+        "Vegan",
+        "Meal Prep"
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarisch",
+        "omnivor"
+      ],
+      "allergenFree": [
+        "laktose",
+        "nuesse",
+        "ei",
+        "fisch",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-49",
+          "grams": 200
+        },
+        {
+          "productId": "p-33",
+          "grams": 500
+        },
+        {
+          "productId": "p-57",
+          "grams": 200
+        },
+        {
+          "productId": "p-02",
+          "grams": 240
+        }
+      ],
+      "instructions": [
+        "Haferflocken mit Haferdrink verrühren und über Nacht kühl stellen.",
+        "Am Morgen die aufgetauten Beeren untermischen.",
+        "Mit Bananenscheiben belegen und nach Wunsch süßen."
+      ],
+      "cookingTimeMin": 10,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/overnight-oats.jpg",
+      "emoji": "🥣"
+    },
+    {
+      "id": "r-14",
+      "title": "Caprese mit Vollkornbrot",
+      "tags": [
+        "Italienisch",
+        "Vegetarisch",
+        "Schnell"
+      ],
+      "dietTags": [
+        "vegetarisch",
+        "omnivor"
+      ],
+      "allergenFree": [
+        "nuesse",
+        "ei",
+        "fisch",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-32",
+          "grams": 250
+        },
+        {
+          "productId": "p-03",
+          "grams": 500
+        },
+        {
+          "productId": "p-41",
+          "grams": 30
+        },
+        {
+          "productId": "p-34",
+          "grams": 200
+        }
+      ],
+      "instructions": [
+        "Tomaten und Mozzarella in Scheiben schneiden.",
+        "Abwechselnd auf einem Teller anrichten.",
+        "Mit Olivenöl, Salz, Pfeffer und Basilikum würzen.",
+        "Mit geröstetem Vollkornbrot servieren."
+      ],
+      "cookingTimeMin": 15,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/caprese.jpg",
+      "emoji": "🍅"
+    },
+    {
+      "id": "r-15",
+      "title": "Thunfisch-Nudelsalat",
+      "tags": [
+        "Mediterran",
+        "Meal Prep",
+        "Schnell"
+      ],
+      "dietTags": [
+        "omnivor"
+      ],
+      "allergenFree": [
+        "laktose",
+        "nuesse",
+        "ei",
+        "soja"
+      ],
+      "ingredients": [
+        {
+          "productId": "p-21",
+          "grams": 240
+        },
+        {
+          "productId": "p-38",
+          "grams": 400
+        },
+        {
+          "productId": "p-03",
+          "grams": 300
+        },
+        {
+          "productId": "p-04",
+          "grams": 200
+        },
+        {
+          "productId": "p-06",
+          "grams": 80
+        },
+        {
+          "productId": "p-41",
+          "grams": 30
+        },
+        {
+          "productId": "p-13",
+          "grams": 40
+        }
+      ],
+      "instructions": [
+        "Nudeln kochen, abschrecken und auskühlen lassen.",
+        "Thunfisch abtropfen lassen und zerpflücken.",
+        "Tomaten, Gurke und Zwiebel klein schneiden.",
+        "Alles mit Olivenöl, Zitronensaft, Salz und Pfeffer marinieren."
+      ],
+      "cookingTimeMin": 25,
+      "servings": 4,
+      "imageUrl": "https://cdn.smartkorb.example/recipes/thunfisch-nudelsalat.jpg",
+      "emoji": "🥗"
+    }
+  ],
+  "sources": [
+    "Demodaten (deterministisch erzeugt)",
+    "CSV-Feed (data/partner-feed.example.csv)"
+  ]
+}

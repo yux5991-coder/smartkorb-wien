@@ -9,6 +9,7 @@
     "@react-navigation/bottom-tabs": "^7.18.18",
     "@react-navigation/native": "^7.3.18",
     "expo": "~57.0.19",
+    "expo-constants": "~57.0.17",
     "expo-status-bar": "~57.0.1",
     "react": "19.2.3",
     "react-dom": "^19.2.3",
@@ -21,7 +22,9 @@
     "zustand": "^5.0.15"
   },
   "devDependencies": {
+    "@types/node": "^22.20.1",
     "@types/react": "~19.2.2",
+    "tsx": "^4.23.13",
     "typescript": "~6.0.3"
   },
   "scripts": {
@@ -29,8 +32,12 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit && tsc --noEmit -p pipeline",
+    "data:refresh": "tsx pipeline/src/cli.ts",
+    "data:refresh:offline": "tsx pipeline/src/cli.ts --skip-stores",
+    "data:check": "tsx pipeline/src/cli.ts --dry-run",
+    "test": "node --import tsx --test pipeline/test/*.test.ts"
   },
   "private": true,
-  "description": "SmartKorb Wien — prototype aggregating grocery discounts in Vienna"
+  "description": "SmartKorb Wien \u2014 prototype aggregating grocery discounts in Vienna"
 }
