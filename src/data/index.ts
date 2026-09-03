@@ -11,7 +11,7 @@
  * up through `expo.extra.snapshotUrl`. To attach a different backend, point that
  * URL at any endpoint that serves the same JSON shape (see `validateCatalog`).
  */
-export { bundledCatalog, bundledRecipes, todayIso } from './bundled';
+export { bundledCatalog, bundledFingerprint, bundledRecipes, todayIso } from './bundled';
 export {
   countOffersForStore,
   getActiveDiscountViews,

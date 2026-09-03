@@ -8,8 +8,15 @@ import { RecipeDetailSheet } from '../components/RecipeDetailSheet';
 import { Chip } from '../components/Chip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { DataStatusBar } from '../components/DataStatusBar';
-import { MIN_VIENNA_STORES } from '../config';
-import { getActiveDiscountViews, getRecipe, useCatalog, useCatalogStore } from '../data';
+import { APP_VERSION, MIN_VIENNA_STORES } from '../config';
+import {
+  bundledCatalog,
+  bundledFingerprint,
+  getActiveDiscountViews,
+  getRecipe,
+  useCatalog,
+  useCatalogStore,
+} from '../data';
 import { costRecipe } from '../services/pricing';
 import { useProfileStore } from '../store/useProfileStore';
 import { colors, radius, shadow, spacing } from '../theme';
@@ -93,6 +100,21 @@ export const ProfileScreen: React.FC = () => {
             <Text style={styles.cardTitle}>{t('profile.dataSource')}</Text>
           </View>
           <View style={styles.settingRow}>
+            <Text style={styles.settingLabel}>{t('profile.build')}</Text>
+            <Text style={styles.settingValue}>
+              {APP_VERSION} · {bundledFingerprint}
+            </Text>
+          </View>
+          <View style={styles.settingRow}>
+            <Text style={styles.settingLabel}>{t('profile.buildContent')}</Text>
+            <Text style={styles.settingValue}>
+              {t('profile.buildContentValue', {
+                products: bundledCatalog.products.length,
+                recipes: bundledCatalog.recipes.length,
+              })}
+            </Text>
+          </View>
+          <View style={styles.settingRow}>
             <Text style={styles.settingLabel}>{t('profile.branches')}</Text>
             <Text style={styles.settingValue}>{catalog.stores.length}</Text>
           </View>
@@ -100,14 +122,6 @@ export const ProfileScreen: React.FC = () => {
             <Text style={styles.warningText}>{t('profile.storesIncomplete')}</Text>
           ) : null}
 
-          <Pressable
-            onPress={resetData}
-            accessibilityRole="button"
-            style={({ pressed }) => [styles.secondaryButton, pressed && styles.pressed]}
-          >
-            <Text style={styles.secondaryButtonText}>{t('profile.resetData')}</Text>
-          </Pressable>
-          <Text style={styles.hintText}>{t('profile.resetHint')}</Text>
           <View style={styles.settingRow}>
             <Text style={styles.settingLabel}>{t('profile.offersToday')}</Text>
             <Text style={styles.settingValue}>{getActiveDiscountViews(catalog).length}</Text>
@@ -118,6 +132,15 @@ export const ProfileScreen: React.FC = () => {
               {catalog.catalog.sources.join(', ')}
             </Text>
           </View>
+
+          <Pressable
+            onPress={resetData}
+            accessibilityRole="button"
+            style={({ pressed }) => [styles.secondaryButton, pressed && styles.pressed]}
+          >
+            <Text style={styles.secondaryButtonText}>{t('profile.resetData')}</Text>
+          </Pressable>
+          <Text style={styles.hintText}>{t('profile.resetHint')}</Text>
         </View>
 
         {/* --- Einstellungen ------------------------------------------------ */}

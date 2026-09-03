@@ -31,6 +31,10 @@ export const SNAPSHOT_CACHE_KEY = 'smartkorb.catalog.v1';
  */
 export const CATALOG_SCHEMA_VERSION = 2;
 
+/** Version from app.json — shown in the profile so it is obvious which build is running. */
+export const APP_VERSION =
+  typeof Constants.expoConfig?.version === 'string' ? Constants.expoConfig.version : '0.0.0';
+
 /**
  * Vienna has several hundred branches of the six chains. A catalog with fewer
  * is an incomplete branch list, not a small city — the profile says so instead

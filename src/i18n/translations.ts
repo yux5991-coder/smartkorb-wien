@@ -138,6 +138,9 @@ const de = {
   'profile.branches': 'Filialen in Wien',
   'profile.offersToday': 'Aktionen heute',
   'profile.sources': 'Quellen',
+  'profile.build': 'App-Version',
+  'profile.buildContent': 'Im Build enthalten',
+  'profile.buildContentValue': '{products} Produkte · {recipes} Rezepte',
   'profile.resetData': 'Daten zurücksetzen',
   'profile.resetHint':
     'Verwirft die zuletzt geladenen Aktionen auf diesem Gerät und lädt sie neu — hilft, wenn die App noch alte Inhalte zeigt.',
@@ -330,6 +333,9 @@ const en: Record<TranslationKey, string> = {
   'profile.branches': 'Stores in Vienna',
   'profile.offersToday': 'Deals today',
   'profile.sources': 'Sources',
+  'profile.build': 'App version',
+  'profile.buildContent': 'Shipped in this build',
+  'profile.buildContentValue': '{products} products · {recipes} recipes',
   'profile.resetData': 'Reset data',
   'profile.resetHint':
     'Discards the deals cached on this device and loads them again — use it if the app still shows old content.',
