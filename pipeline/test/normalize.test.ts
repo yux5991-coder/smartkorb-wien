@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
 import seedProducts from '../../src/data/products.json';
-import type { Product, Retailer } from '../../src/types';
+import type { Product, Retailer, Store } from '../../src/types';
 import { validateCatalog } from '../../src/data/validateCatalog';
 import { ProductCatalogue, parsePackSize, guessCategory, guessVegan } from '../src/normalize/products';
 import { normalizeStores, districtFromPostcode } from '../src/normalize/stores';
@@ -16,6 +16,7 @@ import { matchRetailer, buildQuery } from '../src/sources/overpassStores';
 import { parseCsv } from '../src/sources/csvOffers';
 import { getPath } from '../src/sources/httpJsonOffers';
 import { normalizeOffers } from '../src/normalize/offers';
+import { chooseStores } from '../src/build';
 
 const products = seedProducts as Product[];
 
@@ -193,4 +194,42 @@ test('validateCatalog refuses a broken feed instead of emptying the app', () => 
       }),
     /unusable|refusing/,
   );
+});
+
+test('the branch list survives runs that skip the refresh', () => {
+  const store = (id: string): Store => ({
+    id,
+    retailerId: 'billa',
+    name: id,
+    address: 'Wien',
+    district: 'Wieden',
+    lat: 48.19,
+    lng: 16.36,
+    openingHours: '',
+  });
+
+  const seed = [store('seed-1'), store('seed-2')];
+  const previous = Array.from({ length: 700 }, (_, index) => store(`osm-${index}`));
+
+  // the daily run does not query Overpass — it must not fall back to the seed
+  const skipped = chooseStores({ fetched: null, previous, seed });
+  assert.equal(skipped.source, 'previous');
+  assert.equal(skipped.stores.length, 700);
+
+  // a refresh that collapses is a broken source, not a shrinking city
+  const collapsed = chooseStores({ fetched: [store('osm-1')], previous, seed });
+  assert.equal(collapsed.source, 'previous');
+  assert.equal(collapsed.stores.length, 700);
+
+  // …unless it is explicitly allowed
+  const forced = chooseStores({ fetched: [store('osm-1')], previous, seed, allowDrop: true });
+  assert.equal(forced.source, 'fetched');
+
+  // a healthy refresh wins
+  const refreshed = chooseStores({ fetched: previous.slice(0, 690), previous, seed });
+  assert.equal(refreshed.source, 'fetched');
+  assert.equal(refreshed.stores.length, 690);
+
+  // first run ever: nothing but the seed
+  assert.equal(chooseStores({ fetched: null, previous: [], seed }).source, 'seed');
 });

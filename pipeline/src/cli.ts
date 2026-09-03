@@ -6,6 +6,7 @@
  *   npm run data:refresh -- --dry-run # run everything, write nothing
  *   npm run data:refresh -- --skip-stores
  *   npm run data:refresh -- --update-seed   # also refresh the bundled fallback
+ *   npm run data:refresh -- --allow-store-drop  # accept a much smaller branch list
  *
  * Exits non-zero when no usable snapshot could be produced, which is what stops
  * the daily workflow from publishing a broken file.
@@ -25,6 +26,7 @@ build({
   dryRun: has('--dry-run'),
   skipStores: has('--skip-stores'),
   updateSeed: has('--update-seed'),
+  allowStoreDrop: has('--allow-store-drop'),
   limit: value('--limit') ? Number(value('--limit')) : undefined,
 })
   .then(() => process.exit(0))

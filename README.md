@@ -107,6 +107,25 @@ While the URL still contains the `<owner>/<repo>` placeholder the app stays on
 the bundled data and says so in the UI. Any endpoint serving the same JSON shape
 works — a raw GitHub file, S3, or a real API later on.
 
+## Generated files — do not overwrite them by hand
+
+Two files are *data*, not source, and are produced by the pipeline:
+
+| File | What it holds | How to rebuild |
+| --- | --- | --- |
+| `src/data/stores.json` | the branch list bundled with the app (hundreds of branches once OSM has been queried) | `npm run data:refresh -- --update-seed` |
+| `data/snapshot.json` | the published snapshot the app downloads | `npm run data:refresh` |
+
+Never copy them over from another checkout or an archive — that silently replaces
+a full branch list with whatever the other copy happened to contain. If it does
+happen, the fix is one command: `npm run data:refresh -- --update-seed`.
+
+The pipeline itself protects the branch list: a run that skips the OSM query
+carries the branches over from the previous snapshot instead of falling back to
+the small bundled seed, and a refresh that returns less than half of the previous
+count is treated as a broken source and rejected (`--allow-store-drop` overrides
+it when branches really did close).
+
 ## All branches in Vienna (OpenStreetMap)
 
 ```bash

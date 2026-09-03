@@ -25,11 +25,74 @@ export interface BuildOptions {
   dryRun: boolean;
   skipStores: boolean;
   updateSeed: boolean;
+  /** Publish a much shorter branch list anyway (branches really did close). */
+  allowStoreDrop?: boolean;
   limit?: number;
 }
 
 const readJson = async <T>(path: string): Promise<T> =>
   JSON.parse(await readFile(path, 'utf8')) as T;
+
+const readJsonIfExists = async <T>(path: string): Promise<T | null> => {
+  try {
+    return await readJson<T>(path);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') return null;
+    throw error;
+  }
+};
+
+export interface StoreDecision {
+  stores: Store[];
+  source: 'fetched' | 'previous' | 'seed';
+  reason: string;
+}
+
+/**
+ * Which branch list the snapshot is built from.
+ *
+ * The branch list is expensive to obtain (one Overpass query per week) and easy
+ * to lose: a run that skips the refresh must not fall back to the small bundled
+ * seed and publish a snapshot with a fraction of the branches. So the previous
+ * snapshot's list is carried over, and a fetch that returns far fewer branches
+ * than last time is treated as a broken source, not as a city that shrank.
+ */
+export const chooseStores = ({
+  fetched,
+  previous,
+  seed,
+  allowDrop = false,
+}: {
+  fetched: Store[] | null;
+  previous: Store[];
+  seed: Store[];
+  allowDrop?: boolean;
+}): StoreDecision => {
+  if (fetched && fetched.length > 0) {
+    if (!allowDrop && previous.length > 0 && fetched.length < previous.length * 0.5) {
+      return {
+        stores: previous,
+        source: 'previous',
+        reason: `refresh returned ${fetched.length} branches but the last snapshot had ${previous.length} — keeping the previous list (pass --allow-store-drop to override)`,
+      };
+    }
+    return {
+      stores: fetched,
+      source: 'fetched',
+      reason: `${fetched.length} branches from the refresh`,
+    };
+  }
+
+  if (previous.length > seed.length) {
+    return {
+      stores: previous,
+      source: 'previous',
+      reason: `reusing the ${previous.length} branches from the last snapshot`,
+    };
+  }
+
+  return { stores: seed, source: 'seed', reason: `${seed.length} branches from the bundled seed` };
+};
 
 const writeJson = async (path: string, value: unknown): Promise<void> => {
   await mkdir(dirname(path), { recursive: true });
@@ -65,33 +128,41 @@ export const build = async (options: BuildOptions): Promise<Catalog> => {
   const usedSources: string[] = [];
 
   // --- branches ------------------------------------------------------------
-  let stores = seedStores;
+  const previousSnapshot = await readJsonIfExists<Catalog>(config.output.snapshot);
+  const previousStores = previousSnapshot?.stores ?? [];
+
+  let fetchedStores: Store[] | null = null;
+  let storeSourceLabel: string | null = null;
   if (config.stores.enabled && !options.skipStores) {
     try {
       const source = createOverpassStoreSource(config.stores.overpassUrl, config.city);
       const raw = await source.fetchStores(ctx);
-      const normalized = normalizeStores(
+      fetchedStores = normalizeStores(
         raw,
         new Map(retailers.map((retailer) => [retailer.id, retailer.name])),
       );
-      if (normalized.length >= seedStores.length / 2) {
-        stores = normalized;
-        usedSources.push(source.label);
-        log(`branches: ${stores.length} (was ${seedStores.length} in the seed)`);
-        if (options.updateSeed && !options.dryRun) {
-          await writeJson(config.output.seedStores, stores);
-          log(`updated bundled fallback ${config.output.seedStores}`);
-        }
-      } else {
-        warn(
-          `only ${normalized.length} branches came back — keeping the previous ${seedStores.length}`,
-        );
-      }
+      storeSourceLabel = source.label;
     } catch (error) {
-      warn(`branch refresh failed, keeping the previous list: ${String(error)}`);
+      warn(`branch refresh failed: ${String(error)}`);
     }
-  } else {
-    log(`branches: using the existing ${stores.length} (store refresh skipped)`);
+  }
+
+  const decision = chooseStores({
+    fetched: fetchedStores,
+    previous: previousStores,
+    seed: seedStores,
+    allowDrop: options.allowStoreDrop,
+  });
+  const stores = decision.stores;
+  log(`branches: ${decision.reason}`);
+
+  if (decision.source === 'fetched' && storeSourceLabel) usedSources.push(storeSourceLabel);
+  if (decision.source !== 'fetched' && fetchedStores) {
+    warn(decision.reason);
+  }
+  if (decision.source === 'fetched' && options.updateSeed && !options.dryRun) {
+    await writeJson(config.output.seedStores, stores);
+    log(`updated bundled fallback ${config.output.seedStores}`);
   }
 
   // --- offers --------------------------------------------------------------
