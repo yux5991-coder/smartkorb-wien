@@ -28,6 +28,12 @@ export interface PipelineConfig {
   offers: OfferSourceConfig[];
   /** A snapshot with fewer offers than this is rejected instead of published. */
   minDiscounts: number;
+  /**
+   * Vienna has several hundred branches of the six chains. Anything below this
+   * means the branch list is incomplete, so the run repairs it from
+   * OpenStreetMap instead of publishing a stub.
+   */
+  minStores: number;
   output: {
     /** Snapshot the app downloads. */
     snapshot: string;
@@ -41,6 +47,7 @@ const DEFAULTS: PipelineConfig = {
   stores: { enabled: true },
   offers: [{ id: 'mock', type: 'mock', enabled: true }],
   minDiscounts: 20,
+  minStores: 300,
   output: {
     snapshot: 'data/snapshot.json',
     seedStores: 'src/data/stores.json',

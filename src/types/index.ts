@@ -52,7 +52,10 @@ export type Allergen = 'gluten' | 'laktose' | 'nuesse' | 'ei' | 'fisch' | 'soja'
 
 export interface Product {
   id: ProductId;
+  /** German name, as the retailers print it. */
   name: string;
+  /** English name, used when the profile language is 'en'. */
+  nameEn?: string;
   category: ProductCategory;
   /** Human readable pack size, e.g. "1 kg" or "6 Stk". */
   unit: string;

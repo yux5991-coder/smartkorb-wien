@@ -16,7 +16,7 @@ import {
   getStore,
   useCatalog,
 } from '../data';
-import { useT } from '../i18n';
+import { productName, useLanguage, useT } from '../i18n';
 import { useProfileStore } from '../store/useProfileStore';
 import { colors, radius, spacing } from '../theme';
 import { formatPrice } from '../utils/format';
@@ -24,6 +24,7 @@ import { formatPrice } from '../utils/format';
 export const MapScreen: React.FC = () => {
   const catalog = useCatalog();
   const t = useT();
+  const language = useLanguage();
   const [activeRetailers, setActiveRetailers] = useState<string[]>([]);
   const [selectedStoreId, setSelectedStoreId] = useState<string | null>(null);
   const logActivity = useProfileStore((state) => state.logActivity);
@@ -130,7 +131,7 @@ export const MapScreen: React.FC = () => {
                 {bestOffer ? formatPrice(bestOffer.discountPrice) : '–'}
               </Text>
               <Text style={styles.summaryLabel} numberOfLines={1}>
-                {bestOffer ? bestOffer.product.name : t('map.noOffer')}
+                {bestOffer ? productName(bestOffer.product, language) : t('map.noOffer')}
               </Text>
             </View>
           </View>
@@ -149,7 +150,7 @@ export const MapScreen: React.FC = () => {
                 key={discount.id}
                 discount={discount}
                 hideStore
-                onPress={() => logActivity('discount_viewed', discount.product.name)}
+                onPress={() => logActivity('discount_viewed', productName(discount.product, language))}
               />
             ))
           )}

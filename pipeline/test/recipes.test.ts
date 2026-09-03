@@ -82,3 +82,23 @@ test('each recipe is complete enough to render', () => {
   assert.ok(cuisines.size >= 10, `only ${cuisines.size} cuisines in the catalogue`);
   assert.ok(recipes.length >= 50, `only ${recipes.length} recipes in the catalogue`);
 });
+
+test('every catalogue entry exists in both languages', () => {
+  products.forEach((product) => {
+    assert.ok(
+      product.nameEn && product.nameEn.trim().length > 1,
+      `product "${product.name}" has no English name`,
+    );
+  });
+  recipes.forEach((recipe) => {
+    assert.ok(
+      recipe.titleEn && recipe.titleEn.trim().length > 2,
+      `recipe "${recipe.title}" has no English title`,
+    );
+    // dish names are German or English — no original-language spellings
+    assert.ok(
+      !/[()]/.test(recipe.title) && !/[()]/.test(recipe.titleEn ?? ''),
+      `recipe "${recipe.title}" still carries a bracketed original name`,
+    );
+  });
+});

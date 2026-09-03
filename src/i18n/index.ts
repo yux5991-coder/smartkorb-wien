@@ -8,7 +8,7 @@
 import { useCallback } from 'react';
 
 import { useProfileStore } from '../store/useProfileStore';
-import type { Allergen, DietPreference, Recipe } from '../types';
+import type { Allergen, DietPreference, Product, Recipe } from '../types';
 import {
   categoryLabelsEn,
   cuisineLabelsEn,
@@ -44,6 +44,10 @@ export const useT = () => {
     [language],
   );
 };
+
+/** Product names exist in both languages; new feed products fall back to German. */
+export const productName = (product: Product, language: Language): string =>
+  language === 'en' && product.nameEn ? product.nameEn : product.name;
 
 /** Recipe titles are our own content and exist in both languages. */
 export const recipeTitle = (recipe: Recipe, language: Language): string =>

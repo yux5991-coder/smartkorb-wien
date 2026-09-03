@@ -24,3 +24,10 @@ export const SNAPSHOT_TIMEOUT_MS = 15000;
 
 /** AsyncStorage key of the cached snapshot. */
 export const SNAPSHOT_CACHE_KEY = 'smartkorb.catalog.v1';
+
+/**
+ * Vienna has several hundred branches of the six chains. A catalog with fewer
+ * is an incomplete branch list, not a small city — the profile says so instead
+ * of quietly showing a stub.
+ */
+export const MIN_VIENNA_STORES = 300;

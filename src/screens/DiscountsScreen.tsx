@@ -26,7 +26,7 @@ import { SearchBar } from '../components/SearchBar';
 import { DataStatusBar } from '../components/DataStatusBar';
 import { getActiveDiscountViews, useCatalog, useCatalogStore } from '../data';
 import { useDebouncedValue } from '../hooks/useDebouncedValue';
-import { useT } from '../i18n';
+import { categoryLabel, productName, useLanguage, useT } from '../i18n';
 import { useProfileStore } from '../store/useProfileStore';
 import { colors, radius, shadow, spacing } from '../theme';
 import type { DiscountView } from '../types';
@@ -45,6 +45,7 @@ export const DiscountsScreen: React.FC = () => {
 
   const catalog = useCatalog();
   const t = useT();
+  const language = useLanguage();
   const syncStatus = useCatalogStore((state) => state.status);
   const refresh = useCatalogStore((state) => state.refresh);
 
@@ -54,7 +55,14 @@ export const DiscountsScreen: React.FC = () => {
   const visibleDiscounts = useMemo(() => {
     const needle = normalise(debouncedQuery);
     const result = allDiscounts.filter((view) => {
-      if (needle && !normalise(view.product.name).includes(needle)) return false;
+      // search matches both language variants, so "tomato" and "Tomaten" work
+      if (
+        needle &&
+        !normalise(view.product.name).includes(needle) &&
+        !normalise(view.product.nameEn ?? '').includes(needle)
+      ) {
+        return false;
+      }
       if (filters.retailerIds.length > 0 && !filters.retailerIds.includes(view.retailer.id)) {
         return false;
       }
@@ -69,11 +77,13 @@ export const DiscountsScreen: React.FC = () => {
       case 'priceAsc':
         return result.sort((a, b) => a.discountPrice - b.discountPrice);
       case 'alpha':
-        return result.sort((a, b) => a.product.name.localeCompare(b.product.name, 'de'));
+        return result.sort((a, b) =>
+          productName(a.product, language).localeCompare(productName(b.product, language), language),
+        );
       default:
         return result.sort((a, b) => b.discountPercent - a.discountPercent);
     }
-  }, [allDiscounts, debouncedQuery, filters]);
+  }, [allDiscounts, debouncedQuery, filters, language]);
 
   useEffect(() => {
     if (debouncedQuery.trim().length >= 3) {
@@ -184,7 +194,7 @@ export const DiscountsScreen: React.FC = () => {
             discount={item}
             onPress={() => {
               setDetail(item);
-              logActivity('discount_viewed', `${item.product.name} (${item.retailer.name})`);
+              logActivity('discount_viewed', `${productName(item.product, language)} (${item.retailer.name})`);
             }}
           />
         )}
@@ -207,8 +217,12 @@ export const DiscountsScreen: React.FC = () => {
       <BottomSheet
         visible={detail !== null}
         onClose={() => setDetail(null)}
-        title={detail?.product.name ?? ''}
-        subtitle={detail ? `${detail.product.unit} · ${detail.product.category}` : undefined}
+        title={detail ? productName(detail.product, language) : ''}
+        subtitle={
+          detail
+            ? `${detail.product.unit} · ${categoryLabel(detail.product.category, language)}`
+            : undefined
+        }
         maxHeightRatio={0.7}
       >
         {detail ? (

@@ -57,6 +57,23 @@ export interface StoreDecision {
  * snapshot's list is carried over, and a fetch that returns far fewer branches
  * than last time is treated as a broken source, not as a city that shrank.
  */
+/**
+ * Guard against publishing a stub branch list. Returns the error message, or
+ * null when the list is acceptable.
+ */
+export const checkStoreCount = (
+  count: number,
+  minimum: number,
+  allowDrop = false,
+): string | null => {
+  if (allowDrop || count >= minimum) return null;
+  return (
+    `only ${count} branches — Vienna has several hundred, so this snapshot is not published. ` +
+    `Run "npm run data:refresh -- --update-seed" with network access to fetch the real list from ` +
+    `OpenStreetMap (or pass --allow-store-drop if the number is genuinely correct).`
+  );
+};
+
 export const chooseStores = ({
   fetched,
   previous,
@@ -131,9 +148,20 @@ export const build = async (options: BuildOptions): Promise<Catalog> => {
   const previousSnapshot = await readJsonIfExists<Catalog>(config.output.snapshot);
   const previousStores = previousSnapshot?.stores ?? [];
 
+  // A short branch list is never acceptable: Vienna has several hundred
+  // branches, so a run that would otherwise skip the refresh repairs the list
+  // instead. This is what stops a stub list from quietly staying in the app.
+  const listIncomplete = Math.max(previousStores.length, seedStores.length) < config.minStores;
+  if (listIncomplete && options.skipStores) {
+    log(
+      `branch list has only ${Math.max(previousStores.length, seedStores.length)} of at least ` +
+        `${config.minStores} branches — refreshing from OpenStreetMap even though --skip-stores was passed`,
+    );
+  }
+
   let fetchedStores: Store[] | null = null;
   let storeSourceLabel: string | null = null;
-  if (config.stores.enabled && !options.skipStores) {
+  if (config.stores.enabled && (!options.skipStores || listIncomplete)) {
     try {
       const source = createOverpassStoreSource(config.stores.overpassUrl, config.city);
       const raw = await source.fetchStores(ctx);
@@ -160,10 +188,16 @@ export const build = async (options: BuildOptions): Promise<Catalog> => {
   if (decision.source !== 'fetched' && fetchedStores) {
     warn(decision.reason);
   }
-  if (decision.source === 'fetched' && options.updateSeed && !options.dryRun) {
+  // Refresh the bundled fallback when asked to — and always while it is still
+  // incomplete, so the repair sticks instead of happening again tomorrow.
+  const seedNeedsRepair = seedStores.length < config.minStores;
+  if (decision.source === 'fetched' && (options.updateSeed || seedNeedsRepair) && !options.dryRun) {
     await writeJson(config.output.seedStores, stores);
-    log(`updated bundled fallback ${config.output.seedStores}`);
+    log(`updated bundled fallback ${config.output.seedStores} (${stores.length} branches)`);
   }
+
+  const storeProblem = checkStoreCount(stores.length, config.minStores, options.allowStoreDrop);
+  if (storeProblem) throw new Error(storeProblem);
 
   // --- offers --------------------------------------------------------------
   const catalogue = new ProductCatalogue(seedProducts);

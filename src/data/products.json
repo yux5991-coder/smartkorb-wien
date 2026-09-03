@@ -10,7 +10,8 @@
     "emoji": "🍎",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Gala apples"
   },
   {
     "id": "p-02",
@@ -23,7 +24,8 @@
     "emoji": "🍌",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Bananas"
   },
   {
     "id": "p-03",
@@ -35,7 +37,8 @@
     "emoji": "🍅",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Vine tomatoes"
   },
   {
     "id": "p-04",
@@ -48,7 +51,8 @@
     "emoji": "🥒",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Cucumber"
   },
   {
     "id": "p-05",
@@ -60,7 +64,8 @@
     "emoji": "🥔",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Waxy potatoes"
   },
   {
     "id": "p-06",
@@ -73,7 +78,8 @@
     "emoji": "🧅",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Yellow onions"
   },
   {
     "id": "p-07",
@@ -86,7 +92,8 @@
     "emoji": "🥕",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Carrots"
   },
   {
     "id": "p-08",
@@ -99,7 +106,8 @@
     "emoji": "🫑",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Red peppers"
   },
   {
     "id": "p-09",
@@ -112,7 +120,8 @@
     "emoji": "🥬",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Courgettes"
   },
   {
     "id": "p-10",
@@ -124,7 +133,8 @@
     "emoji": "🍄",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Mushrooms"
   },
   {
     "id": "p-11",
@@ -136,7 +146,8 @@
     "emoji": "🥬",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Fresh leaf spinach"
   },
   {
     "id": "p-12",
@@ -149,7 +160,8 @@
     "emoji": "🧄",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Garlic"
   },
   {
     "id": "p-13",
@@ -162,7 +174,8 @@
     "emoji": "🍋",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Lemons"
   },
   {
     "id": "p-14",
@@ -175,7 +188,8 @@
     "emoji": "🥑",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Avocado"
   },
   {
     "id": "p-15",
@@ -187,7 +201,8 @@
     "emoji": "🍓",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Strawberries"
   },
   {
     "id": "p-16",
@@ -199,7 +214,8 @@
     "emoji": "🍗",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Chicken breast fillet"
   },
   {
     "id": "p-17",
@@ -211,7 +227,8 @@
     "emoji": "🥩",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Mixed mince"
   },
   {
     "id": "p-18",
@@ -223,7 +240,8 @@
     "emoji": "🥩",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Pork escalope"
   },
   {
     "id": "p-19",
@@ -235,7 +253,8 @@
     "emoji": "🥩",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Beef for goulash"
   },
   {
     "id": "p-20",
@@ -249,7 +268,8 @@
       "fisch"
     ],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Salmon fillet"
   },
   {
     "id": "p-21",
@@ -263,7 +283,8 @@
       "fisch"
     ],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Tuna in water"
   },
   {
     "id": "p-22",
@@ -275,7 +296,8 @@
     "emoji": "🌭",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Frankfurter sausages"
   },
   {
     "id": "p-23",
@@ -287,7 +309,8 @@
     "emoji": "🍖",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Cooked ham"
   },
   {
     "id": "p-24",
@@ -301,7 +324,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Whole milk 3.5 %"
   },
   {
     "id": "p-25",
@@ -315,7 +339,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Natural yoghurt"
   },
   {
     "id": "p-26",
@@ -329,7 +354,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Butter"
   },
   {
     "id": "p-27",
@@ -343,7 +369,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Grated gouda"
   },
   {
     "id": "p-28",
@@ -357,7 +384,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Mountain cheese"
   },
   {
     "id": "p-29",
@@ -371,7 +399,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Curd cheese 20 %"
   },
   {
     "id": "p-30",
@@ -385,7 +414,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Whipping cream"
   },
   {
     "id": "p-31",
@@ -400,7 +430,8 @@
       "ei"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Free-range eggs"
   },
   {
     "id": "p-32",
@@ -414,7 +445,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Mozzarella"
   },
   {
     "id": "p-33",
@@ -428,7 +460,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Oat drink"
   },
   {
     "id": "p-34",
@@ -442,7 +475,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Wholegrain bread"
   },
   {
     "id": "p-35",
@@ -457,7 +491,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Bread rolls"
   },
   {
     "id": "p-36",
@@ -471,7 +506,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Sandwich loaf"
   },
   {
     "id": "p-37",
@@ -488,7 +524,8 @@
       "ei"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Croissants"
   },
   {
     "id": "p-38",
@@ -502,7 +539,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Spaghetti"
   },
   {
     "id": "p-39",
@@ -514,7 +552,8 @@
     "emoji": "🍚",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Basmati rice"
   },
   {
     "id": "p-40",
@@ -526,7 +565,8 @@
     "emoji": "🥫",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Passata"
   },
   {
     "id": "p-41",
@@ -538,7 +578,8 @@
     "emoji": "🫒",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Extra virgin olive oil"
   },
   {
     "id": "p-42",
@@ -550,7 +591,8 @@
     "emoji": "🫘",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Red lentils"
   },
   {
     "id": "p-43",
@@ -562,7 +604,8 @@
     "emoji": "🫘",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Chickpeas (tin)"
   },
   {
     "id": "p-44",
@@ -576,7 +619,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Plain flour"
   },
   {
     "id": "p-45",
@@ -588,7 +632,8 @@
     "emoji": "🌽",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Polenta"
   },
   {
     "id": "p-46",
@@ -600,7 +645,8 @@
     "emoji": "🥥",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Coconut milk"
   },
   {
     "id": "p-47",
@@ -614,7 +660,8 @@
       "nuesse"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Peanut butter"
   },
   {
     "id": "p-48",
@@ -626,7 +673,8 @@
     "emoji": "🍯",
     "allergens": [],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Honey"
   },
   {
     "id": "p-49",
@@ -640,7 +688,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Rolled oats"
   },
   {
     "id": "p-50",
@@ -652,7 +701,8 @@
     "emoji": "🌶️",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Red curry paste"
   },
   {
     "id": "p-51",
@@ -664,7 +714,8 @@
     "emoji": "💧",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Sparkling mineral water"
   },
   {
     "id": "p-52",
@@ -676,7 +727,8 @@
     "emoji": "🧃",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Cloudy apple juice"
   },
   {
     "id": "p-53",
@@ -688,7 +740,8 @@
     "emoji": "🍊",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Organic orange juice"
   },
   {
     "id": "p-54",
@@ -700,7 +753,8 @@
     "emoji": "☕",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Coffee beans"
   },
   {
     "id": "p-55",
@@ -714,7 +768,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Lager beer"
   },
   {
     "id": "p-56",
@@ -726,7 +781,8 @@
     "emoji": "🫛",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Frozen peas"
   },
   {
     "id": "p-57",
@@ -738,7 +794,8 @@
     "emoji": "🫐",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Frozen berry mix"
   },
   {
     "id": "p-58",
@@ -750,7 +807,8 @@
     "emoji": "🍟",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Frozen chips"
   },
   {
     "id": "p-59",
@@ -764,7 +822,8 @@
       "soja"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Dark chocolate"
   },
   {
     "id": "p-60",
@@ -778,7 +837,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Salted pretzel sticks"
   },
   {
     "id": "p-61",
@@ -792,7 +852,8 @@
       "nuesse"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Trail mix"
   },
   {
     "id": "p-62",
@@ -809,7 +870,8 @@
       "ei"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Vanilla crescent biscuits"
   },
   {
     "id": "p-63",
@@ -825,7 +887,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Fresh tagliatelle"
   },
   {
     "id": "p-64",
@@ -840,7 +903,8 @@
     ],
     "vegan": true,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Gnocchi"
   },
   {
     "id": "p-65",
@@ -856,7 +920,8 @@
     "vegan": true,
     "convenience": true,
     "pieceGrams": 80,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Potato dumplings"
   },
   {
     "id": "p-66",
@@ -874,7 +939,8 @@
     "vegan": false,
     "convenience": true,
     "pieceGrams": 80,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Bread dumplings"
   },
   {
     "id": "p-67",
@@ -889,7 +955,8 @@
     ],
     "vegan": true,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Fresh pizza dough"
   },
   {
     "id": "p-68",
@@ -904,7 +971,8 @@
     ],
     "vegan": true,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Puff pastry"
   },
   {
     "id": "p-69",
@@ -917,7 +985,8 @@
     "allergens": [],
     "vegan": false,
     "convenience": true,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Bolognese sauce (jar)"
   },
   {
     "id": "p-70",
@@ -933,7 +1002,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Pesto genovese"
   },
   {
     "id": "p-71",
@@ -948,7 +1018,8 @@
     ],
     "vegan": true,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Hummus"
   },
   {
     "id": "p-72",
@@ -963,7 +1034,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Paprika cheese spread"
   },
   {
     "id": "p-73",
@@ -976,7 +1048,8 @@
     "allergens": [],
     "vegan": true,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Washed mixed salad leaves"
   },
   {
     "id": "p-74",
@@ -992,7 +1065,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Ready-made pasta salad"
   },
   {
     "id": "p-75",
@@ -1007,7 +1081,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Goulash soup (tin)"
   },
   {
     "id": "p-76",
@@ -1023,7 +1098,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Fresh pancake-strip soup"
   },
   {
     "id": "p-77",
@@ -1039,7 +1115,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Breaded chicken strips"
   },
   {
     "id": "p-78",
@@ -1057,7 +1134,8 @@
     "vegan": false,
     "convenience": true,
     "pieceGrams": 200,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Breaded cordon bleu"
   },
   {
     "id": "p-79",
@@ -1073,7 +1151,8 @@
     ],
     "vegan": true,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Falafel"
   },
   {
     "id": "p-80",
@@ -1089,7 +1168,8 @@
     ],
     "vegan": true,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Veggie burger patties"
   },
   {
     "id": "p-81",
@@ -1106,7 +1186,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Sushi box"
   },
   {
     "id": "p-82",
@@ -1122,7 +1203,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Chicken wrap"
   },
   {
     "id": "p-83",
@@ -1135,7 +1217,8 @@
     "allergens": [],
     "vegan": false,
     "convenience": true,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Sliced meatloaf"
   },
   {
     "id": "p-84",
@@ -1150,7 +1233,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Instant mashed potato"
   },
   {
     "id": "p-85",
@@ -1166,7 +1250,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Frozen pizza margherita"
   },
   {
     "id": "p-86",
@@ -1182,7 +1267,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Frozen lasagne bolognese"
   },
   {
     "id": "p-87",
@@ -1199,7 +1285,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Frozen cheese spätzle"
   },
   {
     "id": "p-88",
@@ -1215,7 +1302,8 @@
     ],
     "vegan": false,
     "convenience": true,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Frozen fish fingers"
   },
   {
     "id": "p-89",
@@ -1228,7 +1316,8 @@
     "allergens": [],
     "vegan": true,
     "convenience": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Frozen vegetable mix"
   },
   {
     "id": "p-90",
@@ -1246,7 +1335,8 @@
     "vegan": false,
     "convenience": true,
     "pieceGrams": 80,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Frozen apricot dumplings"
   },
   {
     "id": "p-91",
@@ -1260,7 +1350,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Bulgur"
   },
   {
     "id": "p-92",
@@ -1273,7 +1364,8 @@
     "allergens": [],
     "vegan": true,
     "vegetarian": true,
-    "pieceGrams": 350
+    "pieceGrams": 350,
+    "nameEn": "Aubergine"
   },
   {
     "id": "p-93",
@@ -1287,7 +1379,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Flatbread"
   },
   {
     "id": "p-94",
@@ -1301,7 +1394,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Feta cheese"
   },
   {
     "id": "p-95",
@@ -1313,7 +1407,8 @@
     "emoji": "🌶️",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Pepper paste"
   },
   {
     "id": "p-96",
@@ -1325,7 +1420,8 @@
     "emoji": "🥫",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Tomato purée"
   },
   {
     "id": "p-97",
@@ -1337,7 +1433,8 @@
     "emoji": "🥣",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Tahini"
   },
   {
     "id": "p-98",
@@ -1349,7 +1446,8 @@
     "emoji": "🥩",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Minced lamb"
   },
   {
     "id": "p-99",
@@ -1361,7 +1459,8 @@
     "emoji": "🌭",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Sucuk sausage"
   },
   {
     "id": "p-100",
@@ -1374,7 +1473,8 @@
     "allergens": [],
     "vegan": true,
     "vegetarian": true,
-    "pieceGrams": 30
+    "pieceGrams": 30,
+    "nameEn": "Parsley"
   },
   {
     "id": "p-101",
@@ -1387,7 +1487,8 @@
     "allergens": [],
     "vegan": true,
     "vegetarian": true,
-    "pieceGrams": 25
+    "pieceGrams": 25,
+    "nameEn": "Fresh coriander"
   },
   {
     "id": "p-102",
@@ -1401,7 +1502,8 @@
       "nuesse"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Walnuts"
   },
   {
     "id": "p-103",
@@ -1413,7 +1515,8 @@
     "emoji": "🥬",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Sauerkraut"
   },
   {
     "id": "p-104",
@@ -1425,7 +1528,8 @@
     "emoji": "🥬",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "White cabbage"
   },
   {
     "id": "p-105",
@@ -1437,7 +1541,8 @@
     "emoji": "🍠",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Beetroot"
   },
   {
     "id": "p-106",
@@ -1451,7 +1556,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Sour cream"
   },
   {
     "id": "p-107",
@@ -1464,7 +1570,8 @@
     "allergens": [],
     "vegan": true,
     "vegetarian": true,
-    "pieceGrams": 25
+    "pieceGrams": 25,
+    "nameEn": "Dill"
   },
   {
     "id": "p-108",
@@ -1476,7 +1583,8 @@
     "emoji": "🌾",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Buckwheat"
   },
   {
     "id": "p-109",
@@ -1488,7 +1596,8 @@
     "emoji": "🌭",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Smoked sausage"
   },
   {
     "id": "p-110",
@@ -1500,7 +1609,8 @@
     "emoji": "🥓",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Smoked bacon"
   },
   {
     "id": "p-111",
@@ -1512,7 +1622,8 @@
     "emoji": "🍑",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Prunes"
   },
   {
     "id": "p-112",
@@ -1526,7 +1637,8 @@
       "ei"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Mayonnaise"
   },
   {
     "id": "p-113",
@@ -1538,7 +1650,8 @@
     "emoji": "🌶️",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Ajvar"
   },
   {
     "id": "p-114",
@@ -1553,7 +1666,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Soy sauce"
   },
   {
     "id": "p-115",
@@ -1565,7 +1679,8 @@
     "emoji": "🍶",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Rice vinegar"
   },
   {
     "id": "p-116",
@@ -1577,7 +1692,8 @@
     "emoji": "🫗",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Sesame oil"
   },
   {
     "id": "p-117",
@@ -1589,7 +1705,8 @@
     "emoji": "🫚",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Ginger"
   },
   {
     "id": "p-118",
@@ -1602,7 +1719,8 @@
     "allergens": [],
     "vegan": true,
     "vegetarian": true,
-    "pieceGrams": 100
+    "pieceGrams": 100,
+    "nameEn": "Spring onions"
   },
   {
     "id": "p-119",
@@ -1617,7 +1735,8 @@
     ],
     "vegan": true,
     "vegetarian": true,
-    "convenience": true
+    "convenience": true,
+    "nameEn": "Plain tofu"
   },
   {
     "id": "p-120",
@@ -1629,7 +1748,8 @@
     "emoji": "🍜",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Rice noodles"
   },
   {
     "id": "p-121",
@@ -1644,7 +1764,8 @@
       "ei"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Egg noodles"
   },
   {
     "id": "p-122",
@@ -1656,7 +1777,8 @@
     "emoji": "🍚",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Sushi rice"
   },
   {
     "id": "p-123",
@@ -1668,7 +1790,8 @@
     "emoji": "🌿",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Nori sheets"
   },
   {
     "id": "p-124",
@@ -1681,7 +1804,8 @@
     "allergens": [],
     "vegan": true,
     "vegetarian": true,
-    "convenience": true
+    "convenience": true,
+    "nameEn": "Kimchi"
   },
   {
     "id": "p-125",
@@ -1696,7 +1820,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Gochujang"
   },
   {
     "id": "p-126",
@@ -1710,7 +1835,8 @@
       "soja"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Miso paste"
   },
   {
     "id": "p-127",
@@ -1724,7 +1850,8 @@
       "fisch"
     ],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Fish sauce"
   },
   {
     "id": "p-128",
@@ -1737,7 +1864,8 @@
     "allergens": [],
     "vegan": true,
     "vegetarian": true,
-    "pieceGrams": 60
+    "pieceGrams": 60,
+    "nameEn": "Limes"
   },
   {
     "id": "p-129",
@@ -1749,7 +1877,8 @@
     "emoji": "🥬",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Pak choi"
   },
   {
     "id": "p-130",
@@ -1763,7 +1892,8 @@
       "nuesse"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Peanuts"
   },
   {
     "id": "p-131",
@@ -1775,7 +1905,8 @@
     "emoji": "🌶️",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Chillies"
   },
   {
     "id": "p-132",
@@ -1787,7 +1918,8 @@
     "emoji": "🥩",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Beef strips"
   },
   {
     "id": "p-133",
@@ -1801,7 +1933,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Parmesan"
   },
   {
     "id": "p-134",
@@ -1813,7 +1946,8 @@
     "emoji": "🍚",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Risotto rice"
   },
   {
     "id": "p-135",
@@ -1826,7 +1960,8 @@
     "allergens": [],
     "vegan": true,
     "vegetarian": true,
-    "pieceGrams": 30
+    "pieceGrams": 30,
+    "nameEn": "Basil"
   },
   {
     "id": "p-136",
@@ -1838,7 +1973,8 @@
     "emoji": "🥓",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Pancetta"
   },
   {
     "id": "p-137",
@@ -1852,7 +1988,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Lasagne sheets"
   },
   {
     "id": "p-138",
@@ -1866,7 +2003,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Ricotta"
   },
   {
     "id": "p-139",
@@ -1878,7 +2016,8 @@
     "emoji": "🥬",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Rocket"
   },
   {
     "id": "p-140",
@@ -1890,7 +2029,8 @@
     "emoji": "🫘",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "White beans (tin)"
   },
   {
     "id": "p-141",
@@ -1904,7 +2044,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Cheddar"
   },
   {
     "id": "p-142",
@@ -1918,7 +2059,8 @@
       "laktose"
     ],
     "vegan": false,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Buttermilk"
   },
   {
     "id": "p-143",
@@ -1930,7 +2072,8 @@
     "emoji": "🧂",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Baking powder"
   },
   {
     "id": "p-144",
@@ -1942,7 +2085,8 @@
     "emoji": "🍬",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Granulated sugar"
   },
   {
     "id": "p-145",
@@ -1954,7 +2098,8 @@
     "emoji": "🍬",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Brown sugar"
   },
   {
     "id": "p-146",
@@ -1966,7 +2111,8 @@
     "emoji": "🍯",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Maple syrup"
   },
   {
     "id": "p-147",
@@ -1978,7 +2124,8 @@
     "emoji": "🍖",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "BBQ sauce"
   },
   {
     "id": "p-148",
@@ -1993,7 +2140,8 @@
     ],
     "vegan": true,
     "vegetarian": true,
-    "pieceGrams": 75
+    "pieceGrams": 75,
+    "nameEn": "Burger buns"
   },
   {
     "id": "p-149",
@@ -2005,7 +2153,8 @@
     "emoji": "🍠",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Sweet potato"
   },
   {
     "id": "p-150",
@@ -2017,7 +2166,8 @@
     "emoji": "🌽",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Sweetcorn (tin)"
   },
   {
     "id": "p-151",
@@ -2029,7 +2179,8 @@
     "emoji": "🫘",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Kidney beans (tin)"
   },
   {
     "id": "p-152",
@@ -2041,7 +2192,8 @@
     "emoji": "🍗",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Chicken legs"
   },
   {
     "id": "p-153",
@@ -2055,7 +2207,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Macaroni"
   },
   {
     "id": "p-154",
@@ -2069,7 +2222,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Breadcrumbs"
   },
   {
     "id": "p-155",
@@ -2081,7 +2235,8 @@
     "emoji": "🥩",
     "allergens": [],
     "vegan": false,
-    "vegetarian": false
+    "vegetarian": false,
+    "nameEn": "Boiling beef"
   },
   {
     "id": "p-156",
@@ -2095,7 +2250,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Semolina"
   },
   {
     "id": "p-157",
@@ -2109,7 +2265,8 @@
       "gluten"
     ],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Square pasta"
   },
   {
     "id": "p-158",
@@ -2121,7 +2278,8 @@
     "emoji": "🍲",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Stock powder"
   },
   {
     "id": "p-159",
@@ -2133,7 +2291,8 @@
     "emoji": "🌱",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Horseradish"
   },
   {
     "id": "p-160",
@@ -2145,7 +2304,8 @@
     "emoji": "🌭",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Mustard"
   },
   {
     "id": "p-161",
@@ -2157,7 +2317,8 @@
     "emoji": "🍶",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "White wine vinegar"
   },
   {
     "id": "p-162",
@@ -2169,6 +2330,7 @@
     "emoji": "🍑",
     "allergens": [],
     "vegan": true,
-    "vegetarian": true
+    "vegetarian": true,
+    "nameEn": "Apricot jam"
   }
 ]

@@ -222,7 +222,7 @@
   },
   {
     "id": "r-05",
-    "title": "Türkische Linsensuppe (Mercimek Çorbası)",
+    "title": "Türkische Linsensuppe",
     "tags": [
       "Vegan",
       "Budget"
@@ -277,7 +277,7 @@
     "imageUrl": "https://cdn.smartkorb.example/recipes/linsensuppe.jpg",
     "emoji": "🍲",
     "cuisine": "Türkisch",
-    "titleEn": "Turkish Lentil Soup (Mercimek Çorbası)"
+    "titleEn": "Turkish Lentil Soup"
   },
   {
     "id": "r-06",
@@ -1018,7 +1018,7 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/wiener-schnitzel-vom-schwein.jpg",
     "emoji": "🍖",
-    "titleEn": "Viennese Schnitzel (Pork)"
+    "titleEn": "Viennese Schnitzel"
   },
   {
     "id": "r-20",
@@ -1131,7 +1131,7 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/krautfleckerl.jpg",
     "emoji": "🥬",
-    "titleEn": "Cabbage Noodles (Krautfleckerl)"
+    "titleEn": "Cabbage Noodles"
   },
   {
     "id": "r-22",
@@ -1359,7 +1359,7 @@
   },
   {
     "id": "r-26",
-    "title": "Türkisches Rührei mit Paprika (Menemen)",
+    "title": "Türkisches Rührei mit Paprika",
     "cuisine": "Türkisch",
     "tags": [
       "Frühstück",
@@ -1415,11 +1415,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/menemen.jpg",
     "emoji": "🍳",
-    "titleEn": "Turkish Scrambled Eggs (Menemen)"
+    "titleEn": "Turkish Scrambled Eggs"
   },
   {
     "id": "r-27",
-    "title": "Bulgursalat (Kısır)",
+    "title": "Bulgursalat",
     "cuisine": "Türkisch",
     "tags": [
       "Salat",
@@ -1482,11 +1482,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/kısır.jpg",
     "emoji": "🥗",
-    "titleEn": "Bulgur Salad (Kısır)"
+    "titleEn": "Bulgur Salad"
   },
   {
     "id": "r-28",
-    "title": "Gefüllte Melanzani (Karnıyarık)",
+    "title": "Gefüllte Melanzani",
     "cuisine": "Türkisch",
     "tags": [
       "Hauptspeise",
@@ -1543,11 +1543,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/karnıyarık.jpg",
     "emoji": "🍆",
-    "titleEn": "Stuffed Aubergines (Karnıyarık)"
+    "titleEn": "Stuffed Aubergines"
   },
   {
     "id": "r-29",
-    "title": "Türkische Fleischbällchen mit Bulgur (Köfte)",
+    "title": "Türkische Fleischbällchen mit Bulgur",
     "cuisine": "Türkisch",
     "tags": [
       "Hauptspeise",
@@ -1598,7 +1598,7 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/köfte-mit-bulgur.jpg",
     "emoji": "🍢",
-    "titleEn": "Turkish Meatballs with Bulgur (Köfte)"
+    "titleEn": "Turkish Meatballs with Bulgur"
   },
   {
     "id": "r-30",
@@ -1653,7 +1653,7 @@
   },
   {
     "id": "r-31",
-    "title": "Joghurt-Gurken-Dip (Cacık)",
+    "title": "Joghurt-Gurken-Dip",
     "cuisine": "Türkisch",
     "tags": [
       "Vorspeise",
@@ -1703,11 +1703,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/cacık.jpg",
     "emoji": "🥒",
-    "titleEn": "Yoghurt Cucumber Dip (Cacık)"
+    "titleEn": "Yoghurt Cucumber Dip"
   },
   {
     "id": "r-32",
-    "title": "Georgisches Gemüseragout (Ajapsandali)",
+    "title": "Georgisches Gemüseragout",
     "cuisine": "Kaukasisch",
     "tags": [
       "Gemüse",
@@ -1767,11 +1767,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/ajapsandali.jpg",
     "emoji": "🍆",
-    "titleEn": "Georgian Vegetable Stew (Ajapsandali)"
+    "titleEn": "Georgian Vegetable Stew"
   },
   {
     "id": "r-33",
-    "title": "Georgischer Bohneneintopf (Lobio)",
+    "title": "Georgischer Bohneneintopf",
     "cuisine": "Kaukasisch",
     "tags": [
       "Eintopf",
@@ -1826,11 +1826,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/lobio.jpg",
     "emoji": "🫘",
-    "titleEn": "Georgian Bean Stew (Lobio)"
+    "titleEn": "Georgian Bean Stew"
   },
   {
     "id": "r-34",
-    "title": "Georgisches Hühnerragout (Chakhokhbili)",
+    "title": "Georgisches Hühnerragout",
     "cuisine": "Kaukasisch",
     "tags": [
       "Hauptspeise",
@@ -1883,11 +1883,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/chakhokhbili.jpg",
     "emoji": "🍗",
-    "titleEn": "Georgian Chicken Stew (Chakhokhbili)"
+    "titleEn": "Georgian Chicken Stew"
   },
   {
     "id": "r-35",
-    "title": "Melanzaniröllchen mit Walnusspaste (Badrijani)",
+    "title": "Melanzaniröllchen mit Walnusspaste",
     "cuisine": "Kaukasisch",
     "tags": [
       "Vorspeise",
@@ -1941,11 +1941,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/badrijani-–-melanzaniröllchen-mit-walnuss.jpg",
     "emoji": "🌰",
-    "titleEn": "Aubergine Rolls with Walnut Paste (Badrijani)"
+    "titleEn": "Aubergine Rolls with Walnut Paste"
   },
   {
     "id": "r-36",
-    "title": "Georgisches Käsebrot (Chatschapuri)",
+    "title": "Georgisches Käsebrot",
     "cuisine": "Kaukasisch",
     "tags": [
       "Gebäck",
@@ -1996,11 +1996,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/khachapuri.jpg",
     "emoji": "🧀",
-    "titleEn": "Georgian Cheese Bread (Khachapuri)"
+    "titleEn": "Georgian Cheese Bread"
   },
   {
     "id": "r-37",
-    "title": "Polnischer Krauteintopf (Bigos)",
+    "title": "Polnischer Krauteintopf",
     "cuisine": "Polnisch",
     "tags": [
       "Eintopf",
@@ -2057,11 +2057,11 @@
     "servings": 6,
     "imageUrl": "https://cdn.smartkorb.example/recipes/bigos.jpg",
     "emoji": "🥘",
-    "titleEn": "Polish Cabbage Stew (Bigos)"
+    "titleEn": "Polish Cabbage Stew"
   },
   {
     "id": "r-38",
-    "title": "Teigtaschen mit Erdäpfel-Topfen-Fülle (Pierogi ruskie)",
+    "title": "Teigtaschen mit Erdäpfel-Topfen-Fülle",
     "cuisine": "Polnisch",
     "tags": [
       "Teigtaschen",
@@ -2109,11 +2109,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/pierogi-ruskie.jpg",
     "emoji": "🥟",
-    "titleEn": "Potato and Curd Dumplings (Pierogi ruskie)"
+    "titleEn": "Potato and Curd Dumplings"
   },
   {
     "id": "r-39",
-    "title": "Gefüllte Krautrouladen (Gołąbki)",
+    "title": "Gefüllte Krautrouladen",
     "cuisine": "Polnisch",
     "tags": [
       "Hauptspeise",
@@ -2162,11 +2162,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/gołąbki.jpg",
     "emoji": "🥬",
-    "titleEn": "Stuffed Cabbage Rolls (Gołąbki)"
+    "titleEn": "Stuffed Cabbage Rolls"
   },
   {
     "id": "r-40",
-    "title": "Polnische Erdäpfelpuffer (Placki)",
+    "title": "Polnische Erdäpfelpuffer",
     "cuisine": "Polnisch",
     "tags": [
       "Schnell",
@@ -2214,11 +2214,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/placki-ziemniaczane.jpg",
     "emoji": "🥔",
-    "titleEn": "Polish Potato Pancakes (Placki)"
+    "titleEn": "Polish Potato Pancakes"
   },
   {
     "id": "r-41",
-    "title": "Rote-Rüben-Suppe (Borschtsch)",
+    "title": "Rote-Rüben-Suppe",
     "cuisine": "Ukrainisch",
     "tags": [
       "Suppe",
@@ -2279,11 +2279,11 @@
     "servings": 6,
     "imageUrl": "https://cdn.smartkorb.example/recipes/borschtsch.jpg",
     "emoji": "🍲",
-    "titleEn": "Beetroot Soup (Borscht)"
+    "titleEn": "Beetroot Soup"
   },
   {
     "id": "r-42",
-    "title": "Teigtaschen mit Erdäpfelfülle (Wareniki)",
+    "title": "Teigtaschen mit Erdäpfelfülle",
     "cuisine": "Ukrainisch",
     "tags": [
       "Teigtaschen",
@@ -2331,11 +2331,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/wareniki-mit-erdäpfeln.jpg",
     "emoji": "🥟",
-    "titleEn": "Potato Dumplings (Varenyky)"
+    "titleEn": "Potato Dumplings"
   },
   {
     "id": "r-43",
-    "title": "Topfenpuffer (Syrniki)",
+    "title": "Topfenpuffer",
     "cuisine": "Ukrainisch",
     "tags": [
       "Frühstück",
@@ -2387,7 +2387,7 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/syrniki.jpg",
     "emoji": "🥞",
-    "titleEn": "Curd Cheese Pancakes (Syrniki)"
+    "titleEn": "Curd Cheese Pancakes"
   },
   {
     "id": "r-44",
@@ -2501,7 +2501,7 @@
   },
   {
     "id": "r-46",
-    "title": "Scharfer Tofu nach Sichuan-Art (Mapo Tofu)",
+    "title": "Scharfer Tofu nach Sichuan-Art",
     "cuisine": "Chinesisch",
     "tags": [
       "Wok",
@@ -2556,7 +2556,7 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/mapo-tofu.jpg",
     "emoji": "🌶️",
-    "titleEn": "Sichuan-Style Spicy Tofu (Mapo Tofu)"
+    "titleEn": "Sichuan-Style Spicy Tofu"
   },
   {
     "id": "r-47",
@@ -2727,7 +2727,7 @@
   },
   {
     "id": "r-50",
-    "title": "Hühnchen-Ei-Reisschüssel (Oyakodon)",
+    "title": "Hühnchen-Ei-Reisschüssel",
     "cuisine": "Japanisch",
     "tags": [
       "Reisgericht",
@@ -2777,7 +2777,7 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/oyakodon.jpg",
     "emoji": "🍚",
-    "titleEn": "Chicken and Egg Rice Bowl (Oyakodon)"
+    "titleEn": "Chicken and Egg Rice Bowl"
   },
   {
     "id": "r-51",
@@ -2887,7 +2887,7 @@
   },
   {
     "id": "r-53",
-    "title": "Kimchi-Eintopf (Kimchi-Jjigae)",
+    "title": "Kimchi-Eintopf",
     "cuisine": "Koreanisch",
     "tags": [
       "Eintopf",
@@ -2938,11 +2938,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/kimchi-jjigae.jpg",
     "emoji": "🍲",
-    "titleEn": "Kimchi Stew (Kimchi-Jjigae)"
+    "titleEn": "Kimchi Stew"
   },
   {
     "id": "r-54",
-    "title": "Koreanische Reisschüssel (Bibimbap)",
+    "title": "Koreanische Reisschüssel",
     "cuisine": "Koreanisch",
     "tags": [
       "Reisgericht",
@@ -2996,7 +2996,7 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/bibimbap.jpg",
     "emoji": "🍚",
-    "titleEn": "Korean Rice Bowl (Bibimbap)"
+    "titleEn": "Korean Rice Bowl"
   },
   {
     "id": "r-55",
@@ -3053,7 +3053,7 @@
   },
   {
     "id": "r-56",
-    "title": "Gebratene Reisnudeln (Pad Thai)",
+    "title": "Gebratene Reisnudeln",
     "cuisine": "Thailändisch",
     "tags": [
       "Wok",
@@ -3167,7 +3167,7 @@
   },
   {
     "id": "r-58",
-    "title": "Kokossuppe mit Huhn (Tom Kha Gai)",
+    "title": "Kokossuppe mit Huhn",
     "cuisine": "Thailändisch",
     "tags": [
       "Suppe",
@@ -3220,11 +3220,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/tom-kha-gai.jpg",
     "emoji": "🥥",
-    "titleEn": "Coconut Chicken Soup (Tom Kha Gai)"
+    "titleEn": "Coconut Chicken Soup"
   },
   {
     "id": "r-59",
-    "title": "Vietnamesische Hühnersuppe (Phở Gà)",
+    "title": "Vietnamesische Hühnersuppe",
     "cuisine": "Vietnamesisch",
     "tags": [
       "Suppe",
@@ -3280,11 +3280,11 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/phở-gà.jpg",
     "emoji": "🍜",
-    "titleEn": "Vietnamese Chicken Noodle Soup (Phở Gà)"
+    "titleEn": "Vietnamese Chicken Noodle Soup"
   },
   {
     "id": "r-60",
-    "title": "Vietnamesisches Sandwich mit Huhn (Bánh mì)",
+    "title": "Vietnamesisches Sandwich mit Huhn",
     "cuisine": "Vietnamesisch",
     "tags": [
       "Sandwich",
@@ -3338,7 +3338,7 @@
     "servings": 4,
     "imageUrl": "https://cdn.smartkorb.example/recipes/bánh-mì-mit-hühnerstreifen.jpg",
     "emoji": "🥖",
-    "titleEn": "Vietnamese Chicken Sandwich (Bánh mì)"
+    "titleEn": "Vietnamese Chicken Sandwich"
   },
   {
     "id": "r-61",
@@ -3500,7 +3500,7 @@
   },
   {
     "id": "r-64",
-    "title": "Überbackene Melanzani (Parmigiana)",
+    "title": "Überbackene Melanzani",
     "cuisine": "Italienisch",
     "tags": [
       "Ofen",
@@ -3557,7 +3557,7 @@
   },
   {
     "id": "r-65",
-    "title": "Nudel-Bohnen-Suppe (Pasta e fagioli)",
+    "title": "Nudel-Bohnen-Suppe",
     "cuisine": "Italienisch",
     "tags": [
       "Suppe",
@@ -3785,7 +3785,7 @@
   },
   {
     "id": "r-69",
-    "title": "Makkaroni mit Käsesauce (Mac and Cheese)",
+    "title": "Makkaroni mit Käsesauce",
     "cuisine": "Amerikanisch",
     "tags": [
       "Ofen",
@@ -3945,7 +3945,7 @@
   },
   {
     "id": "r-72",
-    "title": "Maisbrot (Cornbread)",
+    "title": "Maisbrot",
     "cuisine": "Amerikanisch",
     "tags": [
       "Beilage",

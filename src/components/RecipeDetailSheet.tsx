@@ -2,7 +2,15 @@ import React, { useMemo } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { useCatalog } from '../data';
-import { cuisineLabel, recipeTitle, tagLabel, unitLabel, useLanguage, useT } from '../i18n';
+import {
+  cuisineLabel,
+  productName,
+  recipeTitle,
+  tagLabel,
+  unitLabel,
+  useLanguage,
+  useT,
+} from '../i18n';
 import { costRecipe } from '../services/pricing';
 import { colors, radius, spacing } from '../theme';
 import type { Recipe } from '../types';
@@ -78,7 +86,7 @@ export const RecipeDetailSheet: React.FC<Props> = ({
           <View key={item.product.id} style={styles.ingredientRow}>
             <Text style={styles.ingredientEmoji}>{item.product.emoji}</Text>
             <View style={styles.ingredientBody}>
-              <Text style={styles.ingredientName}>{item.product.name}</Text>
+              <Text style={styles.ingredientName}>{productName(item.product, language)}</Text>
               <Text style={styles.ingredientMeta}>
                 {t('kitchen.needed', { amount: formatAmount(item.grams, item.product) })}
               </Text>

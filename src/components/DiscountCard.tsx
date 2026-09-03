@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-import { categoryLabel, useLanguage, useT } from '../i18n';
+import { categoryLabel, productName, useLanguage, useT } from '../i18n';
 import { colors, radius, shadow, spacing } from '../theme';
 import type { DiscountView } from '../types';
 import { formatPrice, formatRemainingDays, formatValidTo } from '../utils/format';
@@ -31,7 +31,7 @@ export const DiscountCard: React.FC<Props> = ({ discount, onPress, hideStore = f
       <View style={styles.body}>
         <View style={styles.headerRow}>
           <Text style={styles.name} numberOfLines={2}>
-            {product.name}
+            {productName(product, language)}
           </Text>
           <View style={[styles.percentPill, { backgroundColor: colors.danger }]}>
             <Text style={styles.percentText}>−{discount.discountPercent} %</Text>

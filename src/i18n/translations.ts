@@ -138,6 +138,8 @@ const de = {
   'profile.branches': 'Filialen in Wien',
   'profile.offersToday': 'Aktionen heute',
   'profile.sources': 'Quellen',
+  'profile.storesIncomplete':
+    'Unvollständig: Wien hat mehrere hundert Filialen dieser Ketten. Führe „npm run data:refresh -- --update-seed“ aus, um die echte Liste aus OpenStreetMap zu laden.',
   'profile.preferences': 'Ernährung & Vorlieben',
   'profile.edit': 'Bearbeiten',
   'profile.diet': 'Ernährung',
@@ -325,6 +327,8 @@ const en: Record<TranslationKey, string> = {
   'profile.branches': 'Stores in Vienna',
   'profile.offersToday': 'Deals today',
   'profile.sources': 'Sources',
+  'profile.storesIncomplete':
+    'Incomplete: Vienna has several hundred branches of these chains. Run "npm run data:refresh -- --update-seed" to fetch the real list from OpenStreetMap.',
   'profile.preferences': 'Diet & preferences',
   'profile.edit': 'Edit',
   'profile.diet': 'Diet',

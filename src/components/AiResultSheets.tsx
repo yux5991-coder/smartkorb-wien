@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import { recipeTitle, unitLabel, useLanguage, useT } from '../i18n';
+import { productName, recipeTitle, unitLabel, useLanguage, useT } from '../i18n';
 import type { DishSuggestion, ShoppingList } from '../services/ai';
 import { colors, radius, spacing } from '../theme';
 import type { Recipe } from '../types';
@@ -138,7 +138,7 @@ export const ShoppingListSheet: React.FC<ShoppingListProps> = ({
           <View key={item.product.id} style={styles.itemRow}>
             <Text style={styles.itemEmoji}>{item.product.emoji}</Text>
             <View style={styles.itemBody}>
-              <Text style={styles.itemName}>{item.product.name}</Text>
+              <Text style={styles.itemName}>{productName(item.product, language)}</Text>
               <Text style={styles.itemAmount}>
                 {t('ai.neededPacks', {
                   amount: formatAmount(item.grams, item.product),

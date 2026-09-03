@@ -142,6 +142,23 @@ derives the district from the postcode, deduplicates shops that OSM stores both
 as a node and as a building outline, and writes them into the snapshot (and,
 with `--update-seed`, into the bundled fallback).
 
+**The branch list is never allowed to be a stub.** Vienna has several hundred
+branches of the six chains, so `sources.config.json` carries `minStores` (300 by
+default) and the pipeline enforces it in three places:
+
+1. a run that would skip the OSM query refreshes the list anyway while it is
+   below the floor — including the daily CI run, so an incomplete list repairs
+   itself on the next run instead of waiting for the weekly refresh;
+2. a successful refresh also rewrites the bundled fallback while that is still
+   incomplete, so the repair sticks;
+3. a snapshot with fewer branches is **not published** — the run fails with the
+   command to fix it (`--allow-store-drop` overrides it if the number is truly
+   correct).
+
+The app says it too: the profile shows a warning under *Datenquelle* when it is
+running on fewer than 300 branches, so a stub list can never look like the real
+thing.
+
 OSM data is licensed under the **ODbL**: the app credits
 "© OpenStreetMap contributors" in the profile tab, and published derived data has
 to stay under the same licence. Overpass is a free shared service — the workflow
@@ -158,12 +175,15 @@ date formats (`2,49 €` / `bis 12.09.` vs `€2.49` / `until 12/09`).
   in English fails the type check.
 - `useT()` returns `t('key', { params })` for components; `translate(lang, key)`
   is the non-hook variant the assistant uses for its answers.
-- Recipe titles exist in both languages (`title` / `titleEn`); cuisines, product
-  categories and dish tags have English labels.
-- **Catalogue data stays German**: product names, chain names and the flyer small
-  print are what the retailers publish — a Billa offer is called
-  "Rispentomaten" in any UI language. Only pack unit words (`Stk` → `pcs`,
-  `Bund` → `bunch`) are swapped.
+- The catalogue is bilingual too: every product has `name` / `nameEn` and every
+  recipe `title` / `titleEn`; cuisines, categories, dish tags and pack unit words
+  (`Stk` → `pcs`, `Bund` → `bunch`) have English labels. Product search matches
+  both variants, so "tomato" and "Tomaten" find the same offer.
+- Dish names are German or English only — no original-language spellings.
+- Chain names and the flyer small print stay as the retailers publish them, and
+  products that arrive from a feed without a translation fall back to their
+  German name. `pipeline/test/recipes.test.ts` fails if a catalogue entry is
+  missing its English variant.
 
 ## Recipe catalogue
 

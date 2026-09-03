@@ -16,7 +16,7 @@ import { matchRetailer, buildQuery } from '../src/sources/overpassStores';
 import { parseCsv } from '../src/sources/csvOffers';
 import { getPath } from '../src/sources/httpJsonOffers';
 import { normalizeOffers } from '../src/normalize/offers';
-import { chooseStores } from '../src/build';
+import { checkStoreCount, chooseStores } from '../src/build';
 
 const products = seedProducts as Product[];
 
@@ -232,4 +232,13 @@ test('the branch list survives runs that skip the refresh', () => {
 
   // first run ever: nothing but the seed
   assert.equal(chooseStores({ fetched: null, previous: [], seed }).source, 'seed');
+});
+
+test('a stub branch list is never published', () => {
+  // Vienna has several hundred branches of the six chains
+  assert.equal(checkStoreCount(742, 300), null);
+  assert.match(checkStoreCount(22, 300) ?? '', /only 22 branches/);
+  assert.match(checkStoreCount(22, 300) ?? '', /--update-seed/);
+  // ... unless the number is explicitly confirmed
+  assert.equal(checkStoreCount(22, 300, true), null);
 });

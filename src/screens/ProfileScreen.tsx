@@ -8,6 +8,7 @@ import { RecipeDetailSheet } from '../components/RecipeDetailSheet';
 import { Chip } from '../components/Chip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { DataStatusBar } from '../components/DataStatusBar';
+import { MIN_VIENNA_STORES } from '../config';
 import { getActiveDiscountViews, getRecipe, useCatalog } from '../data';
 import { costRecipe } from '../services/pricing';
 import { useProfileStore } from '../store/useProfileStore';
@@ -94,6 +95,9 @@ export const ProfileScreen: React.FC = () => {
             <Text style={styles.settingLabel}>{t('profile.branches')}</Text>
             <Text style={styles.settingValue}>{catalog.stores.length}</Text>
           </View>
+          {catalog.stores.length < MIN_VIENNA_STORES ? (
+            <Text style={styles.warningText}>{t('profile.storesIncomplete')}</Text>
+          ) : null}
           <View style={styles.settingRow}>
             <Text style={styles.settingLabel}>{t('profile.offersToday')}</Text>
             <Text style={styles.settingValue}>{getActiveDiscountViews(catalog).length}</Text>
@@ -329,6 +333,12 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: colors.textMuted,
     textAlign: 'center',
+  },
+  warningText: {
+    fontSize: 11,
+    color: colors.danger,
+    lineHeight: 16,
+    paddingVertical: 6,
   },
   emptyText: {
     fontSize: 13,

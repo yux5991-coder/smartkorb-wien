@@ -44,7 +44,7 @@ import { getActiveDiscountViews, getProduct, type CatalogIndex } from '../data';
 import type { Allergen, Product, Recipe, UserProfile } from '../types';
 import { formatPrice } from '../utils/format';
 import { packsFor, usedCostFor } from './packMath';
-import { allergenLabel, recipeTitle, translate } from '../i18n';
+import { allergenLabel, productName, recipeTitle, translate } from '../i18n';
 import {
   costRecipe,
   discountCoverage,
@@ -132,7 +132,7 @@ export const suggestDishes = async (
     if (highlight?.offer) {
       parts.push(
         translate(lang, 'ai.reasonHighlight', {
-          product: highlight.product.name,
+          product: productName(highlight.product, lang),
           percent: highlight.offer.discountPercent,
           retailer: highlight.offer.retailer.name,
         }),
@@ -316,7 +316,7 @@ export const buildShoppingList = async (
         warnings.push(
           translate(lang, 'ai.warnDiet', {
             diet: profile.dietPreference,
-            products: conflicting.map((item) => item.product.name).join(', '),
+            products: conflicting.map((item) => productName(item.product, lang)).join(', '),
           }),
         );
       }
