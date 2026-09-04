@@ -1,0 +1,39 @@
+# Runs on every push and pull request.
+#
+# The logo guard is part of this on purpose: assets/logos/*.png are the owner's
+# artwork, and once they are locked (npm run logos:lock) this job fails if
+# anything — a script, a merge, an unpacked archive — replaces them with the
+# shipped placeholders.
+name: Verify
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Types (app and pipeline)
+        run: npm run typecheck
+
+      - name: Tests
+        run: npm test
+
+      - name: Chain logos untouched
+        run: npm run logos:check
+
+      - name: Project state
+        if: always()
+        run: npm run project:status

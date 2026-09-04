@@ -34,7 +34,10 @@ Requirements: Node.js 20+, Expo SDK 57.
 | `npm run feed:check -- <file.csv>` | validate a partner delivery before using it |
 | `npm run data:seed` | regenerate the offers bundled with the app |
 | `npm run data:probe -- --url <url>` | inspect a candidate offer endpoint and propose an adapter config |
-| `npm run logos:check` | show which chain logos are still placeholders |
+| `npm run verify` | typecheck + tests + logo guard — run this before committing |
+| `npm run logos:check` | verify the chain logos (fails if locked artwork was replaced) |
+| `npm run logos:lock` | record the current logo files as the ones to keep |
+| `npm run project:status` | app version and how many stores / products / recipes the build carries |
 
 ## The four sections
 
@@ -273,6 +276,18 @@ into the real logos — the artwork has to be put in the folder.
 
 If a file is missing or unreadable, the UI falls back to the coloured initials
 badge, so a wrong file can never break a screen.
+
+**Protecting your artwork.** After putting the real files in place, run once:
+
+```bash
+npm run logos:lock
+```
+
+That records their checksums in `assets/logos/expected.sha256.json`. From then
+on `npm run logos:check` — and the **Verify** workflow on every push — fails if
+any of the six files changes, with an explicit message when one was reverted to
+a shipped placeholder. The project invariants that protect these assets are
+written down in [`CLAUDE.md`](CLAUDE.md).
 
 **Trademarks.** Chain logos are protected marks. Showing them to identify which
 shop an offer belongs to is the normal, referential use an offer aggregator

@@ -40,7 +40,10 @@
     "feed:check": "tsx pipeline/src/checkFeed.ts",
     "data:seed": "tsx pipeline/src/seed.ts",
     "data:probe": "tsx pipeline/src/probe.ts",
-    "logos:check": "tsx pipeline/src/checkLogos.ts"
+    "logos:check": "tsx pipeline/src/checkLogos.ts",
+    "logos:lock": "tsx pipeline/src/checkLogos.ts --lock",
+    "verify": "npm run typecheck && npm test && npm run logos:check",
+    "project:status": "tsx pipeline/src/status.ts"
   },
   "private": true,
   "description": "SmartKorb Wien \u2014 prototype aggregating grocery discounts in Vienna"
