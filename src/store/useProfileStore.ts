@@ -6,8 +6,11 @@ import type {
   ActivityLogEntry,
   Allergen,
   DietPreference,
+  FamilyMember,
   OnboardingStatus,
+  PlanSettings,
   UserProfile,
+  WeekPlan,
 } from '../types';
 
 type Language = UserProfile['language'];
@@ -20,7 +23,18 @@ export const PROFILE_STORAGE_KEY = 'smartkorb.profile.v1';
 interface ProfileState extends UserProfile {
   /** True once the persisted profile has been read from AsyncStorage. */
   hydrated: boolean;
+  /** Everyone the plan has to work for. */
+  members: FamilyMember[];
+  /** Last settings used in the planner, so the screen opens where it was left. */
+  planSettings: Omit<PlanSettings, 'seed'> | null;
+  savedPlans: WeekPlan[];
   setLanguage: (language: Language) => void;
+  addMember: (member: Omit<FamilyMember, 'id' | 'isDefault'>) => void;
+  updateMember: (id: string, patch: Partial<Omit<FamilyMember, 'id'>>) => void;
+  removeMember: (id: string) => void;
+  setPlanSettings: (settings: Omit<PlanSettings, 'seed'>) => void;
+  savePlan: (plan: WeekPlan) => void;
+  removePlan: (planId: string) => void;
   setDietPreference: (diet: DietPreference) => void;
   toggleAllergy: (allergen: Allergen) => void;
   setAllergies: (allergens: Allergen[]) => void;
@@ -38,6 +52,8 @@ interface ProfileState extends UserProfile {
   logActivity: (type: ActivityLogEntry['type'], label: string) => void;
   clearActivityLog: () => void;
 }
+
+const newId = (): string => `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
 
 const initialProfile: UserProfile = {
   language: 'de',
@@ -61,6 +77,50 @@ export const useProfileStore = create<ProfileState>()(
     (set, get) => ({
       ...initialProfile,
       hydrated: false,
+      members: [],
+      planSettings: null,
+      savedPlans: [],
+
+      addMember: ({ name, dietaryPreferences, allergies }) =>
+        set((state) => ({
+          members: [
+            ...state.members,
+            {
+              id: newId(),
+              name: name.trim() || `Person ${state.members.length + 1}`,
+              dietaryPreferences,
+              allergies,
+              isDefault: state.members.length === 0,
+            },
+          ],
+        })),
+
+      updateMember: (id, patch) =>
+        set((state) => ({
+          members: state.members.map((member) =>
+            member.id === id ? { ...member, ...patch } : member,
+          ),
+        })),
+
+      removeMember: (id) =>
+        set((state) => {
+          const remaining = state.members.filter((member) => member.id !== id);
+          // there is always exactly one default member
+          if (remaining.length > 0 && !remaining.some((member) => member.isDefault)) {
+            remaining[0] = { ...remaining[0], isDefault: true };
+          }
+          return { members: remaining };
+        }),
+
+      setPlanSettings: (planSettings) => set({ planSettings }),
+
+      savePlan: (plan) =>
+        set((state) => ({
+          savedPlans: [plan, ...state.savedPlans.filter((saved) => saved.id !== plan.id)].slice(0, 10),
+        })),
+
+      removePlan: (planId) =>
+        set((state) => ({ savedPlans: state.savedPlans.filter((plan) => plan.id !== planId) })),
 
       setLanguage: (language) => set({ language }),
 
@@ -78,11 +138,36 @@ export const useProfileStore = create<ProfileState>()(
       setBudgetPerPortion: (budgetPerPortion) => set({ budgetPerPortion }),
 
       completeOnboarding: ({ dietPreference, allergies, budgetPerPortion }) =>
-        set({
-          dietPreference,
-          allergies,
-          budgetPerPortion,
-          onboardingStatus: 'completed' as OnboardingStatus,
+        set((state) => {
+          // the questionnaire describes the first family member
+          const members =
+            state.members.length === 0
+              ? [
+                  {
+                    id: newId(),
+                    name: state.language === 'en' ? 'Me' : 'Ich',
+                    dietaryPreferences: dietPreference === 'omnivor' ? [] : [dietPreference],
+                    allergies,
+                    isDefault: true,
+                  },
+                ]
+              : state.members.map((member) =>
+                  member.isDefault
+                    ? {
+                        ...member,
+                        dietaryPreferences: dietPreference === 'omnivor' ? [] : [dietPreference],
+                        allergies,
+                      }
+                    : member,
+                );
+
+          return {
+            members,
+            dietPreference,
+            allergies,
+            budgetPerPortion,
+            onboardingStatus: 'completed' as OnboardingStatus,
+          };
         }),
 
       skipOnboarding: () => set({ onboardingStatus: 'skipped' as OnboardingStatus }),
@@ -115,6 +200,9 @@ export const useProfileStore = create<ProfileState>()(
       storage: createJSONStorage(() => AsyncStorage),
       partialize: (state) => ({
         language: state.language,
+        members: state.members,
+        planSettings: state.planSettings,
+        savedPlans: state.savedPlans,
         dietPreference: state.dietPreference,
         allergies: state.allergies,
         budgetPerPortion: state.budgetPerPortion,

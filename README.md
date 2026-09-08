@@ -54,13 +54,13 @@ Requirements: Node.js 20+, Expo SDK 57.
    Samstag") and whether the offer runs chain-wide or in one branch. Ready meals
    and chilled convenience are in the feed next to raw produce — their own
    category, `Fertig & Convenience`.
-3. **Kulinarik** — 73 recipes from 14 kitchens (see below), filterable by
-   cuisine, dish type, cooking time and diet, plus two assistant features
-   (`Premium` badge): **„Was koche ich?“** ranks recipes against today's offers
-   and the saved profile, **„Ich möchte X kochen“** turns a dish name into exact
-   amounts, the cheapest chain per ingredient and a total. On first use a
-   questionnaire asks for diet, allergies and budget; it can be skipped and is
-   stored in AsyncStorage.
+3. **Planer** — the week planner (see "How a week plan is built" below): pick
+   who is eating this week, a budget, how much time there is to cook and how
+   often you are willing to shop, and get seven days of dishes plus a shopping
+   list grouped by store. It also keeps the reverse case — type a dish and get
+   the exact amounts with the cheapest chain per ingredient — and opens the full
+   recipe catalogue. On first use a questionnaire asks for diet, allergies and
+   budget; it can be skipped and becomes the first family profile.
 4. **Profil** — saved recipes, activity log, the questionnaire as editable
    settings, and the current data source (branch count, offer count, origins).
 
@@ -193,6 +193,38 @@ date formats (`2,49 €` / `bis 12.09.` vs `€2.49` / `until 12/09`).
   products that arrive from a feed without a translation fall back to their
   German name. `pipeline/test/recipes.test.ts` fails if a catalogue entry is
   missing its English variant.
+
+## How a week plan is built
+
+`src/services/planner.ts` — a pure module, no data and no React Native imports,
+so `pipeline/test/planner.test.ts` exercises it directly. Nothing here is a stub.
+
+1. **Everyone at the table.** The diets of all selected members are combined
+   strictest-first (vegan beats vegetarian beats omnivore) and every allergy is
+   unioned, so a dish has to work for all of them at once. The cooking-time
+   budget filters the rest.
+2. **Seven days.** Recipes are ranked by cost with a seeded jitter — the seed is
+   the current week plus the settings, so the same inputs reproduce the same plan
+   while another week or another budget produces a different one. No dish comes
+   back within three days.
+3. **Ingredients.** Amounts are scaled from the recipe's servings to the number
+   of people eating, and summed across the week.
+4. **Budget.** If the basket is over budget, the most expensive day is swapped
+   for the cheapest recipe not in the plan, repeatedly, until it fits or nothing
+   is left to swap; what remains is reported as a warning.
+5. **Shopping trips.** A greedy search spreads the list over at most N branches:
+   it starts in the branch where the whole basket is cheapest, then opens the
+   branch that saves the most — but only while that saving beats
+   `TRIP_SAVINGS_THRESHOLD` (3 €), because a detour has to pay for itself. Every
+   item then goes to the cheapest of the opened branches, and the plan reports
+   what the same list would have cost in one store.
+6. **Pack leftovers.** 200 g of flour still means buying the kilo bag. Whenever a
+   pack leaves a significant rest, the planner looks for another eligible recipe
+   that uses it up and suggests it; if there is none it says how much will be
+   left. The list is ranked by the money sitting in the leftover, not by grams.
+
+Family profiles, plan settings and saved plans live in the same AsyncStorage
+profile as the rest of the user data.
 
 ## Recipe catalogue
 

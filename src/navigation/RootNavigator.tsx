@@ -4,8 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 
 import { DiscountsScreen } from '../screens/DiscountsScreen';
-import { KulinarikScreen } from '../screens/KulinarikScreen';
 import { MapScreen } from '../screens/MapScreen';
+import { PlannerScreen } from '../screens/PlannerScreen';
 import { ProfileScreen } from '../screens/ProfileScreen';
 import { useT } from '../i18n';
 import { colors } from '../theme';
@@ -13,7 +13,7 @@ import { colors } from '../theme';
 export type RootTabParamList = {
   Karte: undefined;
   Rabatte: undefined;
-  Kulinarik: undefined;
+  Planer: undefined;
   Profil: undefined;
 };
 
@@ -22,7 +22,7 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 const icons: Record<keyof RootTabParamList, keyof typeof Ionicons.glyphMap> = {
   Karte: 'map-outline',
   Rabatte: 'pricetags-outline',
-  Kulinarik: 'restaurant-outline',
+  Planer: 'calendar-outline',
   Profil: 'person-outline',
 };
 
@@ -30,7 +30,7 @@ const icons: Record<keyof RootTabParamList, keyof typeof Ionicons.glyphMap> = {
 const TAB_LABELS = {
   Karte: 'tab.map',
   Rabatte: 'tab.discounts',
-  Kulinarik: 'tab.kitchen',
+  Planer: 'tab.planner',
   Profil: 'tab.profile',
 } as const;
 
@@ -60,7 +60,7 @@ export const RootNavigator: React.FC = () => {
     >
       <Tab.Screen name="Karte" component={MapScreen} />
       <Tab.Screen name="Rabatte" component={DiscountsScreen} />
-      <Tab.Screen name="Kulinarik" component={KulinarikScreen} />
+      <Tab.Screen name="Planer" component={PlannerScreen} />
       <Tab.Screen name="Profil" component={ProfileScreen} />
     </Tab.Navigator>
   </NavigationContainer>

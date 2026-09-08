@@ -6,6 +6,7 @@ import { OnboardingForm, budgetLabel } from '../components/OnboardingModal';
 import { PlaceholderImage } from '../components/PlaceholderImage';
 import { RecipeDetailSheet } from '../components/RecipeDetailSheet';
 import { Chip } from '../components/Chip';
+import { FamilyMemberSheet } from '../components/FamilyMemberSheet';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { DataStatusBar } from '../components/DataStatusBar';
 import { APP_VERSION, MIN_VIENNA_STORES } from '../config';
@@ -20,7 +21,7 @@ import {
 import { costRecipe } from '../services/pricing';
 import { useProfileStore } from '../store/useProfileStore';
 import { colors, radius, shadow, spacing } from '../theme';
-import type { Recipe } from '../types';
+import type { FamilyMember, Recipe } from '../types';
 import { formatPrice, formatTimestamp } from '../utils/format';
 import {
   LANGUAGES,
@@ -45,6 +46,12 @@ export const ProfileScreen: React.FC = () => {
     savedRecipeIds,
     activityLog,
     onboardingStatus,
+    members,
+    savedPlans,
+    addMember,
+    updateMember,
+    removeMember,
+    removePlan,
     setLanguage,
     completeOnboarding,
     restartOnboarding,
@@ -53,6 +60,8 @@ export const ProfileScreen: React.FC = () => {
   } = useProfileStore();
 
   const [editVisible, setEditVisible] = useState(false);
+  const [memberSheetVisible, setMemberSheetVisible] = useState(false);
+  const [editingMember, setEditingMember] = useState<FamilyMember | null>(null);
   const [detailRecipe, setDetailRecipe] = useState<Recipe | null>(null);
 
   const savedRecipes = useMemo(
@@ -93,6 +102,83 @@ export const ProfileScreen: React.FC = () => {
               />
             ))}
           </View>
+        </View>
+
+        <View style={styles.card}>
+          <View style={styles.cardHeader}>
+            <Text style={styles.cardTitle}>{t('profile.family')}</Text>
+            <Text style={styles.counter}>{members.length}</Text>
+          </View>
+
+          {members.length === 0 ? (
+            <Text style={styles.emptyText}>{t('planner.noMembers')}</Text>
+          ) : (
+            members.map((member) => (
+              <Pressable
+                key={member.id}
+                onPress={() => {
+                  setEditingMember(member);
+                  setMemberSheetVisible(true);
+                }}
+                accessibilityRole="button"
+                style={({ pressed }) => [styles.savedRow, pressed && styles.pressed]}
+              >
+                <View style={styles.savedBody}>
+                  <Text style={styles.savedTitle}>{member.name}</Text>
+                  <Text style={styles.savedMeta} numberOfLines={1}>
+                    {[
+                      ...member.dietaryPreferences.map((diet) => dietLabel(diet, language)),
+                      ...member.allergies.map((allergen) => allergenLabel(allergen, language)),
+                    ].join(' · ') || '—'}
+                  </Text>
+                </View>
+                <Text style={styles.link}>{t('profile.edit')}</Text>
+              </Pressable>
+            ))
+          )}
+
+          <Pressable
+            onPress={() => {
+              setEditingMember(null);
+              setMemberSheetVisible(true);
+            }}
+            accessibilityRole="button"
+            style={({ pressed }) => [styles.secondaryButton, pressed && styles.pressed]}
+          >
+            <Text style={styles.secondaryButtonText}>+ {t('planner.addMember')}</Text>
+          </Pressable>
+        </View>
+
+        <View style={styles.card}>
+          <View style={styles.cardHeader}>
+            <Text style={styles.cardTitle}>{t('planner.savedPlans')}</Text>
+            <Text style={styles.counter}>{savedPlans.length}</Text>
+          </View>
+
+          {savedPlans.length === 0 ? (
+            <Text style={styles.emptyText}>{t('planner.noSavedPlans')}</Text>
+          ) : (
+            savedPlans.map((plan) => (
+              <View key={plan.id} style={styles.savedRow}>
+                <View style={styles.savedBody}>
+                  <Text style={styles.savedTitle}>
+                    {formatTimestamp(plan.createdAt)} · {formatPrice(plan.total)}
+                  </Text>
+                  <Text style={styles.savedMeta}>
+                    {t('kitchen.servings', { count: plan.memberIds.length })} ·{' '}
+                    {plan.baskets.length} × {t('planner.trips')}
+                  </Text>
+                </View>
+                <Pressable
+                  onPress={() => removePlan(plan.id)}
+                  hitSlop={8}
+                  accessibilityRole="button"
+                >
+                  <Text style={styles.link}>{t('planner.deletePlan')}</Text>
+                </Pressable>
+              </View>
+            ))
+          )}
         </View>
 
         <View style={styles.card}>
@@ -264,6 +350,25 @@ export const ProfileScreen: React.FC = () => {
         saved={detailRecipe ? savedRecipeIds.includes(detailRecipe.id) : false}
         onClose={() => setDetailRecipe(null)}
         onToggleSave={() => detailRecipe && toggleSavedRecipe(detailRecipe.id)}
+      />
+
+      <FamilyMemberSheet
+        visible={memberSheetVisible}
+        member={editingMember}
+        onClose={() => setMemberSheetVisible(false)}
+        onSave={(input) => {
+          if (editingMember) updateMember(editingMember.id, input);
+          else addMember(input);
+          setMemberSheetVisible(false);
+        }}
+        onDelete={
+          editingMember
+            ? () => {
+                removeMember(editingMember.id);
+                setMemberSheetVisible(false);
+              }
+            : undefined
+        }
       />
 
       <Modal

@@ -155,6 +155,96 @@ export interface ActivityLogEntry {
   at: string;
 }
 
+/** One person the plan has to work for. */
+export interface FamilyMember {
+  id: string;
+  name: string;
+  /** Empty means "no restriction"; several entries are combined strictest-first. */
+  dietaryPreferences: DietPreference[];
+  allergies: Allergen[];
+  /** The member created from the first questionnaire. */
+  isDefault: boolean;
+}
+
+export type CookingTimeBudget = 'fast' | 'medium' | 'long';
+
+export interface PlanSettings {
+  /** Members eating at home this week. */
+  memberIds: string[];
+  /** Budget for the whole week in EUR. */
+  weeklyBudget: number;
+  cookingTime: CookingTimeBudget;
+  /** 1-3 — how often the user is willing to go shopping. */
+  maxShoppingTrips: number;
+  /** Makes a plan reproducible; changes with the week. */
+  seed: number;
+}
+
+export interface PlanDay {
+  /** 0 = Monday. */
+  dayIndex: number;
+  recipeId: RecipeId;
+  /** Portions cooked that day = number of members. */
+  servings: number;
+  /** Proportional ingredient cost of that day's dish. */
+  cost: number;
+}
+
+export interface ShoppingItem {
+  productId: ProductId;
+  /** Amount the week's recipes need. */
+  grams: number;
+  /** Whole packs to buy. */
+  packs: number;
+  packPrice: number;
+  lineTotal: number;
+  /** Percentage saved against the regular shelf price, if on offer. */
+  discountPercent?: number;
+  /** Amount left over after cooking, in grams. */
+  leftoverGrams: number;
+}
+
+export interface StoreBasket {
+  storeId: StoreId;
+  retailerId: RetailerId;
+  items: ShoppingItem[];
+  total: number;
+}
+
+export type PlanWarningKind =
+  | 'no-recipes'
+  | 'over-budget'
+  | 'leftover'
+  | 'leftover-used'
+  | 'few-recipes';
+
+export interface PlanWarning {
+  kind: PlanWarningKind;
+  /** Product the warning is about, when it is a leftover. */
+  productId?: ProductId;
+  /** Recipe suggested to use up a leftover. */
+  recipeId?: RecipeId;
+  grams?: number;
+  amount?: number;
+}
+
+export interface WeekPlan {
+  id: string;
+  createdAt: string;
+  settings: PlanSettings;
+  memberIds: string[];
+  days: PlanDay[];
+  baskets: StoreBasket[];
+  /** Sum of all baskets — what the week costs with this plan. */
+  total: number;
+  /** The same shopping list bought entirely in the cheapest single store. */
+  singleStoreTotal: number;
+  /** `singleStoreTotal - total`. */
+  savings: number;
+  withinBudget: boolean;
+  warnings: PlanWarning[];
+}
+
 export interface UserProfile {
   /** UI language — 'de' (default) or 'en'. */
   language: 'de' | 'en';
