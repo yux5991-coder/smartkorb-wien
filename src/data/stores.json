@@ -1455,8 +1455,8 @@
     "name": "Hofer",
     "address": "Gotramgasse 9, 1220 Wien",
     "district": "Donaustadt",
-    "lat": 48.2198757,
-    "lng": 16.4454213,
+    "lat": 48.2198745,
+    "lng": 16.4454172,
     "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
   },
   {
@@ -6707,7 +6707,7 @@
     "district": "Ottakring",
     "lat": 48.2041353,
     "lng": 16.3083122,
-    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
+    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-14:00"
   },
   {
     "id": "osm-node-3826241558",
@@ -7095,8 +7095,8 @@
     "name": "Spar",
     "address": "Linzer Straße 421, 1140 Wien",
     "district": "Penzing",
-    "lat": 48.2023198,
-    "lng": 16.2551841,
+    "lat": 48.2023191,
+    "lng": 16.2551851,
     "openingHours": "Mo-Fr 07:15-19:30; Sa 07:15-18:00; PH off"
   },
   {
