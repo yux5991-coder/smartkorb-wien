@@ -4800,6 +4800,16 @@
     "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
   },
   {
+    "id": "osm-node-14181092443",
+    "retailerId": "billaplus",
+    "name": "Billa Plus",
+    "address": "Wien",
+    "district": "Leopoldstadt",
+    "lat": 48.2207377,
+    "lng": 16.3941936,
+    "openingHours": "Öffnungszeiten laut Aushang"
+  },
+  {
     "id": "osm-way-28767197",
     "retailerId": "spar",
     "name": "Spar",
@@ -5067,6 +5077,16 @@
     "district": "Liesing",
     "lat": 48.1311716,
     "lng": 16.3214876,
+    "openingHours": "Öffnungszeiten laut Aushang"
+  },
+  {
+    "id": "osm-node-13649566092",
+    "retailerId": "spar",
+    "name": "Spar Express",
+    "address": "Wien",
+    "district": "Liesing",
+    "lat": 48.1429577,
+    "lng": 16.2929152,
     "openingHours": "Öffnungszeiten laut Aushang"
   },
   {
@@ -5422,7 +5442,7 @@
   {
     "id": "osm-node-932960975",
     "retailerId": "penny",
-    "name": "PENNY",
+    "name": "Penny",
     "address": "Wien",
     "district": "Margareten",
     "lat": 48.1786402,
@@ -5492,7 +5512,7 @@
   {
     "id": "osm-node-3228467360",
     "retailerId": "penny",
-    "name": "PENNY",
+    "name": "Penny",
     "address": "Wien",
     "district": "Margareten",
     "lat": 48.1751342,
@@ -6757,7 +6777,7 @@
     "district": "Ottakring",
     "lat": 48.2097553,
     "lng": 16.3301272,
-    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00; Su,PH off"
+    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
   },
   {
     "id": "osm-node-6180347288",
@@ -6797,7 +6817,7 @@
     "district": "Ottakring",
     "lat": 48.2100853,
     "lng": 16.329302,
-    "openingHours": "Öffnungszeiten laut Aushang"
+    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00; PH off"
   },
   {
     "id": "osm-node-12149434581",
