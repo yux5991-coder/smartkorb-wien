@@ -1077,7 +1077,7 @@
     "district": "Donaustadt",
     "lat": 48.2249131,
     "lng": 16.5022346,
-    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00; Su,PH off"
+    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
   },
   {
     "id": "osm-node-3861206607",
@@ -4312,7 +4312,7 @@
   {
     "id": "osm-node-11787346338",
     "retailerId": "spar",
-    "name": "Spar Express",
+    "name": "Despar Express",
     "address": "Oberzellergasse 2a, Wien",
     "district": "Landstraße",
     "lat": 48.193924,
