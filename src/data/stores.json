@@ -2155,8 +2155,8 @@
     "name": "Billa stop & shop",
     "address": "Wien",
     "district": "Favoriten",
-    "lat": 48.1651891,
-    "lng": 16.365443,
+    "lat": 48.1651608,
+    "lng": 16.3654717,
     "openingHours": "Öffnungszeiten laut Aushang"
   },
   {
@@ -3797,7 +3797,7 @@
     "district": "Josefstadt",
     "lat": 48.2097797,
     "lng": 16.3471534,
-    "openingHours": "Mo-Fr 07:15-19:30; Sa 07:15-18:00"
+    "openingHours": "Mo-Fr 07:45-20:00; Sa 07:45-18:00"
   },
   {
     "id": "osm-node-324469114",
@@ -3827,7 +3827,7 @@
     "district": "Josefstadt",
     "lat": 48.2106452,
     "lng": 16.3443786,
-    "openingHours": "Sa 07:15-18:00; Mo-Fr 07:15-19:30"
+    "openingHours": "Sa 08:30-18:00; Mo-Fr 07:15-19:45"
   },
   {
     "id": "osm-node-1544643320",
