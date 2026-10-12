@@ -4160,16 +4160,6 @@
     "openingHours": "Mo-Fr 06:30-19:00; Sa off; Su off; PH off"
   },
   {
-    "id": "osm-node-3357492318",
-    "retailerId": "penny",
-    "name": "PENNY",
-    "address": "Landstraßer Hauptstraße 58, 1030 Wien",
-    "district": "Landstraße",
-    "lat": 48.2021513,
-    "lng": 16.3907599,
-    "openingHours": "Mo-Fr 07:15-19:30; Sa 07:15-18:00"
-  },
-  {
     "id": "osm-node-3559448096",
     "retailerId": "spar",
     "name": "SPAR Gourmet",
@@ -6087,7 +6077,7 @@
     "district": "Meidling",
     "lat": 48.1709326,
     "lng": 16.3327474,
-    "openingHours": "Mo-Fr 07:15-19:30; PH,Sa,Su off"
+    "openingHours": "Mo-Fr 06:30-18:30; PH,Sa,Su off"
   },
   {
     "id": "osm-node-9213836194",
@@ -6417,7 +6407,7 @@
     "district": "Ottakring",
     "lat": 48.219138,
     "lng": 16.3163311,
-    "openingHours": "Mo-Fr 07:30-19:50, Sa 07:40-18:00"
+    "openingHours": "Mo-Fr 07:45-20:00; Sa 07:40-18:00"
   },
   {
     "id": "osm-node-126462305",
@@ -6657,7 +6647,7 @@
     "district": "Ottakring",
     "lat": 48.2089069,
     "lng": 16.3355753,
-    "openingHours": "Öffnungszeiten laut Aushang"
+    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00; PH closed"
   },
   {
     "id": "osm-node-2484040028",
@@ -7127,7 +7117,7 @@
     "district": "Penzing",
     "lat": 48.2002172,
     "lng": 16.2562327,
-    "openingHours": "closed"
+    "openingHours": "Öffnungszeiten laut Aushang"
   },
   {
     "id": "osm-way-30039422",
@@ -7518,6 +7508,16 @@
     "lat": 48.1949445,
     "lng": 16.3258351,
     "openingHours": "Mo-Fr 07:30-19:45; Sa 07:15-18:00"
+  },
+  {
+    "id": "osm-node-14252909766",
+    "retailerId": "billa",
+    "name": "Billa",
+    "address": "Wien",
+    "district": "Rudolfsheim-Fünfhaus",
+    "lat": 48.1921388,
+    "lng": 16.3324125,
+    "openingHours": "Mo-Fr 07:15-19:30; Sa 07:15-18:00"
   },
   {
     "id": "osm-way-252830976",
