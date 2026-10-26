@@ -2185,8 +2185,8 @@
     "name": "Hofer",
     "address": "Laxenburger Straße 137-139, Wien",
     "district": "Favoriten",
-    "lat": 48.1667072,
-    "lng": 16.3703852,
+    "lat": 48.1667073,
+    "lng": 16.370384,
     "openingHours": "Mo-Fr 07:40 - 20:00; Sa 07:40 - 18:00"
   },
   {
@@ -4675,8 +4675,8 @@
     "name": "Spar",
     "address": "Taborstraße 87, 1020 Wien",
     "district": "Leopoldstadt",
-    "lat": 48.2248707,
-    "lng": 16.3832316,
+    "lat": 48.2250479,
+    "lng": 16.3831569,
     "openingHours": "Mo-Fr 07:15-19:30; Sa 07:15-18:00"
   },
   {
@@ -7815,8 +7815,8 @@
     "name": "Hofer",
     "address": "Florian-Hedorfer-Straße 19, 1110 Wien",
     "district": "Simmering",
-    "lat": 48.1670406,
-    "lng": 16.4310053,
+    "lat": 48.1670806,
+    "lng": 16.4310052,
     "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
   },
   {
@@ -7847,7 +7847,7 @@
     "district": "Simmering",
     "lat": 48.1664441,
     "lng": 16.4300513,
-    "openingHours": "Öffnungszeiten laut Aushang"
+    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-19:00"
   },
   {
     "id": "osm-way-31255690",
