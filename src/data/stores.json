@@ -4382,7 +4382,7 @@
   {
     "id": "osm-node-278123721",
     "retailerId": "spar",
-    "name": "SPAR Gourmet",
+    "name": "Spar Gourmet",
     "address": "Taborstraße 40, 1020 Wien",
     "district": "Leopoldstadt",
     "lat": 48.2187932,
@@ -4772,7 +4772,7 @@
   {
     "id": "osm-node-12211500901",
     "retailerId": "billa",
-    "name": "BillaToGo",
+    "name": "Billa",
     "address": "Taborstraße 37, 1020 Wien",
     "district": "Leopoldstadt",
     "lat": 48.2188354,
