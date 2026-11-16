@@ -182,7 +182,7 @@
   {
     "id": "osm-node-11414590406",
     "retailerId": "billa",
-    "name": "Billa Corso",
+    "name": "Billa",
     "address": "Schottengasse 11, Wien",
     "district": "Alsergrund",
     "lat": 48.2135714,
@@ -2175,8 +2175,8 @@
     "name": "Billa Plus",
     "address": "Wienerbergstraße 27, 1100 Wien",
     "district": "Favoriten",
-    "lat": 48.1698069,
-    "lng": 16.3388723,
+    "lat": 48.1698276,
+    "lng": 16.3388577,
     "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
   },
   {
@@ -2558,16 +2558,6 @@
     "lat": 48.2552556,
     "lng": 16.4081411,
     "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
-  },
-  {
-    "id": "osm-node-1915156031",
-    "retailerId": "penny",
-    "name": "Penny",
-    "address": "Schloßhofer Straße 13-15, 1210 Wien",
-    "district": "Floridsdorf",
-    "lat": 48.2580253,
-    "lng": 16.4010158,
-    "openingHours": "Öffnungszeiten laut Aushang"
   },
   {
     "id": "osm-node-2142804025",
@@ -3140,6 +3130,16 @@
     "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
   },
   {
+    "id": "osm-way-1577625971",
+    "retailerId": "penny",
+    "name": "Penny",
+    "address": "Schloßhofer Straße 13-15, 1210 Wien",
+    "district": "Floridsdorf",
+    "lat": 48.2580438,
+    "lng": 16.4008588,
+    "openingHours": "Öffnungszeiten laut Aushang"
+  },
+  {
     "id": "osm-node-126489779",
     "retailerId": "billa",
     "name": "Billa",
@@ -3592,7 +3592,7 @@
   {
     "id": "osm-node-505256489",
     "retailerId": "billa",
-    "name": "BILLA",
+    "name": "Billa",
     "address": "Schottengasse 1, 1010 Wien",
     "district": "Innere Stadt",
     "lat": 48.2120362,
@@ -3742,7 +3742,7 @@
   {
     "id": "osm-node-13386857061",
     "retailerId": "billa",
-    "name": "Billa Corso",
+    "name": "Billa",
     "address": "Opernring 3-5, Wien",
     "district": "Innere Stadt",
     "lat": 48.2022297,
@@ -4042,7 +4042,7 @@
   {
     "id": "osm-node-599691758",
     "retailerId": "spar",
-    "name": "SPAR Gourmet",
+    "name": "Spar Gourmet",
     "address": "Salesianergasse 1B, 1030 Wien",
     "district": "Landstraße",
     "lat": 48.2007535,
@@ -4162,7 +4162,7 @@
   {
     "id": "osm-node-3559448096",
     "retailerId": "spar",
-    "name": "SPAR Gourmet",
+    "name": "Spar Gourmet",
     "address": "Landstraßer Hauptstraße 97/101, Wien",
     "district": "Landstraße",
     "lat": 48.199369,
@@ -5657,7 +5657,7 @@
     "district": "Mariahilf",
     "lat": 48.1944368,
     "lng": 16.350478,
-    "openingHours": "Mo-Fr 07:15-19:30; Sa 09:00-18:00"
+    "openingHours": "Mo-Fr 07:45-20:00; Sa 07:45-18:00"
   },
   {
     "id": "osm-node-324469121",
@@ -7117,7 +7117,7 @@
     "district": "Penzing",
     "lat": 48.2002172,
     "lng": 16.2562327,
-    "openingHours": "Öffnungszeiten laut Aushang"
+    "openingHours": "Mo-Fr 07:45-20:00; Sa 07:45-18:00"
   },
   {
     "id": "osm-way-30039422",
@@ -7147,7 +7147,7 @@
     "district": "Penzing",
     "lat": 48.2067578,
     "lng": 16.2230503,
-    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
+    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00; Su,PH off"
   },
   {
     "id": "osm-way-94793314",
@@ -7782,7 +7782,7 @@
   {
     "id": "osm-node-14048117977",
     "retailerId": "spar",
-    "name": "DeSpar",
+    "name": "Spar",
     "address": "Wien",
     "district": "Simmering",
     "lat": 48.1671661,
