@@ -470,16 +470,6 @@
     "openingHours": "Öffnungszeiten laut Aushang"
   },
   {
-    "id": "osm-way-27898142",
-    "retailerId": "hofer",
-    "name": "Hofer",
-    "address": "Traisengasse 20-22, 1200 Wien",
-    "district": "Brigittenau",
-    "lat": 48.2365195,
-    "lng": 16.3904652,
-    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
-  },
-  {
     "id": "osm-way-47034018",
     "retailerId": "hofer",
     "name": "Hofer",
@@ -507,7 +497,7 @@
     "district": "Brigittenau",
     "lat": 48.2398782,
     "lng": 16.3687436,
-    "openingHours": "Mo-Fr 07:30-19:50; Sa 07:40-18:00"
+    "openingHours": "Mo-Fr 07:15-19:30; Sa 07:15-18:00"
   },
   {
     "id": "osm-way-157459338",
@@ -1387,7 +1377,7 @@
     "district": "Donaustadt",
     "lat": 48.2505343,
     "lng": 16.4360689,
-    "openingHours": "Öffnungszeiten laut Aushang"
+    "openingHours": "Mo-Fr 07:15-19:30; Sa 07:15-18:00"
   },
   {
     "id": "osm-way-23681447",
@@ -2495,8 +2485,8 @@
     "name": "Billa",
     "address": "Wien",
     "district": "Floridsdorf",
-    "lat": 48.2964336,
-    "lng": 16.3777664,
+    "lat": 48.2964261,
+    "lng": 16.377771,
     "openingHours": "Mo-Fr 07:15-19:30; Sa 07:15-18:00"
   },
   {
@@ -2653,11 +2643,11 @@
     "id": "osm-node-3837327963",
     "retailerId": "spar",
     "name": "Eurospar",
-    "address": "Wien",
+    "address": "Leopoldauer Straße 26-32, 1210 Wien",
     "district": "Floridsdorf",
     "lat": 48.2586245,
     "lng": 16.4093283,
-    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
+    "openingHours": "Mo-Fr 07:30-19:45; Sa 07:15-18:00"
   },
   {
     "id": "osm-node-4168989696",
@@ -2767,7 +2757,7 @@
     "district": "Floridsdorf",
     "lat": 48.2708221,
     "lng": 16.4231056,
-    "openingHours": "Öffnungszeiten laut Aushang"
+    "openingHours": "Mo-Fr 07:15-19:30; Sa 07:15-18:00"
   },
   {
     "id": "osm-node-11020716396",
@@ -2845,8 +2835,8 @@
     "name": "PENNY",
     "address": "Heinrich-von-Buol-Gasse 20, 1210 Wien",
     "district": "Floridsdorf",
-    "lat": 48.2663526,
-    "lng": 16.428371,
+    "lat": 48.2659983,
+    "lng": 16.4280509,
     "openingHours": "Mo-Fr 07:15-19:00; Sa 07:15-18:00"
   },
   {
@@ -3037,7 +3027,7 @@
     "district": "Floridsdorf",
     "lat": 48.2684144,
     "lng": 16.4292372,
-    "openingHours": "Öffnungszeiten laut Aushang"
+    "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
   },
   {
     "id": "osm-way-246391568",
@@ -4302,7 +4292,7 @@
   {
     "id": "osm-node-11787346338",
     "retailerId": "spar",
-    "name": "Despar Express",
+    "name": "Spar",
     "address": "Oberzellergasse 2a, Wien",
     "district": "Landstraße",
     "lat": 48.193924,
@@ -5745,8 +5735,8 @@
     "name": "Spar",
     "address": "Gumpendorfer Straße 121, 1060 Wien",
     "district": "Mariahilf",
-    "lat": 48.1906163,
-    "lng": 16.3454378,
+    "lat": 48.1905673,
+    "lng": 16.3454278,
     "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
   },
   {
@@ -7885,7 +7875,7 @@
     "name": "Hofer",
     "address": "Simmeringer Hauptstraße 334-336, 1110 Wien",
     "district": "Simmering",
-    "lat": 48.1474044,
+    "lat": 48.1474365,
     "lng": 16.4621149,
     "openingHours": "Mo-Fr 07:40-20:00; Sa 07:40-18:00"
   },
@@ -8212,7 +8202,7 @@
   {
     "id": "osm-node-409168055",
     "retailerId": "spar",
-    "name": "SPAR Gourmet",
+    "name": "Spar Gourmet",
     "address": "Wien",
     "district": "Wieden",
     "lat": 48.1889326,
@@ -8362,7 +8352,7 @@
   {
     "id": "osm-way-372955400",
     "retailerId": "spar",
-    "name": "Interspar Pronto",
+    "name": "Interspar",
     "address": "Wien",
     "district": "Wieden",
     "lat": 48.1846006,
